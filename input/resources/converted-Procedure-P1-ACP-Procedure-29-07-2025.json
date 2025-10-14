@@ -54,8 +54,8 @@
   "code": {
     "coding": [
       {
-        "code": "713603004",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "code": "713603004"
       }
     ]
   },

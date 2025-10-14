@@ -37,8 +37,8 @@
   "code": {
     "coding": [
       {
-        "code": "570801000146104",
         "system": "http://snomed.info/sct",
+        "code": "570801000146104",
         "display": "geregistreerd in orgaan donorregister (bevinding)"
       }
     ]

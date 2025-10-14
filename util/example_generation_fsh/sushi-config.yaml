@@ -1,0 +1,17 @@
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+canonical: https://fhir.iknl.nl/fhir
+status: draft # draft | active | retired | unknown
+version: 0.1.3-beta3
+fhirVersion: 4.0.1 
+dependencies:
+  iknl.fhir.r4.pzp: dev
+  nictiz.fhir.nl.r4.nl-core: 0.12.0-beta.4
+  nictiz.fhir.nl.r4.zib2020: 0.12.0-beta.4
+
+FSHOnly: true
+instanceOptions:
+  manualSliceOrdering: true 

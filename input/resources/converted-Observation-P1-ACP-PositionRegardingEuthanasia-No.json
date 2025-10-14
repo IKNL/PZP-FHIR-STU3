@@ -38,8 +38,8 @@
   "code": {
     "coding": [
       {
-        "code": "340171000146104",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "code": "340171000146104"
       }
     ]
   },

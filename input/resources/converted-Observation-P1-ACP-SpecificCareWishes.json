@@ -30,8 +30,8 @@
   "code": {
     "coding": [
       {
-        "code": "153851000146100",
         "system": "http://snomed.info/sct",
+        "code": "153851000146100",
         "display": "wensen en verwachtingen met betrekking tot uitkomst van behandeling (waarneembare entiteit)"
       }
     ]
@@ -58,8 +58,8 @@
   "method": {
     "coding": [
       {
-        "code": "370819000",
         "system": "http://snomed.info/sct",
+        "code": "370819000",
         "display": "vaststellen van persoonlijke waarden en wensen met betrekking tot zorg (verrichting)"
       }
     ]

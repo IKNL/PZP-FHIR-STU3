@@ -30,8 +30,8 @@
   "code": {
     "coding": [
       {
-        "code": "247751003",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "code": "247751003"
       }
     ]
   },
