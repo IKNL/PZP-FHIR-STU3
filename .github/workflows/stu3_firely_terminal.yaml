@@ -38,7 +38,7 @@ jobs:
           java-version: '21'
         
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.18
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.18-alpha3
         with:
           PATH_TO_CONFORMANCE_RESOURCES: input/resources
           PATH_TO_EXAMPLES: input/resources
@@ -78,9 +78,6 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
-            # DHD Verrichtingenthesaurus-referentieset (41000147108) referenced from ValueSet bound in nl-core profile is not loaded into tx.fhir.org
-            Procedure-F1-ACP-Procedure-01-10-2020.json | |*SNOMED CT Concept 41000147108* | *
-            Procedure-P2-ACP-Procedure-07-08-2025.json | |*SNOMED CT Concept 41000147108* | *
             # Struktur: fileName|messageId|detailsWildcard|location
 
 
