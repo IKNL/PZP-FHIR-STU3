@@ -15,7 +15,7 @@
       {
         "code": "264362003",
         "system": "http://snomed.info/sct",
-        "display": "thuis (omgeving)"
+        "display": "thuis"
       }
     ]
   },
@@ -40,7 +40,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "395091006"
+        "code": "395091006",
+        "display": "Preferred place of death"
       }
     ]
   },

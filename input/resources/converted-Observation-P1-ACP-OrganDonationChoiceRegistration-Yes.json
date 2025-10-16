@@ -14,7 +14,8 @@
     "coding": [
       {
         "code": "373066001",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "ja"
       }
     ]
   },
@@ -39,7 +40,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "570801000146104",
-        "display": "geregistreerd in orgaan donorregister (bevinding)"
+        "display": "geregistreerd in orgaan donorregister"
       }
     ]
   },

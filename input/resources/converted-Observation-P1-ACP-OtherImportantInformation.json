@@ -31,7 +31,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "247751003"
+        "code": "247751003",
+        "display": "gevoel van zingeving"
       }
     ]
   },

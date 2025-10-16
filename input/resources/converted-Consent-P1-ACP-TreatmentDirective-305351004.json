@@ -81,7 +81,7 @@
           {
             "code": "305351004",
             "system": "http://snomed.info/sct",
-            "display": "Admit to ITU"
+            "display": "opname op intensive care"
           }
         ]
       }
