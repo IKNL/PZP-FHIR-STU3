@@ -15,7 +15,7 @@
       {
         "code": "340201000146103",
         "system": "http://snomed.info/sct",
-        "display": "Wil geen euthanasie (bevinding)"
+        "display": "wil geen euthanasie"
       }
     ]
   },
@@ -39,7 +39,8 @@
     "coding": [
       {
         "code": "340171000146104",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "standpunt ten opzichte van euthanasie"
       }
     ]
   },

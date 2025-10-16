@@ -31,7 +31,8 @@
     "coding": [
       {
         "code": "153851000146100",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "wensen en verwachtingen met betrekking tot uitkomst van behandeling"
       }
     ]
   },

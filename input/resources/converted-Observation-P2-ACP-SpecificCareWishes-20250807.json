@@ -31,7 +31,8 @@
     "coding": [
       {
         "code": "153851000146100",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "wensen en verwachtingen met betrekking tot uitkomst van behandeling"
       }
     ]
   },
@@ -59,7 +60,7 @@
       {
         "code": "370819000",
         "system": "http://snomed.info/sct",
-        "display": "vaststellen van persoonlijke waarden en wensen met betrekking tot zorg (verrichting)"
+        "display": "vaststellen van persoonlijke waarden en wensen met betrekking tot zorg"
       }
     ]
   }
