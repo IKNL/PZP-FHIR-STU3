@@ -38,12 +38,12 @@ jobs:
           java-version: '21'
         
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.18-alpha3
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.18
         with:
           PATH_TO_CONFORMANCE_RESOURCES: input/resources
           PATH_TO_EXAMPLES: input/resources
           #PATH_TO_QUALITY_CONTROL_RULES: unittest
-          DOTNET_VALIDATION_ENABLED: false
+          DOTNET_VALIDATION_ENABLED: true
           JAVA_VALIDATION_ENABLED: true
           JAVA_VALIDATION_OPTIONS: >
             -allow-example-urls true
