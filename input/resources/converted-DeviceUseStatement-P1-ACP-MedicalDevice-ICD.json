@@ -38,7 +38,7 @@
             {
               "code": "7771000",
               "system": "http://snomed.info/sct",
-              "display": "Links"
+              "display": "links"
             }
           ]
         }
@@ -48,7 +48,7 @@
       {
         "code": "80891009",
         "system": "http://snomed.info/sct",
-        "display": "Heart structure (body structure)"
+        "display": "structuur van cor"
       }
     ]
   },
@@ -56,13 +56,6 @@
     "start": "2020-05-19"
   },
   "extension": [
-    {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
-        "display": "Encounter, 2025-07-29"
-      }
-    },
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Practitioner",
       "valueReference": {

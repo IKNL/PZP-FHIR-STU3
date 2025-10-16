@@ -24,9 +24,9 @@
   "type": {
     "coding": [
       {
-        "code": "465460004",
+        "code": "72506001",
         "system": "http://snomed.info/sct",
-        "display": "univentriculaire implanteerbare hartdefibrillator"
+        "display": "implanteerbare cardioverter-defibrillator"
       }
     ]
   }
