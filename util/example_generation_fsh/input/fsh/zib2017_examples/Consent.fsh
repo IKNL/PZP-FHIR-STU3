@@ -39,7 +39,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#305351004 "Admit to ITU"
+* provision.code = $snomed#305351004 "opname op intensive care"
 
 
 Instance: P1-ACP-TreatmentDirective-89666000
@@ -59,7 +59,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#89666000 "Cardiopulmonary resuscitation"
+* provision.code = $snomed#89666000 "cardiopulmonale resuscitatie"
 * sourceReference = Reference(P1-ACP-AdvanceDirective-DNR) "P1 ACP Advance Directive DNR"
 
 
@@ -81,7 +81,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#40617009 "Artificial respiration"
+* provision.code = $snomed#40617009 "kunstmatige beademing"
 
 
 Instance: P1-ACP-TreatmentDirective-116762002
@@ -101,7 +101,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#116762002 "administration of blood product"
+* provision.code = $snomed#116762002 "toediening van bloedproduct"
 
 
 Instance: P1-ACP-TreatmentDirective-281789004
@@ -122,7 +122,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#281789004 "Antibiotic therapy"
+* provision.code = $snomed#281789004 "antibiotische therapie"
 
 
 Instance: P1-ACP-TreatmentDirective-32485007
@@ -144,7 +144,7 @@ Usage: #example
 * provision.actor[agreementParty][=].reference.type = "RelatedPerson"
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
-* provision.code = $snomed#32485007 "Hospital admission"
+* provision.code = $snomed#32485007 "opname in ziekenhuis"
 
 
 Instance: P1-ACP-TreatmentDirective-OTH
@@ -165,7 +165,7 @@ Usage: #example
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
 * provision.code = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH "other"
-* provision.code.text = "Sondevoeding (SNOMED CT - 229912004)" // like this?
+* provision.code.text = "toedienen van enterale voeding (SNOMED CT - 229912004)" // like this?
 
 
 Instance: P1-ACP-TreatmentDirective-400231000146108
@@ -187,5 +187,5 @@ Usage: #example
 * provision.actor[agreementParty][+].reference = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
 * provision.code = http://terminology.hl7.org/CodeSystem/v3-NullFlavor#OTH "other"
-* provision.code.text = "Uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting) (SNOMED CT - 400231000146108)" // 20250710 - This seems now as an OK approach. Created: https://nictiz.atlassian.net/browse/ZIB-2796
+* provision.code.text = "uitzetten van cardioverter-defibrillator in laatste levensfase (SNOMED CT - 400231000146108)" // 20250710 - This seems now as an OK approach. Created: https://nictiz.atlassian.net/browse/ZIB-2796
 
