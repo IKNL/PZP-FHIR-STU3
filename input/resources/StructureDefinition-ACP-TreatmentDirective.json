@@ -205,15 +205,16 @@
           }
         ]
       },
-      {"id":"Consent.modifierExtension:treatmentPermitted.valueCodeableConcept:valueCodeableConcept",
-        "path":"Consent.modifierExtension.valueCodeableConcept",
+      {
+        "id": "Consent.modifierExtension:treatmentPermitted.valueCodeableConcept:valueCodeableConcept",
+        "path": "Consent.modifierExtension.valueCodeableConcept",
         "sliceName": "valueCodeableConcept",
-        "binding":{
-          "strength":"extensible",
+        "binding": {
+          "strength": "extensible",
           "valueSetReference": {
             "reference": "https://fhir.iknl.nl/fhir/ValueSet/YesNoYesWithRestrictionsUnknownVS"
+          }
         }
-      }
       },
       {
         "id": "Consent.patient",
