@@ -212,7 +212,7 @@
         "binding": {
           "strength": "extensible",
           "valueSetReference": {
-            "reference": "https://fhir.iknl.nl/fhir/ValueSet/YesNoYesWithRestrictionsUnknownVS"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/YesNoYesWithRestrictionsUnknownVS"
           }
         }
       },

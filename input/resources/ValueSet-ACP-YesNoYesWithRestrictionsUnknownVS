@@ -1,7 +1,7 @@
 {
   "resourceType": "ValueSet",
   "id": "ACP-YesNoYesWithRestrictionsUnknownVS",
-  "url": "https://fhir.iknl.nl/fhir/ValueSet/YesNoYesWithRestrictionsUnknownVS",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/YesNoYesWithRestrictionsUnknownVS",
   "version": "0.1.0",
   "name": "ACPYesNoYesWithRestrictionsUnknownVS",
   "title": "Yes, No, Yes with restrictions, Unknown valueSet",
