@@ -3,7 +3,7 @@
   "id": "F1-ACP-OrganDonationChoiceRegistration-Yes",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OrganDonationChoiceRegistration"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration"
     ]
   },
   "context": {
@@ -14,8 +14,7 @@
     "coding": [
       {
         "code": "373066001",
-        "system": "http://snomed.info/sct",
-        "display": "ja"
+        "system": "http://snomed.info/sct"
       }
     ]
   },
@@ -40,7 +39,7 @@
       {
         "code": "570801000146104",
         "system": "http://snomed.info/sct",
-        "display": "geregistreerd in orgaan donorregister"
+        "display": "geregistreerd in orgaan donorregister (bevinding)"
       }
     ]
   },

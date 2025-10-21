@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-AdvanceDirective",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-AdvanceDirective",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-AdvanceDirective",
   "version": "0.1.0",
   "name": "ACPAdvanceDirective",
   "title": "AdvanceDirective",
@@ -110,7 +110,7 @@
         "type": [
           {
             "code": "Extension",
-            "profile": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference"
+            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference"
           }
         ]
       },
@@ -120,7 +120,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Encounter"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
           }
         ]
       },
@@ -152,7 +152,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
           }
         ]
       },

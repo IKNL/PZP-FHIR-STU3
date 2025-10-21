@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-TreatmentDirective",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-TreatmentDirective",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective",
   "version": "0.1.0",
   "name": "ACPTreatmentDirective",
   "title": "TreatmentDirective",
@@ -211,7 +211,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
           }
         ]
       },
@@ -254,7 +254,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-AdvanceDirective"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-AdvanceDirective"
           }
         ],
         "mapping": [

@@ -3,7 +3,7 @@
   "id": "P1-ACP-TreatmentDirective-400231000146108",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-TreatmentDirective"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
     ]
   },
   "identifier": {
@@ -42,7 +42,7 @@
       "valueString": "Hendrik wil het er nog niet over hebben"
     },
     {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
+      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
       "valueReference": {
         "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
         "display": "Encounter, 2025-07-29"

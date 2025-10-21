@@ -3,7 +3,7 @@
   "id": "F1-ACP-PreferredPlaceOfDeath-Unknown",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-PreferredPlaceOfDeath"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-PreferredPlaceOfDeath"
     ]
   },
   "context": {
@@ -31,8 +31,7 @@
     "coding": [
       {
         "code": "395091006",
-        "system": "http://snomed.info/sct",
-        "display": "Preferred place of death"
+        "system": "http://snomed.info/sct"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-HealthProfessional-Practitioner",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-HealthProfessional-Practitioner",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner",
   "version": "0.1.0",
   "name": "ACPHealthProfessionalPractitioner",
   "title": "HealthProfessional Practitioner",
