@@ -3,7 +3,7 @@
   "id": "P1-ACP-Patient-HendrikHartman",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
   "extension": [
@@ -14,7 +14,7 @@
           "valueBoolean": false
         }
       ],
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
     }
   ],
   "contact": [

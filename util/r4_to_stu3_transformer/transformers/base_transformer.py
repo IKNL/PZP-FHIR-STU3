@@ -179,9 +179,11 @@ class BaseTransformer(ABC):
     
     def convert_profile_url(self, r4_profile_url: str) -> str:
         """Convert R4 profile URL to STU3 equivalent."""
-        # Default: just replace R4 with STU3 in the URL
-        # Subclasses can override for more specific mappings
-        return r4_profile_url.replace('/R4/', '/STU3/').replace('4.0', '3.0')
+        # Handle both uppercase and lowercase r4 in URLs
+        stu3_url = r4_profile_url.replace('/R4/', '/STU3/').replace('/r4/', '/stu3/')
+        # Also handle version numbers
+        stu3_url = stu3_url.replace('4.0', '3.0')
+        return stu3_url
     
     def transform_identifier(self, r4_identifier: Dict[str, Any]) -> Dict[str, Any]:
         """Transform identifier from R4 to STU3."""
@@ -307,7 +309,17 @@ class BaseTransformer(ABC):
                 'http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType'
         }
         
-        return global_mappings.get(url, url)
+        # Check for specific mappings first
+        mapped_url = global_mappings.get(url, url)
+        
+        # If no specific mapping found, apply general R4->STU3 URL conversion
+        if mapped_url == url:
+            # Handle both uppercase and lowercase r4 in URLs
+            mapped_url = url.replace('/R4/', '/STU3/').replace('/r4/', '/stu3/')
+            # Also handle version numbers
+            mapped_url = mapped_url.replace('4.0', '3.0')
+        
+        return mapped_url
     
     def log_transformation_start(self, resource_id: str):
         """Log the start of a transformation."""

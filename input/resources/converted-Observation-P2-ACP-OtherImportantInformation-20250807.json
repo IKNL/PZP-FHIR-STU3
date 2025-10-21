@@ -3,7 +3,7 @@
   "id": "P2-ACP-OtherImportantInformation-20250807",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OtherImportantInformation"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation"
     ]
   },
   "context": {
@@ -31,8 +31,7 @@
     "coding": [
       {
         "code": "247751003",
-        "system": "http://snomed.info/sct",
-        "display": "gevoel van zingeving"
+        "system": "http://snomed.info/sct"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-HealthProfessional-PractitionerRole",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-HealthProfessional-PractitionerRole",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-PractitionerRole",
   "version": "0.1.0",
   "name": "ACPHealthProfessionalPractitionerRole",
   "title": "HealthProfessional PractitionerRole",
@@ -60,7 +60,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-HealthProfessional-Practitioner"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner"
           }
         ]
       },
