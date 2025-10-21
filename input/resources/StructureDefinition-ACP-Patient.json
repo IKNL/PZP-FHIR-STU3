@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-Patient",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient",
   "version": "0.1.0",
   "name": "ACPPatient",
   "title": "Patient",
@@ -61,7 +61,7 @@
         "type": [
           {
             "code": "Extension",
-            "profile": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
           }
         ],
         "condition": [

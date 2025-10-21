@@ -3,7 +3,7 @@
   "id": "P2-ACP-TreatmentDirective-other",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-TreatmentDirective"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
     ]
   },
   "identifier": {
@@ -42,7 +42,7 @@
       "valueString": "wanneer door complicaties peritoneaal dialyse niet meer mogelijk is en de patiënt elke week in het ziekenhuis gedialyseerd zou moeten worden dan wil ze dat de dialyse stopt."
     },
     {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
+      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
       "valueReference": {
         "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
         "display": "Encounter, 2025-08-07"

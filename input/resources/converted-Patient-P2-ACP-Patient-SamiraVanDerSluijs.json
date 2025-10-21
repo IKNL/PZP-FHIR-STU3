@@ -3,7 +3,7 @@
   "id": "P2-ACP-Patient-SamiraVanDerSluijs",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
   "extension": [
@@ -18,7 +18,7 @@
           "valueString": "Patiënt is wilsbekwaam. Bij verandering van de situatie wordt haar partner haar wettelijk vertegenwoordiger."
         }
       ],
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
     }
   ],
   "identifier": [

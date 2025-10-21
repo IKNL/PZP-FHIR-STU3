@@ -3,7 +3,7 @@
   "id": "P1-ACP-Communication-29-07-2025",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Communication"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Communication"
     ]
   },
   "status": "completed",

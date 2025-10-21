@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-OtherImportantInformation",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OtherImportantInformation",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation",
   "version": "0.1.0",
   "name": "ACPOtherImportantInformation",
   "title": "Other Important Information",
@@ -74,7 +74,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
           }
         ]
       },
@@ -84,7 +84,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Encounter"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
           }
         ]
       },

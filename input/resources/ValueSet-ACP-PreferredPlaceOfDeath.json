@@ -1,7 +1,7 @@
 {
   "resourceType": "ValueSet",
   "id": "ACP-PreferredPlaceOfDeath",
-  "url": "https://fhir.iknl.nl/fhir/ValueSet/ACP-PreferredPlaceOfDeath",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeath",
   "version": "0.1.0",
   "name": "ACPPreferredPlaceOfDeathVS",
   "title": "Preferred Place Of Death",

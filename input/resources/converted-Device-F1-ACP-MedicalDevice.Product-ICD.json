@@ -3,7 +3,7 @@
   "id": "F1-ACP-MedicalDevice.Product-ICD",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-MedicalDevice.Product-ICD"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice.Product-ICD"
     ]
   },
   "identifier": [
@@ -24,9 +24,9 @@
   "type": {
     "coding": [
       {
-        "code": "72506001",
+        "code": "465460004",
         "system": "http://snomed.info/sct",
-        "display": "implanteerbare cardioverter-defibrillator"
+        "display": "univentriculaire implanteerbare hartdefibrillator"
       }
     ]
   }
