@@ -10,6 +10,7 @@
     "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
     "display": "Encounter, 2025-08-07"
   },
+  "effectiveDateTime": "2025-08-07",
   "valueCodeableConcept": {
     "coding": [
       {
