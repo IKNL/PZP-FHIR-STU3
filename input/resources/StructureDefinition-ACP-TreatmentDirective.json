@@ -206,6 +206,17 @@
         ]
       },
       {
+        "id": "Consent.modifierExtension:treatmentPermitted.valueCodeableConcept:valueCodeableConcept",
+        "path": "Consent.modifierExtension.valueCodeableConcept",
+        "sliceName": "valueCodeableConcept",
+        "binding": {
+          "strength": "extensible",
+          "valueSetReference": {
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/YesNoYesWithRestrictionsUnknownVS"
+          }
+        }
+      },
+      {
         "id": "Consent.patient",
         "path": "Consent.patient",
         "type": [
