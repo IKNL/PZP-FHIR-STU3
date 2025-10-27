@@ -42,5 +42,9 @@
 
    // Suppress 'que-7' error: The validator incorrectly reports this constraint for STU3 enableWhen conditions using 'answerCoding', even when structurally correct. This is likely a validator bug or terminology resolution issue, as the suppression is active but the error persists.
    "http://hl7.org/fhir/StructureDefinition/Questionnaire#que-7"
+
+   // Suppress 'Terminology_PassThrough_TX_Message' errors for Questionnaire and QuestionnaireResponse resources because they are about differnt language version of the display texts.
+   "Terminology_PassThrough_TX_Message@Questionnaire.*"
+   "Terminology_PassThrough_TX_Message@QuestionnaireResponse.*"
   ]
 }
