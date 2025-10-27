@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-MedicalDevice.Product-ICD",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-MedicalDevice.Product-ICD",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice.Product-ICD",
   "version": "0.1.0",
   "name": "ACPMedicalDeviceProductICD",
   "title": "MedicalDevice Product ICD",
@@ -90,7 +90,7 @@
         "binding": {
           "strength": "required",
           "valueSetReference": {
-            "reference": "https://fhir.iknl.nl/fhir/ValueSet/ACP-MedicalDeviceProductType-ICD",
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD",
             "display": "ProductTypeCodelijst"
           }
         },

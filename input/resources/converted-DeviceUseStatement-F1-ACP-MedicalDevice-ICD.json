@@ -3,7 +3,7 @@
   "id": "F1-ACP-MedicalDevice-ICD",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-MedicalDevice"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice"
     ]
   },
   "identifier": [
@@ -36,14 +36,5 @@
   ],
   "timingPeriod": {
     "start": "2018"
-  },
-  "extension": [
-    {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/F1-ACP-Encounter-01-10-2020",
-        "display": "Encounter, 2020-10-01"
-      }
-    }
-  ]
+  }
 }

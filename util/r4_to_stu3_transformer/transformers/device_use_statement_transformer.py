@@ -139,13 +139,13 @@ class DeviceUseStatementTransformer(BaseTransformer):
         Copy the ext-EncounterReference extension from R4 to STU3.
         
         This extension is at the root level and should be preserved in STU3.
-        Extension URL: https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference
+        Extension URL: https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference
         """
         if 'extension' in r4_resource:
             encounter_ref_extensions = []
             
             for extension in r4_resource['extension']:
-                if extension.get('url') == 'https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference':
+                if extension.get('url') == 'https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference':
                     encounter_ref_extensions.append(extension)
             
             if encounter_ref_extensions:

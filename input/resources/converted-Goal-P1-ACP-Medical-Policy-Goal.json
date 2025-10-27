@@ -3,7 +3,7 @@
   "id": "P1-ACP-Medical-Policy-Goal",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Medical-Policy-Goal"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Medical-Policy-Goal"
     ]
   },
   "identifier": [
@@ -26,7 +26,7 @@
       {
         "code": "713148004",
         "system": "http://snomed.info/sct",
-        "display": "Symptom management (procedure)"
+        "display": "voorkomen en behandelen van symptomen"
       }
     ]
   },
@@ -40,14 +40,5 @@
       "text": "De behandeling van Hendrik is na verslechtering en gesprekken hierover bijgesteld van levensverlenging naar symptoomgericht"
     }
   ],
-  "status": "in-progress",
-  "extension": [
-    {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
-        "display": "Encounter, 2025-07-29"
-      }
-    }
-  ]
+  "status": "in-progress"
 }

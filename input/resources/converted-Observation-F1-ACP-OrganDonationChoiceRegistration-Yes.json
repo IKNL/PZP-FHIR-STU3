@@ -3,7 +3,7 @@
   "id": "F1-ACP-OrganDonationChoiceRegistration-Yes",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OrganDonationChoiceRegistration"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration"
     ]
   },
   "context": {

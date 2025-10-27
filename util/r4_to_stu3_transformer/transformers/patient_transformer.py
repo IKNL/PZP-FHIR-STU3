@@ -85,7 +85,7 @@ class PatientTransformer(BaseTransformer):
         
         # Extensions to preserve as-is
         preserved_extensions = [
-            "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+            "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
         ]
         
         for r4_extension in r4_resource["extension"]:
@@ -165,7 +165,7 @@ class PatientTransformer(BaseTransformer):
                 "extension": "Preserves specific extensions as-is"
             },
             "preserved_extensions": {
-                "ext-LegallyCapable-MedicalTreatmentDecisions": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+                "ext-LegallyCapable-MedicalTreatmentDecisions": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
             },
             "excluded_features": {
                 "patient-animal": "Animal extension mapping not implemented"
@@ -212,7 +212,7 @@ PATIENT_MAPPING_TABLE = """
 ┌─ PRESERVED EXTENSIONS ─────────────────────────────────────────────────────────┐
 │ Extension URL                                                                  │ Notes                                     │
 ├────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────┤
-│ https://fhir.iknl.nl/fhir/StructureDefinition/                                │ Legal capacity for medical treatment     │
+│ https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/                                │ Legal capacity for medical treatment     │
 │ ext-LegallyCapable-MedicalTreatmentDecisions                                   │ decisions - preserved as-is               │
 └────────────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────┘
 
