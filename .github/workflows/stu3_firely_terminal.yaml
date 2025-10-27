@@ -62,6 +62,7 @@ jobs:
           SUSHI_ENABLED: false
           FIRELY_TERMINAL_VERSION: 3.5.0-beta-1
           ##JAVA_VALIDATOR_VERSION: 6.7.1
+          FIRELY_TERMINAL_VALIDATOR_ENGINE: Default
           
       - name: Upload validation artifacts
         uses: actions/upload-artifact@v4
