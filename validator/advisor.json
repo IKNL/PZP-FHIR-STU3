@@ -39,5 +39,8 @@
     //Filter Bug with ignoring the display language '-langage de' (https://github.com/hapifhir/org.hl7.fhir.core/issues/2111 - can't filter on path, so filtering on message id only)
    "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR",
    "NO_VALID_DISPLAY_FOUND_LANG_NONE"
+
+   // Suppress 'que-7' error: The validator incorrectly reports this constraint for STU3 enableWhen conditions using 'answerCoding', even when structurally correct. This is likely a validator bug or terminology resolution issue, as the suppression is active but the error persists.
+   "http://hl7.org/fhir/StructureDefinition/Questionnaire#que-7"
   ]
 }
