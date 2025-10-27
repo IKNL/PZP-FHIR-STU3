@@ -29,7 +29,7 @@
   <dependsOn>
     <uri value="https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.20" />
     <packageId value="nictiz.fhir.nl.stu3.zib2017" />
-    <version value="2.2.20" />
+    <version value="2.3.2" />
   </dependsOn>
   <definition>
     <page>
