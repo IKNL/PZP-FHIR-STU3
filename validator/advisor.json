@@ -38,13 +38,13 @@
 
     //Filter Bug with ignoring the display language '-langage de' (https://github.com/hapifhir/org.hl7.fhir.core/issues/2111 - can't filter on path, so filtering on message id only)
    "NO_VALID_DISPLAY_FOUND_NONE_FOR_LANG_ERR",
-   "NO_VALID_DISPLAY_FOUND_LANG_NONE"
+   "NO_VALID_DISPLAY_FOUND_LANG_NONE",
 
    // Suppress 'que-7' error: The validator incorrectly reports this constraint for STU3 enableWhen conditions using 'answerCoding', even when structurally correct. Seems like an bug in the FHIR path statement in the FHIR spec.
-   "http://hl7.org/fhir/StructureDefinition/Questionnaire#que-7@Questionnaire.*"
+   "http://hl7.org/fhir/StructureDefinition/Questionnaire#que-7",
 
    // Suppress 'Terminology_PassThrough_TX_Message' errors for Questionnaire and QuestionnaireResponse resources because they are about differnt language version of the display texts.
-   "Terminology_PassThrough_TX_Message@Questionnaire.*"
+   "Terminology_PassThrough_TX_Message@Questionnaire.*",
    "Terminology_PassThrough_TX_Message@QuestionnaireResponse.*"
   ]
 }
