@@ -26,18 +26,6 @@
           }
         ]
       }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/F1-ACP-ContactPerson-MichielHartman",
-        "display": "ContactPerson, Michiel Hartman"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/F1-ACP-Patient-HendrikHartman",
-        "display": "Patient, Hendrik Hartman"
-      }
     }
   ],
   "identifier": [
