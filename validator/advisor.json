@@ -16,6 +16,9 @@
     // Snomed code 340201000146103 cannot be found and thus not checked if it is in the valueset
     "Terminology_TX_NoValid_1_CC@Observation.value.ofType(CodeableConcept)",
 
+    // Manually checked: 72506001 is in the ValueSet, even in the expansion. The ValueSet in the profile bound is allowed as it restricts the zib's required binding. 72506001 zit in "Include codes from SNOMED_CT where concept DescendentOf 260787004"  
+    "Terminology_TX_NoValid_1_CC@Device.type",
+
     // filters expected information messages for the violation of preferred bindings.
     "Terminology_TX_NoValid_3_CC@PractitionerRole.specialty[*]",
     "Terminology_TX_NoValid_3_CC@RelatedPerson.relationship[*]",
