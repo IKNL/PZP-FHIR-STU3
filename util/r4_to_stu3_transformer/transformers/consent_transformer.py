@@ -458,18 +458,6 @@ class ConsentTransformer(BaseTransformer):
                    (isinstance(value, dict) and len(value) == 0):
                     del stu3_consent[field]
     
-    def convert_profile_url(self, r4_profile_url: str) -> str:
-        """Convert Consent profile URL from R4 to STU3."""
-        # Specific mappings for Consent profiles
-        if 'ACP-AdvanceDirective' in r4_profile_url:
-            return r4_profile_url.replace('/R4/', '/STU3/')
-        elif 'ACP-TreatmentDirective2' in r4_profile_url:
-            return r4_profile_url.replace('/R4/', '/STU3/')
-        
-        # Default conversion
-        return super().convert_profile_url(r4_profile_url)
-
-
 def main():
     """Main function for standalone execution."""
     import argparse

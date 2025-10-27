@@ -233,16 +233,6 @@ class EncounterTransformer(BaseTransformer):
         
         return url_mappings.get(r4_url, r4_url)
     
-    def convert_profile_url(self, r4_profile_url: str) -> str:
-        """Convert Encounter profile URL from R4 to STU3."""
-        # Specific mappings for Encounter profiles
-        if 'Encounter' in r4_profile_url:
-            return r4_profile_url.replace('/R4/', '/STU3/')
-        
-        # Default conversion
-        return super().convert_profile_url(r4_profile_url)
-
-
 def main():
     """Main function for standalone execution."""
     import argparse

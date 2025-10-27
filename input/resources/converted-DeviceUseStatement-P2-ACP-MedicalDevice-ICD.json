@@ -34,7 +34,7 @@
       {
         "code": "80891009",
         "system": "http://snomed.info/sct",
-        "display": "Heart structure (body structure)"
+        "display": "structuur van cor"
       }
     ],
     "extension": [
@@ -44,7 +44,7 @@
             {
               "code": "7771000",
               "system": "http://snomed.info/sct",
-              "display": "Left (qualifier value)"
+              "display": "links"
             }
           ]
         },
