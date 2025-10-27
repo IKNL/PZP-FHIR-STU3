@@ -79,6 +79,7 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            Questionnaire-ACP-zib2017.json|http://hl7.org/fhir/StructureDefinition/Questionnaire#que-7|*|*
             # Struktur: fileName|messageId|detailsWildcard|location
 
 

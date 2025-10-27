@@ -25,26 +25,6 @@
     "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
     "display": "Patient, Samira van der Sluijs"
   },
-  "relationship": [
-    {
-      "coding": [
-        {
-          "code": "24",
-          "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-          "display": "Wettelijke vertegenwoordiger"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "HUSB",
-          "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-          "display": "husband"
-        }
-      ]
-    }
-  ],
   "name": [
     {
       "extension": [
@@ -168,5 +148,14 @@
         ]
       }
     }
-  ]
+  ],
+  "relationship": {
+    "coding": [
+      {
+        "code": "24",
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+        "display": "Wettelijke vertegenwoordiger"
+      }
+    ]
+  }
 }
