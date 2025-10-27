@@ -6,7 +6,6 @@
     "3.0.2"
   ],
   "dependencies": {
-    "hl7.fhir.r3.core": "3.0.2",
     "nictiz.fhir.nl.stu3.zib2017": "2.3.2"
   }
 }
