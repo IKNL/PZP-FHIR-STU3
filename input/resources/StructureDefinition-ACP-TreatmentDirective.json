@@ -191,6 +191,7 @@
       {
         "id": "Consent.modifierExtension:treatmentPermitted",
         "path": "Consent.modifierExtension",
+        "comment" : "Additional terminology mapping guidance, in addition to the default zib/nl-core guidance: Afspraak uitzetten ICD (dataset id 96) values: Ja -> Yes; No value is mapped to no; Nee, nog geen besluit genomen or Niet besproken -> Unknown  And, communicate this via the except element.",
         "sliceName": "treatmentPermitted",
         "mapping": [
           {

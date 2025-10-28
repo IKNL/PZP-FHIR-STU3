@@ -99,9 +99,9 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-            "code": "JA_MAAR",
-            "display": "Ja, maar met beperkingen"
+            "system": "http://snomed.info/sct",
+            "code": "900000000000013009",
+            "display": "Nog Onbekend"
           }
         ]
       }
