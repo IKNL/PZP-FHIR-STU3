@@ -90,5 +90,30 @@
     {
       "uri": "https://wetten.overheid.nl/"
     }
+  ],
+  "modifierExtension": [
+    {
+      "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-TreatmentPermitted",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+            "code": "JA_MAAR",
+            "display": "Ja, maar met beperkingen"
+          }
+        ]
+      }
+    }
+  ],
+  "except": [
+    {
+      "type": "deny",
+      "extension": [
+        {
+          "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Restrictions",
+          "valueString": "Niet besproken"
+        }
+      ]
+    }
   ]
 }
