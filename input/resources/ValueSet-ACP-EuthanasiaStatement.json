@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-EuthanasiaStatement",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-EuthanasiaStatement",
-  "version": "0.1.0",
+  "version": "1.0.0-rc1",
   "name": "ACPEuthanasiaStatementVS",
   "title": "Euthanasia Statement",
   "status": "draft",

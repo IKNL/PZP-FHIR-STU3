@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-YesNoUnknownVS",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS",
-  "version": "0.1.0",
+  "version": "1.0.0-rc1",
   "name": "ACPYesNoUnknownVS",
   "title": "Yes, No, Unknown valueSet",
   "status": "draft",
