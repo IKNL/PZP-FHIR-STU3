@@ -19,14 +19,6 @@
   ],
   "contact": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/patient-relatedPerson",
-          "valueReference": {
-            "reference": "RelatedPerson/P1-ACP-ContactPerson-MirjamDeLeeuwHartman"
-          }
-        }
-      ],
       "relationship": [
         {
           "coding": [

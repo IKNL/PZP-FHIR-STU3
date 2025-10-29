@@ -115,5 +115,9 @@
       <code value="suppress-mappings" />
       <value value="*" />
     </parameter>
+    <parameter>
+      <code value="path-expansion-params" />
+      <value value="_resources/Parameters-expansion.json" />
+    </parameter>
   </definition>
 </ImplementationGuide>
