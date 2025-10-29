@@ -75,10 +75,7 @@ WARNING: Consent/P2-ACP-TreatmentDirective-other: Consent.policy[0].uri: No defi
 
 
 # Something in the base FHIR definition. Not in our control.
-ERROR: StructureDefinition​.snapshot​.element[19]​.example[0]​.value​.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
-ERROR: StructureDefinition​.snapshot​.element[24]​.example[0]​.value​.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
-ERROR: StructureDefinition/ACP-AdvanceDirective: StructureDefinition.snapshot.element[24].example[0].value.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
-ERROR: StructureDefinition/ACP-TreatmentDirective: StructureDefinition.snapshot.element[29].example[0].value.ofType(Identifier): if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'
+%identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'%
 
 # DHD Verrichtingenthesaurus-referentieset (41000147108) referenced from ValueSet bound in profile is not loaded into tx.fhir.org
 ERROR: Procedure/F1-ACP-Procedure-01-10-2020: Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known
@@ -91,9 +88,12 @@ ERROR: Observation/P1-ACP-OrganDonationChoiceRegistration-Yes: Observation.code.
 ERROR: Observation/P2-ACP-OrganDonationChoiceRegistration-20250807: Observation.code.coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 ERROR: StructureDefinition/ACP-OrganDonationChoiceRegistration: StructureDefinition.snapshot.element[14].pattern.ofType(CodeableConcept).coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 ERROR: StructureDefinition/ACP-OrganDonationChoiceRegistration: StructureDefinition.differential.element[1].pattern.ofType(CodeableConcept).coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Questionnaire/ACP-zib2020: Questionnaire.item[8].item[3].item[0].answerOption[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[8].item[3].item[0].answer[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[8].item[3].item[0].option[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[8].item[3].item[0].answer[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[8].item[3].item[0].initial.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 ERROR: QuestionnaireResponse/HendrikHartman-20221108: QuestionnaireResponse.item[8].item[3].item[0].answer[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
+
+# SNOMED code 1351964001 is ub https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[6].item[1].option[1].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
 ERROR: Goal/F1-ACP-Medical-Policy-Goal: Goal.description.coding[0].code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
@@ -103,8 +103,7 @@ ERROR: Questionnaire/ACP-zib2020: Questionnaire.item[6].item[1].answerOption[1].
 ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[6].item[1].answer[0].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 
 # Manually checked: 72506001 is in the ValueSet, even in the expansion. The ValueSet in the profile bound is allowed as it restricts the zib's required binding. 72506001 zit in "Include codes from SNOMED_CT where concept DescendentOf 260787004"  
-ERROR: Device/P1-ACP-MedicalDevice.Product-ICD: Device.type: None of the codings provided are in the value set 'MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD|0.1.0), and a coding from this value set is required) (codes = http://snomed.info/sct#72506001)
-ERROR: Device/P2-ACP-MedicalDevice.Product-ICD: Device.type: None of the codings provided are in the value set 'MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD|0.1.0), and a coding from this value set is required) (codes = http://snomed.info/sct#72506001)
+%None of the codings provided are in the value set 'MedicalDevice ProductType ICD'%
 
 # Definition can be found in the Nictiz package. Not sure why the IG publisher cannot access it. Also not a big deal for this IG.
 WARNING: Practitioner/F1-ACP-HealthProfessional-Practitioner-DrVanHuissen: Practitioner.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
@@ -117,3 +116,31 @@ WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefin
 WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
 WARNING: StructureDefinition/ACP-Patient: StructureDefinition.snapshot.element[40].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
 WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[11].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/uzi-nr-pers'
+
+# Error in the FHIR invariant
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[2].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[3].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[5].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[6].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[7].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[7].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[5].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[5].item[2].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[0].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[1].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[2].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[3].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[4].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[5].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[7].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[7].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[8].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[8].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[10].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+
+
+## Slicing errors in base profiles... can't do anything about this in this version
+%launches straight into slicing without the slicing being set up properly first%
+
+## Error in base profile or in snapshot, not in our control
+%The element Observation.status.value has no assigned types, and no content reference%

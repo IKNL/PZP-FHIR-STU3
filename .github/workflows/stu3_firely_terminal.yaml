@@ -93,6 +93,7 @@ jobs:
             StructureDefinition-ACP-PreferredPlaceOfDeath.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-Procedure.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-SpecificCareWishes.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-TreatmentDirective.json||*launches straight into slicing without the slicing being set up properly*| 
 
             # Struktur: fileName|messageId|detailsWildcard|location
 
