@@ -3,7 +3,7 @@
   "id": "P2-ACP-Encounter-28-07-2024",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/r4/StructureDefinition/ACP-Encounter"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
     ]
   },
   "identifier": [

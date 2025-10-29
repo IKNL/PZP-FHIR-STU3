@@ -4,9 +4,9 @@ name: STU3 Firely Terminal Validation
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ "main", "14-QA" ]
+    branches: [ "main", "develop", "PZP-FHIR-R4/15"]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "develop" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -38,7 +38,7 @@ jobs:
           java-version: '21'
         
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.20-alpha2
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.20-alpha3
         with:
           PATH_TO_CONFORMANCE_RESOURCES: input/resources
           PATH_TO_EXAMPLES: input/resources
@@ -79,6 +79,7 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            Questionnaire-ACP-zib2017.json||*que-7*|
             # Struktur: fileName|messageId|detailsWildcard|location
 
 

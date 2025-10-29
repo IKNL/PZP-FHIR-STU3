@@ -53,10 +53,19 @@
           }
         ]
       },
-      {
+       {
         "id": "Consent.extension",
         "path": "Consent.extension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.extension:verification",
@@ -79,7 +88,16 @@
       {
         "id": "Consent.extension:verification.extension",
         "path": "Consent.extension.extension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.extension:verification.extension:Verified",
@@ -186,7 +204,16 @@
       {
         "id": "Consent.modifierExtension",
         "path": "Consent.modifierExtension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.modifierExtension:treatmentPermitted",

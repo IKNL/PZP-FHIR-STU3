@@ -84,6 +84,9 @@ class ProcedureTransformer(BaseTransformer):
             # Transform extension URLs globally
             stu3_resource = self.transform_extensions_in_object(stu3_resource)
             
+            # Clean up empty extension arrays
+            stu3_resource = self._clean_empty_extensions(stu3_resource)
+            
             logger.info(f"Successfully transformed Procedure: {stu3_resource.get('id')}")
             return stu3_resource
             
@@ -148,7 +151,7 @@ class ProcedureTransformer(BaseTransformer):
             stu3_resource["extension"] = stu3_extensions
     
     def _transform_performer(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
-        """Transform performer array with function->role mapping."""
+        """Transform performer array with function->role mapping and actor reference filtering."""
         
         if "performer" not in r4_resource:
             return
@@ -160,16 +163,82 @@ class ProcedureTransformer(BaseTransformer):
             # Map function to role
             if "function" in r4_performer:
                 stu3_performer["role"] = r4_performer["function"]
-                
-            # Direct mappings
-            for field in ["actor", "onBehalfOf"]:
-                if field in r4_performer:
-                    stu3_performer[field] = r4_performer[field]
             
-            stu3_performers.append(stu3_performer)
+            # Handle actor field with STU3 reference type validation
+            if "actor" in r4_performer:
+                actor_ref = r4_performer["actor"]
+                if self._is_valid_stu3_performer_actor(actor_ref):
+                    stu3_performer["actor"] = actor_ref
+                else:
+                    # Skip this performer entirely if actor is not supported in STU3
+                    invalid_ref = actor_ref.get("reference", "unknown") if isinstance(actor_ref, dict) else str(actor_ref)
+                    logger.warning(f"Removing Procedure.performer with unsupported actor reference for STU3: {invalid_ref}. STU3 performer.actor can only reference Practitioner.")
+                    continue  # Skip this entire performer
+                
+            # Direct mappings for other fields
+            if "onBehalfOf" in r4_performer:
+                stu3_performer["onBehalfOf"] = r4_performer["onBehalfOf"]
+            
+            # Only add performer if it has valid content
+            if stu3_performer:
+                stu3_performers.append(stu3_performer)
         
         if stu3_performers:
             stu3_resource["performer"] = stu3_performers
+    
+    def _is_valid_stu3_performer_actor(self, actor_ref: Dict[str, Any]) -> bool:
+        """
+        Check if a performer.actor reference is valid for STU3.
+        
+        In STU3, Procedure.performer.actor can only reference Practitioner.
+        R4 allows Patient, RelatedPerson, Practitioner, PractitionerRole, Organization, Device.
+        
+        Args:
+            actor_ref: The actor reference object
+            
+        Returns:
+            True if the reference is supported in STU3, False otherwise
+        """
+        if not isinstance(actor_ref, dict) or "reference" not in actor_ref:
+            return False
+            
+        reference = actor_ref["reference"]
+        
+        # Check if reference starts with allowed resource types for STU3
+        allowed_prefixes = [
+            "Practitioner/",
+            "PractitionerRole/",  # Will be converted to Practitioner by base transformer
+        ]
+        
+        return any(reference.startswith(prefix) for prefix in allowed_prefixes)
+    
+    def _clean_empty_extensions(self, obj: Any) -> Any:
+        """
+        Recursively remove empty extension arrays from the resource.
+        
+        Args:
+            obj: The object to clean
+            
+        Returns:
+            Cleaned object with empty extension arrays removed
+        """
+        if isinstance(obj, dict):
+            cleaned_obj = {}
+            for key, value in obj.items():
+                if key == 'extension' and isinstance(value, list) and len(value) == 0:
+                    # Skip empty extension arrays
+                    continue
+                else:
+                    # Recursively clean the value
+                    cleaned_value = self._clean_empty_extensions(value)
+                    cleaned_obj[key] = cleaned_value
+            return cleaned_obj
+        elif isinstance(obj, list):
+            # Recursively clean all list items
+            return [self._clean_empty_extensions(item) for item in obj]
+        else:
+            # Primitive values - return as-is
+            return obj
     
     def _transform_focal_device(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
         """Transform focalDevice array (direct mapping for this resource)."""
@@ -301,6 +370,7 @@ class ProcedureTransformer(BaseTransformer):
                 "status": "Uses EventStatus concept map, special handling for 'not-done'",
                 "encounter": "Mapped to 'context' field in STU3",
                 "performer.function": "Mapped to 'performer.role' in STU3",
+                "performer.actor": "Filtered to only allow Practitioner references in STU3",
                 "statusReason": "Mapped to 'notDoneReason' when status='not-done'",
                 "notDone": "Set to true when R4 status='not-done'",
                 "extension.url": "Extension URLs mapped from Nictiz R4 to HL7 STU3",
@@ -313,7 +383,8 @@ class ProcedureTransformer(BaseTransformer):
             },
             "unsupported_elements": {
                 "NL-CM:14.1.11": "Procedure.bodySite.extension:ProcedureLaterality.valueCode",
-                "NL-CM:14.1.7": "Procedure.focalDevice.manipulated"
+                "NL-CM:14.1.7": "Procedure.focalDevice.manipulated",
+                "performer.actor": "Patient and RelatedPerson references removed (STU3 only supports Practitioner)"
             },
             "direct_mappings": "identifier, instantiatesCanonical, instantiatesUri, basedOn, partOf, category, code, subject, performed, recorder, asserter, location, reasonCode, reasonReference, bodySite, outcome, report, complication, complicationDetail, followUp, note, usedReference, usedCode, focalDevice"
         }
@@ -344,7 +415,7 @@ PROCEDURE_MAPPING_TABLE = """
 │ asserter                │ asserter                │ Direct mapping                          │
 │ performer               │ performer               │ Transform nested structure              │
 │ performer.function      │ performer.role          │ Field name change in nested object     │
-│ performer.actor         │ performer.actor         │ Direct mapping                          │
+│ performer.actor         │ performer.actor         │ Filtered: only Practitioner refs       │
 │ performer.onBehalfOf    │ performer.onBehalfOf    │ Direct mapping                          │
 │ location                │ location                │ Direct mapping                          │
 │ reasonCode              │ reasonCode              │ Direct mapping                          │
@@ -385,21 +456,26 @@ EventStatus Concept Map:
 └─────────────────┴─────────────────┘
 
 ┌─ UNSUPPORTED ELEMENTS ─────────────────────────────────────────────────────────┐
-│ NL-CM Concept                      │ R4 Path                                  │ Reason                                     │
+│ Element                            │ R4 Path                                  │ Reason                                     │
 ├────────────────────────────────────┼───────────────────────────────────────────┼────────────────────────────────────────────┤
 │ NL-CM:14.1.11 ProcedureLaterality  │ Procedure.bodySite.extension:             │ Complex extension not yet supported       │
 │                                    │ ProcedureLaterality.valueCode             │ in transformer                            │
 │ NL-CM:14.1.7 Device Manipulated    │ Procedure.focalDevice.manipulated        │ Complex nested structure requires         │
 │                                    │                                           │ specialized handling                      │
+│ Performer Actor References         │ Procedure.performer.actor                 │ STU3 only supports Practitioner refs,    │
+│                                    │ (Patient/RelatedPerson refs)              │ Patient/RelatedPerson refs removed       │
 └────────────────────────────────────┴───────────────────────────────────────────┴────────────────────────────────────────────┘
 
 Special Transformations:
 1. status='not-done' becomes status='suspended' + notDone=true + statusReason→notDoneReason
 2. encounter field becomes context field  
 3. performer.function becomes performer.role
-4. Extension URLs are mapped from Nictiz R4 to HL7 STU3 equivalents
-5. Reference.type fields are removed (R4-specific, not supported in STU3)
-6. Auto-population of category field for ACP procedures:
+4. performer.actor filtering: Only Practitioner references allowed in STU3
+   - Patient and RelatedPerson references are removed with warning
+   - Entire performer entry is removed if actor is not supported
+5. Extension URLs are mapped from Nictiz R4 to HL7 STU3 equivalents
+6. Reference.type fields are removed (R4-specific, not supported in STU3)
+7. Auto-population of category field for ACP procedures:
    - When code.coding contains SNOMED "713603004" (Advance care planning (procedure))
    - Automatically adds/updates category with SNOMED "11429006" (Consultation (procedure))
    - Preserves existing category codings if present

@@ -73,13 +73,39 @@ python stu3_mapping_table_generator.py
 - Dutch Core profiles
 - ZIB 2020 profiles
 
+### 4. Questionnaire Item Prefix Populator (`/util/questionnaire_item_prefix_populator.py`)
+
+**Purpose**: Processes Questionnaire and QuestionnaireResponse resources to ensure FHIR validation compliance.
+
+**Key Functions**:
+- **Questionnaire Processing**: Extracts prefixes (like "a)", "1.", "2") from item text and moves them to the `prefix` field
+- **QuestionnaireResponse Processing**: Removes prefixes from item text to match the corresponding Questionnaire definition
+
+**Usage**:
+```bash
+# Process both Questionnaire and QuestionnaireResponse resources
+python questionnaire_item_prefix_populator.py [--dry-run]
+
+# Process only Questionnaire resources  
+python questionnaire_item_prefix_populator.py --questionnaire-only
+
+# Process only QuestionnaireResponse resources
+python questionnaire_item_prefix_populator.py --response-only
+
+# Dry run to see what would be changed
+python questionnaire_item_prefix_populator.py --dry-run
+```
+
+**FHIR Validation**: Ensures compliance with the rule "If text exists, it must match the questionnaire definition for linkId"
+
 ## Development Workflow
 
 1. **Building R4 sources**: Ensure the R4 repository is built first
 2. **Generating FSH examples**: Run SUSHI on the example generation FSH project
 3. **Transforming to STU3**: Use the R4 to STU3 transformer to convert resources
-4. **Generating mappings**: Create mapping tables using the STU3 mapping generator
-5. **Building STU3 IG**: Run the FHIR publisher to generate the final implementation guide
+4. **Processing prefixes**: Use the questionnaire item prefix populator to ensure FHIR validation compliance
+5. **Generating mappings**: Create mapping tables using the STU3 mapping generator
+6. **Building STU3 IG**: Run the FHIR publisher to generate the final implementation guide
 
 ## Important Notes
 

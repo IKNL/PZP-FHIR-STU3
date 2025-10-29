@@ -22,6 +22,7 @@ The `/util/` folder contains specialized tools for maintaining this STU3 impleme
 
 - **R4 to STU3 Transformer** (`/util/r4_to_stu3_transformer/`) - Converts FHIR resources from R4 to STU3 format
 - **STU3 Mapping Generator** (`/util/stu3_mapping_generator/`) - Generates ZIB mapping tables from StructureDefinitions  
-- **Example Generation FSH** (`/util/example_generation_fsh/`) - FSH-based example generation to be converted to STU3
+- **Example Generation FSH** (`/util/example_generation_fsh/`) - FSH-based example generation
+- **Questionnaire Prefix Populator** (`/util/questionnaire_item_prefix_populator.py`) - Ensures FHIR validation compliance for questionnaires
 
 Run the batch files in each utility folder for standard workflows. See [GitHub Copilot instructions](.github/copilot-instructions.md) for detailed usage.

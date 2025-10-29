@@ -22,18 +22,6 @@
           }
         ]
       }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/P2-ACP-ContactPerson-GertJanDeJong",
-        "display": "ContactPerson, Gert-Jan de Jong"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
-        "display": "Patient, Samira van der Sluijs"
-      }
     }
   ],
   "identifier": [

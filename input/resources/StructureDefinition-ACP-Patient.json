@@ -153,6 +153,19 @@
         ]
       },
       {
+        "id": "Patient.name.family.extension",
+        "path": "Patient.name.family.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
         "id": "Patient.name.family.extension:humannameOwnPrefix",
         "path": "Patient.name.family.extension",
         "sliceName": "humannameOwnPrefix",

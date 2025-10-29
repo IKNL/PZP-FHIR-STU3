@@ -3,7 +3,7 @@
   "id": "P1-ACP-AdvanceDirective-DNR",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/r4/StructureDefinition/ACP-AdvanceDirective"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-AdvanceDirective"
     ]
   },
   "identifier": {

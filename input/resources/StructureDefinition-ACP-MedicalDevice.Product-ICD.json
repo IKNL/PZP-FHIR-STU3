@@ -50,26 +50,14 @@
         ]
       },
       {
-        "id": "Device.identifier:gs1ProductID",
+        "id": "Device.identifier:serialNumber",
         "path": "Device.identifier",
-        "sliceName": "gs1ProductID",
+        "sliceName": "serialNumber",
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",
             "map": "77",
-            "comment": "ProductID"
-          }
-        ]
-      },
-      {
-        "id": "Device.identifier:hibcProductID",
-        "path": "Device.identifier",
-        "sliceName": "hibcProductID",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2017v2025-03-11",
-            "map": "77",
-            "comment": "ProductID"
+            "comment": "ProductID. (serial number (21) part of the UDI)"
           }
         ]
       },

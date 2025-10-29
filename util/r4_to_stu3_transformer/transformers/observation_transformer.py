@@ -57,6 +57,7 @@ class ObservationTransformer(BaseTransformer):
         try:
             # Apply Observation-specific transformations
             self._transform_encounter_to_context(r4_resource, stu3_resource)
+            self._transform_effective_polymorphic(r4_resource, stu3_resource)
             self._transform_value_polymorphic(r4_resource, stu3_resource)
             self._transform_note_to_comment(r4_resource, stu3_resource)
             self._transform_has_member_and_derived_from(r4_resource, stu3_resource)
@@ -83,6 +84,22 @@ class ObservationTransformer(BaseTransformer):
         
         if "encounter" in r4_resource:
             stu3_resource["context"] = r4_resource["encounter"]
+    
+    def _transform_effective_polymorphic(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
+        """Transform polymorphic effective[x] field from R4 to STU3."""
+        
+        # List of possible effective[x] field names
+        effective_fields = [
+            "effectiveDateTime",
+            "effectivePeriod"
+        ]
+        
+        # Find which effective[x] field exists and copy it
+        for effective_field in effective_fields:
+            if effective_field in r4_resource:
+                stu3_resource[effective_field] = r4_resource[effective_field]
+                logger.debug(f"Mapped {effective_field} to STU3")
+                break  # Only one effective[x] field should exist
     
     def _transform_value_polymorphic(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
         """Transform polymorphic value[x] field from R4 to STU3."""
@@ -242,7 +259,7 @@ class ObservationTransformer(BaseTransformer):
             "category", 
             "code",
             "subject",
-            "effective",  # Handles both dateTime and Period
+            # effective[x] handled separately in _transform_effective_polymorphic
             "issued",
             "performer",
             # value[x] handled separately in _transform_value_polymorphic
@@ -281,7 +298,8 @@ class ObservationTransformer(BaseTransformer):
                 "value[x]": "Supports valueQuantity, valueCodeableConcept, valueString, valueBoolean, valueRange, valueRatio, valueSampledData, valueTime, valueDateTime, valuePeriod",
                 "effective[x]": "Supports effectiveDateTime, effectivePeriod"
             },
-            "direct_mappings": "identifier, basedOn, status, category, code, subject, effective, issued, performer, dataAbsentReason, interpretation, bodySite, method, specimen, device, referenceRange"
+            "direct_mappings": "identifier, basedOn, status, category, code, subject, issued, performer, dataAbsentReason, interpretation, bodySite, method, specimen, device, referenceRange",
+            "effective_polymorphic": "effectiveDateTime, effectivePeriod - handled separately"
         }
 
 

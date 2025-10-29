@@ -22,18 +22,6 @@
           }
         ]
       }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/P2-ACP-ContactPerson-MayaVanDerSluijsMulder",
-        "display": "ContactPerson, Maya van der Sluijs"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
-        "display": "Patient, Samira van der Sluijs"
-      }
     }
   ],
   "identifier": [
