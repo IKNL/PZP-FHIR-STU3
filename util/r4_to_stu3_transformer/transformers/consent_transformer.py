@@ -52,6 +52,18 @@ the specific mapping requirements for the PZP project.
 │ (Direct mapping - same codes)      │ (Direct mapping - same codes)             │
 └────────────────────────────────────┴───────────────────────────────────────────┘
 
+┌─ SPECIFICATION OTHER STRING MAPPINGS ──────────────────────────────────────────┐
+│ R4 SpecificationOther valueString  │ STU3 TreatmentPermitted Code              │
+├────────────────────────────────────┼───────────────────────────────────────────┤
+│ "Nee, nog geen besluit genomen"    │ v3-NullFlavor#ASKU                        │
+│ "Nog onbekend"                     │ v3-NullFlavor#UNK                         │
+│ "Onbekend"                         │ v3-NullFlavor#UNK                         │
+│ "Niet gevraagd"                    │ v3-NullFlavor#NASK                        │
+│ "Niet besproken"                   │ v3-NullFlavor#NASK                        │
+│ (other strings)                    │ oid:2.16.840.1.113883.2.4.3.11.60.40.4#   │
+│                                    │ JA_MAAR (with restrictions extension)     │
+└────────────────────────────────────┴───────────────────────────────────────────┘
+
 ┌─ CONDITIONAL LOGIC RULES ──────────────────────────────────────────────────────┐
 │ Condition                          │ Action                                    │
 ├────────────────────────────────────┼───────────────────────────────────────────┤
@@ -245,26 +257,45 @@ class ConsentTransformer(BaseTransformer):
             for mod_ext in r4_consent['modifierExtension']:
                 if mod_ext.get('url') == specification_other_url:
                     found_specification_other = True
-                    # Add modifierExtension:treatmentPermitted (JA_MAAR)
-                    stu3_consent['modifierExtension'].append({
-                        'url': stu3_extension_urls['treatment_permitted'],
-                        'valueCodeableConcept': {
-                            'coding': [{
-                                'system': 'urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4',
-                                'code': 'JA_MAAR',
-                                'display': 'Ja, maar met beperkingen'
+                    value_string = mod_ext.get('valueString', '')
+                    
+                    # Check for specific string mappings to null flavor codes
+                    null_flavor_mapping = self._get_null_flavor_mapping(value_string)
+                    
+                    if null_flavor_mapping:
+                        # Map to null flavor code
+                        stu3_consent['modifierExtension'].append({
+                            'url': stu3_extension_urls['treatment_permitted'],
+                            'valueCodeableConcept': {
+                                'coding': [{
+                                    'system': 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor',
+                                    'code': null_flavor_mapping['code'],
+                                    'display': null_flavor_mapping['display']
+                                }]
+                            }
+                        })
+                        # No except item needed for null flavor codes
+                    else:
+                        # Default to JA_MAAR (Yes with restrictions) for other strings
+                        stu3_consent['modifierExtension'].append({
+                            'url': stu3_extension_urls['treatment_permitted'],
+                            'valueCodeableConcept': {
+                                'coding': [{
+                                    'system': 'urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4',
+                                    'code': 'JA_MAAR',
+                                    'display': 'Ja, maar met beperkingen'
+                                }]
+                            }
+                        })
+                        # Add except with restrictions extension and type='deny' for JA_MAAR
+                        except_item = {
+                            'type': 'deny',
+                            'extension': [{
+                                'url': stu3_extension_urls['restrictions'],
+                                'valueString': value_string
                             }]
                         }
-                    })
-                    # Add except with restrictions extension and type='deny' for JA_MAAR
-                    except_item = {
-                        'type': 'deny',
-                        'extension': [{
-                            'url': stu3_extension_urls['restrictions'],
-                            'valueString': mod_ext.get('valueString', '')
-                        }]
-                    }
-                    stu3_consent['except'].append(except_item)
+                        stu3_consent['except'].append(except_item)
                     break  # Only process first occurrence
         
         # If specificationOther not found, use provision.type for treatmentPermitted
@@ -404,6 +435,42 @@ class ConsentTransformer(BaseTransformer):
                 coding.get('code') == 'CONSENTER'):
                 return True
         return False
+
+    def _get_null_flavor_mapping(self, value_string: str) -> Optional[Dict[str, str]]:
+        """
+        Map specific SpecificationOther valueString values to null flavor codes.
+        
+        Args:
+            value_string: The valueString from ext-TreatmentDirective2.SpecificationOther
+            
+        Returns:
+            Dictionary with 'code' and 'display' if mapping exists, None otherwise
+        """
+        # Exact string mappings to null flavor codes
+        null_flavor_mappings = {
+            "Nee, nog geen besluit genomen": {
+                "code": "ASKU",
+                "display": "Nee, nog geen besluit genomen"
+            },
+            "Nog onbekend": {
+                "code": "UNK", 
+                "display": "Nog onbekend"
+            },
+            "Onbekend": {
+                "code": "UNK", 
+                "display": "Nog onbekend"
+            },
+            "Niet gevraagd": {
+                "code": "NASK",
+                "display": "Niet gevraagd"
+            },
+            "Niet besproken": {
+                "code": "NASK",
+                "display": "Niet gevraagd"
+            }
+        }
+        
+        return null_flavor_mappings.get(value_string)
 
     def _is_advance_directive(self, r4_consent: Dict[str, Any]) -> bool:
         """Check if this is an AdvanceDirective based on category containing consentcategorycodes#acd."""

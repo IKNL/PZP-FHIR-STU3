@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "P1-ACP-TreatmentDirective-400231000146108",
+  "id": "P2-ACP-TreatmentDirective-40617009-1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,9 +17,9 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "6e644b65-aac4-4af2-9090-60f848767c61"
+    "value": "bc70c02f-f4f3-44a1-833b-41965885cc02"
   },
-  "status": "active",
+  "status": "inactive",
   "category": [
     {
       "coding": [
@@ -32,20 +32,16 @@
     }
   ],
   "patient": {
-    "reference": "Patient/P1-ACP-Patient-HendrikHartman",
-    "display": "Patient, Hendrik Hartman"
+    "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
+    "display": "Patient, Samira van der Sluijs"
   },
-  "dateTime": "2025-07-29",
+  "dateTime": "2024-07-28",
   "extension": [
-    {
-      "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
-      "valueString": "Hendrik wil het er nog niet over hebben"
-    },
     {
       "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
       "valueReference": {
-        "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
-        "display": "Encounter, 2025-07-29"
+        "reference": "Encounter/P2-ACP-Encounter-28-07-2024",
+        "display": "Encounter, 2024-07-28"
       }
     },
     {
@@ -57,19 +53,18 @@
         },
         {
           "url": "VerificationDate",
-          "valueDateTime": "2025-07-29"
+          "valueDateTime": "2024-07-28"
         },
         {
           "url": "VerifiedWith",
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/v3/NullFlavor",
-                "code": "OTH",
-                "display": "Other"
+                "system": "http://snomed.info/sct",
+                "code": "116154003",
+                "display": "Patient"
               }
-            ],
-            "text": "ContactPerson, Michiel Hartman"
+            ]
           }
         }
       ]
@@ -79,12 +74,11 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "OTH",
-            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "display": "other"
+            "code": "40617009",
+            "system": "http://snomed.info/sct",
+            "display": "kunstmatige beademing"
           }
-        ],
-        "text": "uitzetten van cardioverter-defibrillator in laatste levensfase (SNOMED CT - 400231000146108)"
+        ]
       }
     }
   ],
@@ -100,11 +94,14 @@
         "coding": [
           {
             "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "code": "ASKU",
-            "display": "Nee, nog geen besluit genomen"
+            "code": "UNK",
+            "display": "Nog onbekend"
           }
         ]
       }
     }
-  ]
+  ],
+  "period": {
+    "end": "2025-06-09"
+  }
 }

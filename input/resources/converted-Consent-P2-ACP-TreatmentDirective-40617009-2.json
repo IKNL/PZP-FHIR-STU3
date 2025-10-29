@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "P1-ACP-TreatmentDirective-400231000146108",
+  "id": "P2-ACP-TreatmentDirective-40617009-2",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "6e644b65-aac4-4af2-9090-60f848767c61"
+    "value": "9173e0ef-c00e-4ed3-bf64-97e490dd1dc0"
   },
   "status": "active",
   "category": [
@@ -32,20 +32,20 @@
     }
   ],
   "patient": {
-    "reference": "Patient/P1-ACP-Patient-HendrikHartman",
-    "display": "Patient, Hendrik Hartman"
+    "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
+    "display": "Patient, Samira van der Sluijs"
   },
-  "dateTime": "2025-07-29",
+  "dateTime": "2025-08-07",
   "extension": [
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
-      "valueString": "Hendrik wil het er nog niet over hebben"
+      "valueString": "Mevrouw wil geen kunstmatige beademing omdat er te weinig kans is om nog van de beademing af te komen i.v.m. gezondheid."
     },
     {
       "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
       "valueReference": {
-        "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
-        "display": "Encounter, 2025-07-29"
+        "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
+        "display": "Encounter, 2025-08-07"
       }
     },
     {
@@ -57,19 +57,18 @@
         },
         {
           "url": "VerificationDate",
-          "valueDateTime": "2025-07-29"
+          "valueDateTime": "2025-08-07"
         },
         {
           "url": "VerifiedWith",
           "valueCodeableConcept": {
             "coding": [
               {
-                "system": "http://hl7.org/fhir/v3/NullFlavor",
-                "code": "OTH",
-                "display": "Other"
+                "system": "http://snomed.info/sct",
+                "code": "116154003",
+                "display": "Patient"
               }
-            ],
-            "text": "ContactPerson, Michiel Hartman"
+            ]
           }
         }
       ]
@@ -79,12 +78,11 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "OTH",
-            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "display": "other"
+            "code": "40617009",
+            "system": "http://snomed.info/sct",
+            "display": "kunstmatige beademing"
           }
-        ],
-        "text": "uitzetten van cardioverter-defibrillator in laatste levensfase (SNOMED CT - 400231000146108)"
+        ]
       }
     }
   ],
@@ -99,12 +97,17 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-            "code": "ASKU",
-            "display": "Nee, nog geen besluit genomen"
+            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+            "code": "NEE",
+            "display": "Nee"
           }
         ]
       }
+    }
+  ],
+  "except": [
+    {
+      "type": "deny"
     }
   ]
 }
