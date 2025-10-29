@@ -79,7 +79,21 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
+
+            # Issues in base profiles that we cannot fix here
+            StructureDefinition-ACP-ContactPerson.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-HealthProfessional-Practitioner.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-MedicalDevice.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-OrganDonationChoiceRegistration.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-OtherImportantInformation.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-Patient.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-PositionRegardingEuthanasia.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-PreferredPlaceOfDeath.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-Procedure.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-SpecificCareWishes.json||*launches straight into slicing without the slicing being set up properly*| 
+
             # Struktur: fileName|messageId|detailsWildcard|location
 
 
