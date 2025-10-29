@@ -48,33 +48,11 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 
 
 # This is a proposed fixed value in the Nictiz Consent profiles as there is no better alternative.
-WARNING: Consent/F1-ACP-TreatmentDirective-116762002: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-281789004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-305351004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-32485007: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-400231000146108: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-40617009: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F1-ACP-TreatmentDirective-89666000: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/F2-ACP-TreatmentDirective-305351004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-116762002: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-281789004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-305351004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-32485007: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-400231000146108: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-40617009: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-89666000: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P1-ACP-TreatmentDirective-OTH: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-281789004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-30351004: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-32485007: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-400231000146108: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-40617009: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-89666000: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
-WARNING: Consent/P2-ACP-TreatmentDirective-other: Consent.policy[0].uri: No definition could be found for URL value 'https://wetten.overheid.nl/'
+%No definition could be found for URL value 'https://wetten.overheid.nl/'%
 
+# CodeSystem is not accessible by the validator. The code is manually checked and is valid within the codesystem and is inside the ValueSet.
+%The code provided (urn:oid:2.16.840.1.113883.2.4.6.7#0100) was not found in the value set 'SpecialismeAGBCodelijst'%
 
-
-# Something in the base FHIR definition. Not in our control.
 %identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'%
 
 # DHD Verrichtingenthesaurus-referentieset (41000147108) referenced from ValueSet bound in profile is not loaded into tx.fhir.org
@@ -83,17 +61,11 @@ ERROR: Procedure/P1-ACP-Procedure-29-07-2025: Procedure.code: Error from https:/
 ERROR: Procedure/P2-ACP-Procedure-07-08-2025: Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known
 
 # SNOMED code 570801000146104 is added after 'http://snomed.info/sct/11000146104/version/20240930' which is the one currently known by tx.fhir.org/r4
-ERROR: Observation/F1-ACP-OrganDonationChoiceRegistration-Yes: Observation.code.coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Observation/P1-ACP-OrganDonationChoiceRegistration-Yes: Observation.code.coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Observation/P2-ACP-OrganDonationChoiceRegistration-20250807: Observation.code.coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: StructureDefinition/ACP-OrganDonationChoiceRegistration: StructureDefinition.snapshot.element[14].pattern.ofType(CodeableConcept).coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: StructureDefinition/ACP-OrganDonationChoiceRegistration: StructureDefinition.differential.element[1].pattern.ofType(CodeableConcept).coding[0].code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[8].item[3].item[0].option[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[8].item[3].item[0].answer[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[8].item[3].item[0].initial.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: QuestionnaireResponse/HendrikHartman-20221108: QuestionnaireResponse.item[8].item[3].item[0].answer[0].value.ofType(Coding).code: Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
+%Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'%
 
-# SNOMED code 1351964001 is ub https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[6].item[1].option[1].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
+# SNOMED code 1351964001 is  https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
+%Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'%
+%None of the codings provided are in the value set 'Most Important Agreed-upon Goal of Medical Policy'%
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
 ERROR: Goal/F1-ACP-Medical-Policy-Goal: Goal.description.coding[0].code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
@@ -118,29 +90,26 @@ WARNING: StructureDefinition/ACP-Patient: StructureDefinition.snapshot.element[4
 WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[11].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/uzi-nr-pers'
 
 # Error in the FHIR invariant
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[2].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[3].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[5].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[6].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[7].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[4].item[1].item[7].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[5].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[5].item[2].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[0].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[1].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[2].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[3].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[4].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[5].item[1].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[7].item[0].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[7].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[8].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[7].item[8].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
-ERROR: Questionnaire/ACP-zib2017: Questionnaire.item[10].item[1].enableWhen[0]: Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)
+%Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)%
 
 
-## Slicing errors in base profiles... can't do anything about this in this version
+# Slicing errors in base profiles... can't do anything about this in this version
 %launches straight into slicing without the slicing being set up properly first%
 
-## Error in base profile or in snapshot, not in our control
+# Error in base profile or in snapshot, not in our control
 %The element Observation.status.value has no assigned types, and no content reference%
+%The element RelatedPerson.name.family.value has no assigned types, and no content reference%
+%The element RelatedPerson.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Practitioner.name.given.value has no assigned types, and no content reference%
+%The element Practitioner.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.name.given.value has no assigned types, and no content reference%
+%The element Patient.name.family.value has no assigned types, and no content reference%
+%The element Patient.gender.value has no assigned types, and no content reference%
+%The element Patient.contact.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.contact.name.family.value has no assigned types, and no content reference%
+%The element Patient.contact.name.given.value has no assigned types, and no content reference%
+%Hyperlink 'StructureDefinition-ACP-TreatmentDirective-definitions.html#Consent.extension:verification.extension:Verified.valueBoolean' at 'div/table/tr/td/a' for 'valueBoolean' does not resolv%
+
+# IG publisher stuff?
+%The extension http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.dependency]; allowed for this version = e:ImplementationGuide.dependsOn)%
