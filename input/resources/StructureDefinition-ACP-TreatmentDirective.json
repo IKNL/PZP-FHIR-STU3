@@ -213,7 +213,7 @@
         "binding": {
           "strength": "extensible",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/YesNoYesWithRestrictionsUnknownVS"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoYesWithRestrictionsUnknownVS"
           }
         }
       },
