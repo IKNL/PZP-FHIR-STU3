@@ -19,6 +19,14 @@
   ],
   "contact": [
     {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/patient-relatedPerson",
+          "valueReference": {
+            "reference": "RelatedPerson/P1-ACP-ContactPerson-MirjamDeLeeuwHartman"
+          }
+        }
+      ],
       "relationship": [
         {
           "coding": [
@@ -160,7 +168,7 @@
         "type": "both",
         "city": "Utrecht",
         "district": "Utrecht",
-        "postalCode": "3511 ZL",
+        "postalCode": "3511ZL",
         "country": "Nederland",
         "_country": {
           "extension": [
@@ -338,7 +346,7 @@
       "type": "both",
       "city": "Utrecht",
       "district": "Utrecht",
-      "postalCode": "3511 ZL",
+      "postalCode": "3511ZL",
       "country": "Nederland",
       "_country": {
         "extension": [

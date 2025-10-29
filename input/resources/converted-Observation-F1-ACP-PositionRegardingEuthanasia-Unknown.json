@@ -39,7 +39,8 @@
     "coding": [
       {
         "code": "340171000146104",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "standpunt ten opzichte van euthanasie"
       }
     ]
   },

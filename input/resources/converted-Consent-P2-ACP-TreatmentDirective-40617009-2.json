@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "F2-ACP-TreatmentDirective-305351004",
+  "id": "P2-ACP-TreatmentDirective-40617009-2",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "d543b9f3-4b87-4f10-bbbb-1425d66f485c"
+    "value": "9173e0ef-c00e-4ed3-bf64-97e490dd1dc0"
   },
   "status": "active",
   "category": [
@@ -32,16 +32,20 @@
     }
   ],
   "patient": {
-    "reference": "Patient/F1-ACP-Patient-HendrikHartman",
-    "display": "Patient, Hendrik Hartman"
+    "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
+    "display": "Patient, Samira van der Sluijs"
   },
-  "dateTime": "2022-11-08",
+  "dateTime": "2025-08-07",
   "extension": [
+    {
+      "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
+      "valueString": "Mevrouw wil geen kunstmatige beademing omdat er te weinig kans is om nog van de beademing af te komen i.v.m. gezondheid."
+    },
     {
       "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
       "valueReference": {
-        "reference": "Encounter/F1-ACP-Encounter-01-10-2020",
-        "display": "Encounter, 2020-10-01"
+        "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
+        "display": "Encounter, 2025-08-07"
       }
     },
     {
@@ -53,7 +57,7 @@
         },
         {
           "url": "VerificationDate",
-          "valueDateTime": "2022-11-08"
+          "valueDateTime": "2025-08-07"
         },
         {
           "url": "VerifiedWith",
@@ -66,19 +70,6 @@
               }
             ]
           }
-        },
-        {
-          "url": "VerifiedWith",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/v3/NullFlavor",
-                "code": "OTH",
-                "display": "Other"
-              }
-            ],
-            "text": "ContactPerson, Michiel Hartman"
-          }
         }
       ]
     },
@@ -87,9 +78,9 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "305351004",
+            "code": "40617009",
             "system": "http://snomed.info/sct",
-            "display": "opname op intensive care"
+            "display": "kunstmatige beademing"
           }
         ]
       }
@@ -107,8 +98,8 @@
         "coding": [
           {
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-            "code": "JA",
-            "display": "Ja"
+            "code": "NEE",
+            "display": "Nee"
           }
         ]
       }
@@ -116,7 +107,7 @@
   ],
   "except": [
     {
-      "type": "permit"
+      "type": "deny"
     }
   ]
 }

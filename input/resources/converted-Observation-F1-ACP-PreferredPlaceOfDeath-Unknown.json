@@ -31,7 +31,8 @@
     "coding": [
       {
         "code": "395091006",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "Preferred place of death"
       }
     ]
   },

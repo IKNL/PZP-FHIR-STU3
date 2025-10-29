@@ -22,6 +22,18 @@
           }
         ]
       }
+    },
+    {
+      "actor": {
+        "reference": "RelatedPerson/P1-ACP-ContactPerson-MichielHartman",
+        "display": "ContactPerson, Michiel Hartman"
+      }
+    },
+    {
+      "actor": {
+        "reference": "Patient/P1-ACP-Patient-HendrikHartman",
+        "display": "Patient, Hendrik Hartman"
+      }
     }
   ],
   "identifier": [

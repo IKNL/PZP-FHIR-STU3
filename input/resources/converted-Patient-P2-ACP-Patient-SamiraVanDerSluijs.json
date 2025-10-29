@@ -112,7 +112,9 @@
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "HP"
+                "code": "HP",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                "display": "Primary Home"
               }
             ]
           }
