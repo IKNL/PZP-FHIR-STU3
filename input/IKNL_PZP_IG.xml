@@ -57,6 +57,11 @@
         <title value="Data Exchange" />
         <generation value="markdown" />
       </page>
+      <page>
+        <nameUrl value="changelog.html" />
+        <title value="Change log" />
+        <generation value="markdown" />
+      </page>
     </page>
     <!--
     <resource>
