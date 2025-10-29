@@ -192,6 +192,7 @@
         "id": "Consent.modifierExtension:treatmentPermitted",
         "path": "Consent.modifierExtension",
         "sliceName": "treatmentPermitted",
+        "comment": "If the value of the element NL-CM:2.1.4 TreatmentPermitted is YES_BUT/JA_MAAR, then the value of NL-CM:2.1.5 Restrictions is expected under Consent.except. \r\n\r\nAdditional terminology mapping guidance, in addition to the default zib/nl-core guidance for \"Afspraak uitzetten ICD\" (dataset id 96) values: \r\n   - _Ja_ -> _Yes_; \r\n   -  No value is mapped to _No_; \r\n   - _Nee, nog geen besluit genomen_ -> _ASKU_ \r\n _Niet besproken_ -> _NASK_ ",
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",

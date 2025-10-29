@@ -1,6 +1,6 @@
 {
   "resourceType": "Procedure",
-  "id": "P2-ACP-Procedure-07-08-2025",
+  "id": "P2-ACP-Procedure-28-07-2024",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
@@ -25,8 +25,8 @@
     },
     {
       "actor": {
-        "reference": "RelatedPerson/P2-ACP-ContactPerson-MayaVanDerSluijsMulder",
-        "display": "ContactPerson, Maya van der Sluijs"
+        "reference": "RelatedPerson/P2-ACP-ContactPerson-GertJanDeJong",
+        "display": "ContactPerson, Gert-Jan de Jong"
       }
     },
     {
@@ -48,7 +48,7 @@
         ]
       },
       "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-      "value": "e2efbdd1-b926-46c1-a18c-f72b4b281fbc"
+      "value": "f527654a-5fa4-4394-95bc-50a9f50a5b1f"
     }
   ],
   "code": {
