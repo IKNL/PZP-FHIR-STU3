@@ -27,7 +27,8 @@
     "Terminology_TX_NoValid_3_CC@RelatedPerson.relationship[*]",
 
     // Validator is unable to check whether the code is in the value set 'http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.7--20171231000000\|2017-12-31T00:00:00' because the code system urn:oid:2.16.840.1.113883.2.4.6.7 is not present.
-    "Terminology_TX_Confirm_4a@PractitionerRole.​specialty[0].​coding[0]",
+    "Terminology_TX_Confirm_4a@PractitionerRole.specialty[*].coding[*]",
+    "Terminology_TX_Confirm_4a@PractitionerRole.*",
     "UNABLE_TO_CHECK_IF_THE_PROVIDED_CODES_ARE_IN_THE_VALUE_SET_CS@PractitionerRole.specialty[*]",
     "UNABLE_TO_CHECK_IF_THE_PROVIDED_CODES_ARE_IN_THE_VALUE_SET_CS@RelatedPerson.relationship[*]",
 
