@@ -52,7 +52,6 @@ Usage: #example
 * address[0].country = "Nederland"
 * address[0].country.extension[0].url = "http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification"
 * address[0].country.extension[=].valueCodeableConcept.coding[0].system = "urn:iso:std:iso:3166"
-* address[0].country.extension[=].valueCodeableConcept.coding[0].version = "2020-10-26T00:00:00"
 * address[0].country.extension[=].valueCodeableConcept.coding[0].code = #NL
 * address[0].country.extension[=].valueCodeableConcept.coding[0].display = "Netherlands"
 
@@ -113,6 +112,5 @@ Usage: #example
 * address[=].country = "Nederland"
 * address[=].country.extension[0].url = "http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification"
 * address[=].country.extension[=].valueCodeableConcept.coding[0].system = "urn:iso:std:iso:3166"
-* address[=].country.extension[=].valueCodeableConcept.coding[=].version = "2020-10-26T00:00:00"
 * address[=].country.extension[=].valueCodeableConcept.coding[=].code = #NL
 * address[=].country.extension[=].valueCodeableConcept.coding[=].display = "Netherlands"
