@@ -2,7 +2,7 @@
    "package-id" : "iknl.fhir.stu3.pzp",
    "version" : "1.0.0-rc1",
    "path" : "https://api.iknl.nl/docs/pzp/stu3/1.0.0-rc1",
-   "mode" : "milestone",
+   "mode" : "working",
    "status" : "trial-use",
    "sequence" : "Release 1",
    "desc" : "1.0.0 release candidate of the IKNL PZP information standard.",
