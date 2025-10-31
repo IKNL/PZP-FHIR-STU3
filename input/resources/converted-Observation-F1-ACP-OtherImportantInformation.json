@@ -3,13 +3,14 @@
   "id": "F1-ACP-OtherImportantInformation",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OtherImportantInformation"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation"
     ]
   },
   "context": {
     "reference": "Encounter/F1-ACP-Encounter-01-10-2020",
     "display": "Encounter, 2020-10-01"
   },
+  "effectiveDateTime": "2020-10-01",
   "valueString": "Michiel gaat nadenken over wat hij belangrijk vindt. Over een tijdje vervolggesprek",
   "identifier": [
     {
@@ -31,7 +32,8 @@
     "coding": [
       {
         "code": "247751003",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "gevoel van zingeving"
       }
     ]
   },

@@ -1,8 +1,8 @@
 {
   "resourceType": "ValueSet",
   "id": "ACP-MedicalPolicyGoal",
-  "url": "https://fhir.iknl.nl/fhir/ValueSet/ACP-MedicalPolicyGoal",
-  "version": "0.1.0",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal",
+  "version": "1.0.0-rc1",
   "name": "MedicalPolicyGoalVS",
   "title": "Most Important Agreed-upon Goal of Medical Policy",
   "status": "draft",

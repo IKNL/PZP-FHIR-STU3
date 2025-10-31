@@ -3,13 +3,14 @@
   "id": "P1-ACP-OtherImportantInformation",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-OtherImportantInformation"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation"
     ]
   },
   "context": {
     "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
     "display": "Encounter, 2025-07-29"
   },
+  "effectiveDateTime": "2025-07-29",
   "valueString": "Hendrik wordt erg vrolijk van tulpen",
   "identifier": [
     {
@@ -31,7 +32,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "247751003"
+        "code": "247751003",
+        "display": "gevoel van zingeving"
       }
     ]
   },

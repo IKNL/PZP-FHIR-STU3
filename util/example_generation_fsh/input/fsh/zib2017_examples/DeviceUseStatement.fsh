@@ -12,6 +12,6 @@ Usage: #example
 * subject = Reference(P1-ACP-Patient-HendrikHartman) "Patient, Hendrik Hartman"
 * device = Reference(P1-ACP-MedicalDevice.Product-ICD)
 // What to do with reference to problem as in test script? --> check with Esther
-* bodySite = $snomed#80891009 "Heart structure (body structure)"
-* bodySite.extension[laterality].valueCodeableConcept = $snomed#7771000 "Links"
+* bodySite = $snomed#80891009 "structuur van cor"
+* bodySite.extension[laterality].valueCodeableConcept = $snomed#7771000 "links"
 * timingPeriod.start = "2020-05-19"

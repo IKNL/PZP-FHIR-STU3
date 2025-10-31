@@ -3,19 +3,20 @@
   "id": "P2-ACP-PositionRegardingEuthanasia-20250807",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-PositionRegardingEuthanasia"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-PositionRegardingEuthanasia"
     ]
   },
   "context": {
     "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
     "display": "Encounter, 2025-08-07"
   },
+  "effectiveDateTime": "2025-08-07",
   "valueCodeableConcept": {
     "coding": [
       {
         "code": "340201000146103",
         "system": "http://snomed.info/sct",
-        "display": "Wil geen euthanasie (bevinding)"
+        "display": "wil geen euthanasie"
       }
     ]
   },
@@ -39,7 +40,8 @@
     "coding": [
       {
         "code": "340171000146104",
-        "system": "http://snomed.info/sct"
+        "system": "http://snomed.info/sct",
+        "display": "standpunt ten opzichte van euthanasie"
       }
     ]
   },

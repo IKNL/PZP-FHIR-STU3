@@ -1,0 +1,64 @@
+{
+  "resourceType": "Procedure",
+  "id": "P2-ACP-Procedure-28-07-2024",
+  "meta": {
+    "profile": [
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
+    ]
+  },
+  "status": "completed",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/P2-ACP-HealthProfessional-Practitioner-DesireeWolters",
+        "display": "Healthcare professional (person), Desiree Wolters",
+        "extension": [
+          {
+            "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+            "valueReference": {
+              "reference": "PractitionerRole/P2-ACP-HealthProfessional-PractitionerRole-DesireeWolters",
+              "display": "Healthcare professional (role), Desiree Wolters"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "RI",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "display": "Resource identifier"
+          }
+        ]
+      },
+      "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
+      "value": "f527654a-5fa4-4394-95bc-50a9f50a5b1f"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "713603004",
+        "system": "http://snomed.info/sct",
+        "display": "advance care planning"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
+    "display": "Patient, Samira van der Sluijs"
+  },
+  "category": {
+    "coding": [
+      {
+        "code": "11429006",
+        "system": "http://snomed.info/sct",
+        "display": "Consultation (procedure)"
+      }
+    ]
+  }
+}

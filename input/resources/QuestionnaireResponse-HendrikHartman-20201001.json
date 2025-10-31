@@ -10,9 +10,9 @@
   },
   "status": "completed",
   "authored": "2025-08-25T19:24:59.121Z",
-  "questionnaire":{
-    "reference": "https://fhir.iknl.nl/fhir/Questionnaire/ACP-zib2017|0.1.3-beta3" 
-     },
+  "questionnaire": {
+    "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|0.1.3-beta3"
+  },
   "item": [
     {
       "answer": [
@@ -101,7 +101,7 @@
     },
     {
       "linkId": "26",
-      "text": "1. Wilsbekwaamheid & Wettelijke vertegenwoordiging",
+      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
       "item": [
         {
           "answer": [
@@ -121,7 +121,7 @@
           "item": [
             {
               "linkId": "30",
-              "text": "a) Naam wettelijk vertegenwoordiger",
+              "text": "Naam wettelijk vertegenwoordiger",
               "item": [
                 {
                   "answer": [
@@ -145,7 +145,7 @@
             },
             {
               "linkId": "39",
-              "text": "b) Contactgegevens wettelijk vertegenwoordiger",
+              "text": "Contactgegevens wettelijk vertegenwoordiger",
               "item": [
                 {
                   "linkId": "41",
@@ -188,7 +188,7 @@
                 }
               ],
               "linkId": "51",
-              "text": "c) Relatie tot patiënt (2)"
+              "text": "Relatie tot patiënt (2)"
             },
             {
               "answer": [
@@ -200,7 +200,7 @@
                 }
               ],
               "linkId": "52",
-              "text": "d) Is de wettelijk vertegenwoordiger ook de eerste contactpersoon?"
+              "text": "Is de wettelijk vertegenwoordiger ook de eerste contactpersoon?"
             }
           ]
         }
@@ -208,7 +208,7 @@
     },
     {
       "linkId": "78",
-      "text": "2 Gesprek gevoerd in bijzijn van",
+      "text": "Gesprek gevoerd in bijzijn van",
       "item": [
         {
           "answer": [
@@ -239,7 +239,7 @@
     },
     {
       "linkId": "586",
-      "text": "3. Belangrijkste overeengekomen doel van medisch beleid",
+      "text": "Belangrijkste overeengekomen doel van medisch beleid",
       "item": [
         {
           "answer": [
@@ -271,11 +271,11 @@
     },
     {
       "linkId": "83",
-      "text": "4. Behandelgrenzen",
+      "text": "Behandelgrenzen",
       "item": [
         {
           "linkId": "792",
-          "text": "a) Reanimatie",
+          "text": "Reanimatie",
           "item": [
             {
               "answer": [
@@ -307,7 +307,7 @@
         },
         {
           "linkId": "793",
-          "text": "b) Kunstmatige invasieve beademing",
+          "text": "Kunstmatige invasieve beademing",
           "item": [
             {
               "answer": [
@@ -339,7 +339,7 @@
         },
         {
           "linkId": "796",
-          "text": "c) Opname op intensive care",
+          "text": "Opname op intensive care",
           "item": [
             {
               "answer": [
@@ -371,7 +371,7 @@
         },
         {
           "linkId": "798",
-          "text": "d) Opname in ziekenhuis",
+          "text": "Opname in ziekenhuis",
           "item": [
             {
               "answer": [
@@ -403,7 +403,7 @@
         },
         {
           "linkId": "800",
-          "text": "e) Behandeling met antibiotica",
+          "text": "Behandeling met antibiotica",
           "item": [
             {
               "answer": [
@@ -435,7 +435,7 @@
         },
         {
           "linkId": "802",
-          "text": "f) Toediening van een bloedproduct",
+          "text": "Toediening van een bloedproduct",
           "item": [
             {
               "answer": [
@@ -467,7 +467,7 @@
         },
         {
           "linkId": "804",
-          "text": "g) Overige behandelgrenzen",
+          "text": "Overige behandelgrenzen",
           "item": [
             {
               "answer": [
@@ -542,11 +542,11 @@
             }
           ],
           "linkId": "249",
-          "text": "h) Heeft de patiënt een ICD?"
+          "text": "Heeft de patiënt een ICD?"
         },
         {
           "linkId": "808",
-          "text": "i) Is er een afspraak over het moment van uitzetten ICD?",
+          "text": "Is er een afspraak over het moment van uitzetten ICD?",
           "item": [
             {
               "answer": [
@@ -580,11 +580,11 @@
     },
     {
       "linkId": "107",
-      "text": "5. Behandelwensen",
+      "text": "Behandelwensen",
       "item": [
         {
           "linkId": "810",
-          "text": "a) Wat zouden zorgverleners, volgens de patiënt, moeten weten om goede zorg te kunnen verlenen? Heeft deze patiënt specifieke wensen met betrekking tot zijn zorg? (incl. culturele/religieuze/sociale/spirituele aspecten) ",
+          "text": "Wat zouden zorgverleners, volgens de patiënt, moeten weten om goede zorg te kunnen verlenen? Heeft deze patiënt specifieke wensen met betrekking tot zijn zorg? (incl. culturele/religieuze/sociale/spirituele aspecten)",
           "item": [
             {
               "answer": [
@@ -612,7 +612,7 @@
         },
         {
           "linkId": "812",
-          "text": "b) Gewenste plek van overlijden",
+          "text": "Gewenste plek van overlijden",
           "item": [
             {
               "answer": [
@@ -655,7 +655,7 @@
         },
         {
           "linkId": "813",
-          "text": "c) Euthanasie standpunt",
+          "text": "Euthanasie standpunt",
           "item": [
             {
               "answer": [
@@ -698,7 +698,7 @@
         },
         {
           "linkId": "814",
-          "text": "d) Keuze orgaandonatie vastgelegd in donorregister?",
+          "text": "Keuze orgaandonatie vastgelegd in donorregister?",
           "item": [
             {
               "answer": [
@@ -732,7 +732,7 @@
     },
     {
       "linkId": "598",
-      "text": "6. Wat verder nog belangrijk is",
+      "text": "Wat verder nog belangrijk is",
       "item": [
         {
           "answer": [
@@ -760,7 +760,7 @@
     },
     {
       "linkId": "115",
-      "text": "7. Eerder vastgelegde behandelwensen",
+      "text": "Eerder vastgelegde behandelwensen",
       "item": [
         {
           "answer": [
@@ -773,13 +773,13 @@
             }
           ],
           "linkId": "253",
-          "text": "a) Heeft de patiënt eerder behandelafspraken vastgelegd?"
+          "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?"
         }
       ]
     },
     {
       "linkId": "119",
-      "text": "8. Informatie delen",
+      "text": "Informatie delen",
       "item": [
         {
           "answer": [
@@ -791,7 +791,7 @@
             }
           ],
           "linkId": "256",
-          "text": "a) Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?"
+          "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?"
         },
         {
           "answer": [
@@ -804,7 +804,7 @@
             }
           ],
           "linkId": "257",
-          "text": "b) Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners"
+          "text": "Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners"
         }
       ]
     }

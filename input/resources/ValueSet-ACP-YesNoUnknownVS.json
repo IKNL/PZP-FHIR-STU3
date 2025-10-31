@@ -1,8 +1,8 @@
 {
   "resourceType": "ValueSet",
   "id": "ACP-YesNoUnknownVS",
-  "url": "https://fhir.iknl.nl/fhir/ValueSet/ACP-YesNoUnknownVS",
-  "version": "0.1.0",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS",
+  "version": "1.0.0-rc1",
   "name": "ACPYesNoUnknownVS",
   "title": "Yes, No, Unknown valueSet",
   "status": "draft",
@@ -40,7 +40,7 @@
         "code": "373066001",
         "display": "Ja",
         "designation": [ {
-          "language": "en-UK",
+          "language": "en-GB",
           "use": {
             "system": "http://snomed.info/sct",
             "code": "900000000000013009",
@@ -56,7 +56,7 @@
           },
           "value": "Yes (qualifier value)"
         }, {
-          "language": "en-UK",
+          "language": "en-GB",
           "use": {
             "system": "http://snomed.info/sct",
             "code": "900000000000013009",
@@ -100,7 +100,7 @@
         "code": "373067005",
         "display": "Nee",
         "designation": [ {
-          "language": "en-UK",
+          "language": "en-GB",
           "use": {
             "system": "http://snomed.info/sct",
             "code": "900000000000013009",
@@ -116,7 +116,7 @@
           },
           "value": "No (qualifier value)"
         }, {
-          "language": "en-UK",
+          "language": "en-GB",
           "use": {
             "system": "http://snomed.info/sct",
             "code": "900000000000013009",

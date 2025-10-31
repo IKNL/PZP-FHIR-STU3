@@ -3,8 +3,8 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R3/fhir-single.xsd">
   <id value="iknl.fhir.stu3.pzp" />
-  <url value="https://fhir.iknl.nl/fhir/ImplementationGuide/iknl.fhir.stu3.pzp" />
-  <version value="0.1.3-beta3" />
+  <url value="https://api.iknl.nl/docs/pzp/stu3/ImplementationGuide/iknl.fhir.stu3.pzp" />
+  <version value="1.0.0-rc1" />
   <name value="PZP" />
   <title value="IKNL PZP STU3" />
   <status value="active" />
@@ -29,7 +29,7 @@
   <dependsOn>
     <uri value="https://simplifier.net/packages/nictiz.fhir.nl.stu3.zib2017/2.2.20" />
     <packageId value="nictiz.fhir.nl.stu3.zib2017" />
-    <version value="2.2.20" />
+    <version value="2.3.2" />
   </dependsOn>
   <definition>
     <page>
@@ -55,6 +55,11 @@
       <page>
         <nameUrl value="data-exchange.html" />
         <title value="Data Exchange" />
+        <generation value="markdown" />
+      </page>
+      <page>
+        <nameUrl value="changelog.html" />
+        <title value="Change log" />
         <generation value="markdown" />
       </page>
     </page>
@@ -114,6 +119,10 @@
     <parameter>
       <code value="suppress-mappings" />
       <value value="*" />
+    </parameter>
+    <parameter>
+      <code value="path-expansion-params" />
+      <value value="_resources/Parameters-expansion.json" />
     </parameter>
   </definition>
 </ImplementationGuide>

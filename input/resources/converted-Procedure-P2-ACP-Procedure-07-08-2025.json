@@ -3,7 +3,7 @@
   "id": "P2-ACP-Procedure-07-08-2025",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Procedure"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
     ]
   },
   "status": "completed",
@@ -21,18 +21,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/P2-ACP-ContactPerson-MayaVanDerSluijsMulder",
-        "display": "ContactPerson, Maya van der Sluijs"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/P2-ACP-Patient-SamiraVanDerSluijs",
-        "display": "Patient, Samira van der Sluijs"
       }
     }
   ],
@@ -56,7 +44,7 @@
       {
         "code": "713603004",
         "system": "http://snomed.info/sct",
-        "display": "Advance care planning (procedure)"
+        "display": "advance care planning"
       }
     ]
   },

@@ -179,9 +179,11 @@ class BaseTransformer(ABC):
     
     def convert_profile_url(self, r4_profile_url: str) -> str:
         """Convert R4 profile URL to STU3 equivalent."""
-        # Default: just replace R4 with STU3 in the URL
-        # Subclasses can override for more specific mappings
-        return r4_profile_url.replace('/R4/', '/STU3/').replace('4.0', '3.0')
+        # Handle both uppercase and lowercase r4 in URLs
+        stu3_url = r4_profile_url.replace('/R4/', '/STU3/').replace('/r4/', '/stu3/')
+        # Also handle version numbers
+        stu3_url = stu3_url.replace('4.0', '3.0')
+        return stu3_url
     
     def transform_identifier(self, r4_identifier: Dict[str, Any]) -> Dict[str, Any]:
         """Transform identifier from R4 to STU3."""
@@ -247,7 +249,13 @@ class BaseTransformer(ABC):
             # Check if this is an extension array
             if 'extension' in obj and isinstance(obj['extension'], list):
                 # Transform extension URLs in this extension array
-                obj['extension'] = self.transform_extension_urls(obj['extension'])
+                transformed_extensions = self.transform_extension_urls(obj['extension'])
+                # Only keep the extension field if there are still extensions left
+                if transformed_extensions:
+                    obj['extension'] = transformed_extensions
+                else:
+                    # Remove the extension key entirely if all extensions were filtered out
+                    obj = {k: v for k, v in obj.items() if k != 'extension'}
             
             # Recursively process all dictionary values
             transformed_obj = {}
@@ -271,8 +279,14 @@ class BaseTransformer(ABC):
         transformed_extensions = []
         
         for ext in extensions:
-            transformed_ext = ext.copy()
             original_url = ext.get('url', '')
+            
+            # Check if this is an R4-specific extension not supported in STU3
+            if self._is_r4_specific_extension(original_url):
+                logger.warning(f"Removing R4-specific extension not supported in STU3: {original_url}")
+                continue  # Skip this extension
+            
+            transformed_ext = ext.copy()
             
             # Apply global URL transformations
             new_url = self.apply_global_extension_url_mappings(original_url)
@@ -288,6 +302,26 @@ class BaseTransformer(ABC):
             transformed_extensions.append(transformed_ext)
         
         return transformed_extensions
+    
+    def _is_r4_specific_extension(self, url: str) -> bool:
+        """
+        Check if an extension URL is R4-specific and not supported in STU3.
+        
+        Args:
+            url: The extension URL to check
+            
+        Returns:
+            True if the extension is R4-specific and should be removed for STU3
+        """
+        r4_specific_extensions = {
+            # Patient extensions that don't exist in STU3
+            'http://hl7.org/fhir/StructureDefinition/patient-relatedPerson',
+            
+            # Add other R4-specific extensions here as needed
+            # 'http://hl7.org/fhir/StructureDefinition/some-other-r4-extension',
+        }
+        
+        return url in r4_specific_extensions
     
     def apply_global_extension_url_mappings(self, url: str) -> str:
         """
@@ -307,7 +341,17 @@ class BaseTransformer(ABC):
                 'http://nictiz.nl/fhir/StructureDefinition/zib-AddressInformation-AddressType'
         }
         
-        return global_mappings.get(url, url)
+        # Check for specific mappings first
+        mapped_url = global_mappings.get(url, url)
+        
+        # If no specific mapping found, apply general R4->STU3 URL conversion
+        if mapped_url == url:
+            # Handle both uppercase and lowercase r4 in URLs
+            mapped_url = url.replace('/R4/', '/STU3/').replace('/r4/', '/stu3/')
+            # Also handle version numbers
+            mapped_url = mapped_url.replace('4.0', '3.0')
+        
+        return mapped_url
     
     def log_transformation_start(self, resource_id: str):
         """Log the start of a transformation."""

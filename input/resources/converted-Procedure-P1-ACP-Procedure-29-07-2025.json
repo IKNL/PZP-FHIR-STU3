@@ -3,7 +3,7 @@
   "id": "P1-ACP-Procedure-29-07-2025",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Procedure"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
     ]
   },
   "status": "completed",
@@ -21,18 +21,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/P1-ACP-ContactPerson-MichielHartman",
-        "display": "ContactPerson, Michiel Hartman"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/P1-ACP-Patient-HendrikHartman",
-        "display": "Patient, Hendrik Hartman"
       }
     }
   ],
@@ -55,7 +43,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "713603004"
+        "code": "713603004",
+        "display": "advance care planning"
       }
     ]
   },

@@ -3,7 +3,7 @@
   "id": "F1-ACP-Procedure-01-10-2020",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Procedure"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
     ]
   },
   "status": "completed",
@@ -25,18 +25,6 @@
             }
           }
         ]
-      }
-    },
-    {
-      "actor": {
-        "reference": "RelatedPerson/F1-ACP-ContactPerson-MichielHartman",
-        "display": "ContactPerson, Michiel Hartman"
-      }
-    },
-    {
-      "actor": {
-        "reference": "Patient/F1-ACP-Patient-HendrikHartman",
-        "display": "Patient, Hendrik Hartman"
       }
     }
   ],
@@ -60,7 +48,7 @@
       {
         "code": "713603004",
         "system": "http://snomed.info/sct",
-        "display": "Advance care planning (procedure)"
+        "display": "advance care planning"
       }
     ]
   },

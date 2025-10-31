@@ -78,7 +78,6 @@ class RelatedPersonTransformer(BaseTransformer):
             "identifier",
             "active", 
             "patient",
-            "relationship",
             "name",
             "telecom",
             "gender",
@@ -91,6 +90,32 @@ class RelatedPersonTransformer(BaseTransformer):
         for field in direct_mappings:
             if field in r4_resource:
                 stu3_resource[field] = r4_resource[field]
+        
+        # Handle relationship field separately due to cardinality change (0..* -> 0..1)
+        if 'relationship' in r4_resource:
+            stu3_resource['relationship'] = self._transform_relationship(r4_resource['relationship'])
+    
+    def _transform_relationship(self, r4_relationship: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        Transform relationship from R4 (0..*) to STU3 (0..1).
+        
+        In R4, relationship is an array of CodeableConcepts.
+        In STU3, relationship is a single CodeableConcept.
+        
+        Strategy: Take the first relationship and log a warning if multiple exist.
+        """
+        if not r4_relationship:
+            return {}
+        
+        if len(r4_relationship) > 1:
+            logger.warning(
+                f"RelatedPerson has {len(r4_relationship)} relationships in R4, "
+                f"but STU3 only supports 1. Taking the first relationship and discarding the rest. "
+                f"Data loss occurred: {[rel.get('text', str(rel)) for rel in r4_relationship[1:]]}"
+            )
+        
+        # Return the first relationship
+        return r4_relationship[0]
     
     def get_mapping_info(self) -> Dict[str, str]:
         """Return mapping information for documentation."""
@@ -98,9 +123,10 @@ class RelatedPersonTransformer(BaseTransformer):
             "resource_type": "RelatedPerson",
             "base_mapping": "http://hl7.org/fhir/StructureMap/RelatedPerson4to3",
             "key_transformations": {
-                "Reference.type": "Removed from all Reference objects (R4-specific)"
+                "Reference.type": "Removed from all Reference objects (R4-specific)",
+                "relationship": "Cardinality changed from 0..* (R4) to 0..1 (STU3) - takes first relationship, warns about data loss"
             },
-            "direct_mappings": "identifier, active, patient, relationship, name, telecom, gender, birthDate, address, photo, period"
+            "direct_mappings": "identifier, active, patient, name, telecom, gender, birthDate, address, photo, period"
         }
 
 
@@ -112,7 +138,7 @@ RELATED_PERSON_MAPPING_TABLE = """
 │ identifier              │ identifier              │ Direct mapping                          │
 │ active                  │ active                  │ Direct mapping                          │
 │ patient                 │ patient                 │ Direct mapping                          │
-│ relationship            │ relationship            │ Direct mapping                          │
+│ relationship (0..*)     │ relationship (0..1)     │ CARDINALITY CHANGE - takes first only  │
 │ name                    │ name                    │ Direct mapping                          │
 │ telecom                 │ telecom                 │ Direct mapping                          │
 │ gender                  │ gender                  │ Direct mapping                          │
@@ -122,9 +148,14 @@ RELATED_PERSON_MAPPING_TABLE = """
 │ period                  │ period                  │ Direct mapping                          │
 └─────────────────────────┴─────────────────────────┴─────────────────────────────────────────┘
 
-Special Transformations:
-1. Reference.type fields are removed (R4-specific, not supported in STU3)
-2. All fields map directly between R4 and STU3 - no structural changes
+Critical Transformations:
+1. RELATIONSHIP CARDINALITY CHANGE (POTENTIAL DATA LOSS):
+   - R4: relationship is an array of CodeableConcepts (0..*)
+   - STU3: relationship is a single CodeableConcept (0..1) 
+   - Transformation: Takes the first relationship, logs WARNING if multiple exist
+   - WARNING: Additional relationships beyond the first are LOST during transformation
+
+2. Reference.type fields are removed (R4-specific, not supported in STU3)
 
 Reference Datatype Transformation:
 - R4 introduced the 'type' field in Reference objects

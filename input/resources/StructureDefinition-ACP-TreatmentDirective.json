@@ -1,8 +1,8 @@
 {
   "resourceType": "StructureDefinition",
   "id": "ACP-TreatmentDirective",
-  "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-TreatmentDirective",
-  "version": "0.1.0",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective",
+  "version": "1.0.0-rc1",
   "name": "ACPTreatmentDirective",
   "title": "TreatmentDirective",
   "status": "draft",
@@ -26,8 +26,8 @@
   "mapping": [
     {
       "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/ad/#/pall-izppz-/scenarios/scenarios/2.16.840.1.113883.2.4.3.11.60.117.4.14/2025-08-05T00:00:00",
-      "name": "PZP zib2017 dataset"
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "name": "ACP zib2017 dataset"
     }
   ],
   "kind": "resource",
@@ -53,10 +53,19 @@
           }
         ]
       },
-      {
+       {
         "id": "Consent.extension",
         "path": "Consent.extension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.extension:verification",
@@ -79,7 +88,16 @@
       {
         "id": "Consent.extension:verification.extension",
         "path": "Consent.extension.extension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.extension:verification.extension:Verified",
@@ -186,12 +204,22 @@
       {
         "id": "Consent.modifierExtension",
         "path": "Consent.modifierExtension",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
       },
       {
         "id": "Consent.modifierExtension:treatmentPermitted",
         "path": "Consent.modifierExtension",
         "sliceName": "treatmentPermitted",
+        "comment": "If the value of the element NL-CM:2.1.4 TreatmentPermitted is YES_BUT/JA_MAAR, then the value of NL-CM:2.1.5 Restrictions is expected under Consent.except. \r\n\r\nAdditional terminology mapping guidance, in addition to the default zib/nl-core guidance for \"Afspraak uitzetten ICD\" (dataset id 96) values: \r\n   - _Ja_ -> _Yes_; \r\n   -  No value is mapped to _No_; \r\n   - _Nee, nog geen besluit genomen_ -> _ASKU_ \r\n _Niet besproken_ -> _NASK_ ",
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",
@@ -206,12 +234,23 @@
         ]
       },
       {
+        "id": "Consent.modifierExtension:treatmentPermitted.valueCodeableConcept:valueCodeableConcept",
+        "path": "Consent.modifierExtension.valueCodeableConcept",
+        "sliceName": "valueCodeableConcept",
+        "binding": {
+          "strength": "extensible",
+          "valueSetReference": {
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoYesWithRestrictionsUnknownVS"
+          }
+        }
+      },
+      {
         "id": "Consent.patient",
         "path": "Consent.patient",
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
           }
         ]
       },
@@ -254,7 +293,7 @@
         "type": [
           {
             "code": "Reference",
-            "targetProfile": "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-AdvanceDirective"
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-AdvanceDirective"
           }
         ],
         "mapping": [

@@ -3,7 +3,7 @@
   "id": "P2-ACP-MedicalDevice-ICD",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-MedicalDevice"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice"
     ]
   },
   "identifier": [
@@ -34,7 +34,7 @@
       {
         "code": "80891009",
         "system": "http://snomed.info/sct",
-        "display": "Heart structure (body structure)"
+        "display": "structuur van cor"
       }
     ],
     "extension": [
@@ -44,7 +44,7 @@
             {
               "code": "7771000",
               "system": "http://snomed.info/sct",
-              "display": "Left (qualifier value)"
+              "display": "links"
             }
           ]
         },
@@ -61,13 +61,6 @@
     "start": "2024"
   },
   "extension": [
-    {
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
-        "display": "Encounter, 2025-08-07"
-      }
-    },
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Practitioner",
       "valueReference": {

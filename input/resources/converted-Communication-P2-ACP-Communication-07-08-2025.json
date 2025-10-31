@@ -3,7 +3,7 @@
   "id": "P2-ACP-Communication-07-08-2025",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Communication"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Communication"
     ]
   },
   "status": "completed",
@@ -52,7 +52,7 @@
         {
           "code": "713603004",
           "system": "http://snomed.info/sct",
-          "display": "Advance care planning (procedure)"
+          "display": "advance care planning"
         }
       ]
     }

@@ -15,6 +15,7 @@ Usage: #example
 * performer[=].actor.type = "Patient" 
 * performedPeriod.start = "2025-07-29"
 * performedPeriod.end = "2025-07-29"
+* code = $snomed#713603004 "advance care planning"
 
 
 

@@ -3,7 +3,7 @@
   "id": "P1-ACP-Patient-HendrikHartman",
   "meta": {
     "profile": [
-      "https://fhir.iknl.nl/fhir/StructureDefinition/ACP-Patient"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
   "extension": [
@@ -14,19 +14,11 @@
           "valueBoolean": false
         }
       ],
-      "url": "https://fhir.iknl.nl/fhir/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
     }
   ],
   "contact": [
     {
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/patient-relatedPerson",
-          "valueReference": {
-            "reference": "RelatedPerson/P1-ACP-ContactPerson-MirjamDeLeeuwHartman"
-          }
-        }
-      ],
       "relationship": [
         {
           "coding": [
@@ -168,7 +160,7 @@
         "type": "both",
         "city": "Utrecht",
         "district": "Utrecht",
-        "postalCode": "3511 ZL",
+        "postalCode": "3511ZL",
         "country": "Nederland",
         "_country": {
           "extension": [
@@ -176,7 +168,6 @@
               "valueCodeableConcept": {
                 "coding": [
                   {
-                    "version": "2020-04-01T00:00:00",
                     "code": "6030",
                     "system": "urn:oid:2.16.840.1.113883.2.4.4.16.34",
                     "display": "Netherlands"
@@ -346,7 +337,7 @@
       "type": "both",
       "city": "Utrecht",
       "district": "Utrecht",
-      "postalCode": "3511 ZL",
+      "postalCode": "3511ZL",
       "country": "Nederland",
       "_country": {
         "extension": [
@@ -354,7 +345,6 @@
             "valueCodeableConcept": {
               "coding": [
                 {
-                  "version": "2020-10-26T00:00:00",
                   "code": "NL",
                   "system": "urn:iso:std:iso:3166",
                   "display": "Netherlands"
