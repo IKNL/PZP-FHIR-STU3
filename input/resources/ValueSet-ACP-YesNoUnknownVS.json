@@ -23,7 +23,7 @@
       "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
       "concept": [ {
         "code": "UNK",
-        "display": "Nog onbekend",
+        "display": "nog onbekend",
         "designation": [ {
           "language": "nl-NL",
           "use": {
@@ -38,7 +38,7 @@
       "system": "http://snomed.info/sct",
       "concept": [ {
         "code": "373066001",
-        "display": "Ja",
+        "display": "ja",
         "designation": [ {
           "language": "en-GB",
           "use": {
@@ -98,7 +98,7 @@
         } ]
       }, {
         "code": "373067005",
-        "display": "Nee",
+        "display": "nee",
         "designation": [ {
           "language": "en-GB",
           "use": {

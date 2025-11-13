@@ -23,13 +23,13 @@
       "system": "http://snomed.info/sct",
       "concept": [ {
         "code": "385987000",
-        "display": "Curatief / actief ziektebeleid"
+        "display": "zorg bij ziekte en/of letsel"
       }, {
         "code": "1351964001",
-        "display": "Life-sustaining treatment (regime/therapy)"
+        "display": "levensverlengende behandeling"
       }, {
         "code": "713148004",
-        "display": "Voorkomen en behandelen van symptomen (verrichting)"
+        "display": "voorkomen en behandelen van symptomen"
       } ]
     } ]
   }
