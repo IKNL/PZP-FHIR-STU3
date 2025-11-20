@@ -26,13 +26,13 @@
         "display": "Anders"
       }, {
         "code": "UNK",
-        "display": "Nog onbekend"
+        "display": "nog onbekend"
       } ]
     }, {
       "system": "http://snomed.info/sct",
       "concept": [ {
         "code": "264362003",
-        "display": "Thuis",
+        "display": "thuis",
         "designation": [ {
           "language": "en-US",
           "use": {
@@ -92,7 +92,7 @@
         } ]
       }, {
         "code": "22232009",
-        "display": "Ziekenhuis",
+        "display": "ziekenhuis",
         "designation": [ {
           "language": "en-US",
           "use": {
@@ -128,7 +128,7 @@
         } ]
       }, {
         "code": "108344006",
-        "display": "Verpleeghuis",
+        "display": "verpleeghuis",
         "designation": [ {
           "language": "en-US",
           "use": {
@@ -164,7 +164,7 @@
         } ]
       }, {
         "code": "284546000",
-        "display": "Hospice",
+        "display": "hospice",
         "designation": [ {
           "language": "en-US",
           "use": {
