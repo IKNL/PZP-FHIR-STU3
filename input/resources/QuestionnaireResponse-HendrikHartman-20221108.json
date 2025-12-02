@@ -17,7 +17,7 @@
     "reference": "Patient/P1-ACP-Patient-HendrikHartman",
     "display": "Patient, Hendrik Hartman"
   },
-  "author": [
+  "author": 
     {
       "reference": "Practitioner/P1-ACP-HealthProfessional-Practitioner-DrVanHuissen",
       "display": "Healthcare professional (person), van Huissen",
@@ -30,8 +30,7 @@
           }
         }
       ]
-    }
-  ],
+    },
   "item": [
     {
       "answer": [
