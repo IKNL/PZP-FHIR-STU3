@@ -103,28 +103,6 @@
         ]
       },
       {
-        "id": "Consent.extension:encounter",
-        "path": "Consent.extension",
-        "sliceName": "encounter",
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference"
-          }
-        ]
-      },
-      {
-        "id": "Consent.extension:encounter.value[x]",
-        "path": "Consent.extension.value[x]",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
-          }
-        ]
-      },
-      {
         "id": "Consent.category:typeOfLivingWill",
         "path": "Consent.category",
         "sliceName": "typeOfLivingWill",
