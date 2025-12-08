@@ -3,7 +3,6 @@ InstanceOf: ACPAdvanceDirective
 Title: "P1 ACP Advance Directive DNR"
 Usage: #example
 * extension[comment].valueString = "Door verdere achteruitgang gezondheid, wenst meneer niet meer gereanimeerd te worden door te kleine kans op herstel"
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "de77e87c-d5be-4245-b201-2d983a557d59"
@@ -26,7 +25,6 @@ InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 305351004"
 Usage: #example
 * extension[comment].valueString = "IC opname is intensief, en weinig kans op goed herstel"
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "fcfdb45f-45c5-4afb-b5f4-ed9c9cfe024e"
@@ -46,7 +44,6 @@ Instance: P1-ACP-TreatmentDirective-89666000
 InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 89666000"
 Usage: #example
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "ac1784f4-2c3a-4691-ab5b-e3489696cc51"
@@ -68,7 +65,6 @@ InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 40617009"
 Usage: #example
 * extension[comment].valueString = "Weinig kans om nog van de beademing af te komen door conditie"
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "cb17317e-e83b-4d6c-87df-e9d8e8fa0543"
@@ -88,7 +84,6 @@ Instance: P1-ACP-TreatmentDirective-116762002
 InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 116762002"
 Usage: #example
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "dfdefd0d-8d59-42ac-8f05-0db4627f5b7c"
@@ -108,7 +103,6 @@ Instance: P1-ACP-TreatmentDirective-281789004
 InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 281789004"
 Usage: #example
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "2bb2cbb4-2692-49c4-81e0-02b9f09d4328"
@@ -130,7 +124,6 @@ InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 32485007"
 Usage: #example
 * extension[comment].valueString = "Patiënt wil deze behandelgrens graag over een aantal maanden opnieuw bespreken"
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "1e632040-9fec-4420-b3e7-9f6ff2fcfc15"
@@ -151,7 +144,6 @@ Instance: P1-ACP-TreatmentDirective-OTH
 InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective OTH"
 Usage: #example
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "3f5faabb-b114-486a-b384-ded484710afb"
@@ -173,7 +165,6 @@ InstanceOf: ACPTreatmentDirective
 Title: "P1 ACP TreatmentDirective 400231000146108"
 Usage: #example
 * extension[comment].valueString = "Hendrik wil het er nog niet over hebben"
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * modifierExtension[specificationOther].valueString = "Nee, nog geen besluit genomen" // not possible to mention ASKU somewhere? 
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"

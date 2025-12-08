@@ -42,13 +42,6 @@
       "valueString": "Patiënt gaat dit volgende week met de cardioloog bespreken."
     },
     {
-      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/P2-ACP-Encounter-07-08-2025",
-        "display": "Encounter, 2025-08-07"
-      }
-    },
-    {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
         {

@@ -42,13 +42,6 @@
       "valueString": "Hendrik wil het er nog niet over hebben"
     },
     {
-      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/P1-ACP-Encounter-29-07-2025",
-        "display": "Encounter, 2025-07-29"
-      }
-    },
-    {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
         {

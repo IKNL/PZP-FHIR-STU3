@@ -36,14 +36,12 @@
     "display": "Patient, Hendrik Hartman"
   },
   "dateTime": "2022-11-08",
-  "extension": [
+  "policy": [
     {
-      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference",
-      "valueReference": {
-        "reference": "Encounter/F1-ACP-Encounter-01-10-2020",
-        "display": "Encounter, 2020-10-01"
-      }
-    },
+      "uri": "https://wetten.overheid.nl/"
+    }
+  ],
+  "extension": [
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
@@ -93,11 +91,6 @@
           }
         ]
       }
-    }
-  ],
-  "policy": [
-    {
-      "uri": "https://wetten.overheid.nl/"
     }
   ],
   "modifierExtension": [
