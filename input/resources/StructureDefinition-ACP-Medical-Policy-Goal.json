@@ -55,28 +55,6 @@
         ]
       },
       {
-        "id": "Goal.extension:encounter",
-        "path": "Goal.extension",
-        "sliceName": "encounter",
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference"
-          }
-        ]
-      },
-      {
-        "id": "Goal.extension:encounter.value[x]",
-        "path": "Goal.extension.value[x]",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
-          }
-        ]
-      },
-      {
         "id": "Goal.description",
         "path": "Goal.description",
         "binding": {

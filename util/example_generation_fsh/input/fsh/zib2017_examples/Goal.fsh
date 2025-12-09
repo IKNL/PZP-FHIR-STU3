@@ -2,7 +2,6 @@ Instance: P1-ACP-Medical-Policy-Goal
 InstanceOf: ACPMedicalPolicyGoal
 Title: "P1 ACP Medical Policy Goal - Symptom management"
 Usage: #example
-* extension[encounter].valueReference = Reference(P1-ACP-Encounter-29-07-2025) "Encounter, 2025-07-29"
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "ecd53b68-d9d2-4945-b1f0-0eccb07f48a3"
