@@ -39,21 +39,21 @@ This approach is useful for applications that need to query specific parts of a 
 The below listed search requests show how all the ACP agreements, procedural information and relevant clinical context can be retrieved. Information on individuals involved in the ACP process are referenced from these resources and can be retrieved using the `_include` statement as defined below, or by resolving the references. Standard FHIR rules apply on the search syntax.
 
 ```
-1a GET [base]/Procedure?patient=[id]&code=http://snomed.info/sct|713603004&_include:Procedure:encounter
+1a GET [base]/Procedure?patient=Patient/[id]&code=http://snomed.info/sct|713603004&_include=Procedure:encounter
 
-1b GET [base]/Encounter?patient=[id]&reason=http://snomed.info/sct|713603004
+1b GET [base]/Encounter?patient=Patient/[id]&reason=http://snomed.info/sct|713603004
 
-2 GET [base]/Consent?patient=[id]&category=http://snomed.info/sct|11291000146105&_include=Consent:actor
+2 GET [base]/Consent?patient=Patient/[id]&category=http://snomed.info/sct|11291000146105&_include=Consent:actor
 
-3 GET [base]/Consent?patient=[id]&category=http://snomed.info/sct|11341000146107&_include=Consent:actor
+3 GET [base]/Consent?patient=Patient/[id]&category=http://snomed.info/sct|11341000146107&_include=Consent:actor
 
-4 GET [base]/Goal?patient=[id]&description=http://snomed.info/sct|385987000,1351964001,713148004
+4 GET [base]/Goal?patient=Patient/[id]&description=http://snomed.info/sct|385987000,1351964001,713148004
 
-5 GET [base]/Observation?patient=[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003
+5 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003
 
-6 GET [base]/DeviceUseStatement?patient=[id]&device.type:in=https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD&_include:DeviceUseSatement:device
+6 GET [base]/DeviceUseStatement?patient=Patient/[id]&device.type:in=https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD&_include=DeviceUseSatement:device
 
-7 GET [base]/Communication?patient=[id]&reason-code=http://snomed.info/sct|713603004
+7 GET [base]/CommunicationRequest?patient=Patient/[id]&category=http://snomed.info/sct|223449006
 ```
 
 1. Both requests are designed to retrieve the same information, but with different approaches:
