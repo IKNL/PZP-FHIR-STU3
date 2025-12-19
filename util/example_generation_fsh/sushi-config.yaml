@@ -5,7 +5,7 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 canonical: https://api.iknl.nl/docs/pzp/stu3
 status: draft # draft | active | retired | unknown
-version: 1.0.0-alpha1
+version: 1.0.0-rc1
 fhirVersion: 4.0.1 
 dependencies:
   iknl.fhir.r4.pzp: dev
