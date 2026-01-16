@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "P2-ACP-OtherImportantInformation-20250807",
+  "id": "P2-ACP-SenseOfPurpose-20250807",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SenseOfPurpose"
     ]
   },
   "context": {

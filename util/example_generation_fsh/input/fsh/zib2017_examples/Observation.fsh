@@ -64,9 +64,9 @@ Usage: #example
 * valueCodeableConcept = $snomed#373066001 "ja"
 
 
-Instance: P1-ACP-OtherImportantInformation
-InstanceOf: ACPOtherImportantInformation
-Title: "P1 ACP Other Important Information"
+Instance: P1-ACP-SenseOfPurpose
+InstanceOf: ACPSenseOfPurpose
+Title: "P1 ACP Sense Of Purpose"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"

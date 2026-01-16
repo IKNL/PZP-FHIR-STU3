@@ -87,7 +87,7 @@ jobs:
             StructureDefinition-ACP-HealthProfessional-Practitioner.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-MedicalDevice.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-OrganDonationChoiceRegistration.json||*launches straight into slicing without the slicing being set up properly*| 
-            StructureDefinition-ACP-OtherImportantInformation.json||*launches straight into slicing without the slicing being set up properly*| 
+            StructureDefinition-ACP-SenseOfPurpose.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-Patient.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-PositionRegardingEuthanasia.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-PreferredPlaceOfDeath.json||*launches straight into slicing without the slicing being set up properly*| 
