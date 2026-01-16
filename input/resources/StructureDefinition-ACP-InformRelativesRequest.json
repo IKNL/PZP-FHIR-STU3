@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ACP-Communication",
-  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Communication",
+  "id": "ACP-InformRelativesRequest",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-InformRelativesRequest",
   "version": "0.1.0",
-  "name": "ACPCommunication",
-  "title": "Communication",
+  "name": "ACPInformRelativesRequest",
+  "title": "Inform Relatives Request",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -32,14 +32,14 @@
   ],
   "kind": "resource",
   "abstract": false,
-  "type": "Communication",
-  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Communication",
+  "type": "CommunicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
   "derivation": "constraint",
   "differential": {
     "element": [
       {
-        "id": "Communication",
-        "path": "Communication",
+        "id": "CommunicationRequest",
+        "path": "CommunicationRequest",
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",
@@ -49,8 +49,22 @@
         ]
       },
       {
-        "id": "Communication.subject",
-        "path": "Communication.subject",
+        "id": "CommunicationRequest.category",
+        "path": "CommunicationRequest.category",
+        "comment": "The `category.text` element may be used to provide additional context for human readers next to the pattern category coding, for example: 'Request for patient to inform relatives about treatment agreements'.",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "223449006"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CommunicationRequest.subject",
+        "path": "CommunicationRequest.subject",
         "type": [
           {
             "code": "Reference",
@@ -59,8 +73,23 @@
         ]
       },
       {
-        "id": "Communication.recipient",
-        "path": "Communication.recipient",
+        "id": "CommunicationRequest.recipient",
+        "path": "CommunicationRequest.recipient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-ContactPerson"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.authoredOn",
+        "path": "CommunicationRequest.authoredOn",
+        "comment": "Indicate the date and preferrably time when the request was sent"
+      },
+      {
+        "id": "CommunicationRequest.sender",
+        "path": "CommunicationRequest.sender",
         "type": [
           {
             "code": "Reference",
@@ -69,18 +98,8 @@
         ]
       },
       {
-        "id": "Communication.topic",
-        "path": "Communication.topic",
-        "comment": "For information patient about own responsibility the following text may be added to the `topic.text` element: Informing the patient about their own responsibility to discuss these treatment agreements with relatives."
-      },
-      {
-        "id": "Communication.sent",
-        "path": "Communication.sent",
-        "comment": "Indicate the date and preferrably time when the communication was sent"
-      },
-      {
-        "id": "Communication.sender",
-        "path": "Communication.sender",
+        "id": "CommunicationRequest.requester.agent",
+        "path": "CommunicationRequest.requester.agent",
         "type": [
           {
             "code": "Reference",
@@ -89,8 +108,20 @@
         ]
       },
       {
-        "id": "Communication.reasonCode",
-        "path": "Communication.reasonCode",
+        "id": "CommunicationRequest.requester.agent.extension:practitionerRole",
+        "path": "CommunicationRequest.requester.agent.extension",
+        "sliceName": "practitionerRole",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference"
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "CommunicationRequest.reasonCode",
+        "path": "CommunicationRequest.reasonCode",
         "min": 1,
         "max": "1",
         "patternCodeableConcept": {
