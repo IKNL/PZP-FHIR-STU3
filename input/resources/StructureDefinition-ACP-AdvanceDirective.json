@@ -172,9 +172,8 @@
         ]
       },
       {
-        "id": "Consent.source[x]:sourceAttachment",
+        "id": "Consent.source[x]",
         "path": "Consent.source[x]",
-        "sliceName": "sourceAttachment",
         "type": [
           {
             "code": "Attachment"

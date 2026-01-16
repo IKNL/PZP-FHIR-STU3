@@ -53,19 +53,10 @@
           }
         ]
       },
-       {
+      {
         "id": "Consent.extension",
         "path": "Consent.extension",
-        "min": 1,
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        }
+        "min": 1
       },
       {
         "id": "Consent.extension:verification",
@@ -88,16 +79,7 @@
       {
         "id": "Consent.extension:verification.extension",
         "path": "Consent.extension.extension",
-        "min": 1,
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        }
+        "min": 1
       },
       {
         "id": "Consent.extension:verification.extension:Verified",
@@ -117,8 +99,8 @@
         ]
       },
       {
-        "id": "Consent.extension:verification.extension:Verified.valueBoolean",
-        "path": "Consent.extension.extension.valueBoolean",
+        "id": "Consent.extension:verification.extension:Verified.value[x]",
+        "path": "Consent.extension.extension.value[x]",
         "min": 1,
         "fixedBoolean": true
       },
@@ -204,16 +186,7 @@
       {
         "id": "Consent.modifierExtension",
         "path": "Consent.modifierExtension",
-        "min": 1,
-        "slicing": {
-          "discriminator": [
-            {
-              "type": "value",
-              "path": "url"
-            }
-          ],
-          "rules": "open"
-        }
+        "min": 1
       },
       {
         "id": "Consent.modifierExtension:treatmentPermitted",
@@ -234,9 +207,8 @@
         ]
       },
       {
-        "id": "Consent.modifierExtension:treatmentPermitted.valueCodeableConcept:valueCodeableConcept",
-        "path": "Consent.modifierExtension.valueCodeableConcept",
-        "sliceName": "valueCodeableConcept",
+        "id": "Consent.modifierExtension:treatmentPermitted.value[x]",
+        "path": "Consent.modifierExtension.value[x]",
         "binding": {
           "strength": "extensible",
           "valueSetReference": {
@@ -287,9 +259,8 @@
         ]
       },
       {
-        "id": "Consent.source[x]:sourceReference",
+        "id": "Consent.source[x]",
         "path": "Consent.source[x]",
-        "sliceName": "sourceReference",
         "type": [
           {
             "code": "Reference",

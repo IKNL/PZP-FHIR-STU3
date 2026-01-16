@@ -45,7 +45,6 @@
         "id": "Extension.extension:legallyCapable",
         "path": "Extension.extension",
         "sliceName": "legallyCapable",
-        "min": 0,
         "max": "1"
       },
       {
@@ -76,7 +75,6 @@
         "id": "Extension.extension:legallyCapableComment",
         "path": "Extension.extension",
         "sliceName": "legallyCapableComment",
-        "min": 0,
         "max": "1"
       },
       {
