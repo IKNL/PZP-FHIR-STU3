@@ -99,9 +99,8 @@
         ]
       },
       {
-        "id": "DeviceUseStatement.timing[x]:timingPeriod",
+        "id": "DeviceUseStatement.timing[x]",
         "path": "DeviceUseStatement.timing[x]",
-        "sliceName": "timingPeriod",
         "type": [
           {
             "code": "Period"

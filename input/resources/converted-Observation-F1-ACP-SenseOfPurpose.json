@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "F1-ACP-OtherImportantInformation",
+  "id": "F1-ACP-SenseOfPurpose",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OtherImportantInformation"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SenseOfPurpose"
     ]
   },
   "context": {

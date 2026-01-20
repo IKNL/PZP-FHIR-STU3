@@ -190,11 +190,11 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 128 | &emsp;Vertegenwoordiger | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.consentingParty`  |
 | 130 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]:sourceAttachment`  |
 | 131 | &emsp;Toelichting | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.extension:comment`  |
-| 132 | Wat verder nog belangrijk is (AlgemeneMeting) | Observation (<a href="StructureDefinition-ACP-OtherImportantInformation.html">ACPOtherImportantInformation</a>) | `Observation`  |
-| 212 | &emsp;&emsp;MetingNaam voor Wat verder nog belangrijk is | Observation (<a href="StructureDefinition-ACP-OtherImportantInformation.html">ACPOtherImportantInformation</a>) | `Observation.code`  |
-| 213 | &emsp;&emsp;Wat verder nog belangrijk is (UitslagWaarde) | Observation (<a href="StructureDefinition-ACP-OtherImportantInformation.html">ACPOtherImportantInformation</a>) | `Observation.value[x]`  |
-| 213 | &emsp;&emsp;Wat verder nog belangrijk is (UitslagWaarde) | Observation (<a href="StructureDefinition-ACP-OtherImportantInformation.html">ACPOtherImportantInformation</a>) | `Observation.dataAbsentReason`  |
-| 215 | &emsp;&emsp;UitslagDatumTijd | Observation (<a href="StructureDefinition-ACP-OtherImportantInformation.html">ACPOtherImportantInformation</a>) | `Observation.effective[x]`  |
+| 132 | Wat verder nog belangrijk is (AlgemeneMeting) | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation`  |
+| 212 | &emsp;&emsp;MetingNaam voor Wat verder nog belangrijk is | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation.code`  |
+| 213 | &emsp;&emsp;Wat verder nog belangrijk is (UitslagWaarde) | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation.value[x]`  |
+| 213 | &emsp;&emsp;Wat verder nog belangrijk is (UitslagWaarde) | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation.dataAbsentReason`  |
+| 215 | &emsp;&emsp;UitslagDatumTijd | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation.effective[x]`  |
 | 139 | Eerder vastgelegde behandelafspraken (Wilsverklaring) | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent`  |
 | 140 | &emsp;WilsverklaringType | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.category:typeOfLivingWill`  |
 | 141 | &emsp;WilsverklaringDatum | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.dateTime`  |
