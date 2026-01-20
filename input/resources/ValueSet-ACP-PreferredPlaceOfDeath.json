@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeath",
   "version": "1.0.0-rc1",
   "name": "ACPPreferredPlaceOfDeathVS",
-  "title": "Preferred Place Of Death",
+  "title": "ACP Preferred Place Of Death",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

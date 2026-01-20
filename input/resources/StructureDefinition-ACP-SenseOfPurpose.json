@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SenseOfPurpose",
   "version": "1.0.0-rc1",
   "name": "ACPSenseOfPurpose",
-  "title": "Sense of Purpose",
+  "title": "ACP Sense of Purpose",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

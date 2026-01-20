@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SpecificCareWishes",
   "version": "1.0.0-rc1",
   "name": "ACPSpecificCareWishes",
-  "title": "Specific Care Wishes",
+  "title": "ACP Specific Care Wishes",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

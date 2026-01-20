@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoYesWithRestrictionsUnknownVS",
   "version": "1.0.0-rc1",
   "name": "ACPYesNoYesWithRestrictionsUnknownVS",
-  "title": "Yes, No, Yes with restrictions, Unknown valueSet",
+  "title": "ACP Yes, No, Yes with restrictions, Unknown valueSet",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
