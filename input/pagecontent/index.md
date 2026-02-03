@@ -1,3 +1,8 @@
+<div class="warning">
+You are currently viewing the <strong>FHIR STU3</strong> version of the implementation guide for the Advance Care Planning.  
+If you are looking for the <strong>R4</strong> version, you can find it here: <a href="https://api.iknl.nl/docs/pzp/r4/">Advance Care Planning R4 HCIM 2020.</a>
+</div>
+
 ### Project Description and Scope
 
 This Implementation Guide (IG) supports the Advance Care Planning (ACP) information standard (Dutch: Proactieve Zorgplanning) and is intended for use within the palliative care domain in the Netherlands. This domain involves care for patients with an incurable illness or condition from which they are expected to die.
@@ -6,14 +11,8 @@ Developed by the <a href="https://iknl.nl/en">Netherlands Comprehensive Cancer O
 
 This guide assumes that readers are familiar with the functional specifications of ACP and the **STU3** version of FHIR.
 
-### Call for Feedback
-
-This implementation guide is a work in progress, and its quality and usefulness depend on community input. We welcome feedback on all aspects of this guide, and we are particularly interested in your thoughts on the following decisions and sections:
-
-1. The <a href="StructureDefinition-ACP-Communication.html">Communication profile</a> has been developed to capture all communication events related to advance care planning. It specifically documents whether the patient has been informed about their responsibility to discuss treatment agreements with relatives. As this profile is newly created rather than derived from zib/nl-core profiles, we welcome input on its structure and modeling approach.
-
-2. The <a href="Questionnaire-ACP-zib2017.html">ACP Questionnaire</a> has been developed based on the ACP form dataset and aims to preserve the zib structure as much as possible. We welcome any feedback on its design and implementation.
 
 ### Dependencies
 
 {% include dependency-table.xhtml %}
+
