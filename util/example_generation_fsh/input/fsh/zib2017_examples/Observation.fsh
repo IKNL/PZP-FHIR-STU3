@@ -62,6 +62,7 @@ Usage: #example
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen) "Healthcare professional (role), van Huissen"
 * valueCodeableConcept = $snomed#373066001 "ja"
+* method = $snomed#1156040003 "self reported"
 
 
 Instance: P1-ACP-SenseOfPurpose
