@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS",
   "version": "1.0.0-rc1",
   "name": "ACPYesNoUnknownVS",
-  "title": "Yes, No, Unknown valueSet",
+  "title": "ACP Yes, No, Unknown valueSet",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

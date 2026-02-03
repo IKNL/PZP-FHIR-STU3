@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective",
   "version": "1.0.0-rc1",
   "name": "ACPTreatmentDirective",
-  "title": "TreatmentDirective",
+  "title": "ACP TreatmentDirective",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

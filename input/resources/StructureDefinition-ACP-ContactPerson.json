@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-ContactPerson",
   "version": "1.0.0-rc1",
   "name": "ACPContactPerson",
-  "title": "ContactPerson",
+  "title": "ACP ContactPerson",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

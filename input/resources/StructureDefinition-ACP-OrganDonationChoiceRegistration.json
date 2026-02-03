@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration",
   "version": "1.0.0-rc1",
   "name": "ACPOrganDonationChoiceRegistration",
-  "title": "Organ donation choice registration in donor register",
+  "title": "ACP Organ donation choice registration in donor register",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
