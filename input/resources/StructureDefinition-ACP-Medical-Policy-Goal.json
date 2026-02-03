@@ -55,6 +55,19 @@
         ]
       },
       {
+        "id":"Goal.category",
+        "path":"Goal.category",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "713603004"
+            }
+          ]
+        }
+      },
+      {
         "id": "Goal.description",
         "path": "Goal.description",
         "binding": {
