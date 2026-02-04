@@ -1,12 +1,12 @@
 
-Instance: P1-ACP-ContactPerson-MichielHartman
+Instance: ACP-ContactPerson-MichielHartman-Pat1
 InstanceOf: ACPContactPerson
-Title: "P1 ACP ContactPerson Michiel Hartman"
+Title: "ACP ContactPerson Michiel HartmanPat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "6504c755-8466-4647-9e53-d6b51d459f3e"
-* patient = Reference(P1-ACP-Patient-HendrikHartman) "Patient, Hendrik Hartman"
+* patient = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
 * patient.type = "Patient"
 * relationship[0] = urn:oid:2.16.840.1.113883.2.4.3.11.22.472#24 "Wettelijke vertegenwoordiger"
 * relationship[+] = $v3-RoleCode#BRO "Brother"
@@ -55,14 +55,14 @@ Usage: #example
 * address[0].country.extension[=].valueCodeableConcept.coding[0].code = #NL
 * address[0].country.extension[=].valueCodeableConcept.coding[0].display = "Netherlands"
 
-Instance: P1-ACP-ContactPerson-MirjamDeLeeuwHartman
+Instance: ACP-ContactPerson-MirjamDeLeeuwHartman-Pat1
 InstanceOf: ACPContactPerson
-Title: "P1 ACP ContactPerson1 Mirjam de Leeuw Hartman"
+Title: "ACP ContactPerson1 Mirjam de Leeuw Hartman Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "2ee35302-cd40-40d5-b7b4-15f103662c7b"
-* patient = Reference(P1-ACP-Patient-HendrikHartman) "Patient, Hendrik Hartman"
+* patient = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
 * patient.type = "Patient"
 * relationship[0] = urn:oid:2.16.840.1.113883.2.4.3.11.22.472#01 "Eerste relatie/contactpersoon"
 * relationship[+] = $v3-RoleCode#WIFE "Wife"

@@ -14,7 +14,7 @@
     "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|1.0.0-rc1"
   },
    "source": {
-    "reference": "Patient/P1-ACP-Patient-HendrikHartman",
+    "reference": "Patient/ACP-Patient-HendrikHartman-Pat1",
     "display": "Patient, Hendrik Hartman"
   },
   "author": 
@@ -25,7 +25,7 @@
         {
           "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
           "valueReference": {
-            "reference": "PractitionerRole/P1-ACP-HealthProfessional-PractitionerRole-DrVanHuissen",
+            "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
             "display": "Healthcare professional (role), van Huissen"
           }
         }

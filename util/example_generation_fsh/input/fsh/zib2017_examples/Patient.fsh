@@ -1,6 +1,6 @@
-Instance: P1-ACP-Patient-HendrikHartman
+Instance: ACP-Patient-HendrikHartman-Pat1
 InstanceOf: ACPPatient
-Title: "P1 ACP Patient Hendrik Hartman"
+Title: "ACP Patient Hendrik Hartman - Pat 1"
 Usage: #example
 * extension[legallyCapableMedicalTreatmentDecisions].extension[legallyCapable].valueBoolean = false
 * identifier.system = "http://fhir.nl/fhir/NamingSystem/bsn"
@@ -61,7 +61,7 @@ Usage: #example
 * address.country = "Nederland"
 * address.country.extension.url = "http://nictiz.nl/fhir/StructureDefinition/ext-CodeSpecification"
 * address.country.extension.valueCodeableConcept.coding = urn:iso:std:iso:3166#NL "Netherlands"
-* contact.extension[relatedPerson].valueReference = Reference(P1-ACP-ContactPerson-MirjamDeLeeuwHartman)
+* contact.extension[relatedPerson].valueReference = Reference(ACP-ContactPerson-MirjamDeLeeuwHartman-Pat1)
 * contact.relationship[0] = urn:oid:2.16.840.1.113883.2.4.3.11.22.472#01 "Eerste relatie/contactpersoon"
 * contact.relationship[+] = $v3-RoleCode#WIFE "Wife"
 * contact.name.extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order"
