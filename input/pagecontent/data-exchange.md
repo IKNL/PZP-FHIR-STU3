@@ -25,7 +25,7 @@ This IG focuses solely on defining how ACP health information is accessed and st
 Within this scope, the following requirements apply:
 
 1. **Authorization**: Accessing ACP information is subject to strict privacy and security rules. All API requests MUST be properly authenticated and authorized. The client application is expected to use a secure mechanism to obtain an access token with the necessary scopes to read the patient's clinical data.
-2. **Patient Context**: All queries described in this guide are patient-specific. The client needs to know the logical ID of the patient and include it in every query (e.g., `patient=123` or `subject=Patient/123`). The method for obtaining the patient's logical ID is not specified in this IG, but may include: an initial search request on the Patient endpoint using a patient identifier such as the BSN or any other method provided by the infrastructure.
+2. **Patient Context**: All queries described in this guide are patient-specific. The client needs to know the logical ID of the patient and include it in every query (e.g., `patient=123` or `subject=Patient/123`). The method for obtaining the patient's logical ID is not specified in this IG, but may include an initial search request on the Patient endpoint using a patient identifier such as the BSN or any other method provided by the infrastructure.
 3. **Resolving References**: The returned resources may contain nested resources or references to other resources (such as `Practitioner` or `RelatedPerson`). The client application may need to perform subsequent requests to resolve these references and display the full details.
 
 ---
