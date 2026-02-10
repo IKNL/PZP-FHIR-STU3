@@ -1,6 +1,6 @@
 Instance: ACP-Patient-HendrikHartman-Pat1
 InstanceOf: ACPPatient
-Title: "ACP Patient Hendrik Hartman - Pat 1"
+Title: "ACP Patient - Hendrik Hartman - Pat 1"
 Usage: #example
 * extension[legallyCapableMedicalTreatmentDecisions].extension[legallyCapable].valueBoolean = false
 * identifier.system = "http://fhir.nl/fhir/NamingSystem/bsn"

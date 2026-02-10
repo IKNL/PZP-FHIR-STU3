@@ -1,6 +1,6 @@
-Instance: ACP-Procedure-29-07-2025-Pat1
+Instance: ACP-Procedure-2025-Pat1
 InstanceOf: ACPProcedure
-Title: "ACP ACPProcedure 29-07-2025 Pat 1"
+Title: "ACP Procedure - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"

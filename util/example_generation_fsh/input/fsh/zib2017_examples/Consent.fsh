@@ -1,6 +1,6 @@
-Instance: ACP-AdvanceDirective-DNR-Pat1
+Instance: ACP-AdvanceDirective-DNR-2025-Pat1
 InstanceOf: ACPAdvanceDirective
-Title: "ACP Advance Directive DNR Pat 1"
+Title: "ACP AdvanceDirective - DNR - 2025 - Pat 1"
 Usage: #example
 * extension[comment].valueString = "Door verdere achteruitgang gezondheid, wenst meneer niet meer gereanimeerd te worden door te kleine kans op herstel"
 * identifier.type = $v2-0203#RI "Resource identifier"
@@ -20,9 +20,9 @@ Usage: #example
 * provision.code = urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.14.1#NR "Niet reanimeren verklaring"
 
 
-Instance: ACP-TreatmentDirective-305351004-Pat1
+Instance: ACP-TreatmentDirective-AdmissionToICU-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 305351004 Pat 1"
+Title: "ACP TreatmentDirective - Admission to intensive care unit - 2025 - Pat 1"
 Usage: #example
 * extension[comment].valueString = "IC opname is intensief, en weinig kans op goed herstel"
 * identifier.type = $v2-0203#RI "Resource identifier"
@@ -40,9 +40,9 @@ Usage: #example
 * provision.code = $snomed#305351004 "opname op intensive care"
 
 
-Instance: ACP-TreatmentDirective-89666000-Pat1
+Instance: ACP-TreatmentDirective-CardiopulmonaryResuscitation-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 89666000 Pat 1"
+Title: "ACP TreatmentDirective - Cardiopulmonary resuscitation - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -60,9 +60,9 @@ Usage: #example
 * sourceReference = Reference(ACP-AdvanceDirective-DNR-Pat1) "ACP Advance Directive DNR"
 
 
-Instance: ACP-TreatmentDirective-40617009-Pat1
+Instance: ACP-TreatmentDirective-ArtificialRespiration-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 40617009 Pat 1"
+Title: "ACP TreatmentDirective - Artificial respiration - 2025 - Pat 1"
 Usage: #example
 * extension[comment].valueString = "Weinig kans om nog van de beademing af te komen door conditie"
 * identifier.type = $v2-0203#RI "Resource identifier"
@@ -80,9 +80,9 @@ Usage: #example
 * provision.code = $snomed#40617009 "kunstmatige beademing"
 
 
-Instance: ACP-TreatmentDirective-116762002-Pat1
+Instance: ACP-TreatmentDirective-AdministrationOfBloodProduct-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 116762002 Pat 1"
+Title: "ACP TreatmentDirective - Administration of blood product - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -99,9 +99,9 @@ Usage: #example
 * provision.code = $snomed#116762002 "toediening van bloedproduct"
 
 
-Instance: ACP-TreatmentDirective-281789004-Pat1
+Instance: ACP-TreatmentDirective-AntibioticTherapy-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 281789004 Pat 1"
+Title: "ACP TreatmentDirective - Antibiotic therapy - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -119,9 +119,9 @@ Usage: #example
 * provision.code = $snomed#281789004 "antibiotische therapie"
 
 
-Instance: ACP-TreatmentDirective-32485007-Pat1
+Instance: ACP-TreatmentDirective-HospitalAdmission-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 32485007 Pat 1"
+Title: "ACP TreatmentDirective - Hospital admission - 2025 - Pat 1"
 Usage: #example
 * extension[comment].valueString = "Patiënt wil deze behandelgrens graag over een aantal maanden opnieuw bespreken"
 * identifier.type = $v2-0203#RI "Resource identifier"
@@ -140,9 +140,9 @@ Usage: #example
 * provision.code = $snomed#32485007 "opname in ziekenhuis"
 
 
-Instance: ACP-TreatmentDirective-OTH-Pat1
+Instance: ACP-TreatmentDirective-Other-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective OTH Pat 1"
+Title: "ACP TreatmentDirective - Other - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -160,9 +160,9 @@ Usage: #example
 * provision.code.text = "toedienen van enterale voeding (SNOMED CT - 229912004)" // like this?
 
 
-Instance: ACP-TreatmentDirective-400231000146108-Pat1
+Instance: ACP-TreatmentDirective-SwitchOffICD-2025-Pat1
 InstanceOf: ACPTreatmentDirective
-Title: "ACP TreatmentDirective 400231000146108 Pat 1"
+Title: "ACP TreatmentDirective - Switch Off ICD - 2025 - Pat 1"
 Usage: #example
 * extension[comment].valueString = "Hendrik wil het er nog niet over hebben"
 * modifierExtension[specificationOther].valueString = "Nee, nog geen besluit genomen" // not possible to mention ASKU somewhere? 

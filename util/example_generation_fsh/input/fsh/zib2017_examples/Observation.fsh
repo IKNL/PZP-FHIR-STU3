@@ -1,6 +1,6 @@
-Instance: ACP-SpecificCareWishes-Pat1
+Instance: ACP-SpecificCareWishes-2025-Pat1
 InstanceOf: ACPSpecificCareWishes
-Title: "ACP Specific Care Wishes Pat 1"
+Title: "ACP Specific Care Wishes - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -8,16 +8,16 @@ Usage: #example
 * status = #final
 * code =  $snomed#153851000146100 "wensen en verwachtingen met betrekking tot uitkomst van behandeling"
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter, 2025-07-29"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * valueString = "Broer Michiel is erg betrokken bij het proces van Hendrik. Het gaat de laatste tijd een stuk slechter en Hendrik denkt vaker na over de dood. Hij is niet bang, maar vindt het lastig om zijn familie achter te laten."
 * method = $snomed#370819000 "vaststellen van persoonlijke waarden en wensen met betrekking tot zorg" 
 
 
-Instance: ACP-PreferredPlaceOfDeath-Home-Pat1
+Instance: ACP-PreferredPlaceOfDeath-2025-Pat1
 InstanceOf: ACPPreferredPlaceOfDeath
-Title: "ACP Preferred Place Of Death Home Pat 1"
+Title: "ACP Preferred Place of Death - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -25,16 +25,16 @@ Usage: #example
 * status = #final
 * code =  $snomed#395091006 "Preferred place of death"
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter, 2025-07-29"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * valueCodeableConcept = $snomed#264362003 "thuis"
 * note.text = "Het liefst rustig thuis"
 
 
-Instance: ACP-PositionRegardingEuthanasia-No-Pat1
+Instance: ACP-PositionRegardingEuthanasia-2025-Pat1
 InstanceOf: ACPPositionRegardingEuthanasia
-Title: "ACP Position Regarding Euthanasia No Pat 1"
+Title: "ACP Position Regarding Euthanasia - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -42,15 +42,15 @@ Usage: #example
 * status = #final
 * code =  $snomed#340171000146104 "standpunt ten opzichte van euthanasie"
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter, 2025-07-29"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * valueCodeableConcept = $snomed#340201000146103 "wil geen euthanasie"
 
 
-Instance: ACP-OrganDonationChoiceRegistration-Yes-Pat1
+Instance: ACP-OrganDonationChoiceRegistration-2025-Pat1
 InstanceOf: ACPOrganDonationChoiceRegistration
-Title: "ACP Donor Registration Yes Pat 1"
+Title: "ACP Organ Donation Choice Registration in Donor Register - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -58,15 +58,15 @@ Usage: #example
 * status = #final
 * code = $snomed#570801000146104 "geregistreerd in orgaan donorregister" 
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter, 2025-07-29"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * valueCodeableConcept = $snomed#373066001 "ja"
 
 
-Instance: ACP-SenseOfPurpose-Pat1
+Instance: ACP-SenseOfPurpose-2025-Pat1
 InstanceOf: ACPSenseOfPurpose
-Title: "ACP Sense Of Purpose Pat 1"
+Title: "ACP Sense of Purpose - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -74,7 +74,7 @@ Usage: #example
 * status = #final
 * code =  $snomed#247751003 "gevoel van zingeving"
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter, 2025-07-29"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
 * performer = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * valueString = "Hendrik wordt erg vrolijk van tulpen"

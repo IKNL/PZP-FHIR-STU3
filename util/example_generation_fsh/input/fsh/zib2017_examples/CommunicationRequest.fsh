@@ -1,6 +1,6 @@
-Instance: ACP-InformRelativesRequest-29-07-2025-Pat1
+Instance: ACP-InformRelativesRequest-2025-Pat1
 InstanceOf: ACPInformRelativesRequest
-Title: "ACP InformRelativesRequest 29-07-2025 Pat1"
+Title: "ACP Request to Inform Relatives - 2025 - Pat1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -10,7 +10,7 @@ Usage: #example
 * status = #completed
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
 * authoredOn = "2025-07-29"
-* encounter = Reference(ACP-Encounter-29-07-2025-Pat1) "Encounter on 29-07-2025"
+* encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter on 29-07-2025"
 * requester = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * recipient = Reference(ACP-ContactPerson-MichielHartman-Pat1) "ContactPerson, Michiel Hartman"
 * sender = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"

@@ -1,6 +1,6 @@
-Instance: ACP-Medical-Policy-Goal-Pat1
+Instance: ACP-Medical-Policy-Goal-2025-Pat1
 InstanceOf: ACPMedicalPolicyGoal
-Title: "ACP Medical Policy Goal - Symptom management Pat 1"
+Title: "ACP Medical Policy Goal - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"

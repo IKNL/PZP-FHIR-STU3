@@ -1,6 +1,6 @@
-Instance: ACP-Encounter-29-07-2025-Pat1
+Instance: ACP-Encounter-2025-Pat1
 InstanceOf: ACPEncounter
-Title: "ACP Encounter 29-07-2025"
+Title: "ACP Encounter - 2025 - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -14,4 +14,4 @@ Usage: #example
 * participant[=].individual.type = "RelatedPerson"
 * period.start = "2025-07-29"
 * period.end = "2025-07-29"
-* reasonReference = Reference(ACP-Procedure-29-07-2025-Pat1) "Procedure, ACP"
+* reasonReference = Reference(ACP-Procedure-2025-Pat1) "Procedure, ACP"

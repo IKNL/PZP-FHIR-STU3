@@ -1,7 +1,6 @@
-
 Instance: ACP-ContactPerson-MichielHartman-Pat1
 InstanceOf: ACPContactPerson
-Title: "ACP ContactPerson Michiel HartmanPat 1"
+Title: "ACP ContactPerson - Michiel Hartman - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
@@ -19,7 +18,7 @@ Usage: #example
 * name[=].family.extension[=].valueString = "Hartman"
 * name[=].given[0] = "M"
 * name[=].given[=].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
-* name[=].given[=].extension.valueCode = #IN // not sure if I should also include initials
+* name[=].given[=].extension.valueCode = #IN
 * name[=].given[1] = "Michiel"
 * name[=].given[=].extension.url = "http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier"
 * name[=].given[=].extension.valueCode = #BR
@@ -57,7 +56,7 @@ Usage: #example
 
 Instance: ACP-ContactPerson-MirjamDeLeeuwHartman-Pat1
 InstanceOf: ACPContactPerson
-Title: "ACP ContactPerson1 Mirjam de Leeuw Hartman Pat 1"
+Title: "ACP ContactPerson - Mirjam de Leeuw Hartman - Pat 1"
 Usage: #example
 * identifier.type = $v2-0203#RI "Resource identifier"
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
