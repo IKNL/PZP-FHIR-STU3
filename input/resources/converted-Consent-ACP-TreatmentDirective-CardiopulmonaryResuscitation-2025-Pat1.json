@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "ACP-TreatmentDirective-32485007-Pat1",
+  "id": "ACP-TreatmentDirective-CardiopulmonaryResuscitation-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "1e632040-9fec-4420-b3e7-9f6ff2fcfc15"
+    "value": "ac1784f4-2c3a-4691-ab5b-e3489696cc51"
   },
   "status": "active",
   "category": [
@@ -36,11 +36,12 @@
     "display": "Patient, Hendrik Hartman"
   },
   "dateTime": "2025-07-29",
-  "extension": [
+  "policy": [
     {
-      "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
-      "valueString": "Patiënt wil deze behandelgrens graag over een aantal maanden opnieuw bespreken"
-    },
+      "uri": "https://wetten.overheid.nl/"
+    }
+  ],
+  "extension": [
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
@@ -72,17 +73,12 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "32485007",
+            "code": "89666000",
             "system": "http://snomed.info/sct",
-            "display": "opname in ziekenhuis"
+            "display": "cardiopulmonale resuscitatie"
           }
         ]
       }
-    }
-  ],
-  "policy": [
-    {
-      "uri": "https://wetten.overheid.nl/"
     }
   ],
   "modifierExtension": [
@@ -92,8 +88,8 @@
         "coding": [
           {
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-            "code": "JA",
-            "display": "Ja"
+            "code": "NEE",
+            "display": "Nee"
           }
         ]
       }
@@ -101,10 +97,7 @@
   ],
   "except": [
     {
-      "type": "permit"
+      "type": "deny"
     }
-  ],
-  "period": {
-    "end": "2025-12-05"
-  }
+  ]
 }

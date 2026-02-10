@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "ACP-TreatmentDirective-281789004-Pat1",
+  "id": "ACP-TreatmentDirective-AdministrationOfBloodProduct-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "2bb2cbb4-2692-49c4-81e0-02b9f09d4328"
+    "value": "dfdefd0d-8d59-42ac-8f05-0db4627f5b7c"
   },
   "status": "active",
   "category": [
@@ -73,9 +73,9 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "281789004",
+            "code": "116762002",
             "system": "http://snomed.info/sct",
-            "display": "antibiotische therapie"
+            "display": "toediening van bloedproduct"
           }
         ]
       }
@@ -88,8 +88,8 @@
         "coding": [
           {
             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-            "code": "JA_MAAR",
-            "display": "Ja, maar met beperkingen"
+            "code": "JA",
+            "display": "Ja"
           }
         ]
       }
@@ -97,13 +97,7 @@
   ],
   "except": [
     {
-      "type": "deny",
-      "extension": [
-        {
-          "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Restrictions",
-          "valueString": "Alleen als het bijdraagt aan symptoomverlichting of betere kwaliteit van leven"
-        }
-      ]
+      "type": "permit"
     }
   ]
 }

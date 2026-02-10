@@ -7,11 +7,11 @@
     ]
   },
   "context": {
-    "reference": "Encounter/ACP-Encounter-29-07-2025-Pat1",
-    "display": "Encounter, 2025-07-29"
+    "reference": "Encounter/ACP-Encounter-Pat1",
+    "display": "Encounter, 2020-10-01"
   },
-  "effectiveDateTime": "2025-07-29",
-  "valueString": "Hendrik wordt erg vrolijk van tulpen",
+  "effectiveDateTime": "2020-10-01",
+  "valueString": "Hendrik gaat nadenken over wat hij belangrijk vindt. Over een tijdje vervolggesprek",
   "identifier": [
     {
       "type": {
@@ -24,15 +24,15 @@
         ]
       },
       "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-      "value": "8d2ba0a3-1a15-4066-9d6a-af596c826cbe"
+      "value": "eef80c58-5721-45fa-8f05-210f9e1f0b63"
     }
   ],
   "status": "final",
   "code": {
     "coding": [
       {
-        "system": "http://snomed.info/sct",
         "code": "247751003",
+        "system": "http://snomed.info/sct",
         "display": "gevoel van zingeving"
       }
     ]

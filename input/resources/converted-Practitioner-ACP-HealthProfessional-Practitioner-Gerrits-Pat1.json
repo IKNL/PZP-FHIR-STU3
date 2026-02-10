@@ -1,6 +1,6 @@
 {
   "resourceType": "Practitioner",
-  "id": "ACP-HealthProfessional-Practitioner-Santos-Pat1",
+  "id": "ACP-HealthProfessional-Practitioner-Gerrits-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner"
@@ -9,7 +9,7 @@
   "name": [
     {
       "use": "official",
-      "text": "Richard Santos"
+      "text": "Adam Gerrits"
     }
   ]
 }

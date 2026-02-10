@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "ACP-TreatmentDirective-OTH-Pat1",
+  "id": "ACP-TreatmentDirective-SwitchOffICD-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "3f5faabb-b114-486a-b384-ded484710afb"
+    "value": "6e644b65-aac4-4af2-9090-60f848767c61"
   },
   "status": "active",
   "category": [
@@ -36,12 +36,11 @@
     "display": "Patient, Hendrik Hartman"
   },
   "dateTime": "2025-07-29",
-  "policy": [
-    {
-      "uri": "https://wetten.overheid.nl/"
-    }
-  ],
   "extension": [
+    {
+      "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
+      "valueString": "Hendrik wil het er nog niet over hebben"
+    },
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
@@ -78,8 +77,13 @@
             "display": "other"
           }
         ],
-        "text": "toedienen van enterale voeding (SNOMED CT - 229912004)"
+        "text": "uitzetten van cardioverter-defibrillator in laatste levensfase (SNOMED CT - 400231000146108)"
       }
+    }
+  ],
+  "policy": [
+    {
+      "uri": "https://wetten.overheid.nl/"
     }
   ],
   "modifierExtension": [
@@ -88,17 +92,12 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-            "code": "NEE",
-            "display": "Nee"
+            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+            "code": "ASKU",
+            "display": "Nee, nog geen besluit genomen"
           }
         ]
       }
-    }
-  ],
-  "except": [
-    {
-      "type": "deny"
     }
   ]
 }

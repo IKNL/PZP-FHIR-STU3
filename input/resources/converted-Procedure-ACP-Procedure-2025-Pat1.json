@@ -1,29 +1,12 @@
 {
   "resourceType": "Procedure",
-  "id": "ACP-Procedure-29-07-2025-Pat1",
+  "id": "ACP-Procedure-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure"
     ]
   },
   "status": "completed",
-  "performer": [
-    {
-      "actor": {
-        "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
-        "display": "Healthcare professional (person), van Huissen",
-        "extension": [
-          {
-            "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
-            "valueReference": {
-              "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
-              "display": "Healthcare professional (role), van Huissen"
-            }
-          }
-        ]
-      }
-    }
-  ],
   "identifier": [
     {
       "type": {

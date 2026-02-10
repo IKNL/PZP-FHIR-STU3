@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "ACP-TreatmentDirective-116762002-Pat1",
+  "id": "ACP-TreatmentDirective-HospitalAdmission-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
@@ -17,7 +17,7 @@
       ]
     },
     "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-    "value": "dfdefd0d-8d59-42ac-8f05-0db4627f5b7c"
+    "value": "1e632040-9fec-4420-b3e7-9f6ff2fcfc15"
   },
   "status": "active",
   "category": [
@@ -36,12 +36,11 @@
     "display": "Patient, Hendrik Hartman"
   },
   "dateTime": "2025-07-29",
-  "policy": [
-    {
-      "uri": "https://wetten.overheid.nl/"
-    }
-  ],
   "extension": [
+    {
+      "url": "http://nictiz.nl/fhir/StructureDefinition/Comment",
+      "valueString": "Patiënt wil deze behandelgrens graag over een aantal maanden opnieuw bespreken"
+    },
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-TreatmentDirective-Verification",
       "extension": [
@@ -73,12 +72,17 @@
       "valueCodeableConcept": {
         "coding": [
           {
-            "code": "116762002",
+            "code": "32485007",
             "system": "http://snomed.info/sct",
-            "display": "toediening van bloedproduct"
+            "display": "opname in ziekenhuis"
           }
         ]
       }
+    }
+  ],
+  "policy": [
+    {
+      "uri": "https://wetten.overheid.nl/"
     }
   ],
   "modifierExtension": [
@@ -99,5 +103,8 @@
     {
       "type": "permit"
     }
-  ]
+  ],
+  "period": {
+    "end": "2025-12-05"
+  }
 }

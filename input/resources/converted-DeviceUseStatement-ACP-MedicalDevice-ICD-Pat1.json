@@ -27,7 +27,7 @@
     "display": "Patient, Hendrik Hartman"
   },
   "device": {
-    "reference": "Device/ACP-MedicalDevice.Product-ICD-Pat1"
+    "reference": "Device/ACP-MedicalDeviceProduct-ICD-Pat1"
   },
   "bodySite": {
     "extension": [
@@ -59,14 +59,14 @@
     {
       "url": "http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Practitioner",
       "valueReference": {
-        "reference": "Practitioner/ACP-HealthProfessional-Practitioner-Santos-Pat1",
-        "display": "Healthcare professional (person), Santos",
+        "reference": "Practitioner/ACP-HealthProfessional-Practitioner-Gerrits-Pat1",
+        "display": "Healthcare professional (person), Gerrits",
         "extension": [
           {
             "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
             "valueReference": {
-              "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-Santos-Pat1",
-              "display": "Healthcare professional, Santos"
+              "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-Gerrits-Pat1",
+              "display": "Healthcare professional, Gerrits"
             }
           }
         ]

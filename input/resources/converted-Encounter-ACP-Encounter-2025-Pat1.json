@@ -1,6 +1,6 @@
 {
   "resourceType": "Encounter",
-  "id": "ACP-Encounter-29-07-2025-Pat1",
+  "id": "ACP-Encounter-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
@@ -34,17 +34,8 @@
   "participant": [
     {
       "individual": {
-        "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
-        "display": "Healthcare professional (person), van Huissen",
-        "extension": [
-          {
-            "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
-            "valueReference": {
-              "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
-              "display": "Healthcare professional (role), van Huissen"
-            }
-          }
-        ]
+        "reference": "ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
+        "display": "Healthcare professional (role), van Huissen"
       }
     },
     {
@@ -61,7 +52,7 @@
   "diagnosis": [
     {
       "condition": {
-        "reference": "Procedure/ACP-Procedure-29-07-2025-Pat1",
+        "reference": "Procedure/ACP-Procedure-2025-Pat1",
         "display": "Procedure, ACP"
       }
     }

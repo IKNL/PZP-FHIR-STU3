@@ -1,6 +1,6 @@
 {
   "resourceType": "PractitionerRole",
-  "id": "ACP-HealthProfessional-PractitionerRole-Santos-Pat1",
+  "id": "ACP-HealthProfessional-PractitionerRole-Gerrits-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-PractitionerRole"
@@ -22,7 +22,7 @@
     }
   ],
   "practitioner": {
-    "reference": "Practitioner/ACP-HealthProfessional-Practitioner-Santos-Pat1",
-    "display": "Healthcare professional (person), Santos"
+    "reference": "Practitioner/ACP-HealthProfessional-Practitioner-Gerrits-Pat1",
+    "display": "Healthcare professional (person), Gerrits"
   }
 }

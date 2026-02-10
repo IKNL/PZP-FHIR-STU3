@@ -1,6 +1,6 @@
 {
   "resourceType": "Consent",
-  "id": "ACP-TreatmentDirective-305351004-Pat1",
+  "id": "ACP-TreatmentDirective-AdmissionToICU-2025-Pat1",
   "meta": {
     "profile": [
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective"
