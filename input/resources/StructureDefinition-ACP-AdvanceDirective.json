@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-AdvanceDirective",
   "version": "1.0.0-rc1",
   "name": "ACPAdvanceDirective",
-  "title": "AdvanceDirective",
+  "title": "ACP AdvanceDirective",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

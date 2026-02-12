@@ -1,0 +1,24 @@
+{
+  "resourceType": "Device",
+  "id": "ACP-MedicalDeviceProduct-ICD-Pat2",
+  "meta": {
+    "profile": [
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice.Product-ICD"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://www.gs1.org/gtin",
+      "value": "8700000000001"
+    }
+  ],
+  "type": {
+    "coding": [
+      {
+        "code": "72506001",
+        "system": "http://snomed.info/sct",
+        "display": "implanteerbare cardioverter-defibrillator"
+      }
+    ]
+  }
+}

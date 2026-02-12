@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice",
   "version": "1.0.0-rc1",
   "name": "ACPMedicalDevice",
-  "title": "MedicalDevice",
+  "title": "ACP MedicalDevice",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

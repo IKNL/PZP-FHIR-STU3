@@ -56,9 +56,8 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 %identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'%
 
 # DHD Verrichtingenthesaurus-referentieset (41000147108) referenced from ValueSet bound in profile is not loaded into tx.fhir.org
-ERROR: Procedure/F1-ACP-Procedure-01-10-2020: Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known
-ERROR: Procedure/P1-ACP-Procedure-29-07-2025: Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known
-ERROR: Procedure/P2-ACP-Procedure-07-08-2025: Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known
+%Procedure.code: Error from https://tx.fhir.org/r4: The SNOMED CT Concept 41000147108 is not known%
+
 
 # SNOMED code 570801000146104 is added after 'http://snomed.info/sct/11000146104/version/20240930' which is the one currently known by tx.fhir.org/r4
 %Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'%
@@ -68,8 +67,8 @@ ERROR: Procedure/P2-ACP-Procedure-07-08-2025: Procedure.code: Error from https:/
 %None of the codings provided are in the value set 'Most Important Agreed-upon Goal of Medical Policy'%
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
-ERROR: Goal/F1-ACP-Medical-Policy-Goal: Goal.description.coding[0].code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
-ERROR: Goal/F1-ACP-Medical-Policy-Goal: Goal.description: None of the codings provided are in the value set 'Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc1), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)
+%Goal.description.coding[0].code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'%
+%Goal.description: None of the codings provided are in the value set 'Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc1), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)%
 ERROR: ValueSet/ACP-MedicalPolicyGoal: ValueSet.compose.include[0].concept[1]: The code '1351964001' is not valid in the system http://snomed.info/sct (Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930')
 ERROR: Questionnaire/ACP-zib2020: Questionnaire.item[6].item[1].answerOption[1].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[6].item[1].answer[0].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
@@ -78,16 +77,9 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 %None of the codings provided are in the value set 'MedicalDevice ProductType ICD'%
 
 # Definition can be found in the Nictiz package. Not sure why the IG publisher cannot access it. Also not a big deal for this IG.
-WARNING: Practitioner/F1-ACP-HealthProfessional-Practitioner-DrVanHuissen: Practitioner.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
-WARNING: Practitioner/P1-ACP-HealthProfessional-Practitioner-DrVanHuissen: Practitioner.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
-WARNING: Practitioner/P2-ACP-HealthProfessional-Practitioner-DesireeWolters: Practitioner.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
-WARNING: Patient/F1-ACP-Patient-HendrikHartman: Patient.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
-WARNING: Patient/P1-ACP-Patient-HendrikHartman: Patient.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
-WARNING: Patient/P2-ACP-Patient-SamiraVanDerSluijs: Patient.identifier[0].system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
-WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[10].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/big'
-WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'
-WARNING: StructureDefinition/ACP-Patient: StructureDefinition.snapshot.element[40].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'
-WARNING: StructureDefinition/ACP-HealthProfessional-Practitioner: StructureDefinition.snapshot.element[11].pattern.ofType(Identifier).system: No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/uzi-nr-pers'
+%No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/agb-z'%
+%No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/bsn'%
+% No definition could be found for URL value 'http://fhir.nl/fhir/NamingSystem/uzi-nr-pers'%
 
 # Error in the FHIR invariant
 %Constraint failed: que-7: 'enableWhen must contain either a 'answer' or a 'hasAnswer' element' (defined in http://hl7.org/fhir/StructureDefinition/Questionnaire)%

@@ -153,8 +153,8 @@ class FhirR4ToStu3Transformer:
         """
         resource_type = resource_data.get('resourceType')
         
-        # Skip ValueSet, StructureDefinition, ImplementationGuide, Parameters, and SearchParameter resources - these are never converted
-        if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter']:
+        # Skip ValueSet, StructureDefinition, ImplementationGuide, Parameters, SearchParameter, ActorDefinition, and CapabilityStatement resources - these are never converted
+        if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter', 'ActorDefinition', 'CapabilityStatement']:
             return None
         
         if resource_type not in self.transformers:
@@ -187,7 +187,7 @@ class FhirR4ToStu3Transformer:
             
             # Check if this is a resource type we should skip
             resource_type = r4_resource.get('resourceType')
-            if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter']:
+            if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter', 'ActorDefinition', 'CapabilityStatement']:
                 print(f"⏭ Skipping {input_file.name} (type: {resource_type} - not converted)")
                 return None
             
