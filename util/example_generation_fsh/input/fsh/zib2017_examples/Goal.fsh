@@ -1,4 +1,4 @@
-Instance: ACP-Medical-Policy-Goal-2025-Pat1
+Instance: ACP-MedicalPolicyGoal-2025-Pat1
 InstanceOf: ACPMedicalPolicyGoal
 Title: "ACP Medical Policy Goal - 2025 - Pat 1"
 Usage: #example
