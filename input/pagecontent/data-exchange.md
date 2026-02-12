@@ -51,7 +51,7 @@ The below listed search requests show how all the ACP agreements, procedural inf
 
 4 GET [base]/Goal?patient=Patient/[id]&description=http://snomed.info/sct|385987000,1351964001,713148004
 
-5 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003
+5 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003,570801000146104
 
 6 GET [base]/DeviceUseStatement?patient=Patient/[id]&device.type:in=https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD&_include=DeviceUseSatement:device
 
