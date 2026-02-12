@@ -61,7 +61,7 @@
         "type": [
           {
             "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
           }
         ],
         "condition": [

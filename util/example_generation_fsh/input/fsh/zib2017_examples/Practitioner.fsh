@@ -1,6 +1,6 @@
-Instance: P1-ACP-HealthProfessional-Practitioner-DrVanHuissen
+Instance: ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1
 InstanceOf: ACPHealthProfessionalPractitioner
-Title: "P1 ACP HealthProfessional Practitioner Dr. van Huissen"
+Title: "ACP HealthProfessional Practitioner - Dr. van Huissen - Pat 1"
 Usage: #example
 * identifier.system = "http://fhir.nl/fhir/NamingSystem/agb-z"
 * identifier.value = "000002222"
@@ -15,9 +15,9 @@ Usage: #example
 * name[nameInformation-GivenName].given = "Marleen"
 
 
-Instance: P1-ACP-HealthProfessional-Practitioner-Santos
+Instance: ACP-HealthProfessional-Practitioner-Gerrits-Pat1
 InstanceOf: ACPHealthProfessionalPractitioner
-Title: "P1 ACP HealthProfessional Practitioner Santos"
+Title: "ACP HealthProfessional Practitioner - Gerrits - Pat 1"
 Usage: #example
 * name.use = #official
-* name.text = "Richard Santos"
+* name.text = "Adam Gerrits"

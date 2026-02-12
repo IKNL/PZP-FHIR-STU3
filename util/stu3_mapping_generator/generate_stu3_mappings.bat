@@ -5,10 +5,11 @@ REM Generates mapping table from STU3 StructureDefinition JSON files
 echo === STU3 Mapping Table Generator ===
 echo.
 
-cd /d "%~dp0"
+REM Change to repository root (two directories up from this script)
+cd /d "%~dp0..\.."
 
-REM Run the Python script
-python stu3_mapping_table_generator.py
+REM Run the Python script from the util/stu3_mapping_generator directory
+python util\stu3_mapping_generator\stu3_mapping_table_generator.py
 
 if %ERRORLEVEL% NEQ 0 (
     echo.
