@@ -59,7 +59,8 @@
     "coding": [
       {
         "system": "http://snomed.info/sct",
-        "code": "1156040003"
+        "code": "1156040003",
+        "display": "self reported"
       }
     ]
   }

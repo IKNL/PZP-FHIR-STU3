@@ -1,7 +1,7 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ACP-Medical-Policy-Goal",
-  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Medical-Policy-Goal",
+  "id": "ACP-MedicalPolicyGoal",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACPMedicalPolicyGoal",
   "version": "1.0.0-rc1",
   "name": "ACPMedicalPolicyGoal",
   "title": "ACP Medical Policy Goal",
@@ -53,6 +53,19 @@
             "comment": "MetingNaam voor Belangrijkste doel van behandeling"
           }
         ]
+      },
+      {
+        "id":"Goal.category",
+        "path":"Goal.category",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "713603004"
+            }
+          ]
+        }
       },
       {
         "id": "Goal.description",
