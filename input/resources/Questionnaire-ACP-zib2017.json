@@ -57,7 +57,7 @@
     {
       "linkId": "6",
       "text": "Geboortedatum patiënt",
-      "type": "dateTime",
+      "type": "date",
       "required": false,
       "repeats": false,
       "code": [
@@ -782,6 +782,57 @@
                 }
               ],
               "repeats": false
+            },
+            {
+              "type": "choice",
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/questionnaire-item-control",
+                        "code": "drop-down",
+                        "display": "Drop down"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "linkId": "819",
+              "code": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                  "code": "1"
+                }
+              ],
+              "text": "Rol",
+              "enableWhen": [
+                {
+                  "question": "52",
+                  "answerCoding": {
+                    "code": "0",
+                    "display": "Nee"
+                  }
+                }
+              ],
+              "required": false,
+              "repeats": false,
+              "readOnly": true,
+              "initialCoding": {
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                "code": "1",
+                "display": "Eerste relatie/contactpersoon"
+              },
+              "option": [
+                {
+                  "valueCoding": {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                    "code": "1",
+                    "display": "Eerste relatie/contactpersoon"
+                  }
+                }
+              ]
             },
             {
               "item": [
