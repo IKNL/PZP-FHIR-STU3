@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient",
   "version": "1.0.0-rc1",
   "name": "ACPPatient",
-  "title": "Patient",
+  "title": "ACP Patient",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -61,7 +61,7 @@
         "type": [
           {
             "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
           }
         ],
         "condition": [

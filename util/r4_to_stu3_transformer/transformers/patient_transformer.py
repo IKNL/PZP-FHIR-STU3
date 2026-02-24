@@ -85,7 +85,7 @@ class PatientTransformer(BaseTransformer):
         
         # Extensions to preserve as-is
         preserved_extensions = [
-            "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+            "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
         ]
         
         for r4_extension in r4_resource["extension"]:
@@ -165,7 +165,7 @@ class PatientTransformer(BaseTransformer):
                 "extension": "Preserves specific extensions as-is"
             },
             "preserved_extensions": {
-                "ext-LegallyCapable-MedicalTreatmentDecisions": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+                "ext-Patient.LegallyCapableMedicalTreatmentDecisions": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
             },
             "excluded_features": {
                 "patient-animal": "Animal extension mapping not implemented"

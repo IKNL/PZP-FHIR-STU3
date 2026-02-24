@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-PositionRegardingEuthanasia",
   "version": "1.0.0-rc1",
   "name": "ACPPositionRegardingEuthanasia",
-  "title": "Position Regarding Euthanasia",
+  "title": "ACP Position Regarding Euthanasia",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

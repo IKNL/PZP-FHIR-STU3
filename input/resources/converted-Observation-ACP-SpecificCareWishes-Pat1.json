@@ -1,0 +1,68 @@
+{
+  "resourceType": "Observation",
+  "id": "ACP-SpecificCareWishes-Pat1",
+  "meta": {
+    "profile": [
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SpecificCareWishes"
+    ]
+  },
+  "context": {
+    "reference": "Encounter/ACP-Encounter-Pat1",
+    "display": "Encounter, 2020-10-01"
+  },
+  "effectiveDateTime": "2020-10-01",
+  "valueString": "Hendrik wil er alles aan doen om zo lang mogelijk in goede gezondheid te kunnen leven. Hij probeert regelmatig te sporten en zou graag willen blijven hardlopen. Broer Michiel woont om de hoek en is erg betrokken bij het proces van Hendrik",
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "RI",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "display": "Resource identifier"
+          }
+        ]
+      },
+      "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
+      "value": "c68d0feb-ee43-45d5-86f5-a7f43a20f167"
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "153851000146100",
+        "system": "http://snomed.info/sct",
+        "display": "wensen en verwachtingen met betrekking tot uitkomst van behandeling"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/ACP-Patient-HendrikHartman-Pat1",
+    "display": "Patient, Hendrik Hartman"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
+      "display": "Healthcare professional (person), van Huissen",
+      "extension": [
+        {
+          "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+          "valueReference": {
+            "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
+            "display": "Healthcare professional (role), van Huissen"
+          }
+        }
+      ]
+    }
+  ],
+  "method": {
+    "coding": [
+      {
+        "code": "370819000",
+        "system": "http://snomed.info/sct",
+        "display": "vaststellen van persoonlijke waarden en wensen met betrekking tot zorg (verrichting)"
+      }
+    ]
+  }
+}

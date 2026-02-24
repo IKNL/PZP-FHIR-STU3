@@ -125,14 +125,13 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 63 | &emsp;EindDatum | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.period.end`  |
 | 64 | &emsp;Toelichting | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.extension:comment`  |
 | 65 | &emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.extension:additionalSources`  |
-| 65 | &emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.source[x]:sourceReference`  |
+| 65 | &emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.source[x]`  |
 | 66 | &emsp;&emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent`  |
 | 218 | Heeft de patient een ICD? | DeviceUseStatement (<a href="StructureDefinition-ACP-MedicalDevice.html">ACPMedicalDevice</a>) | `DeviceUseStatement`  |
 | 75 | ICD (MedischHulpmiddel) | DeviceUseStatement (<a href="StructureDefinition-ACP-MedicalDevice.html">ACPMedicalDevice</a>) | `DeviceUseStatement`  |
 | 76 | &emsp;Product | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device`  |
 | 76 | &emsp;Product | DeviceUseStatement (<a href="StructureDefinition-ACP-MedicalDevice.html">ACPMedicalDevice</a>) | `DeviceUseStatement.device`  |
-| 77 | &emsp;&emsp;ProductID | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.identifier:gs1ProductID`  |
-| 77 | &emsp;&emsp;ProductID | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.identifier:hibcProductID`  |
+| 77 | &emsp;&emsp;ProductID | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.identifier:serialNumber`  |
 | 77 | &emsp;&emsp;ProductID | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.udi.carrierHRF`  |
 | 78 | &emsp;&emsp;ProductType van ICD | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.type`  |
 | 79 | &emsp;ProductOmschrijving | Device (<a href="StructureDefinition-ACP-MedicalDevice.Product-ICD.html">ACPMedicalDeviceProductICD</a>) | `Device.note.text`  |
@@ -155,7 +154,7 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 98 | &emsp;BeginDatum | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.period.start`  |
 | 99 | &emsp;EindDatum | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.period.end`  |
 | 100 | &emsp;Toelichting | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.extension:comment`  |
-| 101 | &emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.source[x]:sourceReference`  |
+| 101 | &emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.source[x]`  |
 | 102 | &emsp;&emsp;Wilsverklaring | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent`  |
 | 190 | Specifieke wensen (AlgemeneMeting) | Observation (<a href="StructureDefinition-ACP-SpecificCareWishes.html">ACPSpecificCareWishes</a>) | `Observation`  |
 | 203 | &emsp;&emsp;Wens en verwachting patient (MetingNaam) | Observation (<a href="StructureDefinition-ACP-SpecificCareWishes.html">ACPSpecificCareWishes</a>) | `Observation.code`  |
@@ -178,7 +177,7 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 166 | Euthanasieverklaring (Wilsverklaring) | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent`  |
 | 175 | &emsp;Euthanasieverklaring (WilsverklaringType) | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.category:typeOfLivingWill`  |
 | 176 | &emsp;WilsverklaringDatum | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.dateTime`  |
-| 181 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]:sourceAttachment`  |
+| 181 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]`  |
 | 737 | Keuze orgaandonatie vastgelegd in donorregister? (AlgemeneMeting) | Observation (<a href="StructureDefinition-ACP-OrganDonationChoiceRegistration.html">ACPOrganDonationChoiceRegistration</a>) | `Observation`  |
 | 742 | &emsp;&emsp;MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister? | Observation (<a href="StructureDefinition-ACP-OrganDonationChoiceRegistration.html">ACPOrganDonationChoiceRegistration</a>) | `Observation.code`  |
 | 743 | &emsp;&emsp;Keuze orgaandonatie in donorregister (UitslagWaarde) | Observation (<a href="StructureDefinition-ACP-OrganDonationChoiceRegistration.html">ACPOrganDonationChoiceRegistration</a>) | `Observation.value[x]`  |
@@ -188,7 +187,7 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 125 | &emsp;WilsverklaringDatum | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.dateTime`  |
 | 126 | &emsp;Aandoening | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.extension:disorder`  |
 | 128 | &emsp;Vertegenwoordiger | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.consentingParty`  |
-| 130 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]:sourceAttachment`  |
+| 130 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]`  |
 | 131 | &emsp;Toelichting | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.extension:comment`  |
 | 132 | Wat verder nog belangrijk is (AlgemeneMeting) | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation`  |
 | 212 | &emsp;&emsp;MetingNaam voor Wat verder nog belangrijk is | Observation (<a href="StructureDefinition-ACP-SenseOfPurpose.html">ACPSenseOfPurpose</a>) | `Observation.code`  |
@@ -200,6 +199,6 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 141 | &emsp;WilsverklaringDatum | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.dateTime`  |
 | 142 | &emsp;Aandoening | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.extension:disorder`  |
 | 144 | &emsp;Vertegenwoordiger | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.consentingParty`  |
-| 146 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]:sourceAttachment`  |
+| 146 | &emsp;WilsverklaringDocument | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.source[x]`  |
 | 147 | &emsp;Toelichting | Consent (<a href="StructureDefinition-ACP-AdvanceDirective.html">ACPAdvanceDirective</a>) | `Consent.extension:comment`  |
-| 187 | Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken? | Communication (<a href="StructureDefinition-ACP-Communication.html">ACPCommunication</a>) | `Communication`  |
+| 187 | Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken? | CommunicationRequest (<a href="StructureDefinition-ACP-InformRelativesRequest.html">ACPInformRelativesRequest</a>) | `CommunicationRequest`  |

@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-InformRelativesRequest",
   "version": "1.0.0-rc1",
   "name": "ACPInformRelativesRequest",
-  "title": "Inform Relatives Request",
+  "title": "ACP Inform Relatives Request",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

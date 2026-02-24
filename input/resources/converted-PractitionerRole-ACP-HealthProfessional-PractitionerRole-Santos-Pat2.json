@@ -1,0 +1,28 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "ACP-HealthProfessional-PractitionerRole-Santos-Pat2",
+  "meta": {
+    "profile": [
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-PractitionerRole"
+    ]
+  },
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "RI",
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "display": "Resource identifier"
+          }
+        ]
+      },
+      "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
+      "value": "e38a934b-2f66-4ae4-954d-f1aee1d8f378"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/ACP-HealthProfessional-Practitioner-Santos-Pat2",
+    "display": "Healthcare professional (person), Santos"
+  }
+}

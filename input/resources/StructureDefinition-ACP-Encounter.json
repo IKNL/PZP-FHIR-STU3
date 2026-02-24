@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter",
   "version": "1.0.0-rc1",
   "name": "ACPEncounter",
-  "title": "Encounter",
+  "title": "ACP Encounter",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

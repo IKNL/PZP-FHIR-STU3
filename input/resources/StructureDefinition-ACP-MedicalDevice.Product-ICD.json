@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalDevice.Product-ICD",
   "version": "1.0.0-rc1",
   "name": "ACPMedicalDeviceProductICD",
-  "title": "MedicalDevice Product ICD",
+  "title": "ACP MedicalDevice Product ICD",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

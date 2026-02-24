@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration",
   "version": "1.0.0-rc1",
   "name": "ACPOrganDonationChoiceRegistration",
-  "title": "Organ donation choice registration in donor register",
+  "title": "ACP Organ Donation Choice Registration in Donor Register",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -20,7 +20,7 @@
       ]
     }
   ],
-  "description": "Answer, captured in an observation, to the question: 'Is the choice on organ donation recorded in the donor register?' Based on Observation resource.",
+  "description": "Observation capturing whether the patient's organ donation choice is recorded in the donor register as reported by the patient. It is intended to track the administrative status of the decision rather than the clinical or legal specifics of the donation choice itself. This information is exchanged so the next caregiver knows whether the topic requires attention in future ACP conversations. Based on Observation resource.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "3.0.2",
   "mapping": [
@@ -131,6 +131,19 @@
             "comment": "Keuze orgaandonatie in donorregister (UitslagWaarde)"
           }
         ]
+      },
+      {
+        "id": "Observation.method",
+        "path": "Observation.method",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1156040003"
+            }
+          ]
+        }
       }
     ]
   }

@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-EuthanasiaStatement",
   "version": "1.0.0-rc1",
   "name": "ACPEuthanasiaStatementVS",
-  "title": "Euthanasia Statement",
+  "title": "ACP Euthanasia Statement",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

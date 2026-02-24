@@ -4,7 +4,7 @@
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Medical-Policy-Goal",
   "version": "1.0.0-rc1",
   "name": "ACPMedicalPolicyGoal",
-  "title": "Medical Policy Goal",
+  "title": "ACP Medical Policy Goal",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",

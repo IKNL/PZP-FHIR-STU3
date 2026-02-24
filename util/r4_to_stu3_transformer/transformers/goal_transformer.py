@@ -48,7 +48,7 @@ class GoalTransformer(BaseTransformer):
         # Transform specific Goal fields
         self._transform_status_fields(r4_resource, stu3_resource)
         self._transform_start_field(r4_resource, stu3_resource)
-        self._transform_target(r4_resource, stu3_resource)
+        self._transform_target_array(r4_resource, stu3_resource)
         
         # Clean references throughout the resource
         stu3_resource = self.clean_references_in_object(stu3_resource)
