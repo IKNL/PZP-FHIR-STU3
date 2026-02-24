@@ -9,6 +9,7 @@ Usage: #example
 * patient.type = "Patient"
 * relationship[0] = urn:oid:2.16.840.1.113883.2.4.3.11.22.472#24 "Wettelijke vertegenwoordiger"
 * relationship[+] = $v3-RoleCode#BRO "Brother"
+* relationship[+] = $snomed#310141000146103 "Schriftelijk gemachtigde zorg en behandeling"
 * name[0].extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order"
 * name[=].extension.valueCode = #NL1
 * name[=].use = #official

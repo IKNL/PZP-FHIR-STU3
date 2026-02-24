@@ -24,7 +24,6 @@
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "3.0.2",
   "mapping": [
-
     {
       "identity": "pall-izppz-zib2017v2025-03-11",
       "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
@@ -41,6 +40,14 @@
       {
         "id": "RelatedPerson",
         "path": "RelatedPerson",
+        "constraint": [
+          {
+            "key": "ACP-ContactPerson-1",
+            "severity": "error",
+            "human": "If the SNOMED CT code 310141000146103 (Holder of medical power of attorney) is present in the role extension, then another role exention with role code 24 (Wettelijke vertegenwoordiger) from code system urn:oid:2.16.840.1.113883.2.4.3.11.22.472 must also be present.",
+            "expression": "extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').valueCodeableConcept.coding.where(system = 'http://snomed.info/sct' and code = '310141000146103').exists() implies extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').valueCodeableConcept.coding.where(system = 'urn:oid:2.16.840.1.113883.2.4.3.11.22.472' and code = '24').exists()"
+          }
+        ],
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",
@@ -63,6 +70,9 @@
         "id": "RelatedPerson.extension:role",
         "path": "RelatedPerson.extension",
         "sliceName": "role",
+        "condition": [
+          "ACP-ContactPerson-1"
+        ],
         "mapping": [
           {
             "identity": "pall-izppz-zib2017v2025-03-11",
@@ -85,6 +95,18 @@
             "comment": "Vertegenwoordiger is contactpersoon"
           }
         ]
+      },
+      {
+        "id": "RelatedPerson.extension:role.value[x]:valueCodeableConcept",
+        "path": "RelatedPerson.extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "binding": {
+          "strength": "extensible",
+          "valueSetReference": {
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-ContactPersonRole",
+            "display": "ACP ContactPerson Role"
+          }
+        }
       },
       {
         "id": "RelatedPerson.patient",
@@ -152,6 +174,18 @@
             "map": "150",
             "comment": "Naamgegevens"
           }
+        ]
+      },
+      {
+        "id": "RelatedPerson.name.extension:humannameAssemblyOrder",
+        "path": "RelatedPerson.name.extension",
+        "sliceName": "humannameAssemblyOrder"
+      },
+      {
+        "id": "RelatedPerson.name.extension:humannameAssemblyOrder.valueCode:valueCode.value",
+        "path": "RelatedPerson.name.extension.valueCode.value",
+        "type": [
+          {}
         ]
       },
       {
@@ -238,7 +272,7 @@
             "identity": "pall-izppz-zib2017v2025-03-11",
             "map": "281",
             "comment": "VoorvoegselsPartner"
-          }          
+          }
         ]
       },
       {
@@ -312,6 +346,18 @@
             "map": "275",
             "comment": "Roepnaam"
           }
+        ]
+      },
+      {
+        "id": "RelatedPerson.name.given.extension:iso21090EnQualifier",
+        "path": "RelatedPerson.name.given.extension",
+        "sliceName": "iso21090EnQualifier"
+      },
+      {
+        "id": "RelatedPerson.name.given.extension:iso21090EnQualifier.valueCode:valueCode.value",
+        "path": "RelatedPerson.name.given.extension.valueCode.value",
+        "type": [
+          {}
         ]
       },
       {
