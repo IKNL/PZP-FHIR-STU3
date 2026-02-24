@@ -16,16 +16,39 @@
       "use": "work"
     } ]
   } ],
-  "description": "ICD product code for MedicalDevice ProductType.",
+  "description": "ICD product code for MedicalDevice ProductType. This ValueSet is conceptually based on SNOMED CT codes that are descendants of `72506001` (implanteerbare cardioverter-defibrillator), i.e. an `is-a` filter. However, the codes are explicitly enumerated rather than using an intensional `is-a` filter to make the ValueSet easier to understand and implement for consumers.",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "compose": {
-    "include": [ {
-      "system": "urn:oid:2.16.840.1.1138836.96",
-      "filter": [ {
-        "property": "concept",
-        "op": "is-a",
-        "value": "72506001"
-      } ]
-    } ]
+  "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "72506001",
+            "display": "implanteerbare cardioverter-defibrillator"
+          },
+          {
+            "code": "465460004",
+            "display": "univentriculaire implanteerbare cardioverter-defibrillator"
+          },
+          {
+            "code": "468542000",
+            "display": "implanteerbare tweekamercardioverter-defibrillator"
+          },
+          {
+            "code": "704707009",
+            "display": "implanteerbare biventriculaire cardioverter-defibrillator"
+          },
+          {
+            "code": "1263462004",
+            "display": "pulsgenerator van defibrillator voor cardiale resynchronisatietherapie"
+          },
+          {
+            "code": "1236894001",
+            "display": "subcutane implanteerbare cardioverter-defibrillator"
+          }
+        ]
+      }
+    ]
   }
 }
