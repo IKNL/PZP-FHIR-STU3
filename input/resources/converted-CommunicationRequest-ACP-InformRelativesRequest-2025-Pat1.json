@@ -13,6 +13,7 @@
   },
   "authoredOn": "2025-07-29",
   "requester": {
+    "agent": {
       "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
       "display": "Healthcare professional (person), van Huissen",
       "extension": [
@@ -23,7 +24,8 @@
             "display": "Healthcare professional (role), van Huissen"
           }
         }
-      ]
+      ]}
+      
   },
   "identifier": [
     {
