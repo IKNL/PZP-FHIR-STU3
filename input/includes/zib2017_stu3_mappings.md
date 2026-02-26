@@ -108,11 +108,11 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 282 | &emsp;&emsp;&emsp;&emsp;AchternaamPartner | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson.name.family.extension:humannamePartnerName`  |
 | 155 | &emsp;Rol | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson.extension:role`  |
 | 156 | &emsp;Relatie tot patient (Relatie) | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson.relationship`  |
-| 157 | Belangrijkste doel van behandeling (AlgemeneMeting) | Goal (<a href="StructureDefinition-ACP-Medical-Policy-Goal.html">ACPMedicalPolicyGoal</a>) | `Goal`  |
-| 160 | &emsp;Toelichting | Goal (<a href="StructureDefinition-ACP-Medical-Policy-Goal.html">ACPMedicalPolicyGoal</a>) | `Goal.note.text`  |
-| 162 | &emsp;&emsp;MetingNaam voor Belangrijkste doel van behandeling | Goal (<a href="StructureDefinition-ACP-Medical-Policy-Goal.html">ACPMedicalPolicyGoal</a>) | `Goal`  |
-| 163 | &emsp;&emsp;Doel (UitslagWaarde) | Goal (<a href="StructureDefinition-ACP-Medical-Policy-Goal.html">ACPMedicalPolicyGoal</a>) | `Goal.description`  |
-| 165 | &emsp;&emsp;UitslagDatumTijd | Goal (<a href="StructureDefinition-ACP-Medical-Policy-Goal.html">ACPMedicalPolicyGoal</a>) | `Goal.start[x]:startDate`  |
+| 157 | Belangrijkste doel van behandeling (AlgemeneMeting) | Goal (<a href="StructureDefinition-ACP-MedicalPolicyGoal.html">ACPMedicalPolicyGoal</a>) | `Goal`  |
+| 160 | &emsp;Toelichting | Goal (<a href="StructureDefinition-ACP-MedicalPolicyGoal.html">ACPMedicalPolicyGoal</a>) | `Goal.note.text`  |
+| 162 | &emsp;&emsp;MetingNaam voor Belangrijkste doel van behandeling | Goal (<a href="StructureDefinition-ACP-MedicalPolicyGoal.html">ACPMedicalPolicyGoal</a>) | `Goal`  |
+| 163 | &emsp;&emsp;Doel (UitslagWaarde) | Goal (<a href="StructureDefinition-ACP-MedicalPolicyGoal.html">ACPMedicalPolicyGoal</a>) | `Goal.description`  |
+| 165 | &emsp;&emsp;UitslagDatumTijd | Goal (<a href="StructureDefinition-ACP-MedicalPolicyGoal.html">ACPMedicalPolicyGoal</a>) | `Goal.start[x]:startDate`  |
 | 54 | Behandelgrens (BehandelAanwijzing) | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent`  |
 | 55 | &emsp;Verificatie | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.extension:verification`  |
 | 56 | &emsp;&emsp;Geverifieerd | Consent (<a href="StructureDefinition-ACP-TreatmentDirective.html">ACPTreatmentDirective</a>) | `Consent.extension:verification.extension:Verified`  |

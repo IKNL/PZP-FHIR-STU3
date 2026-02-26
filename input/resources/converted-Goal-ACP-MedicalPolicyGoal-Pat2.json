@@ -3,7 +3,7 @@
   "id": "ACP-MedicalPolicyGoal-Pat2",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Medical-Policy-Goal"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalPolicyGoal"
     ]
   },
   "identifier": [

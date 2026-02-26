@@ -38,7 +38,7 @@ jobs:
           java-version: '21'
         
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.20-alpha3
+        uses: FirelyTeam/firely-terminal-pipeline@v0.7.32-alpha2
         with:
           PATH_TO_CONFORMANCE_RESOURCES: input/resources
           PATH_TO_EXAMPLES: input/resources
@@ -60,9 +60,8 @@ jobs:
           SIMPLIFIER_USERNAME: ${{ secrets.SIMPLIFIER_USERNAME }}
           SIMPLIFIER_PASSWORD: ${{ secrets.SIMPLIFIER_PASSWORD }}
           SUSHI_ENABLED: false
-          FIRELY_TERMINAL_VERSION: 3.5.0-beta-1
+          ##FIRELY_TERMINAL_VERSION: 3.5.0
           ##JAVA_VALIDATOR_VERSION: 6.7.1
-          FIRELY_TERMINAL_VALIDATOR_ENGINE: Default
           
       - name: Upload validation artifacts
         uses: actions/upload-artifact@v4
@@ -79,6 +78,10 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
+            |VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*1351964001*|
+            |Terminology_TX_NoValid_1_CC|*1351964001*|
+            
             # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
 
