@@ -78,6 +78,10 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
+            |VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*1351964001*|
+            |Terminology_TX_NoValid_1_CC|*1351964001*|
+            
             # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
 
