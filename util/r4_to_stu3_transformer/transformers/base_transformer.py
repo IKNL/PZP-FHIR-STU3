@@ -384,13 +384,17 @@ class BaseTransformer(ABC):
             Transformed reference object for STU3
         """
         # Check if this is a PractitionerRole reference
-        if reference_obj.get('type') == 'PractitionerRole' or (
-            'reference' in reference_obj and 
-            reference_obj['reference'].startswith('PractitionerRole/')
-        ):
+        if self._is_practitioner_role_reference(reference_obj, practitioner_role_resources):
             # Extract PractitionerRole reference info
             practitioner_role_ref = reference_obj.get('reference', '')
             practitioner_role_display = reference_obj.get('display', '')
+            
+            # Normalize the PractitionerRole reference to always have the prefix
+            if not practitioner_role_ref.startswith('PractitionerRole/'):
+                practitioner_role_ref = f'PractitionerRole/{practitioner_role_ref}'
+            
+            # Extract the PractitionerRole ID (without prefix)
+            practitioner_role_id = practitioner_role_ref.replace('PractitionerRole/', '')
             
             # Create the STU3 reference structure
             stu3_reference = {}
@@ -399,9 +403,7 @@ class BaseTransformer(ABC):
             practitioner_ref = None
             practitioner_display = None
             
-            if practitioner_role_resources and practitioner_role_ref:
-                # Extract the PractitionerRole ID
-                practitioner_role_id = practitioner_role_ref.replace('PractitionerRole/', '')
+            if practitioner_role_resources and practitioner_role_id:
                 practitioner_role_resource = practitioner_role_resources.get(practitioner_role_id)
                 
                 if practitioner_role_resource and 'practitioner' in practitioner_role_resource:
@@ -438,6 +440,43 @@ class BaseTransformer(ABC):
             # Not a PractitionerRole reference, just clean normally
             return self.transform_reference(reference_obj)
     
+    def _is_practitioner_role_reference(self, obj: Dict[str, Any], practitioner_role_resources: Dict[str, Dict[str, Any]] = None) -> bool:
+        """
+        Check if a reference object points to a PractitionerRole resource.
+        
+        Detects PractitionerRole references by:
+        1. Explicit 'type' field set to 'PractitionerRole'
+        2. Reference string starting with 'PractitionerRole/'
+        3. Bare reference ID matching a known PractitionerRole resource
+        
+        Args:
+            obj: The reference object to check
+            practitioner_role_resources: Optional dict of PractitionerRole resources for ID matching
+            
+        Returns:
+            True if this is a PractitionerRole reference
+        """
+        if 'reference' not in obj:
+            return False
+        
+        # Check explicit type field
+        if obj.get('type') == 'PractitionerRole':
+            return True
+        
+        ref = obj.get('reference', '')
+        if not isinstance(ref, str):
+            return False
+        
+        # Check PractitionerRole/ prefix
+        if ref.startswith('PractitionerRole/'):
+            return True
+        
+        # Check if bare reference ID matches a known PractitionerRole resource
+        if practitioner_role_resources and ref in practitioner_role_resources:
+            return True
+        
+        return False
+
     def process_practitioner_role_references_in_object(self, obj: Any, practitioner_role_resources: Dict[str, Dict[str, Any]] = None) -> Any:
         """
         Recursively process PractitionerRole references in any FHIR object/structure.
@@ -451,10 +490,7 @@ class BaseTransformer(ABC):
         """
         if isinstance(obj, dict):
             # Check if this looks like a Reference object with PractitionerRole
-            if 'reference' in obj and (
-                obj.get('type') == 'PractitionerRole' or
-                (isinstance(obj.get('reference'), str) and obj['reference'].startswith('PractitionerRole/'))
-            ):
+            if self._is_practitioner_role_reference(obj, practitioner_role_resources):
                 return self.transform_practitioner_role_reference(obj, practitioner_role_resources)
             else:
                 # Recursively process all dictionary values
