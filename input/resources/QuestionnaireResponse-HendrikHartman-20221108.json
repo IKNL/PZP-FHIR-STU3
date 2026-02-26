@@ -17,20 +17,19 @@
     "reference": "Patient/ACP-Patient-HendrikHartman-Pat1",
     "display": "Patient, Hendrik Hartman"
   },
-  "author": 
-    {
-      "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
-      "display": "Healthcare professional (person), van Huissen",
-      "extension": [
-        {
-          "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
-          "valueReference": {
-            "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
-            "display": "Healthcare professional (role), van Huissen"
-          }
+  "author": {
+    "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
+    "display": "Healthcare professional (person), van Huissen",
+    "extension": [
+      {
+        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+        "valueReference": {
+          "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
+          "display": "Healthcare professional (role), van Huissen"
         }
-      ]
-    },
+      }
+    ]
+  },
   "item": [
     {
       "answer": [
@@ -561,8 +560,9 @@
                   "answer": [
                     {
                       "valueCoding": {
-                        "code": "ICD",
-                        "display": "ICD"
+                        "system": "http://snomed.info/sct",
+                        "code": "72506001",
+                        "display": "implanteerbare cardioverter-defibrillator"
                       }
                     }
                   ],
