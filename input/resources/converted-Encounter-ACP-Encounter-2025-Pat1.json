@@ -33,11 +33,18 @@
   },
   "participant": [
     {
-      "individual": {
-        "reference": "ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
-        "display": "Healthcare professional (role), van Huissen"
-      }
-    },
+      "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
+      "display": "Healthcare professional (person), van Huissen",
+      "extension": [
+        {
+          "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+          "valueReference": {
+            "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
+            "display": "Healthcare professional (role), van Huissen"
+          }
+        }
+      ]
+  },
     {
       "individual": {
         "reference": "RelatedPerson/ACP-ContactPerson-MichielHartman-Pat1",
