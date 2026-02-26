@@ -1,0 +1,43 @@
+{
+  "resourceType": "ValueSet",
+  "id": "ACP-ContactPersonRole",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-ContactPersonRole",
+  "version": "1.0.0-rc1",
+  "name": "ContactPersonRoleVS",
+  "title": "ACP ContactPerson Role",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "IKNL",
+  "contact": [
+    {
+      "name": "IKNL",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@iknl.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "ValueSet containing additional codes to the ContactPerson's [RolCodelijst](http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.2--20171231000000). These codes are applied from the zib2024 release onwards. Currently, the ValueSet contains only SNOMED CT code `310141000146103` (Schriftelijk gemachtigde zorg en behandeling / Holder of medical power of attorney) from the zib2024 release. The ValueSet is bound to a slice in `RelatedPerson.relationship.",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "compose": {
+    "include": [
+     {
+        "valueSet": [
+          "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.3.1.2--20171231000000"
+        ]
+      },
+      {
+        "system": "http://snomed.info/sct",
+        "concept": [
+          {
+            "code": "310141000146103",
+            "display": "Schriftelijk gemachtigde zorg en behandeling"
+          }
+        ]
+      }
+    ]
+  }
+}
