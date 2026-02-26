@@ -33,6 +33,7 @@
   },
   "participant": [
     {
+      "individual": {
       "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
       "display": "Healthcare professional (person), van Huissen",
       "extension": [
@@ -44,6 +45,7 @@
           }
         }
       ]
+    }
   },
     {
       "individual": {
