@@ -78,6 +78,9 @@ jobs:
           bundle-file: validation.json
           include: errors
           filters: |
+            # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
+            |business-rule|*The code '1351964001' is not valid in the system http://snomed.info/sct*|
+            |code-invalid|* None of the codings provided are in the value set 'ACP Most Important Agreed-upon Goal of Medical Policy*|
             # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
 
