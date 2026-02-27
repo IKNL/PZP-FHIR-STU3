@@ -52,6 +52,16 @@ the specific mapping requirements for the PZP project.
 │ (Direct mapping - same codes)      │ (Direct mapping - same codes)             │
 └────────────────────────────────────┴───────────────────────────────────────────┘
 
+┌─ PROVISION ACTOR → CONSENTINGPARTY MAPPINGS ───────────────────────────────────┐
+│ R4 provision.actor (CONSENTER role)│ STU3 Target                               │
+├────────────────────────────────────┼───────────────────────────────────────────┤
+│ Practitioner reference             │ consentingParty (direct reference)         │
+│ PractitionerRole reference         │ consentingParty (Practitioner reference    │
+│                                    │ + practitionerrole-reference extension)   │
+│                                    │ Extension resolved by base transformer    │
+│                                    │ post-processing via orchestrator          │
+└────────────────────────────────────┴───────────────────────────────────────────┘
+
 ┌─ SPECIFICATION OTHER STRING MAPPINGS ──────────────────────────────────────────┐
 │ R4 SpecificationOther valueString  │ STU3 TreatmentPermitted Code              │
 ├────────────────────────────────────┼───────────────────────────────────────────┤
@@ -368,6 +378,17 @@ class ConsentTransformer(BaseTransformer):
                             'text': display_text
                         }
                     })
+                
+                # Check if this is a Practitioner or PractitionerRole with CONSENTER role
+                elif ref_type in ('Practitioner', 'PractitionerRole') and self._is_consenter_role(role):
+                    if 'consentingParty' not in stu3_consent:
+                        stu3_consent['consentingParty'] = []
+                    # Use transform_practitioner_role_reference to convert PractitionerRole
+                    # references to Practitioner + practitionerrole-reference extension.
+                    # For plain Practitioner references this just cleans the R4 type field.
+                    stu3_consent['consentingParty'].append(
+                        self.transform_practitioner_role_reference(ref)
+                    )
                 
                 # Check if this is a Representative (RESPRSN role)
                 elif self._is_representative_role(role):
