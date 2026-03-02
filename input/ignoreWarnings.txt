@@ -50,7 +50,7 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 
 # SNOMED code 1351964001 is  https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
 %Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930' (Netherlands Edition)%
-%Geen van de gevonden codings bestaan in waardelijst 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc1) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#1351964001)%
+%Geen van de gevonden codings bestaan in waardelijst 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc2) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#1351964001)%
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
 ERROR: ValueSet/ACP-MedicalPolicyGoal: ValueSet.compose.include[0].concept[1]: The code '1351964001' is not valid in the system http://snomed.info/sct (Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930')
@@ -58,7 +58,7 @@ ERROR: Questionnaire/ACP-zib2020: Questionnaire.item[6].item[1].answerOption[1].
 ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[6].item[1].answer[0].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 
 # Manually checked: 72506001 is in the ValueSet, even in the expansion. The ValueSet in the profile bound is allowed as it restricts the zib's required binding. 72506001 zit in "Include codes from SNOMED_CT where concept DescendentOf 260787004"  
-%Geen van de gevonden codings bestaan in waardelijst 'ACP MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD|1.0.0-rc1) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#72506001)%
+%Geen van de gevonden codings bestaan in waardelijst 'ACP MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD|1.0.0-rc2) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#72506001)%
 
 # Definition can be found in the Nictiz package. Not sure why the IG publisher cannot access it. Also not a big deal for this IG.
 %URL-waarde 'http://fhir.nl/fhir/NamingSystem/agb-z' komt nergens uit%

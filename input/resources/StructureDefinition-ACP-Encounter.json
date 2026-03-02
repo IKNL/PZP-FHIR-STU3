@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-Encounter",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPEncounter",
   "title": "ACP Encounter",
   "status": "draft",

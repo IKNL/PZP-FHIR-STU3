@@ -11,7 +11,7 @@
   "status": "completed",
   "authored": "2025-08-25T19:28:22.151Z",
   "questionnaire": {
-    "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|1.0.0-rc1"
+    "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|1.0.0-rc2"
   },
   "source": {
     "reference": "Patient/ACP-Patient-HendrikHartman-Pat1",

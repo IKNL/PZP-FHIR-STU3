@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-MedicalPolicyGoal",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "MedicalPolicyGoalVS",
   "title": "ACP Most Important Agreed-upon Goal of Medical Policy",
   "status": "draft",

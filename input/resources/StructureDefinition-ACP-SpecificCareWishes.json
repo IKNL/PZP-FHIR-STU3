@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-SpecificCareWishes",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SpecificCareWishes",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPSpecificCareWishes",
   "title": "ACP Specific Care Wishes",
   "status": "draft",

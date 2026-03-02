@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-MedicalPolicyGoal",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-MedicalPolicyGoal",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPMedicalPolicyGoal",
   "title": "ACP Medical Policy Goal",
   "status": "draft",

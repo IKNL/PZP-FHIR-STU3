@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-ContactPersonRole",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-ContactPersonRole",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ContactPersonRoleVS",
   "title": "ACP ContactPerson Role",
   "status": "draft",

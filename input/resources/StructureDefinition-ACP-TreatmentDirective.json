@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-TreatmentDirective",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-TreatmentDirective",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPTreatmentDirective",
   "title": "ACP TreatmentDirective",
   "status": "draft",

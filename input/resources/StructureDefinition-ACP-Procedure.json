@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-Procedure",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Procedure",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPProcedure",
   "title": "ACP Procedure",
   "status": "draft",

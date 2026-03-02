@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-OrganDonationChoiceRegistration",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPOrganDonationChoiceRegistration",
   "title": "ACP Organ Donation Choice Registration in Donor Register",
   "status": "draft",
