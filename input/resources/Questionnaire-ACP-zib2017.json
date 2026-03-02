@@ -2,20 +2,21 @@
   "resourceType": "Questionnaire",
   "id": "ACP-zib2017",
   "url": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPzib2017",
-  "title": "ACP Uniform vastleggen proactieve zorgpanning advance care planning (ACP) o.b.v. zibs2017",
+  "title": "Uniform vastleggen proactieve zorgpanning (PZP) o.b.v. zibs2017 - ReleaseCandidate2 03-03-2026",
+  "language": "nl-NL",
   "status": "draft",
   "experimental": false,
-  "publisher": "Published by PZNL & executed by IKNL",
-  "description": "This form was developed to clearly document agreements resulting from the advance care planning (ACP) process. It is NOT a checklist. It can only be completed by a healthcare provider after a professional and nuanced conversation. For advice on conducting these conversations, please refer to the guideline for proactive care planning in the palliative phase and Palliaweb, see https://palliaweb.nl/zorgpraktijk/proactieve-zorgplanning. \nEnter 'unknown' if a topic is not discussed or if the patient does not (yet) have an opinion.When transferring to a long-term care setting, consider adding conversation records about advance care planning (ACP) to the transfer documents.",
-  "purpose": "This form was developed to clearly document agreements resulting from the advance care planning (ACP) process.",
-  "copyright": "This form is subject to copyright, user rights and a disclaimer, as specified for all IKNL information standards. For details, see the paragraph on Gebruikersrechten en disclaimer at https://iknl.nl/onderzoek/eenheid-van-taal.",
+  "publisher": "Gepubliceerd door PZNL & uitgevoerd door IKNL | Published by PZNL & executed by IKNL",
+  "copyright": "Op dit formulier is copyright, gebruikersrechten en een disclaimer van toepassing, zoals die gespecificeerd zijn voor alle informatiestandaarden van IKNL, zie voor de details het onderdeel Gebruikersrechten en disclaimer op https://iknl.nl/onderzoek/eenheid-van-taal. | \nThis form is subject to copyright, user rights and a disclaimer, as specified for all IKNL information standards. For details, see the paragraph on Gebruikersrechten en disclaimer at https://iknl.nl/onderzoek/eenheid-van-taal.",
+  "purpose": "Dit formulier is ontwikkeld om afspraken voortkomend uit het proces van proactieve zorgplanning (PZP) eenduidig vast te leggen. | \nThis form was developed to clearly document agreements resulting from the advance care planning (ACP) process.",
+  "description": "Dit formulier is ontwikkeld om afspraken voortkomend uit het proces van proactieve zorgplanning (PZP) eenduidig vast te leggen. Het is GEEN afvinklijst. Het kan alleen na deskundig en genuanceerd gesprek door een zorgverlener worden ingevuld. Voor adviezen over het voeren van deze gesprekken word verwezen naar de richtlijn proactieve zorgplanning in de palliatieve fase en Palliaweb, zie https://palliaweb.nl/zorgpraktijk/proactieve-zorgplanning.  | \nVul 'nog onbekend' in als een onderwerp niet is besproken of als de patiënt (nog) geen mening heeft. Overweeg bij overplaatsing naar een langdurige zorgsetting gespreksverslagen over proactieve zorgplanning aan de overdracht toe te voegen. \nThis form was developed to clearly document agreements resulting from the advance care planning (ACP) process. It is NOT a checklist. It can only be completed by a healthcare provider after a professional and nuanced conversation. For advice on conducting these conversations, please refer to the guideline for proactive care planning in the palliative phase and Palliaweb, see https://palliaweb.nl/zorgpraktijk/proactieve-zorgplanning. \nEnter 'unknown' if a topic is not discussed or if the patient does not (yet) have an opinion.When transferring to a long-term care setting, consider adding conversation records about advance care planning (ACP) to the transfer documents.\n",
   "item": [
     {
-      "type": "dateTime",
       "linkId": "385",
       "text": "Datum van invullen",
+      "type": "dateTime",
       "required": false,
       "repeats": false
     },
@@ -96,7 +97,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
@@ -144,6 +145,11 @@
       ]
     },
     {
+      "linkId": "26",
+      "prefix": "1.",
+      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
+      "type": "group",
+      "repeats": false,
       "item": [
         {
           "linkId": "787",
@@ -151,16 +157,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "item": [
-            {
-              "linkId": "788",
-              "text": "Toelichting",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            }
-          ],
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "code": "1",
@@ -172,6 +169,15 @@
                 "code": "0",
                 "display": "Nee"
               }
+            }
+          ],
+          "item": [
+            {
+              "linkId": "788",
+              "text": "Toelichting",
+              "type": "string",
+              "required": false,
+              "repeats": false
             }
           ]
         },
@@ -237,7 +243,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
@@ -274,7 +280,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
@@ -319,7 +325,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
@@ -347,31 +353,14 @@
               "type": "choice",
               "required": false,
               "repeats": true,
-              "item": [
-                {
-                  "linkId": "411",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "410",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                        "code": "9"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
                     "code": "24",
                     "display": "Wettelijke vertegenwoordiger"
-                  }
+                  },
+                  "initialSelected": true
                 },
                 {
                   "valueCoding": {
@@ -408,6 +397,27 @@
                     "display": "Anders"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "411",
+                  "text": "Anders, namelijk:",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "410",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "9",
+                        "display": "Anders"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             },
             {
@@ -417,25 +427,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "408",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "51",
-                      "answerCoding": {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                        "code": "OTH"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
@@ -506,6 +498,27 @@
                     "display": "Anders"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "408",
+                  "text": "Anders, namelijk:",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "51",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Anders"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             },
             {
@@ -515,7 +528,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "code": "1",
@@ -531,6 +544,22 @@
               ]
             },
             {
+              "linkId": "53",
+              "prefix": "e)",
+              "text": "Naam eerste contactpersoon",
+              "type": "group",
+              "enableWhen": [
+                {
+                  "question": "52",
+                  "operator": "=",
+                  "answerCoding": {
+                    "code": "0",
+                    "display": "Nee"
+                  }
+                }
+              ],
+              "enableBehavior": "any",
+              "repeats": false,
               "item": [
                 {
                   "linkId": "395",
@@ -553,23 +582,25 @@
                   "required": false,
                   "repeats": false
                 }
-              ],
+              ]
+            },
+            {
+              "linkId": "61",
+              "prefix": "f)",
+              "text": "Contactgegevens eerste contactpersoon",
               "type": "group",
-              "linkId": "53",
-              "prefix": "e)",
-              "text": "Naam eerste contactpersoon",
               "enableWhen": [
                 {
                   "question": "52",
+                  "operator": "=",
                   "answerCoding": {
                     "code": "0",
                     "display": "Nee"
                   }
                 }
               ],
-              "repeats": false
-            },
-            {
+              "enableBehavior": "any",
+              "repeats": false,
               "item": [
                 {
                   "linkId": "62",
@@ -590,7 +621,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
@@ -627,7 +658,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
@@ -672,7 +703,7 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "option": [
+                      "answerOption": [
                         {
                           "valueCoding": {
                             "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
@@ -691,102 +722,56 @@
                     }
                   ]
                 }
-              ],
-              "type": "group",
-              "linkId": "61",
-              "prefix": "f)",
-              "text": "Contactgegevens eerste contactpersoon",
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerCoding": {
-                    "code": "0",
-                    "display": "Nee"
-                  }
-                }
-              ],
-              "repeats": false
+              ]
             },
             {
-              "type": "choice",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "819",
               "text": "Rol",
+              "type": "choice",
               "enableWhen": [
                 {
                   "question": "52",
+                  "operator": "=",
                   "answerCoding": {
                     "code": "0",
                     "display": "Nee"
                   }
                 }
               ],
+              "enableBehavior": "any",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                "code": "1",
-                "display": "Eerste relatie/contactpersoon"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
                     "code": "1",
                     "display": "Eerste relatie/contactpersoon"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
             {
-              "item": [
-                {
-                  "linkId": "412",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "77",
-                      "answerCoding": {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                        "code": "OTH"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "type": "choice",
               "linkId": "77",
               "prefix": "g)",
               "text": "Relatie tot patiënt",
+              "type": "choice",
               "enableWhen": [
                 {
                   "question": "52",
+                  "operator": "=",
                   "answerCoding": {
                     "code": "0",
                     "display": "Nee"
                   }
                 }
               ],
+              "enableBehavior": "any",
               "required": false,
               "repeats": false,
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
@@ -857,16 +842,32 @@
                     "display": "Anders"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "412",
+                  "text": "Anders, namelijk:",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "77",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Anders"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
           ]
         }
-      ],
-      "type": "group",
-      "linkId": "26",
-      "prefix": "1.",
-      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
-      "repeats": false
+      ]
     },
     {
       "linkId": "78",
@@ -881,7 +882,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "code": "Patiënt",
@@ -896,25 +897,7 @@
           "type": "choice",
           "required": false,
           "repeats": true,
-          "item": [
-            {
-              "linkId": "414",
-              "text": "Anders, namelijk:",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "415",
-                  "answerCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "9"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            }
-          ],
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
@@ -943,6 +926,27 @@
                 "display": "Anders"
               }
             }
+          ],
+          "item": [
+            {
+              "linkId": "414",
+              "text": "Anders, namelijk:",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "415",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                    "code": "9",
+                    "display": "Anders"
+                  }
+                }
+              ],
+              "enableBehavior": "any",
+              "required": false,
+              "repeats": false
+            }
           ]
         },
         {
@@ -951,25 +955,7 @@
           "type": "choice",
           "required": false,
           "repeats": true,
-          "item": [
-            {
-              "linkId": "413",
-              "text": "Anders, namelijk:",
-              "type": "string",
-              "enableWhen": [
-                {
-                  "question": "80",
-                  "answerCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "OTH"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false
-            }
-          ],
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
@@ -1040,6 +1026,27 @@
                 "display": "Anders"
               }
             }
+          ],
+          "item": [
+            {
+              "linkId": "413",
+              "text": "Anders, namelijk:",
+              "type": "string",
+              "enableWhen": [
+                {
+                  "question": "80",
+                  "operator": "=",
+                  "answerCoding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "code": "OTH",
+                    "display": "Anders"
+                  }
+                }
+              ],
+              "enableBehavior": "any",
+              "required": false,
+              "repeats": false
+            }
           ]
         }
       ]
@@ -1052,24 +1059,20 @@
       "repeats": false,
       "item": [
         {
-          "type": "choice",
           "linkId": "790",
           "text": "MetingNaam voor Belangrijkste doel van behandeling",
+          "type": "choice",
           "required": false,
           "repeats": false,
           "readOnly": true,
-          "initialCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "180771000146100",
-            "display": "Focus van behandeling (waarneembare entiteit)"
-          },
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
                 "code": "180771000146100",
                 "display": "Focus van behandeling (waarneembare entiteit)"
-              }
+              },
+              "initialSelected": true
             }
           ]
         },
@@ -1079,7 +1082,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
@@ -1127,24 +1130,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "791",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "89666000",
-                "display": "Cardiopulmonale resuscitatie (verrichting)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "89666000",
                     "display": "Cardiopulmonale resuscitatie (verrichting)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -1154,32 +1153,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "122",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "587",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "86",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1207,6 +1181,34 @@
                     "code": "UNK",
                     "display": "Onbekend"
                   }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "122",
+                  "text": "Beperkingen",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "587",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                },
+                {
+                  "linkId": "86",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
                 }
               ]
             }
@@ -1220,28 +1222,59 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "794",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "40617009",
-                "display": "Kunstmatige beademing (verrichting)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "40617009",
                     "display": "Kunstmatige beademing (verrichting)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
             {
+              "linkId": "588",
+              "text": "BehandelingToegestaan",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                    "code": "JA",
+                    "display": "Ja"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                    "code": "JA_MAAR",
+                    "display": "Ja, maar met beperkingen"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                    "code": "NEE",
+                    "display": "Nee"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "code": "UNK",
+                    "display": "Onbekend"
+                  }
+                }
+              ],
               "item": [
                 {
                   "linkId": "123",
@@ -1250,12 +1283,15 @@
                   "enableWhen": [
                     {
                       "question": "588",
+                      "operator": "=",
                       "answerCoding": {
                         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
                       }
                     }
                   ],
+                  "enableBehavior": "any",
                   "required": false,
                   "repeats": false
                 },
@@ -1266,13 +1302,42 @@
                   "required": false,
                   "repeats": false
                 }
-              ],
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "796",
+          "prefix": "c)",
+          "text": "Opname op intensive care",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "795",
+              "text": "Behandeling",
               "type": "choice",
-              "linkId": "588",
-              "text": "BehandelingToegestaan",
               "required": false,
               "repeats": false,
-              "option": [
+              "readOnly": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "305351004",
+                    "display": "Opname op intensive care (verrichting)"
+                  },
+                  "initialSelected": true
+                }
+              ]
+            },
+            {
+              "linkId": "589",
+              "text": "BehandelingToegestaan",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1301,40 +1366,7 @@
                     "display": "Onbekend"
                   }
                 }
-              ]
-            }
-          ]
-        },
-        {
-          "item": [
-            {
-              "type": "choice",
-              "linkId": "795",
-              "text": "Behandeling",
-              "required": false,
-              "repeats": false,
-              "readOnly": false,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "305351004",
-                "display": "Opname op intensive care (verrichting)"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "305351004",
-                    "display": "Opname op intensive care (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "589",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
+              ],
               "item": [
                 {
                   "linkId": "124",
@@ -1343,12 +1375,15 @@
                   "enableWhen": [
                     {
                       "question": "589",
+                      "operator": "=",
                       "answerCoding": {
                         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
                       }
                     }
                   ],
+                  "enableBehavior": "any",
                   "required": false,
                   "repeats": false
                 },
@@ -1359,8 +1394,42 @@
                   "required": false,
                   "repeats": false
                 }
-              ],
-              "option": [
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "798",
+          "prefix": "d)",
+          "text": "Opname in ziekenhuis",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "799",
+              "text": "Behandeling",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "readOnly": true,
+              "answerOption": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "32485007",
+                    "display": "Opname in ziekenhuis (verrichting)"
+                  },
+                  "initialSelected": true
+                }
+              ]
+            },
+            {
+              "linkId": "590",
+              "text": "BehandelingToegestaan",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1389,45 +1458,7 @@
                     "display": "Onbekend"
                   }
                 }
-              ]
-            }
-          ],
-          "type": "group",
-          "linkId": "796",
-          "prefix": "c)",
-          "text": "Opname op intensive care",
-          "repeats": false
-        },
-        {
-          "item": [
-            {
-              "type": "choice",
-              "linkId": "799",
-              "text": "Behandeling",
-              "required": false,
-              "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "32485007",
-                "display": "Opname in ziekenhuis (verrichting)"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "32485007",
-                    "display": "Opname in ziekenhuis (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "590",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
+              ],
               "item": [
                 {
                   "linkId": "125",
@@ -1436,12 +1467,15 @@
                   "enableWhen": [
                     {
                       "question": "590",
+                      "operator": "=",
                       "answerCoding": {
                         "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
                       }
                     }
                   ],
+                  "enableBehavior": "any",
                   "required": false,
                   "repeats": false
                 },
@@ -1452,44 +1486,9 @@
                   "required": false,
                   "repeats": false
                 }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
-                }
               ]
             }
-          ],
-          "type": "group",
-          "linkId": "798",
-          "prefix": "d)",
-          "text": "Opname in ziekenhuis",
-          "repeats": false
+          ]
         },
         {
           "linkId": "800",
@@ -1499,24 +1498,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "801",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "281789004",
-                "display": "Antibiotische therapie (verrichting)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "281789004",
                     "display": "Antibiotische therapie (verrichting)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -1526,32 +1521,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "126",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "591",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "96",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1579,6 +1549,34 @@
                     "code": "UNK",
                     "display": "Onbekend"
                   }
+                }
+              ],
+              "item": [
+                {
+                  "linkId": "126",
+                  "text": "Beperkingen",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "591",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                },
+                {
+                  "linkId": "96",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
                 }
               ]
             }
@@ -1592,24 +1590,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "803",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "116762002",
-                "display": "Toediening van bloedproduct (verrichting)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "116762002",
                     "display": "Toediening van bloedproduct (verrichting)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -1619,32 +1613,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "127",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "enableWhen": [
-                    {
-                      "question": "592",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
-                      }
-                    }
-                  ],
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "98",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1673,6 +1642,34 @@
                     "display": "Onbekend"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "127",
+                  "text": "Beperkingen",
+                  "type": "string",
+                  "enableWhen": [
+                    {
+                      "question": "592",
+                      "operator": "=",
+                      "answerCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    }
+                  ],
+                  "enableBehavior": "any",
+                  "required": false,
+                  "repeats": false
+                },
+                {
+                  "linkId": "98",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
           ]
@@ -1685,24 +1682,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "805",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "OTH",
-                "display": "Overige behandelingen"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
                     "code": "OTH",
                     "display": "Overige behandelingen"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -1712,16 +1705,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "100",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1743,6 +1727,15 @@
                     "display": "Onbekend"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "100",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
           ]
@@ -1754,23 +1747,49 @@
           "type": "choice",
           "required": false,
           "repeats": false,
+          "answerOption": [
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001",
+                "display": "Ja"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373067005",
+                "display": "Nee"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                "code": "UNK",
+                "display": "Nog onbekend"
+              }
+            }
+          ],
           "item": [
             {
-              "type": "choice",
               "linkId": "600",
               "text": "ProductType van ICD",
+              "type": "choice",
               "enableWhen": [
                 {
                   "question": "249",
+                  "operator": "=",
                   "answerCoding": {
                     "system": "http://snomed.info/sct",
-                    "code": "373066001"
+                    "code": "373066001",
+                    "display": "Ja"
                   }
                 }
               ],
+              "enableBehavior": "any",
               "required": false,
               "repeats": false,
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
@@ -1822,61 +1841,54 @@
               "enableWhen": [
                 {
                   "question": "249",
+                  "operator": "=",
                   "answerCoding": {
                     "system": "http://snomed.info/sct",
-                    "code": "373066001"
+                    "code": "373066001",
+                    "display": "Ja"
                   }
                 }
               ],
+              "enableBehavior": "any",
               "required": false,
               "repeats": false
-            }
-          ],
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373067005",
-                "display": "Nee"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
             }
           ]
         },
         {
+          "linkId": "808",
+          "prefix": "i)",
+          "text": "Is er een afspraak over het moment van uitzetten ICD?",
+          "type": "group",
+          "enableWhen": [
+            {
+              "question": "249",
+              "operator": "=",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001",
+                "display": "Ja"
+              }
+            }
+          ],
+          "enableBehavior": "any",
+          "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "809",
               "text": "Behandeling van uitzetten ICD",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "400231000146108",
-                "display": "uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "400231000146108",
                     "display": "uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -1887,24 +1899,18 @@
               "enableWhen": [
                 {
                   "question": "249",
+                  "operator": "=",
                   "answerCoding": {
                     "system": "http://snomed.info/sct",
-                    "code": "373066001"
+                    "code": "373066001",
+                    "display": "Ja"
                   }
                 }
               ],
+              "enableBehavior": "any",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "596",
-                  "text": "Toelichting gemaakte afspraken",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
@@ -1926,24 +1932,18 @@
                     "display": "Niet besproken"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "596",
+                  "text": "Toelichting gemaakte afspraken",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
-          ],
-          "type": "group",
-          "linkId": "808",
-          "prefix": "i)",
-          "text": "Is er een afspraak over het moment van uitzetten ICD?",
-          "enableWhen": [
-            {
-              "question": "249",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
-              }
-            }
-          ],
-          "repeats": false
+          ]
         }
       ]
     },
@@ -1962,24 +1962,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "811",
               "text": "Wens en verwachting patient (MetingNaam)",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "153851000146100",
-                "display": "Wensen en verwachtingen met betrekking tot uitkomst van behandeling"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "153851000146100",
                     "display": "Wensen en verwachtingen met betrekking tot uitkomst van behandeling"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -2000,24 +1996,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "815",
               "text": "MetingNaam voor Gewenste plek van overlijden",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "395091006",
-                "display": "Gewenste plek van overlijden"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "395091006",
                     "display": "Gewenste plek van overlijden"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -2027,16 +2019,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "110",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
@@ -2079,6 +2062,15 @@
                     "display": "Nog onbekend"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "110",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
           ]
@@ -2091,24 +2083,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "816",
               "text": "MetingNaam voor Euthanasie standpunt",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "340171000146104",
-                "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "340171000146104",
                     "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -2118,16 +2106,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "item": [
-                {
-                  "linkId": "112",
-                  "text": "Toelichting",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
@@ -2156,6 +2135,15 @@
                     "display": "Nog onbekend"
                   }
                 }
+              ],
+              "item": [
+                {
+                  "linkId": "112",
+                  "text": "Toelichting",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                }
               ]
             }
           ]
@@ -2168,24 +2156,20 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "817",
               "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "570801000146104",
-                "display": "Geregistreerd in orgaan donorregister (bevinding)"
-              },
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "570801000146104",
                     "display": "Geregistreerd in orgaan donorregister (bevinding)"
-                  }
+                  },
+                  "initialSelected": true
                 }
               ]
             },
@@ -2195,7 +2179,7 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "option": [
+              "answerOption": [
                 {
                   "valueCoding": {
                     "system": "http://snomed.info/sct",
@@ -2231,24 +2215,20 @@
       "repeats": false,
       "item": [
         {
-          "type": "choice",
           "linkId": "818",
           "text": "MetingNaam voor Wat verder nog belangrijk is",
+          "type": "choice",
           "required": false,
           "repeats": false,
           "readOnly": true,
-          "initialCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "247751003",
-            "display": "Gevoel van zingeving (waarneembare entiteit)"
-          },
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
                 "code": "247751003",
                 "display": "Gevoel van zingeving (waarneembare entiteit)"
-              }
+              },
+              "initialSelected": true
             }
           ]
         },
@@ -2269,22 +2249,13 @@
       "repeats": false,
       "item": [
         {
-          "item": [
-            {
-              "linkId": "254",
-              "text": "Toelichting",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            }
-          ],
-          "type": "choice",
           "linkId": "253",
           "prefix": "a)",
           "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?",
+          "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
@@ -2306,6 +2277,15 @@
                 "display": "Nog onbekend"
               }
             }
+          ],
+          "item": [
+            {
+              "linkId": "254",
+              "text": "Toelichting",
+              "type": "string",
+              "required": false,
+              "repeats": false
+            }
           ]
         },
         {
@@ -2316,15 +2296,18 @@
           "enableWhen": [
             {
               "question": "253",
+              "operator": "=",
               "answerCoding": {
                 "system": "http://snomed.info/sct",
-                "code": "373066001"
+                "code": "373066001",
+                "display": "Ja"
               }
             }
           ],
+          "enableBehavior": "any",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
@@ -2364,7 +2347,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "code": "1",
@@ -2386,7 +2369,7 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
+          "answerOption": [
             {
               "valueCoding": {
                 "system": "http://snomed.info/sct",
