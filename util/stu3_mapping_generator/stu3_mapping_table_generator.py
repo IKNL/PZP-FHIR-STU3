@@ -1,15 +1,47 @@
 #!/usr/bin/env python3
 """
-STU3 StructureDefinition Mapping Table Generator
+stu3_mapping_table_generator.py
 
-This script:
-1. Reads StructureDefinition JSON files from STU3/input/resources/
-2. Extracts ZIB concept mappings from the JSON structure
-3. Generates a markdown table similar to the R4 mapping table generator
-4. Creates the final markdown table in STU3/input/includes/
+Generates a Markdown mapping table from STU3 StructureDefinition JSON files
+and an ART-DECOR JSON dataset export.
 
-Author: AI Assistant
-Date: August 22, 2025
+Workflow:
+  1. Parses the ART-DECOR JSON dataset to discover all zib2017 dataset
+     concept IDs and their hierarchical structure (name, depth).
+  2. Scans all StructureDefinition JSON files in the resources directory,
+     extracting the relationship between dataset concept IDs and FHIR
+     resource elements via the ``mapping`` entries in differential elements.
+  3. Produces a Markdown file containing:
+       - A main table of all mapped dataset elements with links to their
+         corresponding FHIR StructureDefinitions.
+       - (develop mode only) A table of unmapped dataset elements that have
+         no corresponding StructureDefinition mapping.
+       - (develop mode only) A table of orphan mappings whose concept IDs
+         do not appear in the JSON dataset.
+       - (develop mode only) Summary statistics with mapping coverage.
+
+Usage:
+  python util/stu3_mapping_generator/stu3_mapping_table_generator.py
+      [--stu3-dir DIR] [--output-file FILE] [--json-file FILE]
+      [--mode {normal,develop}]
+
+Examples:
+  # Default (normal mode)
+  python util/stu3_mapping_generator/stu3_mapping_table_generator.py
+
+  # Development mode with full diagnostics
+  python util/stu3_mapping_generator/stu3_mapping_table_generator.py --mode develop
+
+  # Custom paths
+  python util/stu3_mapping_generator/stu3_mapping_table_generator.py \\
+      --stu3-dir input/resources \\
+      --json-file util/my_dataset.json \\
+      --output-file input/includes/zib2017_stu3_mappings.md
+
+Note:
+  Unlike the R4 mapping table generator (which reads FSH sources), this STU3
+  version reads compiled StructureDefinition JSON files directly, because the
+  STU3 IG is not authored in FSH.
 """
 
 import os
@@ -17,8 +49,30 @@ import json
 import argparse
 from pathlib import Path
 
-# --- Configuration ---
-# Add any concept IDs here that you want to exclude from the "Unmapped Elements" table.
+# =============================================================================
+# Configuration — edit these values to match your project / dataset
+# =============================================================================
+
+# Default directory containing StructureDefinition JSON files.
+DEFAULT_STU3_DIR = "input/resources"
+
+# Default output path for the generated Markdown mapping table.
+DEFAULT_OUTPUT_FILE = "input/includes/zib2017_stu3_mappings.md"
+
+# Default path to the ART-DECOR JSON dataset export.
+DEFAULT_JSON_FILE = "util/DS_pzp_dataset_beschikbaarstellen_(download_2026-03-02T13_28_56).json"
+
+# Default output mode: 'normal' (main table only) or 'develop' (includes
+# unmapped-elements, orphan-mapping, and coverage diagnostic tables).
+DEFAULT_MODE = "normal"
+
+# OID prefix shared by all relevant dataset concepts. Only concepts whose ID
+# starts with this prefix (and whose remaining part is a plain number without
+# dots) are included in the mapping.
+OID_PREFIX = "2.16.840.1.113883.2.4.3.11.60.117.2."
+
+# Concept IDs to exclude from the "Unmapped Elements" diagnostic table.
+# These are intentionally unmapped container/grouping concepts.
 UNMAPPED_IGNORE_LIST = [
     '283', '223', '226', '233', '243', '246',
     '161', '202', '211', '260', '263', '277', 
@@ -44,7 +98,7 @@ def extract_all_json_ids(json_file_path):
     Returns an ordered list of concept dictionaries.
     """
     ordered_concepts = []
-    oid_prefix = "2.16.840.1.113883.2.4.3.11.60.117.2."
+    oid_prefix = OID_PREFIX
     
     try:
         with open(json_file_path, 'r', encoding='utf-8') as f:
@@ -260,13 +314,13 @@ def main():
         description="Extracts STU3 StructureDefinition mappings to a Markdown file.",
         formatter_class=argparse.RawTextHelpFormatter
     )
-    parser.add_argument('--stu3-dir', default='input/resources', 
-                       help="Directory containing STU3 StructureDefinition JSON files.\n(default: 'input/resources')")
-    parser.add_argument('--output-file', default='input/includes/zib2017_stu3_mappings.md', 
-                       help="Path for the output Markdown file.\n(default: 'input/includes/zib2017_stu3_mappings.md')")
-    parser.add_argument('--json-file', default='util/DS_pzp_dataset_beschikbaarstellen_(download_2025-08-28T07_27_33).json', 
-                       help="Path to the JSON dataset file.")
-    parser.add_argument('--mode', choices=['normal', 'develop'], default='normal', help="Output mode: 'normal' for main table only, 'develop' for full output (default: normal)")
+    parser.add_argument('--stu3-dir', default=DEFAULT_STU3_DIR, 
+                       help=f"Directory containing STU3 StructureDefinition JSON files.\n(default: '{DEFAULT_STU3_DIR}')")
+    parser.add_argument('--output-file', default=DEFAULT_OUTPUT_FILE, 
+                       help=f"Path for the output Markdown file.\n(default: '{DEFAULT_OUTPUT_FILE}')")
+    parser.add_argument('--json-file', default=DEFAULT_JSON_FILE, 
+                       help=f"Path to the JSON dataset file.\n(default: '{DEFAULT_JSON_FILE}')")
+    parser.add_argument('--mode', choices=['normal', 'develop'], default=DEFAULT_MODE, help=f"Output mode: 'normal' for main table only, 'develop' for full output (default: {DEFAULT_MODE})")
     args = parser.parse_args()
     print("=== STU3 StructureDefinition Mapping Table Generator ===")
     print(f"STU3 Resources Directory: {args.stu3_dir}")
