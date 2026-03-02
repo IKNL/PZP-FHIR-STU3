@@ -12,7 +12,7 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 772 | &emsp;RedenContact | Encounter (<a href="StructureDefinition-ACP-Encounter.html">ACPEncounter</a>) | `Encounter.diagnosis.condition`  |
 | 775 | &emsp;&emsp;Verrichting | Encounter (<a href="StructureDefinition-ACP-Encounter.html">ACPEncounter</a>) | `Encounter.diagnosis.condition`  |
 | 776 | &emsp;&emsp;&emsp;Verrichting | Procedure (<a href="StructureDefinition-ACP-Procedure.html">ACPProcedure</a>) | `Procedure`  |
-| 797 | &emsp;&emsp;&emsp;&emsp;PZP gesprek (VerrichtingType) | Procedure (<a href="StructureDefinition-ACP-Procedure.html">ACPProcedure</a>) | `Procedure.code`  |
+| 797 | &emsp;&emsp;&emsp;&emsp;PZP-gesprek (VerrichtingType) | Procedure (<a href="StructureDefinition-ACP-Procedure.html">ACPProcedure</a>) | `Procedure.code`  |
 | 304 | &emsp;Datum van invullen (DatumTijd) | Encounter (<a href="StructureDefinition-ACP-Encounter.html">ACPEncounter</a>) | `Encounter.period.start`  |
 | 11 | Patient | Patient (<a href="StructureDefinition-ACP-Patient.html">ACPPatient</a>) | `Patient`  |
 | 12 | &emsp;Naamgegevens | Patient (<a href="StructureDefinition-ACP-Patient.html">ACPPatient</a>) | `Patient.name`  |
