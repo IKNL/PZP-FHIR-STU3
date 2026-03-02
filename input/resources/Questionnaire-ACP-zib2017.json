@@ -1,12 +1,6 @@
 {
   "resourceType": "Questionnaire",
   "id": "ACP-zib2017",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/3.0/StructureDefinition/Questionnaire"
-    ]
-  },
-  "language": "nl-NL",
   "url": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017",
   "version": "1.0.0-rc2",
   "name": "ACPzib2017",
