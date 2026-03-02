@@ -2,20 +2,20 @@
   "resourceType": "Questionnaire",
   "id": "ACP-zib2017",
   "url": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPzib2017",
-  "title": "ACP Uniform vastleggen proactieve zorgpanning advance care planning (ACP) o.b.v. zibs2017",
+  "title": "Uniform vastleggen proactieve zorgpanning (PZP) o.b.v. zibs2017 - ReleaseCandidate2 03-03-2026",
   "status": "draft",
   "experimental": false,
   "publisher": "Published by PZNL & executed by IKNL",
-  "description": "This form was developed to clearly document agreements resulting from the advance care planning (ACP) process. It is NOT a checklist. It can only be completed by a healthcare provider after a professional and nuanced conversation. For advice on conducting these conversations, please refer to the guideline for proactive care planning in the palliative phase and Palliaweb, see https://palliaweb.nl/zorgpraktijk/proactieve-zorgplanning. \nEnter 'unknown' if a topic is not discussed or if the patient does not (yet) have an opinion.When transferring to a long-term care setting, consider adding conversation records about advance care planning (ACP) to the transfer documents.",
+  "description": "This form was developed to clearly document agreements resulting from the advance care planning (ACP) process. It is NOT a checklist. It can only be completed by a healthcare provider after a professional and nuanced conversation. For advice on conducting these conversations, please refer to the guideline for advance care planning in the palliative phase and Palliaweb, see https://palliaweb.nl/zorgpraktijk/proactieve-zorgplanning. \nEnter 'unknown' if a topic is not discussed or if the patient does not (yet) have an opinion.When transferring to a long-term care setting, consider adding conversation records about advance care planning (ACP) to the transfer documents.\n",
   "purpose": "This form was developed to clearly document agreements resulting from the advance care planning (ACP) process.",
   "copyright": "This form is subject to copyright, user rights and a disclaimer, as specified for all IKNL information standards. For details, see the paragraph on Gebruikersrechten en disclaimer at https://iknl.nl/onderzoek/eenheid-van-taal.",
   "item": [
     {
-      "type": "dateTime",
       "linkId": "385",
       "text": "Datum van invullen",
+      "type": "dateTime",
       "required": false,
       "repeats": false
     },
@@ -144,6 +144,11 @@
       ]
     },
     {
+      "linkId": "26",
+      "prefix": "1",
+      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
+      "type": "group",
+      "repeats": false,
       "item": [
         {
           "linkId": "787",
@@ -352,6 +357,8 @@
                   "linkId": "411",
                   "text": "Anders, namelijk:",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "410",
@@ -360,11 +367,14 @@
                         "code": "9"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 }
               ],
+              "initialCoding": {
+                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                "code": "24",
+                "display": "Wettelijke vertegenwoordiger"
+              },
               "option": [
                 {
                   "valueCoding": {
@@ -422,6 +432,8 @@
                   "linkId": "408",
                   "text": "Anders, namelijk:",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "51",
@@ -430,9 +442,7 @@
                         "code": "OTH"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 }
               ],
               "option": [
@@ -531,6 +541,11 @@
               ]
             },
             {
+              "linkId": "53",
+              "prefix": "e)",
+              "text": "Naam eerste contactpersoon",
+              "type": "group",
+              "repeats": false,
               "item": [
                 {
                   "linkId": "395",
@@ -554,22 +569,21 @@
                   "repeats": false
                 }
               ],
-              "type": "group",
-              "linkId": "53",
-              "prefix": "e)",
-              "text": "Naam eerste contactpersoon",
               "enableWhen": [
                 {
                   "question": "52",
                   "answerCoding": {
-                    "code": "0",
-                    "display": "Nee"
+                    "code": "0"
                   }
                 }
-              ],
-              "repeats": false
+              ]
             },
             {
+              "linkId": "61",
+              "prefix": "f)",
+              "text": "Contactgegevens eerste contactpersoon",
+              "type": "group",
+              "repeats": false,
               "item": [
                 {
                   "linkId": "62",
@@ -692,48 +706,19 @@
                   ]
                 }
               ],
-              "type": "group",
-              "linkId": "61",
-              "prefix": "f)",
-              "text": "Contactgegevens eerste contactpersoon",
               "enableWhen": [
                 {
                   "question": "52",
                   "answerCoding": {
-                    "code": "0",
-                    "display": "Nee"
+                    "code": "0"
                   }
                 }
-              ],
-              "repeats": false
+              ]
             },
             {
-              "type": "choice",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop down"
-                      }
-                    ]
-                  }
-                }
-              ],
               "linkId": "819",
               "text": "Rol",
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerCoding": {
-                    "code": "0",
-                    "display": "Nee"
-                  }
-                }
-              ],
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -753,11 +738,19 @@
               ]
             },
             {
+              "linkId": "77",
+              "prefix": "g)",
+              "text": "Relatie tot patiënt",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
               "item": [
                 {
                   "linkId": "412",
                   "text": "Anders, namelijk:",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "77",
@@ -766,26 +759,9 @@
                         "code": "OTH"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 }
               ],
-              "type": "choice",
-              "linkId": "77",
-              "prefix": "g)",
-              "text": "Relatie tot patiënt",
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerCoding": {
-                    "code": "0",
-                    "display": "Nee"
-                  }
-                }
-              ],
-              "required": false,
-              "repeats": false,
               "option": [
                 {
                   "valueCoding": {
@@ -857,16 +833,19 @@
                     "display": "Anders"
                   }
                 }
+              ],
+              "enableWhen": [
+                {
+                  "question": "52",
+                  "answerCoding": {
+                    "code": "0"
+                  }
+                }
               ]
             }
           ]
         }
-      ],
-      "type": "group",
-      "linkId": "26",
-      "prefix": "1.",
-      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
-      "repeats": false
+      ]
     },
     {
       "linkId": "78",
@@ -901,15 +880,6 @@
               "linkId": "414",
               "text": "Anders, namelijk:",
               "type": "string",
-              "enableWhen": [
-                {
-                  "question": "415",
-                  "answerCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "9"
-                  }
-                }
-              ],
               "required": false,
               "repeats": false
             }
@@ -956,6 +926,8 @@
               "linkId": "413",
               "text": "Anders, namelijk:",
               "type": "string",
+              "required": false,
+              "repeats": false,
               "enableWhen": [
                 {
                   "question": "80",
@@ -964,9 +936,7 @@
                     "code": "OTH"
                   }
                 }
-              ],
-              "required": false,
-              "repeats": false
+              ]
             }
           ],
           "option": [
@@ -1046,15 +1016,15 @@
     },
     {
       "linkId": "586",
-      "prefix": "3.",
+      "prefix": "3",
       "text": "Belangrijkste overeengekomen doel van medisch beleid",
       "type": "group",
       "repeats": false,
       "item": [
         {
-          "type": "choice",
           "linkId": "790",
           "text": "MetingNaam voor Belangrijkste doel van behandeling",
+          "type": "choice",
           "required": false,
           "repeats": false,
           "readOnly": true,
@@ -1114,7 +1084,7 @@
     },
     {
       "linkId": "83",
-      "prefix": "4.",
+      "prefix": "4",
       "text": "Behandelgrenzen",
       "type": "group",
       "repeats": false,
@@ -1127,9 +1097,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "791",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1159,6 +1129,8 @@
                   "linkId": "122",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "587",
@@ -1167,9 +1139,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "86",
@@ -1220,9 +1190,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "794",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1242,11 +1212,18 @@
               ]
             },
             {
+              "linkId": "588",
+              "text": "BehandelingToegestaan",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
               "item": [
                 {
                   "linkId": "123",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "588",
@@ -1255,9 +1232,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "92",
@@ -1267,11 +1242,6 @@
                   "repeats": false
                 }
               ],
-              "type": "choice",
-              "linkId": "588",
-              "text": "BehandelingToegestaan",
-              "required": false,
-              "repeats": false,
               "option": [
                 {
                   "valueCoding": {
@@ -1306,14 +1276,19 @@
           ]
         },
         {
+          "linkId": "796",
+          "prefix": "c)",
+          "text": "Opname op intensive care",
+          "type": "group",
+          "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "795",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
-              "readOnly": false,
+              "readOnly": true,
               "initialCoding": {
                 "system": "http://snomed.info/sct",
                 "code": "305351004",
@@ -1340,6 +1315,8 @@
                   "linkId": "124",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "589",
@@ -1348,9 +1325,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "88",
@@ -1391,19 +1366,19 @@
                 }
               ]
             }
-          ],
-          "type": "group",
-          "linkId": "796",
-          "prefix": "c)",
-          "text": "Opname op intensive care",
-          "repeats": false
+          ]
         },
         {
+          "linkId": "798",
+          "prefix": "d)",
+          "text": "Opname in ziekenhuis",
+          "type": "group",
+          "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "799",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1433,6 +1408,8 @@
                   "linkId": "125",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "590",
@@ -1441,9 +1418,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "94",
@@ -1484,12 +1459,7 @@
                 }
               ]
             }
-          ],
-          "type": "group",
-          "linkId": "798",
-          "prefix": "d)",
-          "text": "Opname in ziekenhuis",
-          "repeats": false
+          ]
         },
         {
           "linkId": "800",
@@ -1499,9 +1469,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "801",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1531,6 +1501,8 @@
                   "linkId": "126",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "591",
@@ -1539,9 +1511,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "96",
@@ -1592,9 +1562,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "803",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1624,6 +1594,8 @@
                   "linkId": "127",
                   "text": "Beperkingen",
                   "type": "string",
+                  "required": false,
+                  "repeats": false,
                   "enableWhen": [
                     {
                       "question": "592",
@@ -1632,9 +1604,7 @@
                         "code": "JA_MAAR"
                       }
                     }
-                  ],
-                  "required": false,
-                  "repeats": false
+                  ]
                 },
                 {
                   "linkId": "98",
@@ -1685,9 +1655,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "805",
               "text": "Behandeling",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1756,18 +1726,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "600",
               "text": "ProductType van ICD",
-              "enableWhen": [
-                {
-                  "question": "249",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001"
-                  }
-                }
-              ],
+              "type": "choice",
               "required": false,
               "repeats": false,
               "option": [
@@ -1813,12 +1774,7 @@
                     "display": "subcutane implanteerbare cardioverter-defibrillator"
                   }
                 }
-              ]
-            },
-            {
-              "linkId": "599",
-              "text": "Toelichting",
-              "type": "string",
+              ],
               "enableWhen": [
                 {
                   "question": "249",
@@ -1827,9 +1783,23 @@
                     "code": "373066001"
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "linkId": "599",
+              "text": "Toelichting",
+              "type": "string",
               "required": false,
-              "repeats": false
+              "repeats": false,
+              "enableWhen": [
+                {
+                  "question": "249",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
+              ]
             }
           ],
           "option": [
@@ -1857,11 +1827,16 @@
           ]
         },
         {
+          "linkId": "808",
+          "prefix": "i)",
+          "text": "Is er een afspraak over het moment van uitzetten ICD?",
+          "type": "group",
+          "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "809",
               "text": "Behandeling van uitzetten ICD",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -1884,15 +1859,6 @@
               "linkId": "595",
               "text": "Afspraak uitzetten ICD (BehandelingToegestaan)",
               "type": "choice",
-              "enableWhen": [
-                {
-                  "question": "249",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001"
-                  }
-                }
-              ],
               "required": false,
               "repeats": false,
               "item": [
@@ -1926,30 +1892,33 @@
                     "display": "Niet besproken"
                   }
                 }
+              ],
+              "enableWhen": [
+                {
+                  "question": "249",
+                  "answerCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001"
+                  }
+                }
               ]
             }
           ],
-          "type": "group",
-          "linkId": "808",
-          "prefix": "i)",
-          "text": "Is er een afspraak over het moment van uitzetten ICD?",
           "enableWhen": [
             {
               "question": "249",
               "answerCoding": {
                 "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
+                "code": "373066001"
               }
             }
-          ],
-          "repeats": false
+          ]
         }
       ]
     },
     {
       "linkId": "107",
-      "prefix": "5.",
+      "prefix": "5",
       "text": "Behandelwensen",
       "type": "group",
       "repeats": false,
@@ -1962,9 +1931,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "811",
               "text": "Wens en verwachting patient (MetingNaam)",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -2000,9 +1969,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "815",
               "text": "MetingNaam voor Gewenste plek van overlijden",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -2091,9 +2060,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "816",
               "text": "MetingNaam voor Euthanasie standpunt",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -2168,9 +2137,9 @@
           "repeats": false,
           "item": [
             {
-              "type": "choice",
               "linkId": "817",
               "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?",
+              "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
@@ -2225,15 +2194,15 @@
     },
     {
       "linkId": "598",
-      "prefix": "6.",
+      "prefix": "6",
       "text": "Wat verder nog belangrijk is",
       "type": "group",
       "repeats": false,
       "item": [
         {
-          "type": "choice",
           "linkId": "818",
           "text": "MetingNaam voor Wat verder nog belangrijk is",
+          "type": "choice",
           "required": false,
           "repeats": false,
           "readOnly": true,
@@ -2263,12 +2232,18 @@
     },
     {
       "linkId": "115",
-      "prefix": "7.",
+      "prefix": "7",
       "text": "Eerder vastgelegde behandelwensen",
       "type": "group",
       "repeats": false,
       "item": [
         {
+          "linkId": "253",
+          "prefix": "a)",
+          "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?",
+          "type": "choice",
+          "required": false,
+          "repeats": false,
           "item": [
             {
               "linkId": "254",
@@ -2278,12 +2253,6 @@
               "repeats": false
             }
           ],
-          "type": "choice",
-          "linkId": "253",
-          "prefix": "a)",
-          "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?",
-          "required": false,
-          "repeats": false,
           "option": [
             {
               "valueCoding": {
@@ -2313,15 +2282,6 @@
           "prefix": "b)",
           "text": "Staan in eerder vastgelegde behandelafspraken andere wensen dan nu in deze verklaring?",
           "type": "choice",
-          "enableWhen": [
-            {
-              "question": "253",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001"
-              }
-            }
-          ],
           "required": false,
           "repeats": false,
           "option": [
@@ -2346,13 +2306,22 @@
                 "display": "Nog onbekend"
               }
             }
+          ],
+          "enableWhen": [
+            {
+              "question": "253",
+              "answerCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001"
+              }
+            }
           ]
         }
       ]
     },
     {
       "linkId": "119",
-      "prefix": "8.",
+      "prefix": "8",
       "text": "Informatie delen",
       "type": "group",
       "repeats": false,
