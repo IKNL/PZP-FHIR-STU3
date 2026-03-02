@@ -87,16 +87,6 @@
             "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
           }
         ]
-      },
-      {
-        "id": "Procedure.performer.actor",
-        "path": "Procedure.performer.actor",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner"
-          }
-        ]
       }
     ]
   }
