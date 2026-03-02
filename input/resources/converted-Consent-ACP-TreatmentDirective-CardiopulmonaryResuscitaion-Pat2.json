@@ -98,5 +98,20 @@
     {
       "type": "deny"
     }
+  ],
+  "consentingParty": [
+    {
+      "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DesireeWolters-Pat2",
+      "display": "Healthcare professional (person), Desiree Wolters",
+      "extension": [
+        {
+          "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+          "valueReference": {
+            "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DesireeWolters-Pat2",
+            "display": "Healthcare professional (role), Desiree Wolters"
+          }
+        }
+      ]
+    }
   ]
 }
