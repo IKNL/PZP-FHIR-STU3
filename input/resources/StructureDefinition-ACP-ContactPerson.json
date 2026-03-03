@@ -45,7 +45,7 @@
             "key": "ACP-ContactPerson-1",
             "severity": "error",
             "human": "If the SNOMED CT code 310141000146103 (Holder of medical power of attorney) is present in the role extension, then another role exention with role code 24 (Wettelijke vertegenwoordiger) from code system urn:oid:2.16.840.1.113883.2.4.3.11.22.472 must also be present.",
-            "expression": "extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').valueCodeableConcept.coding.where(system = 'http://snomed.info/sct' and code = '310141000146103').exists() implies extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').valueCodeableConcept.coding.where(system = 'urn:oid:2.16.840.1.113883.2.4.3.11.22.472' and code = '24').exists()"
+            "expression": "extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').value.ofType(CodeableConcept).coding.where(system = 'http://snomed.info/sct' and code = '310141000146103').exists() implies extension.where(url = 'http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role').value.ofType(CodeableConcept).coding.where(system = 'urn:oid:2.16.840.1.113883.2.4.3.11.22.472' and code = '24').exists()"
           }
         ],
         "mapping": [
