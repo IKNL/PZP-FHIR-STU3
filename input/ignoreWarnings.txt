@@ -92,3 +92,6 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 
 # IG publisher stuff?
 %De extensie http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment mag niet op dit punt worden gebruikt (toegestaan = e:ImplementationGuide.dependsOn; dit element is [BackboneElement, ImplementationGuide.dependency])%
+
+# Known issue: unresolved links to HL7 v3 ValueSets in STU3 IG Publisher
+%The link 'http://hl7.org/fhir/STU3/v3/%
