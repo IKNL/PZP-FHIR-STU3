@@ -1,13 +1,8 @@
 This page describes the two transaction methods for exchanging a patient's Advance Care Planning (ACP) information using RESTful API.
 
-1. As individual resources. By fetching specific resources (`Consent`, `Goal`, `Observation`, etc.) that together form the patient's ACP. See <a href="data-model.html">Data Model page</a> for a complete overview.
-2. As a form. Fetching `QuestionnaireResponse` resource(s). This contains the ACP agreements recorded according to the structured form for uniform registration of ACP.
+1. <a href="#method-1-retrieve-acp-as-individual-resources">As individual resources.</a> By fetching specific resources (`Consent`, `Goal`, `Observation`, etc.) that together form the patient's ACP. See <a href="data-model.html">Data Model page</a> for a complete overview.
+2. <a href="#method-2-retrieve-acp-questionnaireresponse">As a form</a>. Fetching `QuestionnaireResponse` resource(s). This contains the ACP agreements recorded according to the structured form for uniform registration of ACP.
 
-This guide, in conjunction with its R4 counterpart, specifies four distinct transactions for data exchange:
-1.  <a href="#method-1-retrieve-acp-as-individual-resources">STU3 Individual Resources</a> 
-2.  <a href="#method-2-retrieve-acp-questionnaireresponse">STU3 QuestionnaireResponse</a> 
-3.  R4 Individual Resources
-4.  R4 QuestionnaireResponse
 
 ### Conformance Requirements Actors
 
@@ -15,16 +10,18 @@ This implementation guide defines two actors:
 - ACP Actor Consulter: a client application that retrieves a patient's ACP information.
 - ACP Actor Provider: a server application that exposes a patient's ACP information.
 
-To be conformant the ACP Actor Consulter SHALL support all four transaction groups. This ensures the actor can retrieve ACP information from any provider, regardless of the FHIR version (STU3 or R4) or exchange method implemented.
-The ACP Actor Provider SHALL support at least one of the four transaction groups. The individual resources method is preferred over the form-based method for system-to-system exchange, as it offers a more standardized and reusable data structure.
+To be conformant the ACP Actor Consulter SHALL support both transaction groups. This ensures the actor can retrieve ACP information from any provider, regardless of the exchange method implemented.
+The ACP Actor Provider SHALL support at least one of the two transaction groups. The individual resources method is preferred over the form-based method for system-to-system exchange, as it offers a more standardized and reusable data structure.
 
 ### General API requirements
 
-All interactions adhere to the following principles.
+This IG focuses solely on defining how ACP health information is accessed and structured for data exchange. It does not specify supporting functionalities such as addressing, routing, localization, consent management, or authentication. These capabilities are expected to be provided by the underlying infrastructure specifications and agreements in use, such as Generic Functions, LSP, Twiin, or Nuts.
 
-1. **Authorization**: Accessing ACP information is subject to strict privacy and security rules. All API requests MUST be properly authenticated and authorized. The client application is expected to use a secure mechanism to obtain an access token with the necessary scopes to read the patient's clinical data. The exact methods may be found in the used infrastructure specification and agreements of e.g. LSP, Twiin and or Nuts.
-2. **Patient Context**: All queries described in this guide are patient-specific. The client MUST know the logical ID of the patient in question and include it in every query (e.g., `patient=123` or `subject=Patient/123`). This may require an initial request on the Patient endpoint with a search using a patient identifier like the BSN. This may also be described by other technical agreements.
-3. **Resolving references**: The returned resources may contain nested resources or references to other resources (like `Practitioner` or `RelatedPerson`). The client application may need to perform subsequent requests to resolve these references and display the full details.
+Within this scope, the following requirements apply:
+
+1. **Authorization**: Accessing ACP information is subject to strict privacy and security rules. All API requests MUST be properly authenticated and authorized. The client application is expected to use a secure mechanism to obtain an access token with the necessary scopes to read the patient's clinical data.
+2. **Patient Context**: All queries described in this guide are patient-specific. The client needs to know the logical ID of the patient and include it in every query (e.g., `patient=123` or `subject=Patient/123`). The method for obtaining the patient's logical ID is not specified in this IG, but may include: an initial search request on the Patient endpoint using a patient identifier such as the BSN; interactions as defined in [IHE PDQm ITI-119](https://profiles.ihe.net/ITI/PDQm/3.2.0/ITI-119.html); or any other method provided by the infrastructure.
+3. **Resolving References**: The returned resources may contain nested resources or references to other resources (such as `Practitioner` or `RelatedPerson`). The client application may need to perform subsequent requests to resolve these references and display the full details.
 
 ---
 
@@ -39,21 +36,21 @@ This approach is useful for applications that need to query specific parts of a 
 The below listed search requests show how all the ACP agreements, procedural information and relevant clinical context can be retrieved. Information on individuals involved in the ACP process are referenced from these resources and can be retrieved using the `_include` statement as defined below, or by resolving the references. Standard FHIR rules apply on the search syntax.
 
 ```
-1a GET [base]/Procedure?patient=[id]&code=http://snomed.info/sct|713603004&_include:Procedure:encounter
+1a GET [base]/Procedure?patient=Patient/[id]&code=http://snomed.info/sct|713603004&_include=Procedure:encounter
 
-1b GET [base]/Encounter?patient=[id]&reason=http://snomed.info/sct|713603004
+1b GET [base]/Encounter?patient=Patient/[id]&reason=http://snomed.info/sct|713603004
 
-2 GET [base]/Consent?patient=[id]&category=http://snomed.info/sct|11291000146105&_include=Consent:actor
+2 GET [base]/Consent?patient=Patient/[id]&category=http://snomed.info/sct|11291000146105&_include=Consent:actor
 
-3 GET [base]/Consent?patient=[id]&category=http://snomed.info/sct|11341000146107&_include=Consent:actor
+3 GET [base]/Consent?patient=Patient/[id]&category=http://snomed.info/sct|11341000146107&_include=Consent:actor
 
-4 GET [base]/Goal?patient=[id]&description=http://snomed.info/sct|385987000,1351964001,713148004
+4 GET [base]/Goal?patient=Patient/[id]&category=http://snomed.info/sct|713603004
 
-5 GET [base]/Observation?patient=[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003
+5 GET [base]/Observation?patient=Patient/[id]&code=http://snomed.info/sct|153851000146100,395091006,340171000146104,247751003,570801000146104
 
-6 GET [base]/DeviceUseStatement?patient=[id]&device.type:in=https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD&_include:DeviceUseSatement:device
+6 GET [base]/DeviceUseStatement?patient=Patient/[id]&device.type=http://snomed.info/sct|72506001,465460004,468542000,704707009,1263462004,1236894001&_include=DeviceUseSatement:device
 
-7 GET [base]/Communication?patient=[id]&reason-code=http://snomed.info/sct|713603004
+7 GET [base]/CommunicationRequest?patient=Patient/[id]&category=http://snomed.info/sct|223449006
 ```
 
 1. Both requests are designed to retrieve the same information, but with different approaches:
@@ -61,20 +58,15 @@ The below listed search requests show how all the ACP agreements, procedural inf
     * B) Retrieves `Encounter` resources that list an ACP procedure as their reason. Request A is generally preferred because `Encounter.patient` may not always be present; if absent, it indicates the patient was not involved in the Encounter. Using request A ensures these cases are included as well.
 2. Retrieves `Consent` resources for Treatment Directives and includes the agreement parties (Patient, ContactPersons, and HealthProfessionals).
 3. Retrieves `Consent` resources for Advance Directives and includes the representatives (ContactPersons).
-4. Retrieves `Goal` resources with a Medical Policy Goal code in the `Goal.description`.
+4. Retrieves `Goal` resources related to advance care planning.
 5. Retrieves `Observation` resources related to specific wishes and plans, as defined by the profiles in the Implementation Guide.
 6. Retrieves `DeviceUseStatement` resources for devices representing an ICD, and includes the corresponding `Device` resource.
-7. Retrieves `Communication` resources representing all communication events related to the ACP procedure.
+7. Retrieves `CommunicationRequest` resources representing requests made to the patient to inform their relatives.
 
 #### Advanced Search Parameters Supported
 
-Custom search parameters:
-* The `reason-code` parameter allows searching on `Communication.reasonCode`. See the custom `SearchParameter` resource definition in the artifacts tab.
-* The `description` parameter allows searching on `Goal.description`. This search parameter is defined from R5 onwards. The parameter definition can be found in the <a href="https://hl7.org/fhir/searchparameter-registry.html#:~:text=Goal.%E2%80%8Bcategory-,description,-token">Search Parameter Registry</a> and be applied for this version.
-
 The queries above use several search parameter types and modifiers:
 * `_include`: Returns referenced resources in the same `Bundle`, reducing the need for additional API calls.
-* `in`: A modifier that enables searching against a ValueSet. In the client requests above, it checks if the device type is included in the specified ValueSet of ICD products.
 * Chained parameters: Used for searching within referenced resources. For example, to find `DeviceUseStatement` resources with a specific `Device`, or `Encounter` resources that have an advance care planning `Procedure` as their reason.
 
 #### Server Response

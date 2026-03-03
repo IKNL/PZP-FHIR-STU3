@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ext-LegallyCapable-MedicalTreatmentDecisions",
-  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions",
-  "version": "1.0.0-rc1",
-  "name": "ExtLegallyCapableMedicalTreatmentDecisions",
-  "title": "ext LegallyCapable regarding medical treatment decisions",
+  "id": "ext-Patient.LegallyCapableMedicalTreatmentDecisions",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions",
+  "version": "1.0.0-rc2",
+  "name": "ExtPatientLegallyCapableMedicalTreatmentDecisions",
+  "title": "ext Patient.LegallyCapableMedicalTreatmentDecisions",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -45,7 +45,6 @@
         "id": "Extension.extension:legallyCapable",
         "path": "Extension.extension",
         "sliceName": "legallyCapable",
-        "min": 0,
         "max": "1"
       },
       {
@@ -76,7 +75,6 @@
         "id": "Extension.extension:legallyCapableComment",
         "path": "Extension.extension",
         "sliceName": "legallyCapableComment",
-        "min": 0,
         "max": "1"
       },
       {
@@ -106,7 +104,7 @@
       {
         "id": "Extension.url",
         "path": "Extension.url",
-        "fixedUri": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-LegallyCapable-MedicalTreatmentDecisions"
+        "fixedUri": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
       },
       {
         "id": "Extension.value[x]",

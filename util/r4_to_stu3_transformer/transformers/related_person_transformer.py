@@ -91,31 +91,82 @@ class RelatedPersonTransformer(BaseTransformer):
             if field in r4_resource:
                 stu3_resource[field] = r4_resource[field]
         
-        # Handle relationship field separately due to cardinality change (0..* -> 0..1)
+        # Handle relationship field separately:
+        # R4 relationship (0..*) splits into STU3 relationship (0..1) and
+        # nl-core-relatedperson-role extensions based on the coding system.
         if 'relationship' in r4_resource:
-            stu3_resource['relationship'] = self._transform_relationship(r4_resource['relationship'])
+            self._transform_relationship(r4_resource['relationship'], stu3_resource)
     
-    def _transform_relationship(self, r4_relationship: List[Dict[str, Any]]) -> Dict[str, Any]:
+    # Systems whose codes stay on RelatedPerson.relationship in STU3
+    RELATIONSHIP_SYSTEMS = {
+        "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+    }
+
+    ROLE_EXTENSION_URL = "http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role"
+
+    def _is_relationship_concept(self, codeable_concept: Dict[str, Any]) -> bool:
+        """Return True if any coding in the CodeableConcept belongs to a relationship system."""
+        for coding in codeable_concept.get("coding", []):
+            if coding.get("system") in self.RELATIONSHIP_SYSTEMS:
+                return True
+        return False
+
+    def _transform_relationship(
+        self,
+        r4_relationship: List[Dict[str, Any]],
+        stu3_resource: Dict[str, Any],
+    ) -> None:
         """
-        Transform relationship from R4 (0..*) to STU3 (0..1).
-        
-        In R4, relationship is an array of CodeableConcepts.
-        In STU3, relationship is a single CodeableConcept.
-        
-        Strategy: Take the first relationship and log a warning if multiple exist.
+        Transform R4 relationship (0..*) into STU3 relationship (0..1) plus
+        nl-core-relatedperson-role extensions.
+
+        Categorisation logic:
+        - CodeableConcepts with a coding from v3-RoleCode or v3-NullFlavor
+          are mapped to RelatedPerson.relationship (STU3 single CodeableConcept).
+        - All other CodeableConcepts are mapped to separate
+          nl-core-relatedperson-role extensions on the resource root.
+
+        If multiple CodeableConcepts qualify for relationship, only the first
+        is used and a warning is logged about the discarded ones.
         """
         if not r4_relationship:
-            return {}
-        
-        if len(r4_relationship) > 1:
-            logger.warning(
-                f"RelatedPerson has {len(r4_relationship)} relationships in R4, "
-                f"but STU3 only supports 1. Taking the first relationship and discarding the rest. "
-                f"Data loss occurred: {[rel.get('text', str(rel)) for rel in r4_relationship[1:]]}"
+            return
+
+        relationship_concepts: List[Dict[str, Any]] = []
+        role_concepts: List[Dict[str, Any]] = []
+
+        for concept in r4_relationship:
+            if self._is_relationship_concept(concept):
+                relationship_concepts.append(concept)
+            else:
+                role_concepts.append(concept)
+
+        # --- STU3 relationship (0..1) ---
+        if relationship_concepts:
+            stu3_resource["relationship"] = relationship_concepts[0]
+            if len(relationship_concepts) > 1:
+                discarded = relationship_concepts[1:]
+                logger.warning(
+                    f"RelatedPerson has {len(relationship_concepts)} relationship "
+                    f"CodeableConcepts qualifying for STU3 relationship, but only "
+                    f"1 is supported. Taking the first and discarding: "
+                    f"{[rc.get('coding', rc) for rc in discarded]}"
+                )
+
+        # --- nl-core-relatedperson-role extensions ---
+        if role_concepts:
+            if "extension" not in stu3_resource:
+                stu3_resource["extension"] = []
+            for concept in role_concepts:
+                stu3_resource["extension"].append({
+                    "url": self.ROLE_EXTENSION_URL,
+                    "valueCodeableConcept": concept,
+                })
+            logger.info(
+                f"Mapped {len(role_concepts)} role CodeableConcept(s) to "
+                f"nl-core-relatedperson-role extension(s)."
             )
-        
-        # Return the first relationship
-        return r4_relationship[0]
     
     def get_mapping_info(self) -> Dict[str, str]:
         """Return mapping information for documentation."""
@@ -124,7 +175,11 @@ class RelatedPersonTransformer(BaseTransformer):
             "base_mapping": "http://hl7.org/fhir/StructureMap/RelatedPerson4to3",
             "key_transformations": {
                 "Reference.type": "Removed from all Reference objects (R4-specific)",
-                "relationship": "Cardinality changed from 0..* (R4) to 0..1 (STU3) - takes first relationship, warns about data loss"
+                "relationship": (
+                    "R4 relationship (0..*) is split by coding system. "
+                    "v3-RoleCode / v3-NullFlavor codes stay on relationship (0..1). "
+                    "All other codes move to nl-core-relatedperson-role extensions."
+                ),
             },
             "direct_mappings": "identifier, active, patient, name, telecom, gender, birthDate, address, photo, period"
         }
@@ -132,28 +187,33 @@ class RelatedPersonTransformer(BaseTransformer):
 
 # Mapping Documentation
 RELATED_PERSON_MAPPING_TABLE = """
-┌─────────────────────────┬─────────────────────────┬─────────────────────────────────────────┐
-│ R4 Field                │ STU3 Field              │ Transformation Notes                    │
-├─────────────────────────┼─────────────────────────┼─────────────────────────────────────────┤
-│ identifier              │ identifier              │ Direct mapping                          │
-│ active                  │ active                  │ Direct mapping                          │
-│ patient                 │ patient                 │ Direct mapping                          │
-│ relationship (0..*)     │ relationship (0..1)     │ CARDINALITY CHANGE - takes first only  │
-│ name                    │ name                    │ Direct mapping                          │
-│ telecom                 │ telecom                 │ Direct mapping                          │
-│ gender                  │ gender                  │ Direct mapping                          │
-│ birthDate               │ birthDate               │ Direct mapping                          │
-│ address                 │ address                 │ Direct mapping                          │
-│ photo                   │ photo                   │ Direct mapping                          │
-│ period                  │ period                  │ Direct mapping                          │
-└─────────────────────────┴─────────────────────────┴─────────────────────────────────────────┘
+┌─────────────────────────┬──────────────────────────────────────────┬───────────────────────────────────────────────────┐
+│ R4 Field                │ STU3 Field                               │ Transformation Notes                              │
+├─────────────────────────┼──────────────────────────────────────────┼───────────────────────────────────────────────────┤
+│ identifier              │ identifier                               │ Direct mapping                                    │
+│ active                  │ active                                   │ Direct mapping                                    │
+│ patient                 │ patient                                  │ Direct mapping                                    │
+│ relationship (0..*)     │ relationship (0..1) +                    │ Split by coding system (see below)                │
+│                         │ ext:nl-core-relatedperson-role (0..*)    │                                                   │
+│ name                    │ name                                     │ Direct mapping                                    │
+│ telecom                 │ telecom                                  │ Direct mapping                                    │
+│ gender                  │ gender                                   │ Direct mapping                                    │
+│ birthDate               │ birthDate                                │ Direct mapping                                    │
+│ address                 │ address                                  │ Direct mapping                                    │
+│ photo                   │ photo                                    │ Direct mapping                                    │
+│ period                  │ period                                   │ Direct mapping                                    │
+└─────────────────────────┴──────────────────────────────────────────┴───────────────────────────────────────────────────┘
 
 Critical Transformations:
-1. RELATIONSHIP CARDINALITY CHANGE (POTENTIAL DATA LOSS):
+1. RELATIONSHIP SPLIT BY CODING SYSTEM:
    - R4: relationship is an array of CodeableConcepts (0..*)
-   - STU3: relationship is a single CodeableConcept (0..1) 
-   - Transformation: Takes the first relationship, logs WARNING if multiple exist
-   - WARNING: Additional relationships beyond the first are LOST during transformation
+   - Each CodeableConcept is categorised by its coding system:
+     a) v3-RoleCode / v3-NullFlavor  → STU3 RelatedPerson.relationship (0..1)
+        Only the first qualifying concept is used; extras are discarded with a warning.
+     b) All other systems              → extension nl-core-relatedperson-role
+        Each concept becomes a separate extension with valueCodeableConcept. 
+        This is currenlty a bit of a catch-all category that is not production grade, but fine for our purposes.
+   - Extension URL: http://fhir.nl/fhir/StructureDefinition/nl-core-relatedperson-role
 
 2. Reference.type fields are removed (R4-specific, not supported in STU3)
 

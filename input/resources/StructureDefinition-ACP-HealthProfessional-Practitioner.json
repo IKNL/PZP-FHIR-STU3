@@ -2,9 +2,9 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-HealthProfessional-Practitioner",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPHealthProfessionalPractitioner",
-  "title": "HealthProfessional Practitioner",
+  "title": "ACP HealthProfessional Practitioner",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -25,8 +25,8 @@
   "fhirVersion": "3.0.2",
   "mapping": [
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -42,12 +42,12 @@
         "path": "Practitioner",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "24",
             "comment": "Gesprek gevoerd door (Zorgverlener)"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "89",
             "comment": "Zorgverlener"
           }
@@ -58,7 +58,7 @@
         "path": "Practitioner.identifier",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "25",
             "comment": "ZorgverlenerIdentificatienummer"
           }
@@ -69,12 +69,12 @@
         "path": "Practitioner.name",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "26",
             "comment": "Naamgegevens"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "27",
             "comment": "Naamgegevens"
           }
@@ -86,7 +86,7 @@
         "sliceName": "humannameOwnPrefix",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "234"
           }
         ]
@@ -97,7 +97,7 @@
         "sliceName": "humannameOwnName",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "235",
             "comment": "Achternaam"
           }
@@ -108,7 +108,7 @@
         "path": "Practitioner.name.given",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "229",
             "comment": "Voornamen"
           }

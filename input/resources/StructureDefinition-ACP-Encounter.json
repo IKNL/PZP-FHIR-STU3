@@ -2,9 +2,9 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-Encounter",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPEncounter",
-  "title": "Encounter",
+  "title": "ACP Encounter",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -25,8 +25,8 @@
   "fhirVersion": "3.0.2",
   "mapping": [
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -42,7 +42,7 @@
         "path": "Encounter",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "764",
             "comment": "Contact"
           }
@@ -53,7 +53,7 @@
         "path": "Encounter.class",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "765",
             "comment": "ContactType"
           }
@@ -74,7 +74,7 @@
         "path": "Encounter.participant",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "766",
             "comment": "ContactMet"
           }
@@ -95,12 +95,12 @@
         ],
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "807",
             "comment": "Gesprek gevoerd door (Zorgverlener)"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "148",
             "comment": "Gesprek gevoerd in bijzijn van (Contactpersoon)"
           }
@@ -111,12 +111,12 @@
         "path": "Encounter.period.start",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "770",
             "comment": "BeginDatumTijd"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "304",
             "comment": "Datum van invullen (DatumTijd)"
           }
@@ -129,12 +129,12 @@
         "definition": "Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis.",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "772",
             "comment": "RedenContact"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "775",
             "comment": "Verrichting"
           }

@@ -14,6 +14,8 @@ Date: August 26, 2025
 
 import json
 import sys
+import os
+import logging
 import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Optional, Set, Union
@@ -25,6 +27,70 @@ import inspect
 from transformers.base_transformer import BaseTransformer
 
 
+# --- Colored console output ---
+# Enable ANSI escape codes on Windows 10+ (no-op on other platforms)
+if sys.platform == 'win32':
+    os.system('')  # enables VT100 processing in cmd.exe / bat
+
+class _Colors:
+    """ANSI color codes for terminal output."""
+    RED     = '\033[91m'
+    GREEN   = '\033[92m'
+    YELLOW  = '\033[93m'
+    CYAN    = '\033[96m'
+    DIM     = '\033[2m'
+    BOLD    = '\033[1m'
+    RESET   = '\033[0m'
+
+def _cprint(color: str, message: str) -> None:
+    """Print a message with the given ANSI color, then reset."""
+    print(f"{color}{message}{_Colors.RESET}")
+
+def print_error(message: str) -> None:
+    _cprint(_Colors.RED, message)
+
+def print_warning(message: str) -> None:
+    _cprint(_Colors.YELLOW, message)
+
+def print_success(message: str) -> None:
+    _cprint(_Colors.GREEN, message)
+
+def print_info(message: str) -> None:
+    print(message)
+
+def print_skip(message: str) -> None:
+    _cprint(_Colors.DIM, message)
+
+def print_header(message: str) -> None:
+    _cprint(_Colors.CYAN + _Colors.BOLD, message)
+
+
+class _ColoredLogFormatter(logging.Formatter):
+    """Logging formatter that adds ANSI colors based on log level."""
+    
+    LEVEL_COLORS = {
+        logging.DEBUG:    _Colors.DIM,
+        logging.INFO:     '',
+        logging.WARNING:  _Colors.YELLOW,
+        logging.ERROR:    _Colors.RED,
+        logging.CRITICAL: _Colors.RED + _Colors.BOLD,
+    }
+    
+    def format(self, record):
+        color = self.LEVEL_COLORS.get(record.levelno, '')
+        message = super().format(record)
+        if color:
+            return f"{color}{message}{_Colors.RESET}"
+        return message
+
+
+def _setup_colored_logging():
+    """Configure the root logger with a colored console handler."""
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setFormatter(_ColoredLogFormatter('%(levelname)s: %(message)s'))
+    logging.basicConfig(level=logging.WARNING, handlers=[handler])
+
+
 class FhirR4ToStu3Transformer:
     """Main orchestrator for FHIR R4 to STU3 transformations."""
     
@@ -34,6 +100,7 @@ class FhirR4ToStu3Transformer:
     
     def _discover_transformers(self) -> Dict[str, BaseTransformer]:
         """Automatically discover all transformer classes in the transformers package."""
+        print_header("Discovering available transformers...")
         discovered_transformers = {}
         
         # Get the transformers directory path
@@ -59,10 +126,10 @@ class FhirR4ToStu3Transformer:
                         transformer_instance = obj()
                         resource_type = transformer_instance.resource_type
                         discovered_transformers[resource_type] = transformer_instance
-                        print(f"Discovered transformer: {resource_type} ({name})")
+                        print_info(f"  Discovered transformer: {resource_type} ({name})")
                         
             except Exception as e:
-                print(f"Warning: Could not load transformer from {transformer_file.name}: {e}")
+                print_warning(f"Warning: Could not load transformer from {transformer_file.name}: {e}")
         
         return discovered_transformers
     
@@ -85,11 +152,11 @@ class FhirR4ToStu3Transformer:
         
         for input_dir in input_dirs:
             if not input_dir.exists():
-                print(f"Warning: Input directory {input_dir} does not exist, skipping...")
+                print_warning(f"Warning: Input directory {input_dir} does not exist, skipping...")
                 continue
                 
             input_files = list(input_dir.glob(pattern))
-            print(f"Collecting PractitionerRole resources from {len(input_files)} files in {input_dir}")
+            print_info(f"  Collecting PractitionerRole resources from {len(input_files)} files in {input_dir}")
             
             for input_file in input_files:
                 try:
@@ -102,7 +169,7 @@ class FhirR4ToStu3Transformer:
                             practitioner_role_resources[resource_id] = resource_data
                             
                 except Exception as e:
-                    print(f"Warning: Could not read {input_file.name} for PractitionerRole collection: {e}")
+                    print_warning(f"Warning: Could not read {input_file.name} for PractitionerRole collection: {e}")
         
         return practitioner_role_resources
     
@@ -129,7 +196,7 @@ class FhirR4ToStu3Transformer:
                         practitioner_role_resources[resource_id] = resource_data
                         
             except Exception as e:
-                print(f"Warning: Could not read {input_file.name} for PractitionerRole collection: {e}")
+                print_warning(f"Warning: Could not read {input_file.name} for PractitionerRole collection: {e}")
         
         return practitioner_role_resources
     
@@ -153,8 +220,8 @@ class FhirR4ToStu3Transformer:
         """
         resource_type = resource_data.get('resourceType')
         
-        # Skip ValueSet, StructureDefinition, ImplementationGuide, Parameters, and SearchParameter resources - these are never converted
-        if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter']:
+        # Skip ValueSet, StructureDefinition, ImplementationGuide, Parameters, SearchParameter, ActorDefinition, and CapabilityStatement resources - these are never converted
+        if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter', 'ActorDefinition', 'CapabilityStatement']:
             return None
         
         if resource_type not in self.transformers:
@@ -187,17 +254,17 @@ class FhirR4ToStu3Transformer:
             
             # Check if this is a resource type we should skip
             resource_type = r4_resource.get('resourceType')
-            if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter']:
-                print(f"⏭ Skipping {input_file.name} (type: {resource_type} - not converted)")
+            if resource_type in ['ValueSet', 'StructureDefinition', 'ImplementationGuide', 'Parameters', 'SearchParameter', 'ActorDefinition', 'CapabilityStatement']:
+                print_skip(f"  ⏭ Skipping {input_file.name} (type: {resource_type} - not converted)")
                 return None
             
-            print(f"Transforming: {input_file.name} -> {output_file.name}")
+            print_info(f"  Transforming: {input_file.name} -> {output_file.name}")
             
             stu3_resource = self.transform_resource(r4_resource, practitioner_role_resources)
             
             # If transform_resource returns None, the resource was skipped
             if stu3_resource is None:
-                print(f"⏭ Skipped {input_file.name} (resource type not converted)")
+                print_skip(f"  ⏭ Skipped {input_file.name} (resource type not converted)")
                 return None
             
             # Ensure output directory exists
@@ -206,11 +273,11 @@ class FhirR4ToStu3Transformer:
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(stu3_resource, f, indent=2, ensure_ascii=False)
                 
-            print(f"✓ Successfully transformed {input_file.name}")
+            print_success(f"  ✓ Successfully transformed {input_file.name}")
             return True
             
         except Exception as e:
-            print(f"✗ Error transforming {input_file.name}: {e}")
+            print_error(f"  ✗ Error transforming {input_file.name}: {e}")
             return False
     
     def transform_directories(self, input_dirs: List[Path], output_dir: Path, 
@@ -229,24 +296,25 @@ class FhirR4ToStu3Transformer:
         all_input_files = []
         for input_dir in input_dirs:
             if not input_dir.exists():
-                print(f"Warning: Input directory {input_dir} does not exist, skipping...")
+                print_warning(f"Warning: Input directory {input_dir} does not exist, skipping...")
                 continue
             
             input_files = list(input_dir.glob(pattern))
-            print(f"Found {len(input_files)} files in {input_dir}")
+            print_info(f"  Found {len(input_files)} files in {input_dir}")
             all_input_files.extend(input_files)
         
         if not all_input_files:
-            print(f"No files found matching pattern '{pattern}' in any input directory")
+            print_warning(f"No files found matching pattern '{pattern}' in any input directory")
             return
         
-        print(f"Total files to process: {len(all_input_files)}")
+        print_info(f"  Total files to process: {len(all_input_files)}")
         
         # First pass: collect all PractitionerRole resources for reference resolution
-        print("Collecting PractitionerRole resources for reference resolution...")
+        print_header("\nCollecting PractitionerRole resources for reference resolution...")
         practitioner_role_resources = self._collect_practitioner_role_resources_from_dirs(input_dirs, pattern)
-        print(f"Found {len(practitioner_role_resources)} PractitionerRole resources")
+        print_info(f"  Found {len(practitioner_role_resources)} PractitionerRole resources")
         
+        print_header("\nTransforming resources...")
         success_count = 0
         error_count = 0
         skipped_count = 0
@@ -260,7 +328,7 @@ class FhirR4ToStu3Transformer:
                     
                     resource_type = resource_data.get('resourceType')
                     if resource_type not in resource_types:
-                        print(f"⏭ Skipping {input_file.name} (type: {resource_type})")
+                        print_skip(f"  ⏭ Skipping {input_file.name} (type: {resource_type})")
                         skipped_count += 1
                         continue
                 
@@ -276,13 +344,19 @@ class FhirR4ToStu3Transformer:
                     skipped_count += 1
                     
             except Exception as e:
-                print(f"✗ Failed to process {input_file.name}: {e}")
+                print_error(f"  ✗ Failed to process {input_file.name}: {e}")
                 error_count += 1
         
-        print(f"\nTransformation complete:")
-        print(f"  ✓ Success: {success_count}")
-        print(f"  ✗ Errors: {error_count}")
-        print(f"  ⏭ Skipped: {skipped_count}")
+        # --- Summary ---
+        print_header(f"\n{'='*50}")
+        print_header("Transformation summary:")
+        print_header(f"{'='*50}")
+        print_success(f"  ✓ Success: {success_count}")
+        if error_count > 0:
+            print_error(f"  ✗ Errors:  {error_count}")
+        else:
+            print_info(f"  ✗ Errors:  {error_count}")
+        print_skip(f"  ⏭ Skipped: {skipped_count}")
     
     def transform_directory(self, input_dir: Path, output_dir: Path, 
                           pattern: str = "*.json", 
@@ -302,6 +376,9 @@ class FhirR4ToStu3Transformer:
 
 def main():
     """Main entry point."""
+    # Set up colored logging for the logging module (used by base_transformer etc.)
+    _setup_colored_logging()
+    
     transformer = FhirR4ToStu3Transformer()
     available_resources = transformer.get_available_resources()
     
@@ -322,7 +399,7 @@ def main():
     args = parser.parse_args()
     
     if len(args.inputs) < 2:
-        print("Error: Need at least one input and one output path")
+        print_error("Error: Need at least one input and one output path")
         sys.exit(1)
     
     # Last argument is output, rest are inputs
@@ -332,7 +409,7 @@ def main():
     # Validate input paths exist
     for input_path in input_paths:
         if not input_path.exists():
-            print(f"Error: Input path '{input_path}' does not exist")
+            print_error(f"Error: Input path '{input_path}' does not exist")
             sys.exit(1)
     
     # Parse resource types filter
@@ -342,8 +419,8 @@ def main():
         # Validate resource types
         invalid_types = resource_types - set(available_resources)
         if invalid_types:
-            print(f"Error: Unsupported resource types: {', '.join(invalid_types)}")
-            print(f"Available types: {', '.join(available_resources)}")
+            print_error(f"Error: Unsupported resource types: {', '.join(invalid_types)}")
+            print_info(f"Available types: {', '.join(available_resources)}")
             sys.exit(1)
     
     try:
@@ -351,7 +428,7 @@ def main():
         if len(input_paths) == 1 and input_paths[0].is_file():
             # For single file processing, we can't resolve PractitionerRole references
             # Log a warning and proceed without reference resolution
-            print("Warning: Single file processing - PractitionerRole reference resolution not available")
+            print_warning("Warning: Single file processing - PractitionerRole reference resolution not available")
             result = transformer.transform_file(input_paths[0], output_path)
             if result is False:
                 sys.exit(1)
@@ -362,7 +439,7 @@ def main():
                 if input_path.is_dir():
                     directory_paths.append(input_path)
                 else:
-                    print(f"Error: '{input_path}' is not a directory (multi-input mode only supports directories)")
+                    print_error(f"Error: '{input_path}' is not a directory (multi-input mode only supports directories)")
                     sys.exit(1)
             
             if len(directory_paths) == 1:
@@ -371,10 +448,10 @@ def main():
                 transformer.transform_directories(directory_paths, output_path, args.pattern, resource_types)
             
     except KeyboardInterrupt:
-        print("\nTransformation cancelled by user")
+        print_warning("\nTransformation cancelled by user")
         sys.exit(1)
     except Exception as e:
-        print(f"Error: {e}")
+        print_error(f"Error: {e}")
         sys.exit(1)
 
 

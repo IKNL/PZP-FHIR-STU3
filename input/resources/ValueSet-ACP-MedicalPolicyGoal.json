@@ -2,9 +2,9 @@
   "resourceType": "ValueSet",
   "id": "ACP-MedicalPolicyGoal",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "MedicalPolicyGoalVS",
-  "title": "Most Important Agreed-upon Goal of Medical Policy",
+  "title": "ACP Most Important Agreed-upon Goal of Medical Policy",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -23,13 +23,28 @@
       "system": "http://snomed.info/sct",
       "concept": [ {
         "code": "385987000",
-        "display": "Curatief / actief ziektebeleid"
+        "display": "zorg bij ziekte en/of letsel"
       }, {
         "code": "1351964001",
-        "display": "Life-sustaining treatment (regime/therapy)"
+        "display": "levensverlengende behandeling"
       }, {
         "code": "713148004",
-        "display": "Voorkomen en behandelen van symptomen (verrichting)"
+        "display": "voorkomen en behandelen van symptomen"
+      } ]
+    },{
+      "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "concept": [ {
+        "code": "UNK",
+        "display": "nog onbekend",
+        "designation": [ {
+          "language": "nl-NL",
+          "use": {
+            "system": "http://snomed.info/sct",
+            "code": "900000000000013009",
+            "display": "Synonym"
+          },
+          "value": "onbekend"
+        } ]
       } ]
     } ]
   }

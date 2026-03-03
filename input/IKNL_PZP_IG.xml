@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R3/fhir-single.xsd">
   <id value="iknl.fhir.stu3.pzp" />
   <url value="https://api.iknl.nl/docs/pzp/stu3/ImplementationGuide/iknl.fhir.stu3.pzp" />
-  <version value="1.0.0-rc1" />
+  <version value="1.0.0-rc2" />
   <name value="PZP" />
   <title value="IKNL PZP STU3" />
   <status value="active" />
@@ -73,7 +73,7 @@
     -->
     <parameter>
       <code value="copyrightyear" />
-      <value value="2025+" />
+      <value value="2026+" />
     </parameter>
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>

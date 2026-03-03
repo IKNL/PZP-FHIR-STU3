@@ -1,0 +1,138 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ACP-InformRelativesRequest",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-InformRelativesRequest",
+  "version": "1.0.0-rc2",
+  "name": "ACPInformRelativesRequest",
+  "title": "ACP Inform Relatives Request",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "IKNL",
+  "contact": [
+    {
+      "name": "IKNL",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@iknl.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Communication events that have taken place in context of Advance Care Planning. Based on Communication resource.",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "3.0.2",
+  "mapping": [
+    {
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
+      "name": "ACP zib2017 dataset"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "CommunicationRequest",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/CommunicationRequest",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "CommunicationRequest",
+        "path": "CommunicationRequest",
+        "mapping": [
+          {
+            "identity": "pall-izppz-zib2020v2026-02-24",
+            "map": "187",
+            "comment": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.category",
+        "path": "CommunicationRequest.category",
+        "comment": "The `category.text` element may be used to provide additional context for human readers next to the pattern category coding, for example: 'Request for patient to inform relatives about treatment agreements'.",
+        "min": 1,
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "223449006"
+            }
+          ]
+        }
+      },
+      {
+        "id": "CommunicationRequest.subject",
+        "path": "CommunicationRequest.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.recipient",
+        "path": "CommunicationRequest.recipient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-ContactPerson"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.authoredOn",
+        "path": "CommunicationRequest.authoredOn",
+        "comment": "Indicate the date and preferrably time when the request was sent"
+      },
+      {
+        "id": "CommunicationRequest.sender",
+        "path": "CommunicationRequest.sender",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.requester.agent",
+        "path": "CommunicationRequest.requester.agent",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-HealthProfessional-Practitioner"
+          }
+        ]
+      },
+      {
+        "id": "CommunicationRequest.requester.agent.extension:practitionerRole",
+        "path": "CommunicationRequest.requester.agent.extension",
+        "sliceName": "practitionerRole",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference"
+          }
+        ],
+        "isModifier": false
+      },
+      {
+        "id": "CommunicationRequest.reasonCode",
+        "path": "CommunicationRequest.reasonCode",
+        "min": 1,
+        "max": "1",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "713603004"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

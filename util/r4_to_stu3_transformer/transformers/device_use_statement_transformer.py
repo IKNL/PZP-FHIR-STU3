@@ -48,7 +48,6 @@ class DeviceUseStatementTransformer(BaseTransformer):
         self._transform_timing_field(r4_resource, stu3_resource)
         self._transform_reason_code(r4_resource, stu3_resource)
         self._transform_body_site_extensions(r4_resource, stu3_resource)
-        self._copy_encounter_reference_extension(r4_resource, stu3_resource)
         self._transform_health_professional_extension(r4_resource, stu3_resource)
         
         # Clean references throughout the resource
@@ -134,28 +133,6 @@ class DeviceUseStatementTransformer(BaseTransformer):
                         if extension.get('url') == 'http://nictiz.nl/fhir/StructureDefinition/ext-AnatomicalLocation.Laterality':
                             extension['url'] = 'http://nictiz.nl/fhir/StructureDefinition/BodySite-Qualifier'
     
-    def _copy_encounter_reference_extension(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
-        """
-        Copy the ext-EncounterReference extension from R4 to STU3.
-        
-        This extension is at the root level and should be preserved in STU3.
-        Extension URL: https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference
-        """
-        if 'extension' in r4_resource:
-            encounter_ref_extensions = []
-            
-            for extension in r4_resource['extension']:
-                if extension.get('url') == 'https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-EncounterReference':
-                    encounter_ref_extensions.append(extension)
-            
-            if encounter_ref_extensions:
-                # Ensure extension array exists in STU3 resource
-                if 'extension' not in stu3_resource:
-                    stu3_resource['extension'] = []
-                
-                # Add the EncounterReference extensions
-                stu3_resource['extension'].extend(encounter_ref_extensions)
-    
     def _transform_health_professional_extension(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
         """
         Transform the ext-MedicalDevice.HealthProfessional extension from R4 to STU3.
@@ -233,8 +210,6 @@ DeviceUseStatement R4 to STU3 Transformations:
 |                                  |                                  | transformation                   |
 | note                             | note                             | Direct mapping                   |
 +----------------------------------+----------------------------------+----------------------------------+
-| extension[ext-EncounterReference]| extension[ext-EncounterReference]| Direct copy of extension         |
-+----------------------------------+----------------------------------+----------------------------------+
 | extension[ext-MedicalDevice.     | extension[zib-MedicalDevice-     | URL transformation:              |
 | HealthProfessional]              | Practitioner]                    | ext-MedicalDevice.HealthProfes-  |
 |                                  |                                  | sional -> zib-MedicalDevice-     |
@@ -247,7 +222,6 @@ Special Cases:
 - timingPeriod field copied directly from R4 to STU3
 - Reference cleaning applied to subject, source, device fields
 - reasonCode becomes indication in STU3
-- ext-EncounterReference extension preserved at root level
 - ext-MedicalDevice.HealthProfessional extension URL transformed to STU3 equivalent
 - bodySite.extension[ext-AnatomicalLocation.Laterality] URL transformed to BodySite-Qualifier
 """

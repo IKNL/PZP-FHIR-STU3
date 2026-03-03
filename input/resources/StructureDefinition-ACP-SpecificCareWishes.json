@@ -2,9 +2,9 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-SpecificCareWishes",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-SpecificCareWishes",
-  "version": "1.0.0-rc1",
+  "version": "1.0.0-rc2",
   "name": "ACPSpecificCareWishes",
-  "title": "Specific Care Wishes",
+  "title": "ACP Specific Care Wishes",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -26,8 +26,8 @@
   "mapping": [
 
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -43,7 +43,7 @@
         "path": "Observation",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "190",
             "comment": "Specifieke wensen (AlgemeneMeting)"
           }
@@ -62,7 +62,7 @@
         },
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "203",
             "comment": "Wens en verwachting patient (MetingNaam)"
           }
@@ -93,7 +93,7 @@
         "path": "Observation.effective[x]",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "206",
             "comment": "UitslagDatumTijd"
           }
@@ -109,7 +109,7 @@
         ],
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "204",
             "comment": "Wens en verwachting patient (UitslagWaarde)"
           }
@@ -121,7 +121,7 @@
         "comment": "The `dataAbsentReason` is helpful to indicate a more detailed reason on why the data is absent if this is known, namely: \r\n- if the question has been asked but the source does not know the value (code = _asked-unknown_) \r\n- if the question has not been asked (code = _not-asked_) ",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "204",
             "comment": "Wens en verwachting patient (UitslagWaarde)"
           }
@@ -140,7 +140,7 @@
         },
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "205",
             "comment": "Vaststellen wens en verwachting patiënt (Meetmethode)"
           }

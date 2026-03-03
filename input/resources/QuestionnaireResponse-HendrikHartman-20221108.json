@@ -11,13 +11,30 @@
   "status": "completed",
   "authored": "2025-08-25T19:28:22.151Z",
   "questionnaire": {
-    "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|0.1.3-beta3"
+    "reference": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017|1.0.0-rc2"
+  },
+  "source": {
+    "reference": "Patient/ACP-Patient-HendrikHartman-Pat1",
+    "display": "Patient, Hendrik Hartman"
+  },
+  "author": {
+    "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
+    "display": "Healthcare professional (person), van Huissen",
+    "extension": [
+      {
+        "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
+        "valueReference": {
+          "reference": "PractitionerRole/ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1",
+          "display": "Healthcare professional (role), van Huissen"
+        }
+      }
+    ]
   },
   "item": [
     {
       "answer": [
         {
-          "valueDateTime": "2020-10-01T19:23:15.000Z"
+          "valueDateTime": "2022-11-08T19:23:15.000Z"
         }
       ],
       "linkId": "385",
@@ -50,7 +67,7 @@
     {
       "answer": [
         {
-          "valueDateTime": "1961-01-01T20:23:15.000Z"
+          "valueDate": "1961-01-01"
         }
       ],
       "linkId": "6",
@@ -543,8 +560,9 @@
                   "answer": [
                     {
                       "valueCoding": {
-                        "code": "ICD",
-                        "display": "ICD"
+                        "system": "http://snomed.info/sct",
+                        "code": "72506001",
+                        "display": "implanteerbare cardioverter-defibrillator"
                       }
                     }
                   ],
@@ -624,7 +642,7 @@
             {
               "answer": [
                 {
-                  "valueString": "Broer Michiel woont om de hoek en is erg betrokken bij het proces van Hendrik. Het gaat de laatste tijd een stuk slechter en Hendrik denkt vaker na over de dood. Hij is niet bang, maar vindt het lastig om zijn familie achter te laten. "
+                  "valueString": "Broer Michiel woont om de hoek en is erg betrokken bij het proces van Hendrik. Het gaat de laatste tijd een stuk slechter en Hendrik denkt vaker na over de dood. Hij is niet bang, maar vindt het lastig om zijn familie achter te laten."
                 }
               ],
               "linkId": "382",
