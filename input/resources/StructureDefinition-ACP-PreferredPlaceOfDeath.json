@@ -26,8 +26,8 @@
   "mapping": [
 
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -43,7 +43,7 @@
         "path": "Observation",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "105",
             "comment": "Gewenste plek van overlijden (AlgemeneMeting)"
           }
@@ -62,7 +62,7 @@
         },
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "110",
             "comment": "MetingNaam voor Gewenste plek van overlijden"
           }
@@ -93,7 +93,7 @@
         "path": "Observation.effective[x]",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "113",
             "comment": "UitslagDatumTijd"
           }
@@ -115,7 +115,7 @@
         },
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "111",
             "comment": "Voorkeursplek (UitslagWaarde)"
           }
@@ -126,7 +126,7 @@
         "path": "Observation.dataAbsentReason",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "111",
             "comment": "Voorkeursplek (UitslagWaarde)"
           }
@@ -137,7 +137,7 @@
         "path": "Observation.comment",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "108",
             "comment": "Toelichting"
           }

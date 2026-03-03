@@ -25,8 +25,8 @@
   "fhirVersion": "3.0.2",
   "mapping": [
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -42,7 +42,7 @@
         "path": "Device",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "76",
             "comment": "Product"
           }
@@ -54,7 +54,7 @@
         "sliceName": "serialNumber",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "77",
             "comment": "ProductID. (serial number (21) part of the UDI)"
           }
@@ -65,7 +65,7 @@
         "path": "Device.udi.carrierHRF",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "77",
             "comment": "ProductID"
           }
@@ -82,7 +82,7 @@
         },
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "78",
             "comment": "ProductType van ICD"
           }
@@ -93,7 +93,7 @@
         "path": "Device.note.text",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "79",
             "comment": "ProductOmschrijving"
           }

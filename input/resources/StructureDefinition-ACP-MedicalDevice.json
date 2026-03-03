@@ -25,8 +25,8 @@
   "fhirVersion": "3.0.2",
   "mapping": [
     {
-      "identity": "pall-izppz-zib2017v2025-03-11",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2025-10-29T13%3A09%3A23",
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -42,12 +42,12 @@
         "path": "DeviceUseStatement",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "218",
             "comment": "Heeft de patient een ICD?"
           },
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "75",
             "comment": "ICD (MedischHulpmiddel)"
           }
@@ -59,7 +59,7 @@
         "sliceName": "HealthcareProvider",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "86",
             "comment": "Locatie"
           }
@@ -71,7 +71,7 @@
         "sliceName": "HealthProfessional",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "88",
             "comment": "Zorgverlener"
           }
@@ -92,7 +92,7 @@
         "path": "DeviceUseStatement.whenUsed.start",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "80",
             "comment": "BeginDatum"
           }
@@ -118,7 +118,7 @@
         ],
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "76",
             "comment": "Product"
           }
@@ -130,7 +130,7 @@
         "sliceName": "indication_Problem",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "81",
             "comment": "Indicatie"
           }
@@ -141,7 +141,7 @@
         "path": "DeviceUseStatement.bodySite",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "84",
             "comment": "AnatomischeLocatie"
           }
@@ -153,7 +153,7 @@
         "sliceName": "Laterality",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "85",
             "comment": "Lateraliteit"
           }
@@ -164,7 +164,7 @@
         "path": "DeviceUseStatement.note.text",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2017v2025-03-11",
+            "identity": "pall-izppz-zib2020v2026-02-24",
             "map": "83",
             "comment": "Toelichting"
           }
