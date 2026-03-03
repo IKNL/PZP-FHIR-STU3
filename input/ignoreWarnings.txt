@@ -40,10 +40,13 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 
 # CodeSystem is not accessible by the validator. The code is manually checked and is valid within the codesystem and is inside the ValueSet.
 %De gevonden code (urn:oid:2.16.840.1.113883.2.4.6.7#0100) staat niet in waardelijst 'SpecialismeAGBCodelijst'%
+%The code provided (urn:oid:2.16.840.1.113883.2.4.6.7#0100) was not found in the value set 'SpecialismeAGBCodelijst' (http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.7--20171231000000|2017-12-31T00:00:00), and a code from this value set is required:%
+
+
 
 # Something in the base FHIR definition. Not in our control.
 %als identifier.system 'urn:ietf:rfc:3986' is, dan moet de identifier.value een volledige uri zijn (dus beginnen met een scheme), niet 'Local eCMS identifier'%
-
+%if identifier.system is 'urn:ietf:rfc:3986', then the identifier.value must be a full URI (e.g. start with a scheme), not 'Local eCMS identifier'%
 
 # SNOMED code 570801000146104 is added after 'http://snomed.info/sct/11000146104/version/20240930' which is the one currently known by tx.fhir.org/r4
 %Unknown code '570801000146104' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'%
@@ -51,6 +54,8 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 # SNOMED code 1351964001 is  https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
 %Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930' (Netherlands Edition)%
 %Geen van de gevonden codings bestaan in waardelijst 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc2) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#1351964001)%
+%	None of the codings provided are in the value set 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc2), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)%
+
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
 ERROR: ValueSet/ACP-MedicalPolicyGoal: ValueSet.compose.include[0].concept[1]: The code '1351964001' is not valid in the system http://snomed.info/sct (Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930')
@@ -67,7 +72,7 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 
 # Error in the FHIR invariant
 %Fout bij constraint: que-7%
-
+%Constraint failed: que-7%
 
 # Slicing errors in base profiles... can't do anything about this in this version
 %launches straight into slicing without the slicing being set up properly first%
@@ -84,14 +89,38 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 %Het element Patient.contact.name.family.value heeft geen toegekende typen en geen content-reference%
 %Het element Patient.contact.name.given.value heeft geen toegekende typen en geen content-reference%
 %Het element Observation.status.value heeft geen toegekende typen en geen content-reference%
-%et element Patient.name.extension heeft een binding, maar er zijn geen typen gespecificeerd die een binding kunnen hebben [Extension]%
+%Het element Patient.name.extension heeft een binding, maar er zijn geen typen gespecificeerd die een binding kunnen hebben [Extension]%
 %Het element RelatedPerson.name.extension heeft een binding, maar er zijn geen typen gespecificeerd die een binding kunnen hebben [Extension]%
 %Het element Practitioner.name.extension heeft een binding, maar er zijn geen typen gespecificeerd die een binding kunnen hebben [Extension]%
 %Het element Patient.contact.name.extension heeft een binding, maar er zijn geen typen gespecificeerd die een binding kunnen hebben [Extension]%
 %Hyperlink 'StructureDefinition-ACP-TreatmentDirective-definitions.html#Consent.extension:verification.extension:Verified.value[x]' at 'div/table/tr/td/a' for 'value[x]' does not resolve%
+%The element RelatedPerson.name.extension has a binding, but no bindable types are present [Extension]%
+%The element RelatedPerson.name.family.value has no assigned types, and no content reference%
+%The element RelatedPerson.name.given.value has no assigned types, and no content reference%
+%The element Practitioner.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Practitioner.name.family.value has no assigned types, and no content reference%
+%The element Practitioner.name.given.value has no assigned types, and no content reference%
+%The element Observation.status.value has no assigned types, and no content reference%
+%The element RelatedPerson.name.family.value has no assigned types, and no content reference%
+%The element RelatedPerson.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Practitioner.name.given.value has no assigned types, and no content reference%
+%The element Practitioner.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.name.given.value has no assigned types, and no content reference%
+%The element Patient.name.family.value has no assigned types, and no content reference%
+%The element Patient.gender.value has no assigned types, and no content reference%
+%The element Patient.contact.name.extension has a binding, but no bindable types are present [Extension]%
+%The element Patient.contact.name.family.value has no assigned types, and no content reference%
+%The element Patient.contact.name.given.value has no assigned types, and no content reference%
+%Hyperlink 'StructureDefinition-ACP-TreatmentDirective-definitions.html#Consent.extension:verification.extension:Verified.valueBoolean' at 'div/table/tr/td/a' for 'valueBoolean' does not resolv%
 
 # IG publisher stuff?
 %De extensie http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment mag niet op dit punt worden gebruikt (toegestaan = e:ImplementationGuide.dependsOn; dit element is [BackboneElement, ImplementationGuide.dependency])%
+%The extension http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.dependency]; allowed for this version = e:ImplementationGuide.dependsOn)%
 
 # Known issue: unresolved links to HL7 v3 ValueSets in STU3 IG Publisher
 %The link 'http://hl7.org/fhir/STU3/v3/%
+
+# This is an incorrect link in the nl-core profile which we cannot change.
+%The link 'null.html' for "http://hl7.org/fhir/StructureDefinition/body-site-instance" cannot be resolved%
+%The link 'StructureDefinition-ACP-TreatmentDirective-definitions.html#Consent.extension:verification.extension:Verified.value[x]'%
