@@ -153,7 +153,7 @@
         {
           "linkId": "787",
           "text": "Is de patiënt op dit moment wilsbekwaam m.b.t. medische behandelbeslissingen?",
-          "type": "choice",
+          "type": "boolean",
           "required": false,
           "repeats": false,
           "item": [
@@ -163,20 +163,6 @@
               "type": "string",
               "required": false,
               "repeats": false
-            }
-          ],
-          "option": [
-            {
-              "valueCoding": {
-                "code": "1",
-                "display": "Ja"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "0",
-                "display": "Nee"
-              }
             }
           ]
         },
@@ -522,23 +508,9 @@
               "linkId": "52",
               "prefix": "d)",
               "text": "Is de wettelijk vertegenwoordiger ook de eerste contactpersoon?",
-              "type": "choice",
+              "type": "boolean",
               "required": false,
-              "repeats": false,
-              "option": [
-                {
-                  "valueCoding": {
-                    "code": "1",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "code": "0",
-                    "display": "Nee"
-                  }
-                }
-              ]
+              "repeats": false
             },
             {
               "linkId": "53",
@@ -572,9 +544,7 @@
               "enableWhen": [
                 {
                   "question": "52",
-                  "answerCoding": {
-                    "code": "0"
-                  }
+                  "answerBoolean": false
                 }
               ]
             },
@@ -709,9 +679,7 @@
               "enableWhen": [
                 {
                   "question": "52",
-                  "answerCoding": {
-                    "code": "0"
-                  }
+                  "answerBoolean": false
                 }
               ]
             },
@@ -837,9 +805,7 @@
               "enableWhen": [
                 {
                   "question": "52",
-                  "answerCoding": {
-                    "code": "0"
-                  }
+                  "answerBoolean": false
                 }
               ]
             }
@@ -2330,23 +2296,9 @@
           "linkId": "256",
           "prefix": "a)",
           "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?",
-          "type": "choice",
+          "type": "boolean",
           "required": false,
-          "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "code": "1",
-                "display": "Ja"
-              }
-            },
-            {
-              "valueCoding": {
-                "code": "0",
-                "display": "Nee"
-              }
-            }
-          ]
+          "repeats": false
         },
         {
           "linkId": "257",
