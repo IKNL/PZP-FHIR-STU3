@@ -52,14 +52,6 @@
         "id": "Procedure.code",
         "path": "Procedure.code",
         "min": 1,
-        "patternCodeableConcept": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "713603004"
-            }
-          ]
-        },
         "mapping": [
           {
             "identity": "pall-izppz-zib2020v2026-02-24",
@@ -67,6 +59,41 @@
             "comment": "PZP gesprek (VerrichtingType)"
           }
         ]
+      },
+      {
+        "id": "Procedure.code.coding",
+        "path": "Procedure.code.coding",
+        "min": 1
+      },
+      {
+        "id": "Procedure.code.coding:VerrichtingTypeCodelijst",
+        "path": "Procedure.code.coding",
+        "sliceName": "VerrichtingTypeCodelijst",
+        "max": "1",
+        "patternCoding": {
+          "system": "http://snomed.info/sct",
+          "code": "900000000000013009"
+        }
+      },
+      {
+        "id": "Procedure.code.coding:CBV",
+        "path": "Procedure.code.coding",
+        "sliceName": "DHD CBV bestand",
+        "max": "1",
+        "patternCoding": {
+          "system": "urn:oid:2.16.840.1.113883.2.4.3.120.5.3",
+          "code": "411600B"
+        }
+      },
+      {
+        "id": "Procedure.code.coding:NZA",
+        "path": "Procedure.code.coding",
+        "sliceName": "NZA Verrichtingen",
+        "max": "1",
+        "patternCoding": {
+          "system": "urn:oid:2.16.840.1.113883.2.4.3.27.15.5",
+          "code": "190099"
+        }
       },
       {
         "id": "Procedure.subject",

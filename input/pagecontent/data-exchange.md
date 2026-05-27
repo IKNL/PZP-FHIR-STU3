@@ -36,9 +36,9 @@ This approach is useful for applications that need to query specific parts of a 
 The below listed search requests show how all the ACP agreements, procedural information and relevant clinical context can be retrieved. Information on individuals involved in the ACP process are referenced from these resources and can be retrieved using the `_include` statement as defined below, or by resolving the references. Standard FHIR rules apply on the search syntax.
 
 ```
-1a GET [base]/Procedure?patient=Patient/[id]&code=http://snomed.info/sct|713603004&_include=Procedure:encounter
+1a GET [base]/Procedure?patient=Patient/[id]&code=http://snomed.info/sct|713603004,urn:oid:2.16.840.1.113883.2.4.3.120.5.3|411600B,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|190099&_include=Procedure:encounter
 
-1b GET [base]/Encounter?patient=Patient/[id]&reason=http://snomed.info/sct|713603004
+1b GET [base]/Encounter?patient=Patient/[id]&reason=http://snomed.info/sct|713603004,urn:oid:2.16.840.1.113883.2.4.3.120.5.3|411600B,urn:oid:2.16.840.1.113883.2.4.3.27.15.5|190099
 
 2 GET [base]/Consent?patient=Patient/[id]&category=http://snomed.info/sct|11291000146105&_include=Consent:actor
 
