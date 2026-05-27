@@ -78,7 +78,7 @@
       {
         "id": "Procedure.code.coding:CBV",
         "path": "Procedure.code.coding",
-        "sliceName": "DHD CBV bestand",
+        "sliceName": "DHD_CBV_Bestand",
         "max": "1",
         "patternCoding": {
           "system": "urn:oid:2.16.840.1.113883.2.4.3.120.5.3",
@@ -88,7 +88,7 @@
       {
         "id": "Procedure.code.coding:NZA",
         "path": "Procedure.code.coding",
-        "sliceName": "NZA Verrichtingen",
+        "sliceName": "NZA_Verrichtingen",
         "max": "1",
         "patternCoding": {
           "system": "urn:oid:2.16.840.1.113883.2.4.3.27.15.5",
