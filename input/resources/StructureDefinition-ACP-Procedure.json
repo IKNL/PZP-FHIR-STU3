@@ -63,7 +63,21 @@
       {
         "id": "Procedure.code.coding",
         "path": "Procedure.code.coding",
-        "min": 1
+        "min": 1,
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            },
+            {
+              "type": "value",
+              "path": "code"
+            }
+          ],
+          "ordered": false,
+          "rules": "open"
+        }
       },
       {
         "id": "Procedure.code.coding:VerrichtingTypeCodelijst",
