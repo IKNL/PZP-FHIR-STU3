@@ -6,17 +6,6 @@
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
-  "extension": [
-    {
-      "extension": [
-        {
-          "url": "legallyCapable",
-          "valueBoolean": false
-        }
-      ],
-      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
-    }
-  ],
   "contact": [
     {
       "relationship": [
