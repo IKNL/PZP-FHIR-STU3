@@ -54,52 +54,6 @@
         ]
       },
       {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions",
-        "path": "Patient.extension",
-        "sliceName": "legallyCapableMedicalTreatmentDecisions",
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
-          }
-        ],
-        "condition": [
-          "ACP-Patient-1"
-        ],
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "758",
-            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
-          }
-        ]
-      },
-      {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapable",
-        "path": "Patient.extension.extension",
-        "sliceName": "legallyCapable",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "759",
-            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
-          }
-        ]
-      },
-      {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapableComment",
-        "path": "Patient.extension.extension",
-        "sliceName": "legallyCapableComment",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "760",
-            "comment": "Toelichting"
-          }
-        ]
-      },
-      {
         "id": "Patient.identifier",
         "path": "Patient.identifier",
         "mapping": [

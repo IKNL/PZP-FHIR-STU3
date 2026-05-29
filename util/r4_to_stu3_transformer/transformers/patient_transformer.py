@@ -76,31 +76,18 @@ class PatientTransformer(BaseTransformer):
             return None
     
     def _transform_extensions(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
-        """Transform extensions, preserving specific extensions for STU3."""
-        
+        """Copy Patient extensions through to STU3.
+
+        Extension URLs are normalised globally afterwards by
+        ``transform_extensions_in_object`` (e.g. R4 -> STU3 URL rewrites and
+        removal of R4-only extensions), so no Patient-specific extension
+        handling is required here.
+        """
+
         if "extension" not in r4_resource:
             return
-            
-        stu3_extensions = []
-        
-        # Extensions to preserve as-is
-        preserved_extensions = [
-            "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
-        ]
-        
-        for r4_extension in r4_resource["extension"]:
-            extension_url = r4_extension.get("url")
-            
-            # Preserve specific extensions without modification
-            if extension_url in preserved_extensions:
-                stu3_extensions.append(r4_extension.copy())
-                logger.info(f"Preserved extension: {extension_url}")
-            else:
-                # For other extensions, copy as-is (can be extended later if needed)
-                stu3_extensions.append(r4_extension.copy())
-        
-        if stu3_extensions:
-            stu3_resource["extension"] = stu3_extensions
+
+        stu3_resource["extension"] = [ext.copy() for ext in r4_resource["extension"]]
     
     def _transform_contact(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
         """Transform contact array (direct mapping for Patient)."""
@@ -162,10 +149,7 @@ class PatientTransformer(BaseTransformer):
                 "contact": "Direct mapping - structure unchanged",
                 "communication": "Direct mapping - structure unchanged", 
                 "link": "Direct mapping - structure unchanged",
-                "extension": "Preserves specific extensions as-is"
-            },
-            "preserved_extensions": {
-                "ext-Patient.LegallyCapableMedicalTreatmentDecisions": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
+                "extension": "Copied through; URLs normalised globally (R4 -> STU3)"
             },
             "excluded_features": {
                 "patient-animal": "Animal extension mapping not implemented"
@@ -190,7 +174,7 @@ PATIENT_MAPPING_TABLE = """
 │ maritalStatus           │ maritalStatus           │ Direct mapping                          │
 │ multipleBirth           │ multipleBirth           │ Direct mapping (boolean/integer)       │
 │ photo                   │ photo                   │ Direct mapping                          │
-│ extension               │ extension               │ Preserved as-is for specific extensions│
+│ extension               │ extension               │ Copied through; URLs normalised (R4>STU3)│
 │ contact                 │ contact                 │ Direct mapping (nested structure)      │
 │ contact.relationship    │ contact.relationship    │ Direct mapping                          │
 │ contact.name            │ contact.name            │ Direct mapping                          │
@@ -209,13 +193,6 @@ PATIENT_MAPPING_TABLE = """
 │ link.type               │ link.type               │ Direct mapping                          │
 └─────────────────────────┴─────────────────────────┴─────────────────────────────────────────┘
 
-┌─ PRESERVED EXTENSIONS ─────────────────────────────────────────────────────────┐
-│ Extension URL                                                                  │ Notes                                     │
-├────────────────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────┤
-│ https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/                                │ Legal capacity for medical treatment     │
-│ ext-LegallyCapable-MedicalTreatmentDecisions                                   │ decisions - preserved as-is               │
-└────────────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────┘
-
 ┌─ EXCLUDED FEATURES ────────────────────────────────────────────────────────────┐
 │ R4 Feature                         │ Reason                                    │
 ├────────────────────────────────────┼───────────────────────────────────────────┤
@@ -228,7 +205,6 @@ Special Transformations:
 2. All nested structures (contact, communication, link) maintain their format
 3. deceased and multipleBirth support both primitive and complex datatypes
 4. Animal extension mapping is intentionally excluded
-5. ext-LegallyCapable-MedicalTreatmentDecisions extension is preserved as-is
 
 Reference Datatype Transformation:
 - R4 introduced the 'type' field in Reference objects

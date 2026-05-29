@@ -6,21 +6,6 @@
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
-  "extension": [
-    {
-      "extension": [
-        {
-          "url": "legallyCapable",
-          "valueBoolean": true
-        },
-        {
-          "url": "legallyCapableComment",
-          "valueString": "Patiënt is wilsbekwaam. Bij verandering van de situatie wordt haar partner haar wettelijk vertegenwoordiger."
-        }
-      ],
-      "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
-    }
-  ],
   "identifier": [
     {
       "system": "http://fhir.nl/fhir/NamingSystem/bsn",

@@ -1,0 +1,129 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "ACP-LegallyCapable",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable",
+  "version": "1.0.0-rc2",
+  "name": "ACPLegallyCapable",
+  "title": "ACP Legally Capable",
+  "status": "draft",
+  "experimental": false,
+  "publisher": "IKNL",
+  "contact": [
+    {
+      "name": "IKNL",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "info@iknl.nl",
+          "use": "work"
+        }
+      ]
+    }
+  ],
+  "description": "Indicates whether the patient is currently assessed as having the capacity to understand and oversee the consequences of medical treatment decisions. If the patient is not legally capable, there should be a legal representative captured in a RelatedPerson resource. Based on Observation resource",
+  "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+  "fhirVersion": "3.0.2",
+  "mapping": [
+
+    {
+      "identity": "pall-izppz-zib2020v2026-02-24",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
+      "name": "ACP zib2017 dataset"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Observation",
+  "baseDefinition": "http://nictiz.nl/fhir/StructureDefinition/zib-GeneralMeasurement",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Observation",
+        "path": "Observation",
+        "mapping": [
+          {
+            "identity": "pall-izppz-zib2020v2026-02-24",
+            "map": "758",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
+          }
+        ]
+      },
+      {
+        "id": "Observation.code",
+        "path": "Observation.code",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "665671000146101"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Observation.subject",
+        "path": "Observation.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
+          }
+        ]
+      },
+      {
+        "id": "Observation.context",
+        "path": "Observation.context",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Encounter"
+          }
+        ]
+      },
+      {
+        "id": "Observation.effective[x]",
+        "path": "Observation.effective[x]"    
+      },
+      {
+        "id": "Observation.value[x]",
+        "path": "Observation.value[x]",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "pall-izppz-zib2020v2026-02-24",
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
+          }
+        ]
+      },
+      {
+        "id": "Observation.dataAbsentReason",
+        "path": "Observation.dataAbsentReason",
+        "comment": "The `dataAbsentReason` is helpful to indicate a more detailed reason on why the data is absent if this is known, namely: \r\n- if the question has been asked but the source does not know the value (code = _asked-unknown_) \r\n- if the question has not been asked (code = _not-asked_) ",
+        "mapping": [
+          {
+            "identity": "pall-izppz-zib2020v2026-02-24",
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
+          }
+        ]
+      },
+      {
+        "id": "Observation.comment",
+        "path": "Observation.comment",
+        "mapping": [
+          {
+            "identity": "pall-izppz-zib2020v2026-02-24",
+            "map": "760",
+            "comment": "Toelichting"
+          }
+        ]
+      }
+    ]
+  }
+}
