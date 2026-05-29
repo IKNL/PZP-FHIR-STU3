@@ -59,14 +59,7 @@
               "code": "665671000146101"
             }
           ]
-        },
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "759",
-            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
-          }
-        ]
+        }
       },
       {
         "id": "Observation.subject",
@@ -103,8 +96,8 @@
         "mapping": [
           {
             "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "4",
-            "comment": "Wilsbekwaam"
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
         ]
       },
@@ -115,8 +108,8 @@
         "mapping": [
           {
             "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "4",
-            "comment": "Wilsbekwaam"
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
         ]
       },
