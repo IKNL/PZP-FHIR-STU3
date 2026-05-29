@@ -83,31 +83,55 @@
         "id": "Procedure.code.coding:VerrichtingTypeCodelijst",
         "path": "Procedure.code.coding",
         "sliceName": "VerrichtingTypeCodelijst",
-        "max": "1",
-        "patternCoding": {
-          "system": "http://snomed.info/sct",
-          "code": "713603004"
-        }
+        "max": "1"
       },
       {
-        "id": "Procedure.code.coding:CBV",
+        "id": "Procedure.code.coding:VerrichtingTypeCodelijst.system",
+        "path": "Procedure.code.coding.system",
+        "min": 1,
+        "fixedUri": "http://snomed.info/sct"
+      },
+      {
+        "id": "Procedure.code.coding:VerrichtingTypeCodelijst.code",
+        "path": "Procedure.code.coding.code",
+        "min": 1,
+        "fixedCode": "713603004"
+      },
+      {
+        "id": "Procedure.code.coding:DHD_CBV_Bestand",
         "path": "Procedure.code.coding",
         "sliceName": "DHD_CBV_Bestand",
-        "max": "1",
-        "patternCoding": {
-          "system": "urn:oid:2.16.840.1.113883.2.4.3.120.5.3",
-          "code": "411600B"
-        }
+        "max": "1"
       },
       {
-        "id": "Procedure.code.coding:NZA",
+        "id": "Procedure.code.coding:DHD_CBV_Bestand.system",
+        "path": "Procedure.code.coding.system",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.4.3.120.5.3"
+      },
+      {
+        "id": "Procedure.code.coding:DHD_CBV_Bestand.code",
+        "path": "Procedure.code.coding.code",
+        "min": 1,
+        "fixedCode": "411600B"
+      },
+      {
+        "id": "Procedure.code.coding:NZA_Verrichtingen",
         "path": "Procedure.code.coding",
         "sliceName": "NZA_Verrichtingen",
-        "max": "1",
-        "patternCoding": {
-          "system": "urn:oid:2.16.840.1.113883.2.4.3.27.15.5",
-          "code": "190099"
-        }
+        "max": "1"
+      },
+      {
+        "id": "Procedure.code.coding:NZA_Verrichtingen.system",
+        "path": "Procedure.code.coding.system",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.4.3.27.15.5"
+      },
+      {
+        "id": "Procedure.code.coding:NZA_Verrichtingen.code",
+        "path": "Procedure.code.coding.code",
+        "min": 1,
+        "fixedCode": "190099"
       },
       {
         "id": "Procedure.subject",
