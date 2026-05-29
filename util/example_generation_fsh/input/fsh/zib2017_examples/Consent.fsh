@@ -57,7 +57,7 @@ Usage: #example
 * provision.actor[agreementParty][+].reference = Reference(ACP-HealthProfessional-PractitionerRole-DrVanHuissen-Pat1) "Healthcare professional (role), van Huissen"
 * provision.actor[agreementParty][=].reference.type = "PractitionerRole"
 * provision.code = $snomed#89666000 "cardiopulmonale resuscitatie"
-* sourceReference = Reference(ACP-AdvanceDirective-DNR-Pat1) "ACP Advance Directive DNR"
+* sourceReference = Reference(ACP-AdvanceDirective-DNR-2025-Pat1) "ACP Advance Directive DNR"
 
 
 Instance: ACP-TreatmentDirective-ArtificialRespiration-2025-Pat1

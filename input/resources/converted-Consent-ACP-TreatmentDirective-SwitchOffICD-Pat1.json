@@ -97,7 +97,7 @@
   "consentingParty": [
     {
       "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
-      "display": "Healthcare professional (person), van Huissen",
+      "display": "Healthcare professional (person), Dr Van Huissen",
       "extension": [
         {
           "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",
