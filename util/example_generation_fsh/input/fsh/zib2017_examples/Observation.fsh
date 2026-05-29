@@ -23,7 +23,7 @@ Usage: #example
 * identifier.system = "https://acme.com/fhir/NamingSystem/resource-business-identifier"
 * identifier.value = "253b44be-bfad-4ad6-a1d6-2011f1db8a98"
 * status = #final
-* code =  $snomed#395091006 "Preferred place of death"
+* code =  $snomed#395091006 "gewenste plek van overlijden"
 * subject = Reference(ACP-Patient-HendrikHartman-Pat1) "Patient, Hendrik Hartman"
 * encounter = Reference(ACP-Encounter-2025-Pat1) "Encounter, 2025-07-29"
 * effectiveDateTime = "2025-07-29"
