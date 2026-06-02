@@ -1,4 +1,14 @@
-#### 1.0.0-rc2
+### 1.0.0-rc3
+| Issue | Short Description |
+|-------|-------------------|
+| [#137](https://github.com/IKNL/PZP-FHIR-R4/issues/137) | Replaced legally capable extension on Patient with an Observation to better support representation of legal capacity. |
+|||
+| [#151](https://github.com/IKNL/PZP-FHIR-R4/issues/151) | Corrected search URLs by fixing code parameter syntax to ensure proper OR behavior. |
+| [#138](https://github.com/IKNL/PZP-FHIR-R4/issues/138) | Updated yes/no questions in the questionnaire to use `boolean` instead of `choice`. |
+| [#127](https://github.com/IKNL/PZP-FHIR-R4/issues/127) | Added missing `subject` references to QuestionnaireResponse examples and improved consistency of author/source formatting. |
+
+
+### 1.0.0-rc2
 
 | Issue | Short Description |
 |-------|-------------------|
@@ -23,7 +33,7 @@
 | [#25](https://github.com/IKNL/PZP-FHIR-STU3/issues/25) | Added `consentingParty` mappings to STU3 Consent resources in examples. |
 
 
-#### 1.0.0-rc1
+### 1.0.0-rc1
 
 | Issue | Short Description |
 |-------|-------------------|
