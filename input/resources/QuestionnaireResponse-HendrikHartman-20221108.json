@@ -716,7 +716,7 @@
                           "valueCoding": {
                             "system": "http://snomed.info/sct",
                             "code": "340201000146103",
-                            "display": "Wenst geen euthanasie"
+                            "display": "wil geen euthanasie"
                           }
                         }
                       ],
