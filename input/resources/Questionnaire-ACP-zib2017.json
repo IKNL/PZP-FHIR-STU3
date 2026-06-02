@@ -103,1784 +103,1664 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "01.000",
-                "display": "Arts"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "01.015",
-                "display": "Huisarts"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "01.047",
-                "display": "Specialist ouderengeneeskunde"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "30.000",
-                "display": "Verpleegkundige"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "81.000",
-                "display": "Physician assistant"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
-                "code": "99.000",
-                "display": "Zorgverlener andere zorg"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "26",
-      "prefix": "1",
-      "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "787",
-          "text": "Is de patiënt op dit moment wilsbekwaam m.b.t. medische behandelbeslissingen?",
-          "type": "boolean",
-          "required": false,
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "788",
-              "text": "Toelichting",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            }
-          ]
+          "options": {
+            "reference": "http://example.org/ValueSet/ACP-HealthProfessionalSpecialty"
+          }
         },
         {
-          "linkId": "29",
-          "text": "Bij wilsonbekwaamheid m.b.t. medische behandelbeslissingen is/wordt de wettelijke vertegenwoordiger:",
+          "linkId": "26",
+          "prefix": "1",
+          "text": "Wilsbekwaamheid & Wettelijke vertegenwoordiging",
           "type": "group",
           "repeats": false,
           "item": [
             {
-              "linkId": "30",
-              "prefix": "a)",
-              "text": "Naam wettelijk vertegenwoordiger",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "392",
-                  "text": "Voornamen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "393",
-                  "text": "Voorvoegsels",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "394",
-                  "text": "Achternaam",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ]
-            },
-            {
-              "linkId": "39",
-              "prefix": "b)",
-              "text": "Contactgegevens wettelijk vertegenwoordiger",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "40",
-                  "text": "Telefoonnummers",
-                  "type": "group",
-                  "repeats": true,
-                  "item": [
-                    {
-                      "linkId": "398",
-                      "text": "Telefoonnummer",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "399",
-                      "text": "TelecomType",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
-                            "code": "LL",
-                            "display": "Vast telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
-                            "code": "FAX",
-                            "display": "Fax"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "MC",
-                            "display": "Mobiel telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "PG",
-                            "display": "Pieper"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "linkId": "400",
-                      "text": "NummerSoort",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "HP",
-                            "display": "Telefoonnummer thuis"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "TMP",
-                            "display": "Tijdelijk telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "WP",
-                            "display": "Zakelijk telefoonnummer"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "linkId": "41",
-                  "text": "EmailAdressen",
-                  "type": "group",
-                  "repeats": true,
-                  "item": [
-                    {
-                      "linkId": "401",
-                      "text": "EmailAdres",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "402",
-                      "text": "EmailSoort",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "HP",
-                            "display": "Privé e-mailadres"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "WP",
-                            "display": "Zakelijk e-mailadres"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "linkId": "410",
-              "prefix": "c)",
-              "text": "Relatie tot patiënt (1)",
-              "type": "choice",
+              "linkId": "787",
+              "text": "Is de patiënt op dit moment wilsbekwaam m.b.t. medische behandelbeslissingen?",
+              "type": "boolean",
               "required": false,
-              "repeats": true,
+              "repeats": false,
               "item": [
                 {
-                  "linkId": "411",
-                  "text": "Anders, namelijk:",
+                  "linkId": "788",
+                  "text": "Toelichting",
                   "type": "string",
                   "required": false,
+                  "repeats": false
+                }
+              ]
+            },
+            {
+              "linkId": "29",
+              "text": "Bij wilsonbekwaamheid m.b.t. medische behandelbeslissingen is/wordt de wettelijke vertegenwoordiger:",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "30",
+                  "prefix": "a)",
+                  "text": "Naam wettelijk vertegenwoordiger",
+                  "type": "group",
                   "repeats": false,
-                  "enableWhen": [
+                  "item": [
                     {
-                      "question": "410",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                        "code": "9"
-                      }
+                      "linkId": "392",
+                      "text": "Voornamen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    },
+                    {
+                      "linkId": "393",
+                      "text": "Voorvoegsels",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    },
+                    {
+                      "linkId": "394",
+                      "text": "Achternaam",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
                     }
                   ]
-                }
-              ],
-              "initialCoding": {
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                "code": "24",
-                "display": "Wettelijke vertegenwoordiger"
-              },
-              "option": [
+                },
                 {
-                  "valueCoding": {
+                  "linkId": "39",
+                  "prefix": "b)",
+                  "text": "Contactgegevens wettelijk vertegenwoordiger",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "40",
+                      "text": "Telefoonnummers",
+                      "type": "group",
+                      "repeats": true,
+                      "item": [
+                        {
+                          "linkId": "398",
+                          "text": "Telefoonnummer",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "399",
+                          "text": "TelecomType",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
+                                "code": "LL",
+                                "display": "Vast telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
+                                "code": "FAX",
+                                "display": "Fax"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "PG",
+                                "display": "Pieper"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "400",
+                          "text": "NummerSoort",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "HP",
+                                "display": "Telefoonnummer thuis"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "TMP",
+                                "display": "Tijdelijk telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "WP",
+                                "display": "Zakelijk telefoonnummer"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "41",
+                      "text": "EmailAdressen",
+                      "type": "group",
+                      "repeats": true,
+                      "item": [
+                        {
+                          "linkId": "401",
+                          "text": "EmailAdres",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "402",
+                          "text": "EmailSoort",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "HP",
+                                "display": "Privé e-mailadres"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "WP",
+                                "display": "Zakelijk e-mailadres"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "410",
+                  "prefix": "c)",
+                  "text": "Relatie tot patiënt (1)",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": true,
+                  "item": [
+                    {
+                      "linkId": "411",
+                      "text": "Anders, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "410",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                            "code": "9"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "initialCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
                     "code": "24",
                     "display": "Wettelijke vertegenwoordiger"
-                  }
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "24",
+                        "display": "Wettelijke vertegenwoordiger"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "310141000146103",
+                        "display": "Schriftelijk gemachtigde"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "3",
+                        "display": "Curator (juridisch)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "15",
+                        "display": "Mentor"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "9",
+                        "display": "Anders"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {
+                  "linkId": "51",
+                  "prefix": "c)",
+                  "text": "Relatie tot patiënt (2)",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "408",
+                      "text": "Anders, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "51",
+                          "answerCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                            "code": "OTH"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DOMPART",
+                        "display": "Partner"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "HUSB",
+                        "display": "Echtgenoot"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "WIFE",
+                        "display": "Echtgenote"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "FTH",
+                        "display": "Vader"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "MTH",
+                        "display": "Moeder"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SONC",
+                        "display": "Zoon"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DAUC",
+                        "display": "Dochter"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "BRO",
+                        "display": "Broer"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SIS",
+                        "display": "Zuster"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Anders"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "52",
+                  "prefix": "d)",
+                  "text": "Is de wettelijk vertegenwoordiger ook de eerste contactpersoon?",
+                  "type": "boolean",
+                  "required": false,
+                  "repeats": false
+                },
+                {
+                  "linkId": "53",
+                  "prefix": "e)",
+                  "text": "Naam eerste contactpersoon",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "395",
+                      "text": "Voornamen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    },
+                    {
+                      "linkId": "396",
+                      "text": "Voorvoegsels",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    },
+                    {
+                      "linkId": "397",
+                      "text": "Achternaam",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "enableWhen": [
+                    {
+                      "question": "52",
+                      "answerBoolean": false
+                    }
+                  ]
+                },
+                {
+                  "linkId": "61",
+                  "prefix": "f)",
+                  "text": "Contactgegevens eerste contactpersoon",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "62",
+                      "text": "Telefoonnummers",
+                      "type": "group",
+                      "repeats": true,
+                      "item": [
+                        {
+                          "linkId": "403",
+                          "text": "Telefoonnummer",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "404",
+                          "text": "TelecomType",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
+                                "code": "LL",
+                                "display": "Vast telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
+                                "code": "FAX",
+                                "display": "Fax"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "MC",
+                                "display": "Mobiel telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "PG",
+                                "display": "Pieper"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "405",
+                          "text": "NummerSoort",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "HP",
+                                "display": "Telefoonnummer thuis"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "TMP",
+                                "display": "Tijdelijk telefoonnummer"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "WP",
+                                "display": "Zakelijk telefoonnummer"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "66",
+                      "text": "EmailAdressen",
+                      "type": "group",
+                      "repeats": true,
+                      "item": [
+                        {
+                          "linkId": "406",
+                          "text": "EmailAdres",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        },
+                        {
+                          "linkId": "407",
+                          "text": "EmailSoort",
+                          "type": "choice",
+                          "required": false,
+                          "repeats": false,
+                          "option": [
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "HP",
+                                "display": "Privé e-mailadres"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
+                                "code": "WP",
+                                "display": "Zakelijk e-mailadres"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "enableWhen": [
+                    {
+                      "question": "52",
+                      "answerBoolean": false
+                    }
+                  ]
+                },
+                {
+                  "linkId": "819",
+                  "text": "Rol",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
                     "code": "1",
                     "display": "Eerste relatie/contactpersoon"
-                  }
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "1",
+                        "display": "Eerste relatie/contactpersoon"
+                      }
+                    }
+                  ]
                 },
                 {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "310141000146103",
-                    "display": "Schriftelijk gemachtigde"
-                  }
-                },
+                  "linkId": "77",
+                  "prefix": "g)",
+                  "text": "Relatie tot patiënt",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "412",
+                      "text": "Anders, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "77",
+                          "answerCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                            "code": "OTH"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DOMPART",
+                        "display": "Partner"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "HUSB",
+                        "display": "Echtgenoot"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "WIFE",
+                        "display": "Echtgenote"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "FTH",
+                        "display": "Vader"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "MTH",
+                        "display": "Moeder"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SONC",
+                        "display": "Zoon"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DAUC",
+                        "display": "Dochter"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "BRO",
+                        "display": "Broer"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SIS",
+                        "display": "Zuster"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Anders"
+                      }
+                    }
+                  ],
+                  "enableWhen": [
+                    {
+                      "question": "52",
+                      "answerBoolean": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "linkId": "78",
+          "prefix": "2",
+          "text": "Gesprek gevoerd in bijzijn van",
+          "type": "group",
+          "repeats": false,
+          "item": [
+            {
+              "linkId": "82",
+              "text": "Patiënt",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "option": [
                 {
                   "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "3",
-                    "display": "Curator (juridisch)"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "15",
-                    "display": "Mentor"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "9",
-                    "display": "Anders"
+                    "code": "Patiënt",
+                    "display": "Patiënt"
                   }
                 }
               ]
             },
             {
-              "linkId": "51",
-              "prefix": "c)",
-              "text": "Relatie tot patiënt (2)",
-              "type": "choice",
-              "required": false,
+              "linkId": "1038",
+              "text": "Contactperso(o)n(en)",
+              "type": "group",
               "repeats": false,
               "item": [
                 {
-                  "linkId": "408",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
+                  "linkId": "415",
+                  "text": "Rol",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  "repeats": true,
+                  "item": [
                     {
-                      "question": "51",
-                      "answerCoding": {
+                      "linkId": "414",
+                      "text": "Anders, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "3",
+                        "display": "Curator (juridisch)"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "15",
+                        "display": "Mentor"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "310141000146103",
+                        "display": "Schriftelijk gemachtigde"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
+                        "code": "9",
+                        "display": "Anders"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "80",
+                  "text": "Relatie tot patiënt",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": true,
+                  "item": [
+                    {
+                      "linkId": "413",
+                      "text": "Anders, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "80",
+                          "answerCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                            "code": "OTH"
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DOMPART",
+                        "display": "Partner"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "HUSB",
+                        "display": "Echtgenoot"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "WIFE",
+                        "display": "Echtgenote"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "FTH",
+                        "display": "Vader"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "MTH",
+                        "display": "Moeder"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SONC",
+                        "display": "Zoon"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "DAUC",
+                        "display": "Dochter"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "BRO",
+                        "display": "Broer"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                        "code": "SIS",
+                        "display": "Zuster"
+                      }
+                    },
+                    {
+                      "valueCoding": {
                         "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                        "code": "OTH"
+                        "code": "OTH",
+                        "display": "Anders"
                       }
                     }
                   ]
                 }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DOMPART",
-                    "display": "Partner"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "HUSB",
-                    "display": "Echtgenoot"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "WIFE",
-                    "display": "Echtgenote"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "FTH",
-                    "display": "Vader"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "MTH",
-                    "display": "Moeder"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SONC",
-                    "display": "Zoon"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DAUC",
-                    "display": "Dochter"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "BRO",
-                    "display": "Broer"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SIS",
-                    "display": "Zuster"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "OTH",
-                    "display": "Anders"
-                  }
-                }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "linkId": "586",
+          "prefix": "3",
+          "text": "Belangrijkste overeengekomen doel van medisch beleid",
+          "type": "group",
+          "repeats": false,
+          "item": [
             {
-              "linkId": "52",
-              "prefix": "d)",
-              "text": "Is de wettelijk vertegenwoordiger ook de eerste contactpersoon?",
-              "type": "boolean",
-              "required": false,
-              "repeats": false
-            },
-            {
-              "linkId": "53",
-              "prefix": "e)",
-              "text": "Naam eerste contactpersoon",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "395",
-                  "text": "Voornamen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "396",
-                  "text": "Voorvoegsels",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                },
-                {
-                  "linkId": "397",
-                  "text": "Achternaam",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerBoolean": false
-                }
-              ]
-            },
-            {
-              "linkId": "61",
-              "prefix": "f)",
-              "text": "Contactgegevens eerste contactpersoon",
-              "type": "group",
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "62",
-                  "text": "Telefoonnummers",
-                  "type": "group",
-                  "repeats": true,
-                  "item": [
-                    {
-                      "linkId": "403",
-                      "text": "Telefoonnummer",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "404",
-                      "text": "TelecomType",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
-                            "code": "LL",
-                            "display": "Vast telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4.22.1",
-                            "code": "FAX",
-                            "display": "Fax"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "MC",
-                            "display": "Mobiel telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "PG",
-                            "display": "Pieper"
-                          }
-                        }
-                      ]
-                    },
-                    {
-                      "linkId": "405",
-                      "text": "NummerSoort",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "HP",
-                            "display": "Telefoonnummer thuis"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "TMP",
-                            "display": "Tijdelijk telefoonnummer"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "WP",
-                            "display": "Zakelijk telefoonnummer"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "linkId": "66",
-                  "text": "EmailAdressen",
-                  "type": "group",
-                  "repeats": true,
-                  "item": [
-                    {
-                      "linkId": "406",
-                      "text": "EmailAdres",
-                      "type": "string",
-                      "required": false,
-                      "repeats": false
-                    },
-                    {
-                      "linkId": "407",
-                      "text": "EmailSoort",
-                      "type": "choice",
-                      "required": false,
-                      "repeats": false,
-                      "option": [
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "HP",
-                            "display": "Privé e-mailadres"
-                          }
-                        },
-                        {
-                          "valueCoding": {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-AddressUse",
-                            "code": "WP",
-                            "display": "Zakelijk e-mailadres"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ],
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerBoolean": false
-                }
-              ]
-            },
-            {
-              "linkId": "819",
-              "text": "Rol",
+              "linkId": "790",
+              "text": "MetingNaam voor Belangrijkste doel van behandeling",
               "type": "choice",
               "required": false,
               "repeats": false,
               "readOnly": true,
               "initialCoding": {
-                "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                "code": "1",
-                "display": "Eerste relatie/contactpersoon"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "1",
-                    "display": "Eerste relatie/contactpersoon"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "77",
-              "prefix": "g)",
-              "text": "Relatie tot patiënt",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "412",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "77",
-                      "answerCoding": {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                        "code": "OTH"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DOMPART",
-                    "display": "Partner"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "HUSB",
-                    "display": "Echtgenoot"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "WIFE",
-                    "display": "Echtgenote"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "FTH",
-                    "display": "Vader"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "MTH",
-                    "display": "Moeder"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SONC",
-                    "display": "Zoon"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DAUC",
-                    "display": "Dochter"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "BRO",
-                    "display": "Broer"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SIS",
-                    "display": "Zuster"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "OTH",
-                    "display": "Anders"
-                  }
-                }
-              ],
-              "enableWhen": [
-                {
-                  "question": "52",
-                  "answerBoolean": false
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "78",
-      "prefix": "2",
-      "text": "Gesprek gevoerd in bijzijn van",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "82",
-          "text": "Patiënt",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "code": "Patiënt",
-                "display": "Patiënt"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "1038",
-          "text": "Contactperso(o)n(en)",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "415",
-              "text": "Rol",
-              "type": "choice",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "linkId": "414",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "3",
-                    "display": "Curator (juridisch)"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "15",
-                    "display": "Mentor"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "310141000146103",
-                    "display": "Schriftelijk gemachtigde"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.22.472",
-                    "code": "9",
-                    "display": "Anders"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "80",
-              "text": "Relatie tot patiënt",
-              "type": "choice",
-              "required": false,
-              "repeats": true,
-              "item": [
-                {
-                  "linkId": "413",
-                  "text": "Anders, namelijk:",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
-                    {
-                      "question": "80",
-                      "answerCoding": {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                        "code": "OTH"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DOMPART",
-                    "display": "Partner"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "HUSB",
-                    "display": "Echtgenoot"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "WIFE",
-                    "display": "Echtgenote"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "FTH",
-                    "display": "Vader"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "MTH",
-                    "display": "Moeder"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SONC",
-                    "display": "Zoon"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "DAUC",
-                    "display": "Dochter"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "BRO",
-                    "display": "Broer"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                    "code": "SIS",
-                    "display": "Zuster"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "OTH",
-                    "display": "Anders"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "586",
-      "prefix": "3",
-      "text": "Belangrijkste overeengekomen doel van medisch beleid",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "790",
-          "text": "MetingNaam voor Belangrijkste doel van behandeling",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "readOnly": true,
-          "initialCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "180771000146100",
-            "display": "Focus van behandeling (waarneembare entiteit)"
-          },
-          "option": [
-            {
-              "valueCoding": {
                 "system": "http://snomed.info/sct",
                 "code": "180771000146100",
                 "display": "Focus van behandeling (waarneembare entiteit)"
+              },
+              "option": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "180771000146100",
+                    "display": "Focus van behandeling (waarneembare entiteit)"
+                  }
+                }
+              ]
+            },
+            {
+              "linkId": "784",
+              "text": "Doel (UitslagWaarde)",
+              "type": "choice",
+              "required": false,
+              "repeats": false,
+              "options": {
+                "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal"
               }
             }
           ]
         },
         {
-          "linkId": "784",
-          "text": "Doel (UitslagWaarde)",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "385987000",
-                "display": "Curatief / actief ziektebeleid"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1351964001",
-                "display": "Palliatief met als doel levensverlenging én symptoomverlichting"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "713148004",
-                "display": "Palliatief met als doel symptoomverlichting, waarbij levensverlenging niet gewenst is"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "83",
-      "prefix": "4",
-      "text": "Behandelgrenzen",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "792",
-          "prefix": "a)",
-          "text": "Reanimatie",
+          "linkId": "83",
+          "prefix": "4",
+          "text": "Behandelgrenzen",
           "type": "group",
           "repeats": false,
           "item": [
             {
-              "linkId": "791",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "792",
+              "prefix": "a)",
+              "text": "Reanimatie",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "89666000",
-                "display": "Cardiopulmonale resuscitatie (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "791",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "89666000",
                     "display": "Cardiopulmonale resuscitatie (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "587",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "122",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "587",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "89666000",
+                        "display": "Cardiopulmonale resuscitatie (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "86",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "587",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "122",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "587",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "86",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "793",
-          "prefix": "b)",
-          "text": "Kunstmatige invasieve beademing",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "794",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "793",
+              "prefix": "b)",
+              "text": "Kunstmatige invasieve beademing",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "40617009",
-                "display": "Kunstmatige beademing (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "794",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "40617009",
                     "display": "Kunstmatige beademing (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "588",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "123",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "588",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "40617009",
+                        "display": "Kunstmatige beademing (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "92",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "588",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "123",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "588",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "92",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "796",
-          "prefix": "c)",
-          "text": "Opname op intensive care",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "795",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "796",
+              "prefix": "c)",
+              "text": "Opname op intensive care",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "305351004",
-                "display": "Opname op intensive care (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "795",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "305351004",
                     "display": "Opname op intensive care (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "589",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "124",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "589",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "305351004",
+                        "display": "Opname op intensive care (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "88",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "589",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "124",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "589",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "88",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "798",
-          "prefix": "d)",
-          "text": "Opname in ziekenhuis",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "799",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "798",
+              "prefix": "d)",
+              "text": "Opname in ziekenhuis",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "32485007",
-                "display": "Opname in ziekenhuis (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "799",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "32485007",
                     "display": "Opname in ziekenhuis (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "590",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "125",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "590",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "32485007",
+                        "display": "Opname in ziekenhuis (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "94",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "590",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "125",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "590",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "94",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "800",
-          "prefix": "e)",
-          "text": "Behandeling met antibiotica",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "801",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "800",
+              "prefix": "e)",
+              "text": "Behandeling met antibiotica",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "281789004",
-                "display": "Antibiotische therapie (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "801",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "281789004",
                     "display": "Antibiotische therapie (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "591",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "126",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "591",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "281789004",
+                        "display": "Antibiotische therapie (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "96",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "591",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "126",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "591",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "96",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "802",
-          "prefix": "f)",
-          "text": "Toediening van een bloedproduct",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "803",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "802",
+              "prefix": "f)",
+              "text": "Toediening van een bloedproduct",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "116762002",
-                "display": "Toediening van bloedproduct (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "803",
+                  "text": "Behandeling",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "116762002",
                     "display": "Toediening van bloedproduct (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "592",
-              "text": "BehandelingToegestaan",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
-                {
-                  "linkId": "127",
-                  "text": "Beperkingen",
-                  "type": "string",
-                  "required": false,
-                  "repeats": false,
-                  "enableWhen": [
+                  },
+                  "option": [
                     {
-                      "question": "592",
-                      "answerCoding": {
-                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                        "code": "JA_MAAR"
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "116762002",
+                        "display": "Toediening van bloedproduct (verrichting)"
                       }
                     }
                   ]
                 },
                 {
-                  "linkId": "98",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "592",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA_MAAR",
-                    "display": "Ja, maar met beperkingen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "127",
+                      "text": "Beperkingen",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false,
+                      "enableWhen": [
+                        {
+                          "question": "592",
+                          "answerCoding": {
+                            "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                            "code": "JA_MAAR"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "98",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA_MAAR",
+                        "display": "Ja, maar met beperkingen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "804",
-          "prefix": "g)",
-          "text": "Overige behandelgrenzen",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "805",
-              "text": "Behandeling",
-              "type": "choice",
-              "required": false,
+              "linkId": "804",
+              "prefix": "g)",
+              "text": "Overige behandelgrenzen",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
               "item": [
                 {
-                  "linkId": "1033",
-                  "text": "Overige behandelingen, namelijk:",
-                  "type": "string",
+                  "linkId": "805",
+                  "text": "Behandeling",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "initialCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "OTH",
-                "display": "Overige behandelingen"
-              },
-              "option": [
-                {
-                  "valueCoding": {
+                  "repeats": false,
+                  "readOnly": true,
+                  "item": [
+                    {
+                      "linkId": "1033",
+                      "text": "Overige behandelingen, namelijk:",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "initialCoding": {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
                     "code": "OTH",
                     "display": "Overige behandelingen"
-                  }
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Overige behandelingen"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "593",
+                  "text": "BehandelingToegestaan",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "100",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "NEE",
+                        "display": "Nee"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
             },
             {
-              "linkId": "593",
-              "text": "BehandelingToegestaan",
+              "linkId": "249",
+              "prefix": "h)",
+              "text": "Heeft de patiënt een ICD?",
               "type": "choice",
               "required": false,
               "repeats": false,
               "item": [
                 {
-                  "linkId": "100",
+                  "linkId": "600",
+                  "text": "ProductType van ICD",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "options": {
+                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD"
+                  },
+                  "enableWhen": [
+                    {
+                      "question": "249",
+                      "answerCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "599",
                   "text": "Toelichting",
                   "type": "string",
                   "required": false,
-                  "repeats": false
+                  "repeats": false,
+                  "enableWhen": [
+                    {
+                      "question": "249",
+                      "answerCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001"
+                      }
+                    }
+                  ]
                 }
               ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "NEE",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Onbekend"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "249",
-          "prefix": "h)",
-          "text": "Heeft de patiënt een ICD?",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "600",
-              "text": "ProductType van ICD",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "72506001",
-                    "display": "implanteerbare cardioverter-defibrillator"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "465460004",
-                    "display": "univentriculaire implanteerbare cardioverter-defibrillator"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "468542000",
-                    "display": "implanteerbare tweekamercardioverter-defibrillator"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "704707009",
-                    "display": "implanteerbare biventriculaire cardioverter-defibrillator"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1263462004",
-                    "display": "pulsgenerator van defibrillator voor cardiale resynchronisatietherapie"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1236894001",
-                    "display": "subcutane implanteerbare cardioverter-defibrillator"
-                  }
-                }
-              ],
-              "enableWhen": [
-                {
-                  "question": "249",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "599",
-              "text": "Toelichting",
-              "type": "string",
-              "required": false,
-              "repeats": false,
-              "enableWhen": [
-                {
-                  "question": "249",
-                  "answerCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001"
-                  }
-                }
-              ]
-            }
-          ],
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
+              "options": {
+                "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
               }
             },
             {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373067005",
-                "display": "Nee"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "808",
-          "prefix": "i)",
-          "text": "Is er een afspraak over het moment van uitzetten ICD?",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "809",
-              "text": "Behandeling van uitzetten ICD",
-              "type": "choice",
-              "required": false,
+              "linkId": "808",
+              "prefix": "i)",
+              "text": "Is er een afspraak over het moment van uitzetten ICD?",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "400231000146108",
-                "display": "uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "809",
+                  "text": "Behandeling van uitzetten ICD",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "400231000146108",
                     "display": "uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "595",
-              "text": "Afspraak uitzetten ICD (BehandelingToegestaan)",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "item": [
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "400231000146108",
+                        "display": "uitzetten van cardioverter-defibrillator in laatste levensfase (verrichting)"
+                      }
+                    }
+                  ]
+                },
                 {
-                  "linkId": "596",
-                  "text": "Toelichting gemaakte afspraken",
-                  "type": "string",
+                  "linkId": "595",
+                  "text": "Afspraak uitzetten ICD (BehandelingToegestaan)",
+                  "type": "choice",
                   "required": false,
-                  "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
-                    "code": "JA",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "ASKU",
-                    "display": "Nee, nog geen besluit genomen"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "NASK",
-                    "display": "Niet besproken"
-                  }
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "596",
+                      "text": "Toelichting gemaakte afspraken",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.2.4.3.11.60.40.4",
+                        "code": "JA",
+                        "display": "Ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "ASKU",
+                        "display": "Nee, nog geen besluit genomen"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "NASK",
+                        "display": "Niet besproken"
+                      }
+                    }
+                  ],
+                  "enableWhen": [
+                    {
+                      "question": "249",
+                      "answerCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001"
+                      }
+                    }
+                  ]
                 }
               ],
               "enableWhen": [
@@ -1893,506 +1773,365 @@
                 }
               ]
             }
-          ],
-          "enableWhen": [
-            {
-              "question": "249",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001"
-              }
-            }
           ]
-        }
-      ]
-    },
-    {
-      "linkId": "107",
-      "prefix": "5",
-      "text": "Behandelwensen",
-      "type": "group",
-      "repeats": false,
-      "item": [
+        },
         {
-          "linkId": "810",
-          "prefix": "a)",
-          "text": "Wat zouden zorgverleners, volgens de patiënt, moeten weten om goede zorg te kunnen verlenen? Heeft deze patiënt specifieke wensen met betrekking tot zijn zorg? (incl. culturele/religieuze/sociale/spirituele aspecten)",
+          "linkId": "107",
+          "prefix": "5",
+          "text": "Behandelwensen",
           "type": "group",
           "repeats": false,
           "item": [
             {
-              "linkId": "811",
-              "text": "Wens en verwachting patient (MetingNaam)",
-              "type": "choice",
-              "required": false,
+              "linkId": "810",
+              "prefix": "a)",
+              "text": "Wat zouden zorgverleners, volgens de patiënt, moeten weten om goede zorg te kunnen verlenen? Heeft deze patiënt specifieke wensen met betrekking tot zijn zorg? (incl. culturele/religieuze/sociale/spirituele aspecten)",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "153851000146100",
-                "display": "Wensen en verwachtingen met betrekking tot uitkomst van behandeling"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "811",
+                  "text": "Wens en verwachting patient (MetingNaam)",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "153851000146100",
                     "display": "Wensen en verwachtingen met betrekking tot uitkomst van behandeling"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "382",
-              "text": "Wens en verwachting patient (UitslagWaarde)",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            },
-            {
-              "linkId": "1034",
-              "text": "Vaststellen wens en verwachting patiënt (Meetmethode)",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "370819000",
-                "display": "Vaststellen van persoonlijke waarden en wensen met betrekking tot zorg"
-              },
-              "option": [
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "153851000146100",
+                        "display": "Wensen en verwachtingen met betrekking tot uitkomst van behandeling"
+                      }
+                    }
+                  ]
+                },
                 {
-                  "valueCoding": {
+                  "linkId": "382",
+                  "text": "Wens en verwachting patient (UitslagWaarde)",
+                  "type": "string",
+                  "required": false,
+                  "repeats": false
+                },
+                {
+                  "linkId": "1034",
+                  "text": "Vaststellen wens en verwachting patiënt (Meetmethode)",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "370819000",
                     "display": "Vaststellen van persoonlijke waarden en wensen met betrekking tot zorg"
-                  }
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "370819000",
+                        "display": "Vaststellen van persoonlijke waarden en wensen met betrekking tot zorg"
+                      }
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "812",
-          "prefix": "b)",
-          "text": "Gewenste plek van overlijden",
-          "type": "group",
-          "repeats": false,
-          "item": [
+            },
             {
-              "linkId": "1035",
-              "text": "MetingNaam voor Gewenste plek van overlijden",
-              "type": "choice",
-              "required": false,
+              "linkId": "812",
+              "prefix": "b)",
+              "text": "Gewenste plek van overlijden",
+              "type": "group",
               "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "395091006",
-                "display": "Voorkeur voor plaats van overlijden (waarneembare entiteit)"
-              },
-              "option": [
+              "item": [
                 {
-                  "valueCoding": {
+                  "linkId": "1035",
+                  "text": "MetingNaam voor Gewenste plek van overlijden",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
                     "system": "http://snomed.info/sct",
                     "code": "395091006",
                     "display": "Voorkeur voor plaats van overlijden (waarneembare entiteit)"
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "395091006",
+                        "display": "Voorkeur voor plaats van overlijden (waarneembare entiteit)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "604",
+                  "text": "Voorkeursplek (UitslagWaarde)",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "110",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "options": {
+                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeath"
                   }
+                },
+                {
+                  "linkId": "813",
+                  "prefix": "c)",
+                  "text": "Euthanasie standpunt",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "816",
+                      "text": "MetingNaam voor Euthanasie standpunt",
+                      "type": "choice",
+                      "required": false,
+                      "repeats": false,
+                      "readOnly": true,
+                      "initialCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "340171000146104",
+                        "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
+                      },
+                      "option": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340171000146104",
+                            "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "785",
+                      "text": "Standpunt (UitslagWaarde)",
+                      "type": "choice",
+                      "required": false,
+                      "repeats": false,
+                      "item": [
+                        {
+                          "linkId": "112",
+                          "text": "Toelichting",
+                          "type": "string",
+                          "required": false,
+                          "repeats": false
+                        }
+                      ],
+                      "options": {
+                        "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-EuthanasiaStatement"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "814",
+                  "prefix": "d)",
+                  "text": "Keuze orgaandonatie vastgelegd in donorregister?",
+                  "type": "group",
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "817",
+                      "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?",
+                      "type": "choice",
+                      "required": false,
+                      "repeats": false,
+                      "readOnly": true,
+                      "initialCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "570801000146104",
+                        "display": "Geregistreerd in orgaan donorregister (bevinding)"
+                      },
+                      "option": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "570801000146104",
+                            "display": "Geregistreerd in orgaan donorregister (bevinding)"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "linkId": "789",
+                      "text": "Keuze orgaandonatie in donorregister (UitslagWaarde)",
+                      "type": "choice",
+                      "required": false,
+                      "repeats": false,
+                      "options": {
+                        "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
+                      }
+                    },
+                    {
+                      "linkId": "1036",
+                      "text": "Meetmethode voor Keuze orgaandonatie vastgelegd in donorregister?",
+                      "type": "choice",
+                      "required": false,
+                      "repeats": false,
+                      "readOnly": true,
+                      "initialCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "1156040003",
+                        "display": "Self reported (qualifier value)"
+                      },
+                      "option": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "1156040003",
+                            "display": "Self reported (qualifier value)"
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             },
             {
-              "linkId": "604",
-              "text": "Voorkeursplek (UitslagWaarde)",
-              "type": "choice",
-              "required": false,
+              "linkId": "598",
+              "prefix": "6",
+              "text": "Wat verder nog belangrijk is",
+              "type": "group",
               "repeats": false,
               "item": [
                 {
-                  "linkId": "110",
-                  "text": "Toelichting",
+                  "linkId": "818",
+                  "text": "MetingNaam voor Wat verder nog belangrijk is",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "readOnly": true,
+                  "initialCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "247751003",
+                    "display": "Gevoel van zingeving (waarneembare entiteit)"
+                  },
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "247751003",
+                        "display": "Gevoel van zingeving (waarneembare entiteit)"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "383",
+                  "text": "Wat verder nog belangrijk is (UitslagWaarde)",
                   "type": "string",
                   "required": false,
                   "repeats": false
                 }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "264362003",
-                    "display": "Thuis"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "22232009",
-                    "display": "Ziekenhuis"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "108344006",
-                    "display": "Verpleeghuis"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "284546000",
-                    "display": "Hospice"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "OTH",
-                    "display": "Anders"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Nog onbekend"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "813",
-          "prefix": "c)",
-          "text": "Euthanasie standpunt",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "816",
-              "text": "MetingNaam voor Euthanasie standpunt",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "340171000146104",
-                "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "340171000146104",
-                    "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
-                  }
-                }
               ]
             },
             {
-              "linkId": "785",
-              "text": "Standpunt (UitslagWaarde)",
-              "type": "choice",
-              "required": false,
+              "linkId": "115",
+              "prefix": "7",
+              "text": "Eerder vastgelegde behandelwensen",
+              "type": "group",
               "repeats": false,
               "item": [
                 {
-                  "linkId": "112",
-                  "text": "Toelichting",
-                  "type": "string",
+                  "linkId": "253",
+                  "prefix": "a)",
+                  "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "item": [
+                    {
+                      "linkId": "254",
+                      "text": "Toelichting",
+                      "type": "string",
+                      "required": false,
+                      "repeats": false
+                    }
+                  ],
+                  "options": {
+                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
+                  }
+                },
+                {
+                  "linkId": "255",
+                  "prefix": "b)",
+                  "text": "Staan in eerder vastgelegde behandelafspraken andere wensen dan nu in deze verklaring?",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "options": {
+                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
+                  },
+                  "enableWhen": [
+                    {
+                      "question": "253",
+                      "answerCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "linkId": "119",
+              "prefix": "8",
+              "text": "Informatie delen",
+              "type": "group",
+              "repeats": false,
+              "item": [
+                {
+                  "linkId": "256",
+                  "prefix": "a)",
+                  "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?",
+                  "type": "boolean",
                   "required": false,
                   "repeats": false
-                }
-              ],
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "340181000146102",
-                    "display": "Heeft euthanasieverklaring"
-                  }
                 },
                 {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "340201000146103",
-                    "display": "Wenst geen euthanasie"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "340191000146100",
-                    "display": "Geen euthanasieverklaring, zou wel verzoek kunnen doen in bepaalde situaties"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Nog onbekend"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "814",
-          "prefix": "d)",
-          "text": "Keuze orgaandonatie vastgelegd in donorregister?",
-          "type": "group",
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "817",
-              "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "570801000146104",
-                "display": "Geregistreerd in orgaan donorregister (bevinding)"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "570801000146104",
-                    "display": "Geregistreerd in orgaan donorregister (bevinding)"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "789",
-              "text": "Keuze orgaandonatie in donorregister (UitslagWaarde)",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001",
-                    "display": "Ja"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373067005",
-                    "display": "Nee"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                    "code": "UNK",
-                    "display": "Nog onbekend"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "1036",
-              "text": "Meetmethode voor Keuze orgaandonatie vastgelegd in donorregister?",
-              "type": "choice",
-              "required": false,
-              "repeats": false,
-              "readOnly": true,
-              "initialCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "1156040003",
-                "display": "Self reported (qualifier value)"
-              },
-              "option": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "1156040003",
-                    "display": "Self reported (qualifier value)"
-                  }
+                  "linkId": "257",
+                  "prefix": "b)",
+                  "text": "Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners",
+                  "type": "choice",
+                  "required": false,
+                  "repeats": false,
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "441898007",
+                        "display": "Akkoord"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "Nog onbekend"
+                      }
+                    }
+                  ]
                 }
               ]
             }
           ]
         }
-      ]
-    },
-    {
-      "linkId": "598",
-      "prefix": "6",
-      "text": "Wat verder nog belangrijk is",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "818",
-          "text": "MetingNaam voor Wat verder nog belangrijk is",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "readOnly": true,
-          "initialCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "247751003",
-            "display": "Gevoel van zingeving (waarneembare entiteit)"
-          },
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "247751003",
-                "display": "Gevoel van zingeving (waarneembare entiteit)"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "383",
-          "text": "Wat verder nog belangrijk is (UitslagWaarde)",
-          "type": "string",
-          "required": false,
-          "repeats": false
-        }
-      ]
-    },
-    {
-      "linkId": "115",
-      "prefix": "7",
-      "text": "Eerder vastgelegde behandelwensen",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "253",
-          "prefix": "a)",
-          "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "item": [
-            {
-              "linkId": "254",
-              "text": "Toelichting",
-              "type": "string",
-              "required": false,
-              "repeats": false
-            }
-          ],
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373067005",
-                "display": "Nee"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "255",
-          "prefix": "b)",
-          "text": "Staan in eerder vastgelegde behandelafspraken andere wensen dan nu in deze verklaring?",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001",
-                "display": "Ja"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373067005",
-                "display": "Nee"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
-            }
-          ],
-          "enableWhen": [
-            {
-              "question": "253",
-              "answerCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "373066001"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "linkId": "119",
-      "prefix": "8",
-      "text": "Informatie delen",
-      "type": "group",
-      "repeats": false,
-      "item": [
-        {
-          "linkId": "256",
-          "prefix": "a)",
-          "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?",
-          "type": "boolean",
-          "required": false,
-          "repeats": false
-        },
-        {
-          "linkId": "257",
-          "prefix": "b)",
-          "text": "Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners",
-          "type": "choice",
-          "required": false,
-          "repeats": false,
-          "option": [
-            {
-              "valueCoding": {
-                "system": "http://snomed.info/sct",
-                "code": "441898007",
-                "display": "Akkoord"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-                "code": "UNK",
-                "display": "Nog onbekend"
-              }
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
