@@ -692,58 +692,118 @@
                   ],
                   "linkId": "604",
                   "text": "Voorkeursplek (UitslagWaarde)"
+                },
+                {
+                  "linkId": "813",
+                  "text": "Euthanasie standpunt",
+                  "item": [
+                    {
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340171000146104",
+                            "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
+                          }
+                        }
+                      ],
+                      "linkId": "816",
+                      "text": "MetingNaam voor Euthanasie standpunt"
+                    },
+                    {
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340201000146103",
+                            "display": "Wenst geen euthanasie"
+                          }
+                        }
+                      ],
+                      "linkId": "785",
+                      "text": "Standpunt (UitslagWaarde)"
+                    }
+                  ]
+                },
+                {
+                  "linkId": "814",
+                  "text": "Keuze orgaandonatie vastgelegd in donorregister?",
+                  "item": [
+                    {
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "570801000146104",
+                            "display": "Geregistreerd in orgaan donorregister (bevinding)"
+                          }
+                        }
+                      ],
+                      "linkId": "817",
+                      "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?"
+                    },
+                    {
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "373066001",
+                            "display": "ja"
+                          }
+                        }
+                      ],
+                      "linkId": "789",
+                      "text": "Keuze orgaandonatie in donorregister (UitslagWaarde)"
+                    },
+                    {
+                      "answer": [
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "1156040003",
+                            "display": "Self reported (qualifier value)"
+                          }
+                        }
+                      ],
+                      "linkId": "1036",
+                      "text": "Meetmethode voor Keuze orgaandonatie vastgelegd in donorregister?"
+                    }
+                  ]
                 }
               ]
             },
             {
-              "linkId": "813",
-              "text": "Euthanasie standpunt",
+              "linkId": "598",
+              "text": "Wat verder nog belangrijk is",
               "item": [
                 {
                   "answer": [
                     {
                       "valueCoding": {
                         "system": "http://snomed.info/sct",
-                        "code": "340171000146104",
-                        "display": "Standpunt ten opzichte van euthanasie (waarneembare entiteit)"
+                        "code": "247751003",
+                        "display": "Gevoel van zingeving (waarneembare entiteit)"
                       }
                     }
                   ],
-                  "linkId": "816",
-                  "text": "MetingNaam voor Euthanasie standpunt"
+                  "linkId": "818",
+                  "text": "MetingNaam voor Wat verder nog belangrijk is"
                 },
                 {
                   "answer": [
                     {
-                      "valueCoding": {
-                        "system": "http://snomed.info/sct",
-                        "code": "340201000146103",
-                        "display": "Wenst geen euthanasie"
-                      }
+                      "valueString": "De behandeling van Hendrik is na verslechtering en gesprekken hierover bijgesteld van levensverlenging naar symptoomgericht."
                     }
                   ],
-                  "linkId": "785",
-                  "text": "Standpunt (UitslagWaarde)"
+                  "linkId": "383",
+                  "text": "Wat verder nog belangrijk is (UitslagWaarde)"
                 }
               ]
             },
             {
-              "linkId": "814",
-              "text": "Keuze orgaandonatie vastgelegd in donorregister?",
+              "linkId": "115",
+              "text": "Eerder vastgelegde behandelwensen",
               "item": [
-                {
-                  "answer": [
-                    {
-                      "valueCoding": {
-                        "system": "http://snomed.info/sct",
-                        "code": "570801000146104",
-                        "display": "Geregistreerd in orgaan donorregister (bevinding)"
-                      }
-                    }
-                  ],
-                  "linkId": "817",
-                  "text": "MetingNaam voor Keuze orgaandonatie vastgelegd in donorregister?"
-                },
                 {
                   "answer": [
                     {
@@ -751,112 +811,52 @@
                         "system": "http://snomed.info/sct",
                         "code": "373066001",
                         "display": "ja"
-                      }
+                      },
+                      "item": [
+                        {
+                          "answer": [
+                            {
+                              "valueString": "Begin 2020 eerder gesprek gevoerd"
+                            }
+                          ],
+                          "linkId": "254",
+                          "text": "Toelichting"
+                        }
+                      ]
                     }
                   ],
-                  "linkId": "789",
-                  "text": "Keuze orgaandonatie in donorregister (UitslagWaarde)"
+                  "linkId": "253",
+                  "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?"
+                }
+              ]
+            },
+            {
+              "linkId": "119",
+              "text": "Informatie delen",
+              "item": [
+                {
+                  "answer": [
+                    {
+                      "valueBoolean": true
+                    }
+                  ],
+                  "linkId": "256",
+                  "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?"
                 },
                 {
                   "answer": [
                     {
                       "valueCoding": {
                         "system": "http://snomed.info/sct",
-                        "code": "1156040003",
-                        "display": "Self reported (qualifier value)"
+                        "code": "441898007",
+                        "display": "Akkoord"
                       }
                     }
                   ],
-                  "linkId": "1036",
-                  "text": "Meetmethode voor Keuze orgaandonatie vastgelegd in donorregister?"
+                  "linkId": "257",
+                  "text": "Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "linkId": "598",
-          "text": "Wat verder nog belangrijk is",
-          "item": [
-            {
-              "answer": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "247751003",
-                    "display": "Gevoel van zingeving (waarneembare entiteit)"
-                  }
-                }
-              ],
-              "linkId": "818",
-              "text": "MetingNaam voor Wat verder nog belangrijk is"
-            },
-            {
-              "answer": [
-                {
-                  "valueString": "De behandeling van Hendrik is na verslechtering en gesprekken hierover bijgesteld van levensverlenging naar symptoomgericht."
-                }
-              ],
-              "linkId": "383",
-              "text": "Wat verder nog belangrijk is (UitslagWaarde)"
-            }
-          ]
-        },
-        {
-          "linkId": "115",
-          "text": "Eerder vastgelegde behandelwensen",
-          "item": [
-            {
-              "answer": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "373066001",
-                    "display": "ja"
-                  },
-                  "item": [
-                    {
-                      "answer": [
-                        {
-                          "valueString": "Begin 2020 eerder gesprek gevoerd"
-                        }
-                      ],
-                      "linkId": "254",
-                      "text": "Toelichting"
-                    }
-                  ]
-                }
-              ],
-              "linkId": "253",
-              "text": "Heeft de patiënt eerder behandelafspraken vastgelegd?"
-            }
-          ]
-        },
-        {
-          "linkId": "119",
-          "text": "Informatie delen",
-          "item": [
-            {
-              "answer": [
-                {
-                  "valueBoolean": true
-                }
-              ],
-              "linkId": "256",
-              "text": "Heeft u patient geïnformeerd over eigen verantwoordelijkheid om deze behandelafspraken met naasten te bespreken?"
-            },
-            {
-              "answer": [
-                {
-                  "valueCoding": {
-                    "system": "http://snomed.info/sct",
-                    "code": "441898007",
-                    "display": "Akkoord"
-                  }
-                }
-              ],
-              "linkId": "257",
-              "text": "Patiënt gaat akkoord met het delen van deze behandelafspraken met andere betrokken hulpverleners"
             }
           ]
         }
