@@ -81,6 +81,7 @@ jobs:
             # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
             |VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*1351964001*|
             |Terminology_TX_NoValid_1_CC|*1351964001*|
+            |Questionnaire_QR_Item_BadOption|*1351964001*|
             
             # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
@@ -99,6 +100,8 @@ jobs:
             StructureDefinition-ACP-TreatmentDirective.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-LegallyCapable.json||*launches straight into slicing without the slicing being set up properly*|
 
+            # Wrong display name
+            ||*Wrong Display Name 'nog onbekend' Wrong Display Name 'nog onbekend' for http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK. There are no valid display names found for language(s) 'nl'. Default display is 'unknown'* |
             # Struktur: fileName|messageId|detailsWildcard|location
 
 
