@@ -104,7 +104,7 @@
           "required": false,
           "repeats": false,
           "options": {
-            "reference": "http://example.org/ValueSet/ACP-HealthProfessionalSpecialty"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialty"
           }
         },
         {
