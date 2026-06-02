@@ -107,7 +107,7 @@ _ACP_SPECIALTY_OPTIONS = [
 ]
 
 HARDCODED_ANSWER_OPTIONS = {
-    "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialty": _ACP_SPECIALTY_OPTIONS,
+    "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialtyVS": _ACP_SPECIALTY_OPTIONS,
     "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.6--20200901000000": _ACP_SPECIALTY_OPTIONS,
     "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.7--20200901000000": _ACP_SPECIALTY_OPTIONS,
 }

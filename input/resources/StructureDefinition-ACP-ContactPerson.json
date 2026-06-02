@@ -103,7 +103,7 @@
         "binding": {
           "strength": "extensible",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-ContactPersonRole",
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-ContactPersonRoleVS",
             "display": "ACP ContactPerson Role"
           }
         }

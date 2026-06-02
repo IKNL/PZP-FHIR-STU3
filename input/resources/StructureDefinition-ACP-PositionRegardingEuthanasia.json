@@ -111,7 +111,7 @@
         "binding": {
           "strength": "required",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-EuthanasiaStatement"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PositionRegardingEuthanasiaVS"
           }
         },
         "mapping": [
