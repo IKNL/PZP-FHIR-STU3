@@ -101,7 +101,9 @@ jobs:
             StructureDefinition-ACP-LegallyCapable.json||*launches straight into slicing without the slicing being set up properly*|
 
             # Wrong display name
-            ||*Wrong Display Name 'nog onbekend' Wrong Display Name 'nog onbekend' for http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK. There are no valid display names found for language(s) 'nl'. Default display is 'unknown'* |
+            ||*Display Name 'nog onbekend'* |
+            ||*code* |QuestionnaireResponse.​item[3].​item[1].​answer[0]
+           
             # Struktur: fileName|messageId|detailsWildcard|location
 
 
