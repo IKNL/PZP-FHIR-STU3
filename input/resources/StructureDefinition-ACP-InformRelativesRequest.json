@@ -65,6 +65,7 @@
       {
         "id": "CommunicationRequest.subject",
         "path": "CommunicationRequest.subject",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
@@ -85,11 +86,13 @@
       {
         "id": "CommunicationRequest.authoredOn",
         "path": "CommunicationRequest.authoredOn",
+        "min": 1,
         "comment": "Indicate the date and preferrably time when the request was sent"
       },
       {
         "id": "CommunicationRequest.sender",
         "path": "CommunicationRequest.sender",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
@@ -100,6 +103,7 @@
       {
         "id": "CommunicationRequest.requester.agent",
         "path": "CommunicationRequest.requester.agent",
+        "min": 1,
         "type": [
           {
             "code": "Reference",
