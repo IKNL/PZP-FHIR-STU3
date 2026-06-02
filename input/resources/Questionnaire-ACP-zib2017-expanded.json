@@ -103,9 +103,50 @@
           "type": "choice",
           "required": false,
           "repeats": false,
-          "options": {
-            "reference": "http://example.org/ValueSet/ACP-HealthProfessionalSpecialty"
-          }
+          "option": [
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "01.000",
+                "display": "Arts"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "01.015",
+                "display": "Huisarts"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "01.047",
+                "display": "Specialist ouderengeneeskunde"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "30.000",
+                "display": "Verpleegkundige"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "81.000",
+                "display": "Physician assistant"
+              }
+            },
+            {
+              "valueCoding": {
+                "system": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+                "code": "99.000",
+                "display": "Zorgverlener andere zorg"
+              }
+            }
+          ]
         },
         {
           "linkId": "26",
@@ -987,9 +1028,36 @@
               "type": "choice",
               "required": false,
               "repeats": false,
-              "options": {
-                "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal"
-              }
+              "option": [
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "385987000",
+                    "display": "zorg bij ziekte en/of letsel"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "1351964001",
+                    "display": "levensverlengende behandeling"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "713148004",
+                    "display": "voorkomen en behandelen van symptomen"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "code": "UNK",
+                    "display": "onbekend"
+                  }
+                }
+              ]
             }
           ]
         },
@@ -1651,15 +1719,56 @@
                   "type": "choice",
                   "required": false,
                   "repeats": false,
-                  "options": {
-                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD"
-                  },
                   "enableWhen": [
                     {
                       "question": "249",
                       "answerCoding": {
                         "system": "http://snomed.info/sct",
                         "code": "373066001"
+                      }
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "72506001",
+                        "display": "implanteerbare cardioverter-defibrillator"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "465460004",
+                        "display": "univentriculaire implanteerbare cardioverter-defibrillator"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "468542000",
+                        "display": "implanteerbare tweekamercardioverter-defibrillator"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "704707009",
+                        "display": "implanteerbare biventriculaire cardioverter-defibrillator"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "1263462004",
+                        "display": "pulsgenerator van defibrillator voor cardiale resynchronisatietherapie"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "1236894001",
+                        "display": "subcutane implanteerbare cardioverter-defibrillator"
                       }
                     }
                   ]
@@ -1681,9 +1790,29 @@
                   ]
                 }
               ],
-              "options": {
-                "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
-              }
+              "option": [
+                {
+                  "valueCoding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                    "code": "UNK",
+                    "display": "onbekend"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373066001",
+                    "display": "ja"
+                  }
+                },
+                {
+                  "valueCoding": {
+                    "system": "http://snomed.info/sct",
+                    "code": "373067005",
+                    "display": "nee"
+                  }
+                }
+              ]
             },
             {
               "linkId": "808",
@@ -1886,9 +2015,50 @@
                       "repeats": false
                     }
                   ],
-                  "options": {
-                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeath"
-                  }
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "OTH",
+                        "display": "Anders"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "nog onbekend"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "264362003",
+                        "display": "thuis"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "22232009",
+                        "display": "ziekenhuis"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "108344006",
+                        "display": "verpleeghuis en/of locatie voor ambulante zorg"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "284546000",
+                        "display": "hospice"
+                      }
+                    }
+                  ]
                 },
                 {
                   "linkId": "813",
@@ -1934,9 +2104,36 @@
                           "repeats": false
                         }
                       ],
-                      "options": {
-                        "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-EuthanasiaStatement"
-                      }
+                      "option": [
+                        {
+                          "valueCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                            "code": "UNK",
+                            "display": "Onbekend"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340181000146102",
+                            "display": "heeft euthanasieverklaring"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340201000146103",
+                            "display": "wil geen euthanasie"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "340191000146100",
+                            "display": "heeft geen euthanasieverklaring"
+                          }
+                        }
+                      ]
                     }
                   ]
                 },
@@ -1975,9 +2172,29 @@
                       "type": "choice",
                       "required": false,
                       "repeats": false,
-                      "options": {
-                        "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
-                      }
+                      "option": [
+                        {
+                          "valueCoding": {
+                            "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                            "code": "UNK",
+                            "display": "onbekend"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "373066001",
+                            "display": "ja"
+                          }
+                        },
+                        {
+                          "valueCoding": {
+                            "system": "http://snomed.info/sct",
+                            "code": "373067005",
+                            "display": "nee"
+                          }
+                        }
+                      ]
                     },
                     {
                       "linkId": "1036",
@@ -2066,9 +2283,29 @@
                       "repeats": false
                     }
                   ],
-                  "options": {
-                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
-                  }
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "onbekend"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001",
+                        "display": "ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373067005",
+                        "display": "nee"
+                      }
+                    }
+                  ]
                 },
                 {
                   "linkId": "255",
@@ -2077,15 +2314,35 @@
                   "type": "choice",
                   "required": false,
                   "repeats": false,
-                  "options": {
-                    "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-YesNoUnknownVS"
-                  },
                   "enableWhen": [
                     {
                       "question": "253",
                       "answerCoding": {
                         "system": "http://snomed.info/sct",
                         "code": "373066001"
+                      }
+                    }
+                  ],
+                  "option": [
+                    {
+                      "valueCoding": {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+                        "code": "UNK",
+                        "display": "onbekend"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373066001",
+                        "display": "ja"
+                      }
+                    },
+                    {
+                      "valueCoding": {
+                        "system": "http://snomed.info/sct",
+                        "code": "373067005",
+                        "display": "nee"
                       }
                     }
                   ]
@@ -2139,4 +2396,3 @@
     }
   ]
 }
-      
