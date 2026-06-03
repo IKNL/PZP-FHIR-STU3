@@ -73,7 +73,7 @@
         "binding": {
           "strength": "required",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoalVS"
           }
         },
         "mapping": [

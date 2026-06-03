@@ -77,7 +77,7 @@
         "binding": {
           "strength": "required",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICDVS"
           }
         },
         "mapping": [

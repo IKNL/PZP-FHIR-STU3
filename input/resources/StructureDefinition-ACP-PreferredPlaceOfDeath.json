@@ -110,7 +110,7 @@
         "binding": {
           "strength": "extensible",
           "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeath"
+            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeathVS"
           }
         },
         "mapping": [
