@@ -68,14 +68,14 @@
         <reference value="QuestionnaireResponse/HendrikHartman-20201001" />
       </reference>
       <name value="ACP-QuestionnaireResponse-HendrikHartman-20201001" />
-      <description value="Example QuestionnaireResponse for PZP" />
+      <description value="Example QuestionnaireResponse ACP Hendrik Hartman 20201001" />
     </resource>
     <resource>
       <reference>
         <reference value="QuestionnaireResponse/HendrikHartman-20221108" />
       </reference>
       <name value="ACP-QuestionnaireResponse-HendrikHartman-20221108" />
-      <description value="Example QuestionnaireResponse for PZP" />
+      <description value="Example QuestionnaireResponse ACP Hendrik Hartman 20221108" />
     </resource>
     <parameter>
       <code value="copyrightyear" />
