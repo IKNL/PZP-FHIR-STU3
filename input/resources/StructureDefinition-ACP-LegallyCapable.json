@@ -26,7 +26,7 @@
   "mapping": [
 
     {
-      "identity": "pall-izppz-zib2020v2026-02-24",
+      "identity": "pall-izppz-zib2017",
       "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
       "name": "ACP zib2017 dataset"
     }
@@ -43,7 +43,7 @@
         "path": "Observation",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "758",
             "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
@@ -95,7 +95,7 @@
         ],
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "759",
             "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
@@ -107,7 +107,7 @@
         "comment": "The `dataAbsentReason` is helpful to indicate a more detailed reason on why the data is absent if this is known, namely: \r\n- if the question has been asked but the source does not know the value (code = _asked-unknown_) \r\n- if the question has not been asked (code = _not-asked_) ",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "759",
             "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
@@ -118,7 +118,7 @@
         "path": "Observation.comment",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "760",
             "comment": "Toelichting"
           }
