@@ -1,4 +1,22 @@
-#### 1.0.0-rc2
+### 1.0.0-rc3
+
+| Issue | Short Description |
+|-------|-------------------|
+| [#137](https://github.com/IKNL/PZP-FHIR-R4/issues/137) | Replaced legally capable extension on Patient with an Observation to better support representation of legal capacity. |
+| [#132](https://github.com/IKNL/PZP-FHIR-R4/issues/132) | Added slices to Procedure.code in STU3 (unlike R4) to support CBV and NZa codes and ensure compliance with zib/nl-core. |
+| [#157](https://github.com/IKNL/PZP-FHIR-R4/issues/157) | Updated CommunicationRequest cardinalities by requiring subject, requester and sender, and authoredOn. |
+| [#151](https://github.com/IKNL/PZP-FHIR-R4/issues/151) | Corrected search URLs by fixing code parameter syntax to ensure proper OR behavior. |
+| [#136](https://github.com/IKNL/PZP-FHIR-R4/issues/136) | Improved search query documentation by clarifying how to retrieve specific data items such as ContactPerson (e.g. legal representative). |
+| [#126](https://github.com/IKNL/PZP-FHIR-R4/issues/126) | Updated questionnaire to align with latest dataset changes, including support for 'other' treatment directives and addition of missing MeetMethode elements. |
+| [#131](https://github.com/IKNL/PZP-FHIR-R4/issues/131) | Replaced fixed questionnaire answer options for 'Functie (specialisme)' with AGB and UZI value sets. |
+| [#135](https://github.com/IKNL/PZP-FHIR-R4/issues/135) | Updated questionnaire answer options to use answerValueSet references where possible and improve alignment with terminology, resolving validation issues. |
+| [#138](https://github.com/IKNL/PZP-FHIR-R4/issues/138) | Updated a couple questionnaire items from `choice` to `boolean` to resolve validation issues and align with the dataset. |
+| [#138](https://github.com/IKNL/PZP-FHIR-R4/issues/138) | Updated yes/no questions in the questionnaire to use `boolean` instead of `choice`. |
+| [#127](https://github.com/IKNL/PZP-FHIR-R4/issues/127) | Added missing `subject` references to QuestionnaireResponse examples and improved consistency of author/source formatting. |
+| [#156](https://github.com/IKNL/PZP-FHIR-R4/issues/156) | Applied QA fixes including ValueSet renaming to avoid duplicate titles. |
+
+
+### 1.0.0-rc2
 
 | Issue | Short Description |
 |-------|-------------------|
@@ -23,7 +41,7 @@
 | [#25](https://github.com/IKNL/PZP-FHIR-STU3/issues/25) | Added `consentingParty` mappings to STU3 Consent resources in examples. |
 
 
-#### 1.0.0-rc1
+### 1.0.0-rc1
 
 | Issue | Short Description |
 |-------|-------------------|
