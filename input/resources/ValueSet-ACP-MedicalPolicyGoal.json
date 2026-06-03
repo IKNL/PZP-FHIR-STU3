@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-MedicalPolicyGoalVS",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoalVS",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "ACPMedicalPolicyGoalVS",
   "title": "ACP Primary Agreed-upon Goal of Medical Policy Codes",
   "status": "draft",

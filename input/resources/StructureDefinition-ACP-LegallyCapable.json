@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-LegallyCapable",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "ACPLegallyCapable",
   "title": "ACP Legally Capable",
   "status": "draft",

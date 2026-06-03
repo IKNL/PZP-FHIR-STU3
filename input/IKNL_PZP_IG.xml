@@ -4,9 +4,9 @@
   xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R3/fhir-single.xsd">
   <id value="iknl.fhir.stu3.pzp" />
   <url value="https://api.iknl.nl/docs/pzp/stu3/ImplementationGuide/iknl.fhir.stu3.pzp" />
-  <version value="1.0.0-rc2" />
+  <version value="1.0.0-rc3" />
   <name value="PZP" />
-  <title value="IKNL PZP STU3" />
+  <title value="Advance Care Planning (PZP) STU3" />
   <status value="active" />
   <experimental value="false" />
   <publisher value="IKNL" />
@@ -63,14 +63,20 @@
         <generation value="markdown" />
       </page>
     </page>
-    <!--
     <resource>
       <reference>
-        <reference value="SearchParameter/Communication-reason-code" />
+        <reference value="QuestionnaireResponse/HendrikHartman-20201001" />
       </reference>
-      <description value="SearchParameter for Communication reason code" />
+      <name value="ACP-QuestionnaireResponse-HendrikHartman-20201001" />
+      <description value="Example QuestionnaireResponse for PZP" />
     </resource>
-    -->
+    <resource>
+      <reference>
+        <reference value="QuestionnaireResponse/HendrikHartman-20221108" />
+      </reference>
+      <name value="ACP-QuestionnaireResponse-HendrikHartman-20221108" />
+      <description value="Example QuestionnaireResponse for PZP" />
+    </resource>
     <parameter>
       <code value="copyrightyear" />
       <value value="2026+" />
