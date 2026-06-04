@@ -1,8 +1,8 @@
 {
   "resourceType": "ValueSet",
-  "id": "ACP-MedicalDeviceProductType-ICD",
-  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD",
-  "version": "1.0.0-rc2",
+  "id": "ACP-MedicalDeviceProductType-ICDVS",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICDVS",
+  "version": "1.0.0-rc3",
   "name": "ACPMedicalDeviceProductTypeICDVS",
   "title": "ACP MedicalDevice ProductType ICD",
   "status": "draft",

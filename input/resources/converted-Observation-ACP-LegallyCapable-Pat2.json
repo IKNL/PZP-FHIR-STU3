@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "ACP-PreferredPlaceOfDeath-Pat2",
+  "id": "ACP-LegallyCapable-Pat2",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-PreferredPlaceOfDeath"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable"
     ]
   },
   "context": {
@@ -11,16 +11,8 @@
     "display": "Encounter, 2025-08-07"
   },
   "effectiveDateTime": "2025-08-07",
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "264362003",
-        "system": "http://snomed.info/sct",
-        "display": "thuis"
-      }
-    ]
-  },
-  "comment": "Het liefst rustig thuis",
+  "valueBoolean": true,
+  "comment": "Patiënt is wilsbekwaam. Bij verandering van de situatie wordt haar partner haar wettelijk vertegenwoordiger.",
   "identifier": [
     {
       "type": {
@@ -33,16 +25,16 @@
         ]
       },
       "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-      "value": "d1866b00-aa64-4155-aa20-25ce51dac894"
+      "value": "337d9e4a-08a3-486f-9f24-d6c60c6f342a"
     }
   ],
   "status": "final",
   "code": {
     "coding": [
       {
-        "code": "395091006",
+        "code": "665671000146101",
         "system": "http://snomed.info/sct",
-        "display": "gewenste plek van overlijden"
+        "display": "juridisch in staat om beslissingen te nemen over medische behandelingen"
       }
     ]
   },

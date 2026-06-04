@@ -1,0 +1,39 @@
+{
+    "resourceType": "ValueSet",
+    "status": "draft",
+    "name": "ACPHealthProfessionalSpecialtyVS",
+    "id": "ACP-HealthProfessionalSpecialtyVS",
+    "title": "ACP Health Professional Specialty",
+    "description": "ValueSet for specialty of the health professional, to be used in the questionnaire. This ValueSet allows codes from both the UZI role coding and the AGB specialty list. The ValueSet is derived from the zib Healthcare Professional Specialty, representing the specialty of the healthcare professional using UZI and AGB codes.",
+    "version": "1.0.0-rc3",
+    "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialtyVS",
+    "experimental": false,
+    "publisher": "IKNL",
+    "contact": [
+        {
+            "name": "IKNL",
+            "telecom": [
+                {
+                    "system": "email",
+                    "value": "info@iknl.nl",
+                    "use": "work"
+                }
+            ]
+        }
+    ],
+    "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
+    "compose": {
+        "include": [
+            {
+                "valueSet": [
+                    "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.6--20171231000000"
+                ]
+            },
+            {
+                "valueSet": [
+                    "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.7--20171231000000"
+                ]
+            }
+        ]
+    }
+}

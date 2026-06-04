@@ -1,4 +1,22 @@
-#### 1.0.0-rc2
+### 1.0.0-rc3
+
+| Issue | Short Description |
+|-------|-------------------|
+| [#137](https://github.com/IKNL/PZP-FHIR-R4/issues/137) | Replaced legally capable extension on Patient with an Observation to better support representation of legal capacity. |
+| [#132](https://github.com/IKNL/PZP-FHIR-R4/issues/132) | Added slices to Procedure.code in STU3 (unlike R4) to support CBV and NZa codes and ensure compliance with zib/nl-core. |
+| [#157](https://github.com/IKNL/PZP-FHIR-R4/issues/157) | Updated CommunicationRequest cardinalities by requiring subject, requester and sender, and authoredOn. |
+| [#151](https://github.com/IKNL/PZP-FHIR-R4/issues/151) | Corrected search URLs by fixing code parameter syntax to ensure proper OR behavior. |
+| [#136](https://github.com/IKNL/PZP-FHIR-R4/issues/136) | Improved search query documentation by clarifying how to retrieve specific data items such as ContactPerson (e.g. legal representative). |
+| [#126](https://github.com/IKNL/PZP-FHIR-R4/issues/126) | Updated questionnaire to align with latest dataset changes, including support for 'other' treatment directives and addition of missing MeetMethode elements. |
+| [#131](https://github.com/IKNL/PZP-FHIR-R4/issues/131) | Replaced fixed questionnaire answer options for 'Functie (specialisme)' with AGB and UZI value sets. |
+| [#135](https://github.com/IKNL/PZP-FHIR-R4/issues/135) | Updated questionnaire answer options to use answerValueSet references where possible and improve alignment with terminology, resolving validation issues. |
+| [#138](https://github.com/IKNL/PZP-FHIR-R4/issues/138) | Updated a couple questionnaire items from `choice` to `boolean` to resolve validation issues and align with the dataset. |
+| [#138](https://github.com/IKNL/PZP-FHIR-R4/issues/138) | Updated yes/no questions in the questionnaire to use `boolean` instead of `choice`. |
+| [#127](https://github.com/IKNL/PZP-FHIR-R4/issues/127) | Added missing `subject` references to QuestionnaireResponse examples and improved consistency of author/source formatting. |
+| [#156](https://github.com/IKNL/PZP-FHIR-R4/issues/156) | Applied QA fixes including ValueSet renaming to avoid duplicate titles. |
+
+
+### 1.0.0-rc2
 
 | Issue | Short Description |
 |-------|-------------------|
@@ -15,7 +33,7 @@
 | [#54](https://github.com/IKNL/PZP-FHIR-R4/issues/54) | Removed the outdated `Beta3 28‑08‑2025` from the questionnaire title. |
 | [#56](https://github.com/IKNL/PZP-FHIR-R4/issues/56) | Reorganized the R4 and STU3 example sets for consistency and aligned naming across all examples. |
 | [#63](https://github.com/IKNL/PZP-FHIR-R4/issues/63) | Redesigned Communication profile into CommunicationRequest profile. |
-| [#99](https://github.com/IKNL/PZP-FHIR-R4/issues/99) | Made all ICD SNOMED codes explicit in the ValueSet ACP-MedicalDeviceProductType-ICD and search URLs to reduce implementation burden. | 
+| [#99](https://github.com/IKNL/PZP-FHIR-R4/issues/99) | Made all ICD SNOMED codes explicit in the ValueSet ACP-MedicalDeviceProductType-ICDVS and search URLs to reduce implementation burden. | 
 | [#107](https://github.com/IKNL/PZP-FHIR-R4/issues/107) | Added the missing contact‑person role code `310141000146103` for "schriftelijk gemachtigde" and relaxed the cardinality constraints. |
 | [#113](https://github.com/IKNL/PZP-FHIR-R4/issues/113) | Removed incorrect uses of `Questionnaire.item.code` and cleaned up all item code fields. |
 |[#91](https://github.com/IKNL/PZP-FHIR-R4/issues/91)  | Updated the IG text and homepage to clearly separate the STU3/zib2017 and R4/zib2020 versions.|
@@ -23,7 +41,7 @@
 | [#25](https://github.com/IKNL/PZP-FHIR-STU3/issues/25) | Added `consentingParty` mappings to STU3 Consent resources in examples. |
 
 
-#### 1.0.0-rc1
+### 1.0.0-rc1
 
 | Issue | Short Description |
 |-------|-------------------|

@@ -42,7 +42,7 @@
       {
         "system": "http://snomed.info/sct",
         "code": "395091006",
-        "display": "Preferred place of death"
+        "display": "gewenste plek van overlijden"
       }
     ]
   },
@@ -53,7 +53,7 @@
   "performer": [
     {
       "reference": "Practitioner/ACP-HealthProfessional-Practitioner-DrVanHuissen-Pat1",
-      "display": "Healthcare professional (person), van Huissen",
+      "display": "Healthcare professional (person), Dr Van Huissen",
       "extension": [
         {
           "url": "http://nictiz.nl/fhir/StructureDefinition/practitionerrole-reference",

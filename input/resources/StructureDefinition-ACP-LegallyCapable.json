@@ -1,10 +1,10 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "ACP-PreferredPlaceOfDeath",
-  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-PreferredPlaceOfDeath",
+  "id": "ACP-LegallyCapable",
+  "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable",
   "version": "1.0.0-rc3",
-  "name": "ACPPreferredPlaceOfDeath",
-  "title": "ACP Preferred Place Of Death",
+  "name": "ACPLegallyCapable",
+  "title": "ACP Legally Capable",
   "status": "draft",
   "experimental": false,
   "publisher": "IKNL",
@@ -20,7 +20,7 @@
       ]
     }
   ],
-  "description": "The preferred place of death. This is the place where the patient prefers to die, if possible. The preferred place of death can be a home, a hospital, a nursing home, hospice or another location. Based on Observation resource.",
+  "description": "Indicates whether the patient is currently assessed as having the capacity to understand and oversee the consequences of medical treatment decisions. If the patient is not legally capable, there should be a legal representative captured in a RelatedPerson resource. Based on Observation resource",
   "copyright": "Copyright and related rights waived via CC0, https://creativecommons.org/publicdomain/zero/1.0/. This does not apply to information from third parties, for example a medical terminology system. The implementer alone is responsible for identifying and obtaining any necessary licenses or authorizations to utilize third party IP in connection with the specification or otherwise.",
   "fhirVersion": "3.0.2",
   "mapping": [
@@ -44,8 +44,8 @@
         "mapping": [
           {
             "identity": "pall-izppz-zib2017",
-            "map": "105",
-            "comment": "Gewenste plek van overlijden (AlgemeneMeting)"
+            "map": "758",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
         ]
       },
@@ -56,17 +56,10 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "395091006"
+              "code": "665671000146101"
             }
           ]
-        },
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2017",
-            "map": "110",
-            "comment": "MetingNaam voor Gewenste plek van overlijden"
-          }
-        ]
+        }
       },
       {
         "id": "Observation.subject",
@@ -90,45 +83,33 @@
       },
       {
         "id": "Observation.effective[x]",
-        "path": "Observation.effective[x]",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2017",
-            "map": "113",
-            "comment": "UitslagDatumTijd"
-          }
-        ]
+        "path": "Observation.effective[x]"    
       },
       {
         "id": "Observation.value[x]",
         "path": "Observation.value[x]",
         "type": [
           {
-            "code": "CodeableConcept"
+            "code": "boolean"
           }
         ],
-        "binding": {
-          "strength": "extensible",
-          "valueSetReference": {
-            "reference": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeathVS"
-          }
-        },
         "mapping": [
           {
             "identity": "pall-izppz-zib2017",
-            "map": "111",
-            "comment": "Voorkeursplek (UitslagWaarde)"
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
         ]
       },
       {
         "id": "Observation.dataAbsentReason",
         "path": "Observation.dataAbsentReason",
+        "comment": "The `dataAbsentReason` is helpful to indicate a more detailed reason on why the data is absent if this is known, namely: \r\n- if the question has been asked but the source does not know the value (code = _asked-unknown_) \r\n- if the question has not been asked (code = _not-asked_) ",
         "mapping": [
           {
             "identity": "pall-izppz-zib2017",
-            "map": "111",
-            "comment": "Voorkeursplek (UitslagWaarde)"
+            "map": "759",
+            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
           }
         ]
       },
@@ -138,7 +119,7 @@
         "mapping": [
           {
             "identity": "pall-izppz-zib2017",
-            "map": "108",
+            "map": "760",
             "comment": "Toelichting"
           }
         ]

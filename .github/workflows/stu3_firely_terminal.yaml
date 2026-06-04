@@ -38,7 +38,7 @@ jobs:
           java-version: '21'
         
       - name: Firely.Terminal (GitHub Actions)
-        uses: FirelyTeam/firely-terminal-pipeline@v0.7.32-alpha2
+        uses: FirelyTeam/firely-terminal-pipeline@v0.8.1
         with:
           PATH_TO_CONFORMANCE_RESOURCES: input/resources
           PATH_TO_EXAMPLES: input/resources
@@ -81,6 +81,7 @@ jobs:
             # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
             |VALUESET_INCLUDE_INVALID_CONCEPT_CODE|*1351964001*|
             |Terminology_TX_NoValid_1_CC|*1351964001*|
+            |Questionnaire_QR_Item_BadOption|*1351964001*|
             
             # Suppressed issues because of error in invariate in base fhir spec
             Questionnaire-ACP-zib2017.json||*que-7*|
@@ -99,6 +100,14 @@ jobs:
             StructureDefinition-ACP-TreatmentDirective.json||*launches straight into slicing without the slicing being set up properly*| 
             StructureDefinition-ACP-LegallyCapable.json||*launches straight into slicing without the slicing being set up properly*|
 
+            # Wrong display name that we don't care about
+            ||*Display Name 'nog onbekend'* |
+            ||*Display Name 'Onbekend'* |
+
+            # Can't find this code because the validator does not have access to the CodeSystem... 
+            ||*code '01.015'* |
+            ||*code 'http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.015 ('Huisarts')' was not found* |
+           
             # Struktur: fileName|messageId|detailsWildcard|location
 
 

@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-Patient",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "name": "ACPPatient",
   "title": "ACP Patient",
   "status": "draft",
@@ -25,8 +25,8 @@
   "fhirVersion": "3.0.2",
   "mapping": [
     {
-      "identity": "pall-izppz-zib2020v2026-02-24",
-      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-02-24T09:29:59",
+      "identity": "pall-izppz-zib2017",
+      "uri": "https://decor.nictiz.nl/exist/apps/api/dataset/2.16.840.1.113883.2.4.3.11.60.117.1.1/2020-07-29T10%3A37%3A48/$view?language=nl-NL&ui=nl-NL&format=html&hidecolumns=3456gh&release=2026-05-12T07%3A32%3A31",
       "name": "ACP zib2017 dataset"
     }
   ],
@@ -42,60 +42,14 @@
         "path": "Patient",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "11",
             "comment": "Patient"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "305",
             "comment": "Gesprek gevoerd in bijzijn van (Patient)"
-          }
-        ]
-      },
-      {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions",
-        "path": "Patient.extension",
-        "sliceName": "legallyCapableMedicalTreatmentDecisions",
-        "max": "1",
-        "type": [
-          {
-            "code": "Extension",
-            "profile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ext-Patient.LegallyCapableMedicalTreatmentDecisions"
-          }
-        ],
-        "condition": [
-          "ACP-Patient-1"
-        ],
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "758",
-            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
-          }
-        ]
-      },
-      {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapable",
-        "path": "Patient.extension.extension",
-        "sliceName": "legallyCapable",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "759",
-            "comment": "Wilsbekwaamheid m.b.t. medische behandelbeslissingen"
-          }
-        ]
-      },
-      {
-        "id": "Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapableComment",
-        "path": "Patient.extension.extension",
-        "sliceName": "legallyCapableComment",
-        "mapping": [
-          {
-            "identity": "pall-izppz-zib2020v2026-02-24",
-            "map": "760",
-            "comment": "Toelichting"
           }
         ]
       },
@@ -104,7 +58,7 @@
         "path": "Patient.identifier",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "18",
             "comment": "Identificatienummer"
           }
@@ -115,22 +69,22 @@
         "path": "Patient.name",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "12",
             "comment": "Naamgegevens"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "328",
             "comment": "Naamgegevens"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "13",
             "comment": "Naamgegevens"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "329",
             "comment": "Naamgegevens"
           }
@@ -141,12 +95,12 @@
         "path": "Patient.name.use",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "222",
             "comment": "Naamgebruik"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "333",
             "comment": "Naamgebruik"
           }
@@ -158,12 +112,12 @@
         "sliceName": "humannameOwnPrefix",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "224",
             "comment": "Voorvoegsels"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "335",
             "comment": "Voorvoegsels"
           }
@@ -175,12 +129,12 @@
         "sliceName": "humannameOwnName",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "225",
             "comment": "Achternaam"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "336",
             "comment": "Achternaam"
           }
@@ -192,12 +146,12 @@
         "sliceName": "humannamePartnerPrefix",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "227",
             "comment": "VoorvoegselsPartner"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "338",
             "comment": "VoorvoegselsPartner"
           }
@@ -209,12 +163,12 @@
         "sliceName": "humannamePartnerName",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "228",
             "comment": "AchternaamPartner"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "339",
             "comment": "AchternaamPartner"
           }
@@ -225,32 +179,32 @@
         "path": "Patient.name.given",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "219",
             "comment": "Voornamen"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "220",
             "comment": "Initialen"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "221",
             "comment": "Roepnaam"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "330",
             "comment": "Voornamen"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "331",
             "comment": "Initialen"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "332",
             "comment": "Roepnaam"
           }
@@ -261,12 +215,12 @@
         "path": "Patient.telecom",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "16",
             "comment": "Contactgegevens"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "17",
             "comment": "Contactgegevens"
           }
@@ -277,7 +231,7 @@
         "path": "Patient.gender",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "20",
             "comment": "Geslacht"
           }
@@ -288,7 +242,7 @@
         "path": "Patient.birthDate",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "19",
             "comment": "Geboortedatum"
           }
@@ -299,12 +253,12 @@
         "path": "Patient.address",
         "mapping": [
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "14",
             "comment": "Adresgegevens"
           },
           {
-            "identity": "pall-izppz-zib2020v2026-02-24",
+            "identity": "pall-izppz-zib2017",
             "map": "15",
             "comment": "Adresgegevens"
           }

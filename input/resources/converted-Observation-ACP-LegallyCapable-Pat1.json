@@ -1,25 +1,17 @@
 {
   "resourceType": "Observation",
-  "id": "ACP-OrganDonationChoiceRegistration-2025-Pat1",
+  "id": "ACP-LegallyCapable-Pat1",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-OrganDonationChoiceRegistration"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable"
     ]
   },
   "context": {
-    "reference": "Encounter/ACP-Encounter-2025-Pat1",
-    "display": "Encounter, 2025-07-29"
+    "reference": "Encounter/ACP-Encounter-Pat1",
+    "display": "Encounter, 2020-10-01"
   },
-  "effectiveDateTime": "2025-07-29",
-  "valueCodeableConcept": {
-    "coding": [
-      {
-        "code": "373066001",
-        "system": "http://snomed.info/sct",
-        "display": "ja"
-      }
-    ]
-  },
+  "effectiveDateTime": "2020-10-01",
+  "valueBoolean": true,
   "identifier": [
     {
       "type": {
@@ -32,16 +24,16 @@
         ]
       },
       "system": "https://acme.com/fhir/NamingSystem/resource-business-identifier",
-      "value": "ec6d52d0-4ebc-4904-bf8b-8610d049be24"
+      "value": "928e493b-3265-46ad-a155-b46d3d31b821"
     }
   ],
   "status": "final",
   "code": {
     "coding": [
       {
+        "code": "665671000146101",
         "system": "http://snomed.info/sct",
-        "code": "570801000146104",
-        "display": "geregistreerd in orgaan donorregister"
+        "display": "juridisch in staat om beslissingen te nemen over medische behandelingen"
       }
     ]
   },
@@ -63,14 +55,5 @@
         }
       ]
     }
-  ],
-  "method": {
-    "coding": [
-      {
-        "system": "http://snomed.info/sct",
-        "code": "1156040003",
-        "display": "self reported"
-      }
-    ]
-  }
+  ]
 }

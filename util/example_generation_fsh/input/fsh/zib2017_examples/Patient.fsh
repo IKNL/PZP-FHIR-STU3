@@ -2,7 +2,6 @@ Instance: ACP-Patient-HendrikHartman-Pat1
 InstanceOf: ACPPatient
 Title: "ACP Patient - Hendrik Hartman - Pat 1"
 Usage: #example
-* extension[legallyCapableMedicalTreatmentDecisions].extension[legallyCapable].valueBoolean = false
 * identifier.system = "http://fhir.nl/fhir/NamingSystem/bsn"
 * identifier.value = "999998286"
 * name[nameInformation].extension.url = "http://hl7.org/fhir/StructureDefinition/humanname-assembly-order"

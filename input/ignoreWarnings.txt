@@ -41,7 +41,7 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 # CodeSystem is not accessible by the validator. The code is manually checked and is valid within the codesystem and is inside the ValueSet.
 %De gevonden code (urn:oid:2.16.840.1.113883.2.4.6.7#0100) staat niet in waardelijst 'SpecialismeAGBCodelijst'%
 %The code provided (urn:oid:2.16.840.1.113883.2.4.6.7#0100) was not found in the value set 'SpecialismeAGBCodelijst' (http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.40.2.17.1.7--20171231000000|2017-12-31T00:00:00), and a code from this value set is required:%
-
+%The code '01.015' in the system 'http://fhir.nl/fhir/NamingSystem/uzi-rolcode' is not in the options value set (ACP Health Professional Specialty) specified by the questionnaire. Terminology Error: A definition for CodeSystem 'http://fhir.nl/fhir/NamingSystem/uzi-rolcode' could not be found, so the code cannot be validated; The provided code 'http://fhir.nl/fhir/NamingSystem/uzi-rolcode#01.015 ('Huisarts')' was not found in the value set 'https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialtyVS|1.0.0-rc3'%
 
 
 # Something in the base FHIR definition. Not in our control.
@@ -53,17 +53,24 @@ ERROR: Library/example: Library.dataRequirement[4].codeFilter[0].valueSet: Canon
 
 # SNOMED code 1351964001 is  https://browser.ihtsdotools.org/?perspective=full&conceptId1=1351964001&edition=MAIN/SNOMEDCT-NL/2025-09-30&release=&languages=nl,en
 %Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930' (Netherlands Edition)%
-%Geen van de gevonden codings bestaan in waardelijst 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc2) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#1351964001)%
-%	None of the codings provided are in the value set 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoal|1.0.0-rc2), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)%
+%Geen van de gevonden codings bestaan in waardelijst 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoalVS|1.0.0-rc3) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#1351964001)%
+%None of the codings provided are in the value set 'ACP Most Important Agreed-upon Goal of Medical Policy' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoalVS|1.0.0-rc3), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)%
+%None of the codings provided are in the value set 'ACP Primary Agreed-upon Goal of Medical Policy Codes' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalPolicyGoalVS|1.0.0-rc3), and a coding from this value set is required) (codes = http://snomed.info/sct#1351964001)%
 
+# Intentional terminology deviation: the display 'nog onbekend' is used as a Dutch synonym for 'unknown' (NullFlavor UNK). Although it differs from the canonical display, the semantic meaning is equivalent and accepted in this implementation
+%The code 'UNK' in the system 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' is not in the options value set (ACP Preferred Place Of Death Codes) specified by the questionnaire. Terminology Error: Wrong Display Name 'nog onbekend' for http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK. Valid display is 'unknown' (en) (for the language(s) '--')%
+%	The code 'UNK' in the system 'http://terminology.hl7.org/CodeSystem/v3-NullFlavor' is not in the options value set (ACP Position Regarding Euthanasia Codes) specified by the questionnaire. Terminology Error: Wrong Display Name 'Onbekend' for http://terminology.hl7.org/CodeSystem/v3-NullFlavor#UNK. Valid display is 'unknown' (en) (for the language(s) '--')%
 
 # Manual check in latest version of SNOMED does find the code '1351964001'. The error might be due to a older version of SNOMED available in tx.fhir.org/r4 
-ERROR: ValueSet/ACP-MedicalPolicyGoal: ValueSet.compose.include[0].concept[1]: The code '1351964001' is not valid in the system http://snomed.info/sct (Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930')
+ERROR: ValueSet/ACP-MedicalPolicyGoalVS: ValueSet.compose.include[0].concept[1]: The code '1351964001' is not valid in the system http://snomed.info/sct (Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930')
 ERROR: Questionnaire/ACP-zib2020: Questionnaire.item[6].item[1].answerOption[1].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item[6].item[1].answer[0].value.ofType(Coding).code: Unknown code '1351964001' in the CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000146104/version/20240930'
 
 # Manually checked: 72506001 is in the ValueSet, even in the expansion. The ValueSet in the profile bound is allowed as it restricts the zib's required binding. 72506001 zit in "Include codes from SNOMED_CT where concept DescendentOf 260787004"  
-%Geen van de gevonden codings bestaan in waardelijst 'ACP MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICD|1.0.0-rc2) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#72506001)%
+%Geen van de gevonden codings bestaan in waardelijst 'ACP MedicalDevice ProductType ICD' (https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-MedicalDeviceProductType-ICDVS|1.0.0-rc3) en een coding uit deze waardelijst is verplicht (codes = http://snomed.info/sct#72506001)%
+
+# Manually checked: 665671000146101 is added after 'http://snomed.info/sct/11000146104/version/20240930' which is the one currently known by tx.fhir.org/r4
+%Unknown code '665671000146101' in the CodeSystem 'http://snomed.info/sct'% 
 
 # Definition can be found in the Nictiz package. Not sure why the IG publisher cannot access it. Also not a big deal for this IG.
 %URL-waarde 'http://fhir.nl/fhir/NamingSystem/agb-z' komt nergens uit%
@@ -73,6 +80,7 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 # Error in the FHIR invariant
 %Fout bij constraint: que-7%
 %Constraint failed: que-7%
+%Constraint failed: eld-12%
 
 # Slicing errors in base profiles... can't do anything about this in this version
 %launches straight into slicing without the slicing being set up properly first%
@@ -117,6 +125,8 @@ ERROR: QuestionnaireResponse/HendrikHartman-20201001: QuestionnaireResponse.item
 # IG publisher stuff?
 %De extensie http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment mag niet op dit punt worden gebruikt (toegestaan = e:ImplementationGuide.dependsOn; dit element is [BackboneElement, ImplementationGuide.dependency])%
 %The extension http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.dependency]; allowed for this version = e:ImplementationGuide.dependsOn)%
+%The extension http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment v1.1.2 is not allowed to be used at this point (this element is [BackboneElement, ImplementationGuide.dependency]; allowed for this version = e:ImplementationGuide.dependsOn)%
+
 
 # Known issue: unresolved links to HL7 v3 ValueSets in STU3 IG Publisher
 %The link 'http://hl7.org/fhir/STU3/v3/%
