@@ -13,5 +13,7 @@ from .communication_transformer import CommunicationTransformer
 from .goal_transformer import GoalTransformer
 from .device_transformer import DeviceTransformer
 from .device_use_statement_transformer import DeviceUseStatementTransformer
+from .condition_transformer import ConditionTransformer
+from .organization_transformer import OrganizationTransformer
 
-__all__ = ['BaseTransformer', 'ConsentTransformer', 'EncounterTransformer', 'ProcedureTransformer', 'PatientTransformer', 'RelatedPersonTransformer', 'PractitionerTransformer', 'PractitionerRoleTransformer', 'ObservationTransformer', 'CommunicationTransformer', 'GoalTransformer', 'DeviceTransformer', 'DeviceUseStatementTransformer']
+__all__ = ['BaseTransformer', 'ConsentTransformer', 'EncounterTransformer', 'ProcedureTransformer', 'PatientTransformer', 'RelatedPersonTransformer', 'PractitionerTransformer', 'PractitionerRoleTransformer', 'ObservationTransformer', 'CommunicationTransformer', 'GoalTransformer', 'DeviceTransformer', 'DeviceUseStatementTransformer', 'ConditionTransformer', 'OrganizationTransformer']
