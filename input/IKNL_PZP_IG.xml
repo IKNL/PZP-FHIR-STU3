@@ -62,6 +62,11 @@
         <title value="Change log" />
         <generation value="markdown" />
       </page>
+      <page>
+        <nameUrl value="downloads.html" />
+        <title value="Downloads" />
+        <generation value="markdown" />
+      </page>
     </page>
     <resource>
       <reference>
