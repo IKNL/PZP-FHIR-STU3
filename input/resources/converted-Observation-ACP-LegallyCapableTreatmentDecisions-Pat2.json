@@ -1,9 +1,9 @@
 {
   "resourceType": "Observation",
-  "id": "ACP-LegallyCapable-Pat2",
+  "id": "ACP-LegallyCapableTreatmentDecisions-Pat2",
   "meta": {
     "profile": [
-      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapable"
+      "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapableTreatmentDecisions"
     ]
   },
   "context": {
