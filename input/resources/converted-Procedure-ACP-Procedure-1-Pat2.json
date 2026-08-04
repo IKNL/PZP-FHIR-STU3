@@ -42,23 +42,14 @@
   "code": {
     "coding": [
       {
-        "code": "713603004",
-        "system": "http://snomed.info/sct",
-        "display": "advance care planning"
+        "code": "411600B",
+        "system": "urn:oid:2.16.840.1.113883.2.4.3.120.5.3",
+        "display": "PROACTIEVE ZORGPLANNING-OPSTEL. INDIV.ZORGPL.PALLIAT.FASE"
       }
     ]
   },
   "subject": {
     "reference": "Patient/ACP-Patient-SamiraVanDerSluijs-Pat2",
     "display": "Patient, Samira van der Sluijs"
-  },
-  "category": {
-    "coding": [
-      {
-        "code": "11429006",
-        "system": "http://snomed.info/sct",
-        "display": "Consultation (procedure)"
-      }
-    ]
   }
 }
