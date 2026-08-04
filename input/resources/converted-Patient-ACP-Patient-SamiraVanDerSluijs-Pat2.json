@@ -6,6 +6,20 @@
       "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-Patient"
     ]
   },
+  "contact": [
+    {
+      "name": {
+        "use": "official",
+        "text": "Gert-Jan de Jong"
+      }
+    },
+    {
+      "name": {
+        "use": "official",
+        "text": "Maya van der Sluijs-Mulder"
+      }
+    }
+  ],
   "identifier": [
     {
       "system": "http://fhir.nl/fhir/NamingSystem/bsn",
