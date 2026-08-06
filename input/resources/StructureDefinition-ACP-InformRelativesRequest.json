@@ -74,16 +74,6 @@
         ]
       },
       {
-        "id": "CommunicationRequest.recipient",
-        "path": "CommunicationRequest.recipient",
-        "type": [
-          {
-            "code": "Reference",
-            "targetProfile": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-ContactPerson"
-          }
-        ]
-      },
-      {
         "id": "CommunicationRequest.authoredOn",
         "path": "CommunicationRequest.authoredOn",
         "min": 1,
