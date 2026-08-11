@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-PositionRegardingEuthanasiaVS",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PositionRegardingEuthanasiaVS",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "name": "ACPPositionRegardingEuthanasiaVS",
   "title": "ACP Position Regarding Euthanasia Codes",
   "status": "draft",

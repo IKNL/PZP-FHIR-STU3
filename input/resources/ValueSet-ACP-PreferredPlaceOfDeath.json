@@ -2,7 +2,7 @@
   "resourceType": "ValueSet",
   "id": "ACP-PreferredPlaceOfDeathVS",
   "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-PreferredPlaceOfDeathVS",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "name": "ACPPreferredPlaceOfDeathVS",
   "title": "ACP Preferred Place Of Death Codes",
   "status": "draft",

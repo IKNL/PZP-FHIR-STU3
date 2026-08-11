@@ -9,7 +9,7 @@
     ]
   },
   "url": "https://api.iknl.nl/docs/pzp/stu3/Questionnaire/ACP-zib2017",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "status": "draft",
   "experimental": false,
   "name": "ACPzib2017",

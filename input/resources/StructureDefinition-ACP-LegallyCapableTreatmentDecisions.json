@@ -2,7 +2,7 @@
   "resourceType": "StructureDefinition",
   "id": "ACP-LegallyCapableTreatmentDecisions",
   "url": "https://api.iknl.nl/docs/pzp/stu3/StructureDefinition/ACP-LegallyCapableTreatmentDecisions",
-  "version": "1.0.0-rc3",
+  "version": "1.0.0",
   "name": "ACPLegallyCapableTreatmentDecisions",
   "title": "ACP Legally Capable Regarding Medical Treatment Decisions",
   "status": "draft",

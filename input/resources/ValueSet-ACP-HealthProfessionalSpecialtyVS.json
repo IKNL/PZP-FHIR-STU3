@@ -5,7 +5,7 @@
     "id": "ACP-HealthProfessionalSpecialtyVS",
     "title": "ACP Health Professional Specialty",
     "description": "ValueSet for specialty of the health professional, to be used in the questionnaire. This ValueSet allows codes from both the UZI role coding and the AGB specialty list. The ValueSet is derived from the zib Healthcare Professional Specialty, representing the specialty of the healthcare professional using UZI and AGB codes.",
-    "version": "1.0.0-rc3",
+    "version": "1.0.0",
     "url": "https://api.iknl.nl/docs/pzp/stu3/ValueSet/ACP-HealthProfessionalSpecialtyVS",
     "experimental": false,
     "publisher": "IKNL",
