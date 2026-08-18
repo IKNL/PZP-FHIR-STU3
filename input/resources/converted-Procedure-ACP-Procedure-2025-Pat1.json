@@ -42,8 +42,8 @@
   "code": {
     "coding": [
       {
-        "system": "http://snomed.info/sct",
         "code": "713603004",
+        "system": "http://snomed.info/sct",
         "display": "advance care planning"
       }
     ]

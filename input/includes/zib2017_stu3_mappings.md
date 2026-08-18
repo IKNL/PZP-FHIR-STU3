@@ -41,9 +41,10 @@ This table provides an overview of all zib2017 dataset elements that are mapped 
 | 234 | &emsp;&emsp;&emsp;&emsp;Voorvoegsels | Practitioner (<a href="StructureDefinition-ACP-HealthProfessional-Practitioner.html">ACPHealthProfessionalPractitioner</a>) | `Practitioner.name.family.extension:humannameOwnPrefix`  |
 | 235 | &emsp;&emsp;&emsp;&emsp;Achternaam | Practitioner (<a href="StructureDefinition-ACP-HealthProfessional-Practitioner.html">ACPHealthProfessionalPractitioner</a>) | `Practitioner.name.family.extension:humannameOwnName`  |
 | 28 | &emsp;Functie (Specialisme) | PractitionerRole (<a href="StructureDefinition-ACP-HealthProfessional-PractitionerRole.html">ACPHealthProfessionalPractitionerRole</a>) | `PractitionerRole.specialty`  |
-| 758 | Wilsbekwaamheid m.b.t. medische behandelbeslissingen | Patient (<a href="StructureDefinition-ACP-Patient.html">ACPPatient</a>) | `Patient.extension:legallyCapableMedicalTreatmentDecisions`  |
-| 759 | &emsp;Wilsbekwaamheid m.b.t. medische behandelbeslissingen | Patient (<a href="StructureDefinition-ACP-Patient.html">ACPPatient</a>) | `Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapable`  |
-| 760 | &emsp;Toelichting | Patient (<a href="StructureDefinition-ACP-Patient.html">ACPPatient</a>) | `Patient.extension:legallyCapableMedicalTreatmentDecisions.extension:legallyCapableComment`  |
+| 758 | Wilsbekwaamheid m.b.t. medische behandelbeslissingen | Observation (<a href="StructureDefinition-ACP-LegallyCapableTreatmentDecisions.html">ACPLegallyCapableTreatmentDecisions</a>) | `Observation`  |
+| 759 | &emsp;Wilsbekwaamheid m.b.t. medische behandelbeslissingen | Observation (<a href="StructureDefinition-ACP-LegallyCapableTreatmentDecisions.html">ACPLegallyCapableTreatmentDecisions</a>) | `Observation.value[x]`  |
+| 759 | &emsp;Wilsbekwaamheid m.b.t. medische behandelbeslissingen | Observation (<a href="StructureDefinition-ACP-LegallyCapableTreatmentDecisions.html">ACPLegallyCapableTreatmentDecisions</a>) | `Observation.dataAbsentReason`  |
+| 760 | &emsp;Toelichting | Observation (<a href="StructureDefinition-ACP-LegallyCapableTreatmentDecisions.html">ACPLegallyCapableTreatmentDecisions</a>) | `Observation.comment`  |
 | 36 | Wettelijk vertegenwoordiger (Contactpersoon) | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson`  |
 | 37 | &emsp;Naam wettelijk vertegenwoordiger (Naamgegevens) | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson.name`  |
 | 38 | &emsp;&emsp;Naamgegevens | RelatedPerson (<a href="StructureDefinition-ACP-ContactPerson.html">ACPContactPerson</a>) | `RelatedPerson.name`  |

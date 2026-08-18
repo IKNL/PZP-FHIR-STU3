@@ -1,3 +1,16 @@
+### 1.0.0
+
+| Issue | Short Description |
+|-------|-------------------|
+| [#171](https://github.com/IKNL/PZP-FHIR-R4/issues/171) | Renamed `ACP Legally Capable` profile to `ACP Legally Capable Regarding Medical Treatment Decisions` to better reflect the content of the information. |
+| [#163](https://github.com/IKNL/PZP-FHIR-R4/issues/163) | Added an `Anders, namelijk` item to the to the Preferred Place of Death questionnaire item, enabling users to provide additional details when none of the predefined answer options are applicable. |
+| [#175](https://github.com/IKNL/PZP-FHIR-R4/issues/175) | Provided guidance on how to distuingish ICD deactivation from other additional 'Other' treatment directive on data exchange page.  |
+| [#176](https://github.com/IKNL/PZP-FHIR-R4/issues/176) | Expanded the data exchange documentation with a code-to-profile mapping table, explicitly linking SNOMED CT observation codes used in search queries to their corresponding ACP Observation profiles. |
+| [#170](https://github.com/IKNL/PZP-FHIR-R4/issues/170) | Improved the DeviceUseStatement search query example to use typed reference chaining (device:Device.type). |
+| [#174](https://github.com/IKNL/PZP-FHIR-R4/issues/174) | Corrected description of CommunicationRequest and removed reference from the `recipient` element. |
+| [#158](https://github.com/IKNL/PZP-FHIR-R4/issues/58) | Added `How to Read this Guide` section to homepage. |
+| [#160](https://github.com/IKNL/PZP-FHIR-R4/issues/160) | Added Downloads page to IG. |
+
 ### 1.0.0-rc3
 
 | Issue | Short Description |

@@ -164,3 +164,6 @@ full-ig.zip
 # simplifier files
 .simplifier
 fhirpkg.lock.json
+
+# Questionnaire expanded files 
+input/resources/Questionnaire-ACP-zib2017-expanded.json

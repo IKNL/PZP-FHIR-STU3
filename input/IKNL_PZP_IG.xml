@@ -4,7 +4,8 @@
   xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R3/fhir-single.xsd">
   <id value="iknl.fhir.stu3.pzp" />
   <url value="https://api.iknl.nl/docs/pzp/stu3/ImplementationGuide/iknl.fhir.stu3.pzp" />
-  <version value="1.0.0-rc3" />
+  <version value="1.0.0" />
+  <date value="2026-08-17" />
   <name value="PZP" />
   <title value="Advance Care Planning (PZP) STU3" />
   <status value="active" />
@@ -62,6 +63,11 @@
         <title value="Change log" />
         <generation value="markdown" />
       </page>
+      <page>
+        <nameUrl value="downloads.html" />
+        <title value="Downloads" />
+        <generation value="markdown" />
+      </page>
     </page>
     <resource>
       <reference>
@@ -84,7 +90,7 @@
     <!-- releaselabel should be the ballot status for HL7-published IGs. -->
     <parameter>
       <code value="releaselabel" />
-      <value value="consultation" />
+      <value value="release" />
     </parameter>
     <parameter>
       <code value="find-other-resources" />
