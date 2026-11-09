@@ -14,6 +14,7 @@ Key transformations:
 
 from typing import Dict, Any, Optional, List
 from .base_transformer import BaseTransformer
+from .location_transformer import location_to_organization_reference
 
 
 class DeviceUseStatementTransformer(BaseTransformer):
@@ -49,7 +50,7 @@ class DeviceUseStatementTransformer(BaseTransformer):
         self._transform_reason_code(r4_resource, stu3_resource)
         self._transform_body_site_extensions(r4_resource, stu3_resource)
         self._transform_health_professional_extension(r4_resource, stu3_resource)
-        self._copy_healthcare_provider_extension(r4_resource, stu3_resource)
+        self._transform_healthcare_provider_extension(r4_resource, stu3_resource)
         
         # Clean references throughout the resource
         stu3_resource = self.clean_references_in_object(stu3_resource)
@@ -161,17 +162,33 @@ class DeviceUseStatementTransformer(BaseTransformer):
                 # Add the transformed HealthProfessional extensions
                 stu3_resource['extension'].extend(health_professional_extensions)
     
-    def _copy_healthcare_provider_extension(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
+    def _transform_healthcare_provider_extension(self, r4_resource: Dict[str, Any], stu3_resource: Dict[str, Any]) -> None:
         """
-        Copy the zib2017 HealthcareProvider extension unchanged.
+        Transform the HealthcareProvider ("Locatie") extension from R4 to STU3.
 
-        The STU3 extension http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Organization
-        refers to an Organization (nl-core-organization). Its R4 counterpart, ext-MedicalDevice.Location,
-        refers to a Location, so it cannot be mapped one-to-one; source material that needs the STU3
-        location sets the STU3 extension directly and it is passed through here.
+        R4:   http://nictiz.nl/fhir/StructureDefinition/ext-MedicalDevice.Location
+              valueReference -> Location (zib-HealthcareProvider)
+        STU3: http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Organization
+              valueReference -> Organization (nl-core-organization)
+
+        The referenced Location is converted to an Organization with the same id by
+        LocationTransformer, so Location/<id> is rewritten to Organization/<id>.
+        An extension that already uses the STU3 URL is copied unchanged.
         """
-        url = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Organization'
-        provider_extensions = [ext.copy() for ext in r4_resource.get('extension', []) if ext.get('url') == url]
+        r4_url = 'http://nictiz.nl/fhir/StructureDefinition/ext-MedicalDevice.Location'
+        stu3_url = 'http://nictiz.nl/fhir/StructureDefinition/zib-MedicalDevice-Organization'
+        provider_extensions = []
+
+        for extension in r4_resource.get('extension', []):
+            if extension.get('url') == r4_url:
+                stu3_extension = extension.copy()
+                stu3_extension['url'] = stu3_url
+                if 'valueReference' in stu3_extension:
+                    stu3_extension['valueReference'] = location_to_organization_reference(stu3_extension['valueReference'])
+                provider_extensions.append(stu3_extension)
+            elif extension.get('url') == stu3_url:
+                provider_extensions.append(extension.copy())
+
         if provider_extensions:
             stu3_resource.setdefault('extension', []).extend(provider_extensions)
 
@@ -230,9 +247,12 @@ DeviceUseStatement R4 to STU3 Transformations:
 |                                  |                                  | sional -> zib-MedicalDevice-     |
 |                                  |                                  | Practitioner                     |
 +----------------------------------+----------------------------------+----------------------------------+
-| extension[zib-MedicalDevice-     | extension[zib-MedicalDevice-     | Copied unchanged (zib2017        |
-| Organization]                    | Organization]                    | HealthcareProvider, references   |
-|                                  |                                  | an Organization)                 |
+| extension[ext-MedicalDevice.     | extension[zib-MedicalDevice-     | URL transformation +             |
+| Location] -> Location/<id>       | Organization] -> Organization/   | Location/<id> -> Organization/   |
+|                                  | <id>                             | <id> (see LocationTransformer)   |
++----------------------------------+----------------------------------+----------------------------------+
+| extension[zib-MedicalDevice-     | extension[zib-MedicalDevice-     | Copied unchanged                 |
+| Organization]                    | Organization]                    |                                  |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Special Cases:
@@ -242,6 +262,7 @@ Special Cases:
 - Reference cleaning applied to subject, source, device fields
 - reasonCode becomes indication in STU3
 - ext-MedicalDevice.HealthProfessional extension URL transformed to STU3 equivalent
-- zib-MedicalDevice-Organization extension copied unchanged; R4 ext-MedicalDevice.Location refers to a Location and is not mapped
+- ext-MedicalDevice.Location (Reference to a Location) becomes zib-MedicalDevice-Organization (Reference to the Organization that LocationTransformer makes of that Location)
+- zib-MedicalDevice-Organization extension (already STU3) copied unchanged
 - bodySite.extension[ext-AnatomicalLocation.Laterality] URL transformed to BodySite-Qualifier
 """
