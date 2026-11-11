@@ -59,6 +59,9 @@ class PractitionerRoleTransformer(BaseTransformer):
             self._transform_available_time(r4_resource, stu3_resource)
             self._transform_not_available(r4_resource, stu3_resource)
             self._copy_direct_mappings(r4_resource, stu3_resource)
+
+            # Remove coding.version from specialty codings
+            self._remove_specialty_versions(stu3_resource)
             
             # Clean all Reference objects to remove R4-specific 'type' fields
             stu3_resource = self.clean_references_in_object(stu3_resource)
@@ -149,6 +152,21 @@ class PractitionerRoleTransformer(BaseTransformer):
             if field in r4_resource:
                 stu3_resource[field] = r4_resource[field]
     
+    def _remove_specialty_versions(self, stu3_resource: Dict[str, Any]) -> None:
+        """
+        Remove coding.version from PractitionerRole.specialty.
+
+        The STU3 specialty ValueSet is defined without code system versions.
+        Therefore coding.version is removed during R4 -> STU3 transformation.
+        """
+
+        if "specialty" not in stu3_resource:
+            return
+
+        for specialty in stu3_resource["specialty"]:
+            for coding in specialty.get("coding", []):
+                coding.pop("version", None)
+
     def get_mapping_info(self) -> Dict[str, str]:
         """Return mapping information for documentation."""
         return {

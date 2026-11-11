@@ -32,6 +32,13 @@ class ProcedureTransformer(BaseTransformer):
         "suspended": "suspended",
         "unknown": "unknown"
     }
+
+    # Procedure codes that should be categorized as Consultation (procedure)
+    ACP_PROCEDURE_CODES = {
+        ("http://snomed.info/sct", "713603004"),                  # Advance care planning (procedure)
+        ("urn:oid:2.16.840.1.113883.2.4.3.120.5.3", "411600B"),  # PROACTIEVE ZORGPLANNING-OPSTEL. INDIV.ZORGPL.PALLIAT.FASE
+        ("urn:oid:2.16.840.1.113883.2.4.3.27.15.5", "190099")    # Proactieve zorgplanning
+    }
     
     def __init__(self):
         super().__init__()
@@ -271,7 +278,7 @@ class ProcedureTransformer(BaseTransformer):
         """
         Add consultation category when the procedure code is "Advance care planning (procedure)".
         
-        When code.coding contains SNOMED code "713603004" (Advance care planning (procedure)),
+        When Procedure.code contains one of the configured ACP procedure codes,
         automatically populate category with SNOMED code "11429006" (Consultation (procedure)).
         """
         # Check if the procedure has the ACP code
@@ -279,8 +286,10 @@ class ProcedureTransformer(BaseTransformer):
             has_acp_code = False
             
             for coding in stu3_resource['code']['coding']:
-                if (coding.get('code') == '713603004' and 
-                    coding.get('system') == 'http://snomed.info/sct'):
+                if (
+                    coding.get('system'),
+                    coding.get('code')
+                ) in self.ACP_PROCEDURE_CODES:
                     has_acp_code = True
                     break
             
@@ -476,8 +485,12 @@ Special Transformations:
 5. Extension URLs are mapped from Nictiz R4 to HL7 STU3 equivalents
 6. Reference.type fields are removed (R4-specific, not supported in STU3)
 7. Auto-population of category field for ACP procedures:
-   - When code.coding contains SNOMED "713603004" (Advance care planning (procedure))
-   - Automatically adds/updates category with SNOMED "11429006" (Consultation (procedure))
+   - Triggered by configured ACP procedure codes:
+       * SNOMED CT: 713603004
+       * NHG Tabel 25B: 411600B
+       * Verrichtingenthesaurus: 190099
+   - Automatically adds/updates category with SNOMED 11429006
+     (Consultation (procedure))
    - Preserves existing category codings if present
 
 Reference Datatype Transformation:
